@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  store_id: 1
+  school_name: MyString
+  address: MyString
+  city: MyString
+  state: MyString
+  monday_hours: MyString
+  tuesday_hours: MyString
+  wednesday_hours: MyString
+  thursday_hours: MyString
+  friday_hours: MyString
+  saturday_hours: MyString
+  sunday_hours: MyString
+  num_of_schools: 1
+  num_of_schools_included: 1
+
+two:
+  store_id: 1
+  school_name: MyString
+  address: MyString
+  city: MyString
+  state: MyString
+  monday_hours: MyString
+  tuesday_hours: MyString
+  wednesday_hours: MyString
+  thursday_hours: MyString
+  friday_hours: MyString
+  saturday_hours: MyString
+  sunday_hours: MyString
+  num_of_schools: 1
+  num_of_schools_included: 1
