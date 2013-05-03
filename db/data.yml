@@ -1,0 +1,225 @@
+
+---
+schools:
+  columns:
+  - id
+  - store_id
+  - school_name
+  - address
+  - city
+  - state
+  - monday_hours
+  - tuesday_hours
+  - wednesday_hours
+  - thursday_hours
+  - friday_hours
+  - saturday_hours
+  - sunday_hours
+  - num_of_schools
+  - num_of_schools_included
+  - created_at
+  - updated_at
+  - latitude
+  - longitude
+  - gmaps
+  records: 
+  - - 31
+    - 681
+    - Missouri Western State University
+    - 4525 Downs
+    - St Joseph
+    - MO
+    - 8:00_AM - 4:30_PM
+    - 8:00_AM - 4:30_PM
+    - 8:00_AM - 4:30_PM
+    - 8:00_AM - 4:30_PM
+    - 8:00_AM - 4:30_PM
+    - CLOSED
+    - CLOSED
+    - 1
+    - 1
+    - '2013-05-03 16:13:14.485237'
+    - '2013-05-03 16:13:14.485237'
+    - 39.7576384
+    - -94.78551759999999
+    - true
+  - - 32
+    - 657
+    - Saint Louis University
+    - 20 N. Grand Blvd
+    - Saint Louis
+    - MO
+    - 08:30_AM - 5:00_PM
+    - 08:30_AM - 5:00_PM
+    - 08:30_AM - 5:00_PM
+    - 08:30_AM - 5:00_PM
+    - 08:30_AM - 4:00_PM
+    - 12:00_PM - 3:00_PM
+    - CLOSED
+    - 1
+    - 1
+    - '2013-05-03 16:13:14.814841'
+    - '2013-05-03 16:13:14.814841'
+    - 38.633716
+    - -90.233121
+    - true
+  - - 33
+    - 204
+    - Mississippi State
+    - 75 B.S. Hood Drive
+    - Mississippi State
+    - MS
+    - 7:30_AM - 8:00_PM
+    - 7:30_AM - 8:00_PM
+    - 7:30_AM - 8:00_PM
+    - 7:30_AM - 8:00_PM
+    - 7:30_AM - 8:00_PM
+    - 10:00_AM - 8:00_PM
+    - 12:00_PM - 6:00_PM
+    - 1
+    - 1
+    - '2013-05-03 16:13:15.092999'
+    - '2013-05-03 16:13:15.092999'
+    - 33.456377
+    - -88.795568
+    - true
+  - - 34
+    - 45
+    - University of Southern Mississippi
+    - 121 West Memorial Drive
+    - Hattiesburg
+    - MS
+    - 7:45_AM - 6:45_PM
+    - 7:45_AM - 6:45_PM
+    - 7:45_AM - 6:45_PM
+    - 7:45_AM - 6:45_PM
+    - 7:45_AM - 5:00_PM
+    - 11:00_AM - 4:00_PM
+    - 1:00_PM - 5:00_PM
+    - 1
+    - 1
+    - '2013-05-03 16:13:15.379740'
+    - '2013-05-03 16:13:15.379740'
+    - 31.3226305
+    - -89.3292982
+    - true
+  - - 35
+    - 15
+    - William Carey University
+    - 498 Tuscan Avenue
+    - Hattiesburg
+    - MS
+    - 8:00_AM - 6:00_PM
+    - 8:00_AM - 6:00_PM
+    - 8:00_AM - 6:00_PM
+    - 8:00_AM - 5:00_PM
+    - 8:00_AM - 4:30_PM
+    - CLOSED
+    - CLOSED
+    - 1
+    - 1
+    - '2013-05-03 16:13:15.581906'
+    - '2013-05-03 16:13:15.581906'
+    - 31.305386
+    - -89.289869
+    - true
+  - - 36
+    - 317
+    - University Of Mississippi - Ole Miss
+    - ! ' '
+    - University
+    - MS
+    - 7:30_AM - 5:00_PM
+    - 7:30_AM - 5:00_PM
+    - 7:30_AM - 5:00_PM
+    - 7:30_AM - 5:00_PM
+    - 7:30_AM - 5:00_PM
+    - 12:00_PM - 5:00_PM
+    - CLOSED
+    - 1
+    - 1
+    - '2013-05-03 16:13:15.823467'
+    - '2013-05-03 16:13:15.823467'
+    - 34.3659395
+    - -89.5253597
+    - true
+  - - 37
+    - 413
+    - Rowan-Cabarrus Community College North Campus
+    - 1333 Jake Alexander Blvd
+    - Salisbury
+    - NC
+    - 08:30_AM - 07:00_PM
+    - 08:30_AM - 07:00_PM
+    - 08:30_AM - 07:00_PM
+    - 08:30_AM - 07:00_PM
+    - 08:30_AM - 01:00_PM
+    - CLOSED
+    - CLOSED
+    - 1
+    - 1
+    - '2013-05-03 16:13:16.030042'
+    - '2013-05-03 16:13:16.030042'
+    - 35.6749193
+    - -80.5029208
+    - true
+  - - 38
+    - 276
+    - University of North Carolina at Charlotte
+    - 9201 University City Boulevard
+    - Charlotte
+    - NC
+    - CLOSED
+    - 7:30_AM - 9:00_PM
+    - 7:30_AM - 9:00_PM
+    - 7:30_AM - 9:00_PM
+    - 7:30_AM - 6:00_PM
+    - 10:00_AM - 05:00_PM
+    - CLOSED
+    - 1
+    - 1
+    - '2013-05-03 16:13:16.269995'
+    - '2013-05-03 16:13:16.269995'
+    - 35.3038368
+    - -80.72990700000001
+    - true
+  - - 39
+    - 416
+    - Elon University
+    - 130 N. Williamson Avenue
+    - Elon
+    - NC
+    - 8:30_AM - 7:00_PM
+    - 8:30_AM - 7:00_PM
+    - 8:30_AM - 7:00_PM
+    - 8:30_AM - 7:00_PM
+    - 8:30_AM - 5:00_PM
+    - 11:00_AM - 5:00_PM
+    - CLOSED
+    - 1
+    - 1
+    - '2013-05-03 16:13:16.494841'
+    - '2013-05-03 16:13:16.494841'
+    - 36.101537
+    - -79.506895
+    - true
+  - - 40
+    - 684
+    - University Of North Carolina at Greensboro
+    - 507 Stirlling Street
+    - Greensboro
+    - NC
+    - CLOSED
+    - 8:00_AM - 7:00_PM
+    - 8:00_AM - 7:00_PM
+    - 8:00_AM - 7:00_PM
+    - 8:00_AM - 5:00_PM
+    - CLOSED
+    - CLOSED
+    - 1
+    - 1
+    - '2013-05-03 16:13:16.724687'
+    - '2013-05-03 16:13:16.724687'
+    - 36.0679971
+    - -79.81130689999999
+    - true

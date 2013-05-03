@@ -7,8 +7,10 @@
 # Ignore bundler config
 /.bundle
 
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
+.redcar/
 
 # Ignore all logfiles and tempfiles.
 /log/*.log

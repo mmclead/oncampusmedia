@@ -12,6 +12,7 @@ gem 'simple_form'
 gem 'rspec'
 gem 'haml-rails'
 gem 'jquery-ui-rails'
+gem 'yaml_db'
 
 
 

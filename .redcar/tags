@@ -1,4 +1,4 @@
-1367608748
+1367609016
 AddGMapsToSchool	/Users/masonmclead/Sites/schools/db/migrate/20130503160134_add_g_maps_to_school.rb	class AddGMapsToSchool 
 AddLatAndLongToSchool	/Users/masonmclead/Sites/schools/db/migrate/20130503152609_add_lat_and_long_to_school.rb	class AddLatAndLongToSchool 
 Application	/Users/masonmclead/Sites/schools/config/application.rb	  class Application 
