@@ -5,7 +5,16 @@ class SchoolsController < ApplicationController
     @json = @schools.to_gmaps4rails do |school, marker|
       marker.infowindow render_to_string(partial: "/schools/infowindow", locals: {school: school})
       marker.title "#{school.school_name}"
-      marker.json({num_of_schools: school.num_of_schools})   
+      marker.json({num_of_schools: school.num_of_schools, state: school.state})   
     end
   end
+  
+  def search
+    
+  end
+  
+  def results
+    
+  end
+  
 end

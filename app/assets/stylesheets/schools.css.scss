@@ -6,3 +6,16 @@
 #school-count-range {
   width:300px;
 }
+
+#state-list
+  ul {
+    list-style-type: none;
+  }
+  
+  li {
+    display:inline-block;
+    border:1px solid #c1c1c1;
+    padding: 3px;
+    margin:3px;
+  }
+  

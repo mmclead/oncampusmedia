@@ -1,0 +1,10 @@
+#all-states
+  = check_box_tag "All States", 'all', true
+  = label_tag "All States", "All States"
+  
+#state-list
+  %ul
+    - STATE_LIST.each do |state|  
+      %li
+        = check_box_tag "#{state}"
+        = label_tag "#{state}", "#{state}"

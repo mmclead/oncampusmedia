@@ -1,47 +1,17 @@
+%h3 Filter by State
+= render 'filters/states_list'
 
-= gmaps4rails(@json)
+%h3 Filter by Sports
+= render 'filters/sports_list'
+
+%h3 Filter by Demographics
+= render 'filters/demographics'
+
+
+
 %h3 Filter by School Count
 #school-count-range
-<input type="text" id="filtered-pop" style="width: 200px"/>
-
-:javascript
-  $(document).ready(function() {
-    Gmaps.map.callback = function() {
-
-      var CountFilter = {
-        min: 0,
-        max: 2,
-      };
-    
-      $("#school-count-range").slider({
-        range: true,
-        min: CountFilter.min,
-        max: CountFilter.max,
-        values: [ CountFilter.min, CountFilter.max ],
-        slide: function(event, ui) {
-          $( "#filtered-pop" ).val( (ui.values[ 0 ])+ " - " + (ui.values[ 1 ]))
-          CountFilter.min = ui.values[ 0 ]
-          CountFilter.max = ui.values[ 1 ]
-          applyFilters()
-        }
-      });
-      
-      var VisibleMarkers = function() {
-      var filtered = _.reject(Gmaps.map.markers, function(marker) {
-          return marker.num_of_schools < CountFilter.min || marker.num_of_schools > CountFilter.max;
-        });
-        return filtered
-       }
-
-      var applyFilters = function() {
-        _.each(Gmaps.map.markers, function(marker) {
-          Gmaps.map.hideMarker(marker)
-        })
-        _.each(VisibleMarkers(), function(marker) {
-          Gmaps.map.showMarker(marker)
-        })
-      };
-    }
-  });
+%input#filtered-pop{type: "text"}
 
 
+= gmaps4rails(@json)
