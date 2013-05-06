@@ -8,6 +8,7 @@ $(document).ready(function() {
 
     var FullMarkerList = Gmaps.map.markers
     var StateFilter = [];
+    var ConferenceFilter = [];
     var SportFilter = [];
 
     var CountFilter = {
@@ -56,11 +57,26 @@ $(document).ready(function() {
       }
     });
     
+    $('#conference-list input').change(function() {
+      $('#all-conferences input').prop('checked', false);
+      ConferenceFilter = $('#conference-list input:checked').map( function() { return this.name;});
+      applyFilters()
+    });
+    
+    $('#all-conferences input').change(function() {
+      if (this.checked) {
+        $('#conference-list input:checked').prop('checked', false);
+        ConferenceFilter = [];
+        applyFilters()
+      }
+    });
+    
     
     var VisibleMarkers = function() {
       var filtered = _.reject(FullMarkerList, function(marker) {
         return !( (_.contains(StateFilter, marker.state) || ($('#all-states input').prop('checked'))) 
         && ( _.some(marker.sports, function(sport) {return _.contains(SportFilter, sport)} ) || ($('#all-sports input').prop('checked')) ) 
+        && (_.contains(ConferenceFilter, marker.conference) || ($('#all-conferences input').prop('checked')))
         );
       });
 

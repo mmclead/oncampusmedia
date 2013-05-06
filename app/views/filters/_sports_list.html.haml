@@ -8,3 +8,6 @@
       %li
         = check_box_tag "#{sport}"
         = label_tag "#{sport}", "#{sport.titleize}"
+        
+%h4 Filter by Conference
+= render 'filters/conference'
