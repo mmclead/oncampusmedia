@@ -6,6 +6,7 @@
 $(document).ready(function() {
   Gmaps.map.callback = function() {
 
+    var FullMarkerList = Gmaps.map.markers
     var StateFilter = [];
     var CountFilter = {
       min: 0,
@@ -41,7 +42,7 @@ $(document).ready(function() {
     
     
     var VisibleMarkers = function() {
-      var filtered = _.reject(Gmaps.map.markers, function(marker) {
+      var filtered = _.reject(FullMarkerList, function(marker) {
         return (!(_.contains(StateFilter, marker.state)) && !($('#all-states input').prop('checked')) );
       });
 
@@ -50,12 +51,15 @@ $(document).ready(function() {
      }
 
     var applyFilters = function() {
-      _.each(Gmaps.map.markers, function(marker) {
-        Gmaps.map.hideMarker(marker)
-      })
-      _.each(VisibleMarkers(), function(marker) {
-        Gmaps.map.showMarker(marker)
-      })
+      Gmaps.map.replaceMarkers(VisibleMarkers())
+      //_.each(Gmaps.map.markers, function(marker) {
+      //  Gmaps.map.hideMarker(marker)
+      //})
+      //Gmaps.map.markerClusterer.clearMarkers()
+      //_.each(VisibleMarkers(), function(marker) {
+      //  Gmaps.map.showMarker(marker)
+        //Gmaps.map.markerClusterer.addMarker(marker)
+      //})
     };
   }
 });
