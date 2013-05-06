@@ -8,6 +8,8 @@ $(document).ready(function() {
 
     var FullMarkerList = Gmaps.map.markers
     var StateFilter = [];
+    var SportFilter = [];
+
     var CountFilter = {
       min: 0,
       max: 2,
@@ -40,10 +42,26 @@ $(document).ready(function() {
       }
     });
     
+    $('#sport-list input').change(function() {
+      $('#all-sports input').prop('checked', false);
+      SportFilter = $('#sport-list input:checked').map( function() { return this.name;});
+      applyFilters()
+    });
+    
+    $('#all-sports input').change(function() {
+      if (this.checked) {
+        $('#sport-list input:checked').prop('checked', false);
+        SportFilter = [];
+        applyFilters()
+      }
+    });
+    
     
     var VisibleMarkers = function() {
       var filtered = _.reject(FullMarkerList, function(marker) {
-        return (!(_.contains(StateFilter, marker.state)) && !($('#all-states input').prop('checked')) );
+        return !( (_.contains(StateFilter, marker.state) || ($('#all-states input').prop('checked'))) 
+        && ( _.some(marker.sports, function(sport) {return _.contains(SportFilter, sport)} ) || ($('#all-sports input').prop('checked')) ) 
+        );
       });
 
       return filtered

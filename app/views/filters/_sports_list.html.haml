@@ -1,0 +1,10 @@
+#all-sports
+  = check_box_tag "All Sports", 'all', true
+  = label_tag "All Sports", "All Sports"
+  
+#sport-list
+  %ul
+    - SPORT_LIST.each do |sport|  
+      %li
+        = check_box_tag "#{sport}"
+        = label_tag "#{sport}", "#{sport.titleize}"
