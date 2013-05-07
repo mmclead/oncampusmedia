@@ -111,7 +111,8 @@ $(document).ready(function() {
                   .addClass('school-list-item')
                   .append($('<input/>').attr({type: 'checkbox', 
                                               id: marker.title, 
-                                              name: marker.title }))
+                                              name: "schools["+marker.title+"]",
+                                              value: marker.store_id}))
                   .append( $('<label/>').attr({'for': marker.title}).text(' ' + marker.title) )
                   .appendTo(list);
       });

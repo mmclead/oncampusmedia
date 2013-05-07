@@ -1,9 +1,11 @@
 = gmaps4rails(@json)
 
 #school-list-holder
-  = form_tag url: {controller: 'ratecards', action: 'create'} do
+  = form_tag url_for(controller: 'ratecards', action: 'create') do
     %ul.school-list
       = render @schools
+      
+    = submit_tag 'Create Quote'
   
   
 #clear

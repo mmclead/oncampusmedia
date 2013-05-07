@@ -1,3 +1,3 @@
 %li#school-list-item
-  = check_box_tag school.name.parameterize.underscore.to_sym
-  = label_tag school.name.parameterize.underscore.to_sym, school.name.titleize
+  = check_box_tag "schools[#{school.name.parameterize.underscore.to_sym}]",  school.store_id
+  = label_tag "schools[#{school.name.parameterize.underscore.to_sym}]", school.name.titleize
