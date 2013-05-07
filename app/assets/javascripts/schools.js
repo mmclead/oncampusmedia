@@ -5,6 +5,8 @@
 
 $(document).ready(function() {
   Gmaps.map.callback = function() {
+    
+    
 
     var FullMarkerList = Gmaps.map.markers;
     var DemoList = {
@@ -24,6 +26,7 @@ $(document).ready(function() {
     var ConferenceFilter = [];
     var SportFilter = [];
 
+    
     $(".range").each(function() {
       var demo = DemoList[$(this).attr('id')]
       $(this).slider({
@@ -39,6 +42,7 @@ $(document).ready(function() {
         }
       });
     });
+    
     
     
     $('#state-list input').change(function() {
@@ -98,15 +102,19 @@ $(document).ready(function() {
      }
 
     var applyFilters = function() {
-      Gmaps.map.replaceMarkers(VisibleMarkers())
-      //_.each(Gmaps.map.markers, function(marker) {
-      //  Gmaps.map.hideMarker(marker)
-      //})
-      //Gmaps.map.markerClusterer.clearMarkers()
-      //_.each(VisibleMarkers(), function(marker) {
-      //  Gmaps.map.showMarker(marker)
-        //Gmaps.map.markerClusterer.addMarker(marker)
-      //})
+      var markers = VisibleMarkers();
+      Gmaps.map.replaceMarkers(markers)
+      var list = $('ul.school-list');
+      list.text("");
+      _.each(markers, function(marker) {
+        var li =  $('<li/>')
+                  .addClass('school-list-item')
+                  .append($('<input/>').attr({type: 'checkbox', 
+                                              id: marker.title, 
+                                              name: marker.title }))
+                  .append( $('<label/>').attr({'for': marker.title}).text(' ' + marker.title) )
+                  .appendTo(list);
+      });
     };
   }
 });

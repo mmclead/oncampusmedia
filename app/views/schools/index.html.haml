@@ -1,3 +1,13 @@
+= gmaps4rails(@json)
+
+#school-list-holder
+  = form_tag url: {controller: 'ratecards', action: 'create'} do
+    %ul.school-list
+      = render @schools
+  
+  
+#clear
+
 %h3 Filter by State
 = render 'filters/states_list'
 
@@ -9,4 +19,3 @@
 = render 'filters/demographics'
 
 
-= gmaps4rails(@json)
