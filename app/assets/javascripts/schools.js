@@ -6,28 +6,40 @@
 $(document).ready(function() {
   Gmaps.map.callback = function() {
 
-    var FullMarkerList = Gmaps.map.markers
+    var FullMarkerList = Gmaps.map.markers;
+    var DemoList = {
+      african_american_black: {name:"african_american_black", min: 0, max: 100}, 
+      american_indian_alaskan_native: {name: "american_indian_alaskan_native", min: 0, max: 100}, 
+      asian: {name: "asian", min: 0, max: 100}, 
+      hispanic_latino: {name: "hispanic_latino", min: 0, max: 100}, 
+      native_hawaiian_pacific_islander: {name:"native_hawaiian_pacific_islander", min: 0, max: 100}, 
+      non_resident_alien: {name: "non_resident_alien", min: 0, max: 100}, 
+      two_or_more_races: {name: "two_or_more_races", min: 0, max: 100}, 
+      unknown: {name: "unknown", min: 0, max: 100}, 
+      white: {name: "white", min: 0, max: 100},
+      average_age: {name:"average_age", min: 0, max: 100}, 
+      enrollment: {name: "enrollment", min: 0, max: 10000}
+    };
     var StateFilter = [];
     var ConferenceFilter = [];
     var SportFilter = [];
 
-    var CountFilter = {
-      min: 0,
-      max: 2,
-    };
-  
-    $("#school-count-range").slider({
-      range: true,
-      min: CountFilter.min,
-      max: CountFilter.max,
-      values: [ CountFilter.min, CountFilter.max ],
-      slide: function(event, ui) {
-        $( "#filtered-pop" ).val( (ui.values[ 0 ])+ " - " + (ui.values[ 1 ]))
-        CountFilter.min = ui.values[ 0 ]
-        CountFilter.max = ui.values[ 1 ]
-        applyFilters()
-      }
+    $(".range").each(function() {
+      var demo = DemoList[$(this).attr('id')]
+      $(this).slider({
+        range: true,
+        min: demo.min,
+        max: demo.max,
+        values: [ demo.min, demo.max ],
+        slide: function(event, ui) {
+          $( "#filtered-"+demo.name ).val( (ui.values[ 0 ])+ " - " + (ui.values[ 1 ]))
+          demo.min = ui.values[ 0 ]
+          demo.max = ui.values[ 1 ]
+          applyFilters()
+        }
+      });
     });
+    
     
     $('#state-list input').change(function() {
       $('#all-states input').prop('checked', false);
@@ -77,6 +89,7 @@ $(document).ready(function() {
         return !( (_.contains(StateFilter, marker.state) || ($('#all-states input').prop('checked'))) 
         && ( _.some(marker.sports, function(sport) {return _.contains(SportFilter, sport)} ) || ($('#all-sports input').prop('checked')) ) 
         && (_.contains(ConferenceFilter, marker.conference) || ($('#all-conferences input').prop('checked')))
+        && (_.every(marker.demographics, function(val, key) { return val >= DemoList[key].min && val <= DemoList[key].max; }))
         );
       });
 

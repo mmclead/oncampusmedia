@@ -1,0 +1,9 @@
+#demographics-list
+  %ul
+    - @schools[0].demographics.attributes.except("id", "created_at", "updated_at", "school_id").keys.each do |dem|  
+      %li
+        = label_tag "#{dem}", "#{dem.titleize}"
+        .range{id: "#{dem}"}
+        %input{id: "filtered-#{dem}", type: "text"}
+
+ 
