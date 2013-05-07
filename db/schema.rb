@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130506164049) do
+ActiveRecord::Schema.define(:version => 20130507171430) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "school_id"
@@ -64,6 +64,22 @@ ActiveRecord::Schema.define(:version => 20130506164049) do
   end
 
   add_index "hours", ["school_id"], :name => "index_hours_on_school_id"
+
+  create_table "ratecards", :force => true do |t|
+    t.string   "prepared_for"
+    t.string   "brand"
+    t.date     "quote_date"
+    t.date     "accept_by"
+    t.integer  "spot_length"
+    t.integer  "num_of_weeks"
+    t.date     "flight_date"
+    t.date     "end_date"
+    t.date     "creative_due_date"
+    t.integer  "spot_rate"
+    t.float    "cpm"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
 
   create_table "schedules", :force => true do |t|
     t.integer  "school_id"
