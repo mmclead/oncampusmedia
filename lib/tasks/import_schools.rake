@@ -38,20 +38,20 @@ namespace :importer do
           school.demographics = demographics
           
           hours = Hours.new
-          hours.monday_open = Time.parse(row[43].split(" - ")[0]) unless row[43] == "CLOSED" or row[43].blank?
-          hours.monday_close = Time.parse(row[43].split(" - ")[1]) unless row[43] == "CLOSED" or row[43].blank?
-          hours.tuesday_open = Time.parse(row[44].split(" - ")[0]) unless row[44] == "CLOSED" or row[44].blank?
-          hours.tuesday_close = Time.parse(row[44].split(" - ")[1]) unless row[44] == "CLOSED" or row[44].blank?
-          hours.wednesday_open = Time.parse(row[45].split(" - ")[0]) unless row[45] == "CLOSED" or row[45].blank?
-          hours.wednesday_close = Time.parse(row[45].split(" - ")[1]) unless row[45] == "CLOSED" or row[45].blank?
-          hours.thursday_open = Time.parse(row[46].split(" - ")[0]) unless row[46] == "CLOSED" or row[46].blank?
-          hours.thursday_close = Time.parse(row[46].split(" - ")[1]) unless row[46] == "CLOSED" or row[46].blank?
-          hours.friday_open = Time.parse(row[47].split(" - ")[0]) unless row[47] == "CLOSED" or row[47].blank?
-          hours.friday_close = Time.parse(row[47].split(" - ")[0]) unless row[47] == "CLOSED" or row[47].blank?
-          hours.saturday_open = Time.parse(row[48].split(" - ")[0]) unless row[48] == "CLOSED" or row[48].blank?
-          hours.saturday_close = Time.parse(row[48].split(" - ")[0]) unless row[48] == "CLOSED" or row[48].blank?
-          hours.sunday_open = Time.parse(row[42].split(" - ")[0]) unless row[42] == "CLOSED" or row[42].blank?
-          hours.sunday_close = Time.parse(row[42].split(" - ")[1]) unless row[42] == "CLOSED" or row[42].blank?
+          hours.monday_open = Time.parse(row[43].to_s.split(" - ")[0]) unless row[43] == "CLOSED" or row[43].blank?
+          hours.monday_close = Time.parse(row[43].to_s.split(" - ")[1]) unless row[43] == "CLOSED" or row[43].blank?
+          hours.tuesday_open = Time.parse(row[44].to_s.split(" - ")[0]) unless row[44] == "CLOSED" or row[44].blank?
+          hours.tuesday_close = Time.parse(row[44].to_s.split(" - ")[1]) unless row[44] == "CLOSED" or row[44].blank?
+          hours.wednesday_open = Time.parse(row[45].to_s.split(" - ")[0]) unless row[45] == "CLOSED" or row[45].blank?
+          hours.wednesday_close = Time.parse(row[45].to_s.split(" - ")[1]) unless row[45] == "CLOSED" or row[45].blank?
+          hours.thursday_open = Time.parse(row[46].to_s.split(" - ")[0]) unless row[46] == "CLOSED" or row[46].blank?
+          hours.thursday_close = Time.parse(row[46].to_s.split(" - ")[1]) unless row[46] == "CLOSED" or row[46].blank?
+          hours.friday_open = Time.parse(row[47].to_s.split(" - ")[0]) unless row[47] == "CLOSED" or row[47].blank?
+          hours.friday_close = Time.parse(row[47].to_s.split(" - ")[0]) unless row[47] == "CLOSED" or row[47].blank?
+          hours.saturday_open = Time.parse(row[48].to_s.split(" - ")[0]) unless row[48] == "CLOSED" or row[48].blank?
+          hours.saturday_close = Time.parse(row[48].to_s.split(" - ")[0]) unless row[48] == "CLOSED" or row[48].blank?
+          hours.sunday_open = Time.parse(row[42].to_s.split(" - ")[0]) unless row[42] == "CLOSED" or row[42].blank?
+          hours.sunday_close = Time.parse(row[42].to_s.split(" - ")[1]) unless row[42] == "CLOSED" or row[42].blank?
           school.hours = hours
           
           sports = Sports.new
