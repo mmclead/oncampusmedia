@@ -1,6 +1,14 @@
 class Ratecard < ActiveRecord::Base
-  attr_accessible :accept_by, :brand, :cpm, :creative_due_date, :end_date, :flight_date, :num_of_weeks, :prepared_for, :quote_date, :spot_length, :spot_rate
+  attr_accessible :accept_by, :brand, :cpm, :creative_due_date, :end_date, :flight_date, :num_of_weeks, :prepared_for, :quote_date, :spot_length, :spot_rate, :presented_to, :prepared_by, :store_ids
 
+  serialize :store_ids
+  
+  
+  
+  def schools
+    store_ids..map {|store_id| School.where(store_id: store_id).first}
+  end
+  
   def calculate_impressions(schools)
     impressions = 0
     

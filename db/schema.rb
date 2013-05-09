@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130507171430) do
+ActiveRecord::Schema.define(:version => 20130509220255) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "school_id"
@@ -79,6 +79,9 @@ ActiveRecord::Schema.define(:version => 20130507171430) do
     t.float    "cpm"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+    t.text     "presented_to"
+    t.text     "prepared_by"
+    t.text     "store_ids"
   end
 
   create_table "schedules", :force => true do |t|
