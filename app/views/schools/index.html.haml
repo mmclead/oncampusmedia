@@ -1,13 +1,12 @@
-= gmaps4rails(@json)
+#map-and-list
+  = gmaps4rails(@json)
+  #school-list-holder
+    = simple_form_for Ratecard.new, url: {controller: 'ratecards', action: 'create'}, html: {class: 'form-horizontal' } do |f|
+      %ul.school-list
+        = render @schools
+      = link_to 'Create Quote', '#',{role: "button", class: "btn", data:{toggle: "modal", target:"#modal"}}
+      = render 'modal', f:f
 
-#school-list-holder
-  = form_tag url_for(controller: 'ratecards', action: 'create') do
-    %ul.school-list
-      = render @schools
-      
-    = submit_tag 'Create Quote'
-  
-  
 #clear
 
 %h3 Filter by State
@@ -19,5 +18,7 @@
 
 %h3 Filter by Demographics
 = render 'filters/demographics'
+
+
 
 
