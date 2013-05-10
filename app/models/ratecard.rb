@@ -30,7 +30,7 @@ class Ratecard < ActiveRecord::Base
                          }
     end
     
-    per_spot["total"] = { total_hours_per_week: per_spot.inject(0) {|sum, spot| sum + spot[1][:total_hours_per_week].to_i } }
+    per_spot["total"] = { total_spots: per_spot.inject(0) {|sum, spot| sum + spot[1][:total_hours_per_week].to_i }  * self.num_of_weeks.to_i * spot_rate.to_i  }
     
     return per_spot
   end

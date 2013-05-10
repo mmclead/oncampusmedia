@@ -1,0 +1,71 @@
+= render 'layouts/quote_header'
+
+
+%table.table.half-width
+  %tr
+    %th Prepared For:
+    %td= @ratecard.prepared_for
+  %tr
+    %th Brand/Division:
+    %td= @ratecard.brand
+  %tr
+    %th Presented To:
+    %td= @ratecard.presented_to
+  %tr  
+    %th Prepared By:
+    %td= @ratecard.prepared_by
+
+    
+%table.table.half-width 
+  %tr
+    %th Quote Date:
+    %td= @ratecard.quote_date
+  %tr
+    %th Accept By (Expires):
+    %td= @ratecard.accept_by
+  %tr
+    %th Spot Length:
+    %td= @ratecard.spot_length
+  %tr
+    %th # of Weeks:
+    %td= @ratecard.prepared_by
+  %tr 
+    %th Flight Date:
+    %td= @ratecard.flight_date
+  %tr 
+    %th End Date:
+    %td= @ratecard.end_date
+  %tr
+    %th Creative Due Date:
+    %td= @ratecard.creative_due_date
+    
+    
+%table.table.table-bordered
+  %tr
+    %th CPM
+    %td= @ratecard.cpm
+  %tr
+    %th Estimated Impressions
+    %td= @impressions
+  %tr
+    %th 4 Week Total Cost
+    %td
+  %tr
+    %th Cost per Spot
+    %td
+  %tr
+    %th Avg * Week Cost Per Spot
+    %td
+  %tr
+    %th Number of Schools
+    %td= @ratecard.store_ids.count
+  %tr
+    %th Est. Spots
+    %td= @impressions_per_spot['total'][:total_spots] 
+  %tr
+    %th Spots per Hour
+    %td= @ratecard.spot_rate
+    
+    
+
+
