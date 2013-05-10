@@ -5,7 +5,7 @@
 
 $(document).ready(function() {
   
-  $('.quote-button').removeAttr('data-target');
+  //$('.quote-button').removeAttr('data-target');
   Gmaps.map.callback = function() {
     
     
@@ -95,12 +95,12 @@ $(document).ready(function() {
       }
     });
     
-    $('.school-list input').change(function() {
-      if ($('.school-list input:checked').size() > 0) {
-        $('.quote-button').attr('data-target','#modal').removeClass('disabled'); 
+    $('.school-list-item input').click(function() {
+      if ($('.school-list-item input:checked').size() > 0) {
+       // $('.quote-button').attr('data-target','#modal').removeClass('disabled'); 
       }
       else {
-        $('.quote-button').attr('data-target','nothing').addClass('disabled'); 
+       // $('.quote-button').attr('data-target','nothing').addClass('disabled'); 
       }
     });
     

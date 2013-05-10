@@ -4,7 +4,7 @@
       = gmaps4rails(@json)
       #school-list-holder
         = simple_form_for Ratecard.new, url: {controller: 'ratecards', action: 'create'}, html: {class: 'form-horizontal' } do |f|
-          = link_to 'Create Quote', '#',{role: "button", class: "quote-button btn disabled", data:{toggle: "modal", target:"#modal"}}
+          = link_to 'Create Quote', '#',{role: "button", class: "quote-button btn", data:{toggle: "modal", target:"#modal"}}
           = render 'modal', f:f
           %ul.school-list.nav-list
             = render @schools
