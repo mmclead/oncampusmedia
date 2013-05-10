@@ -2,7 +2,7 @@
   = check_box_tag "All Conferences", 'all', true
   = label_tag "All Conferences", "All Conferences"
   
-#conference-list
+#conference-list.well
   %ul
     - @schools.collect {|s| s.sports.conference }.compact.uniq.each do |conf|  
       %li

@@ -1,4 +1,4 @@
-#demographics-list
+#demographics-list.well
   %ul
     - @schools[0].demographics.attributes.except("id", "created_at", "updated_at", "school_id").keys.each do |dem|  
       %li

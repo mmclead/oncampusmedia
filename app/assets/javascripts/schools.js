@@ -4,6 +4,8 @@
 */
 
 $(document).ready(function() {
+  
+  $('.quote-button').removeAttr('data-target');
   Gmaps.map.callback = function() {
     
     
@@ -19,7 +21,7 @@ $(document).ready(function() {
       two_or_more_races: {name: "two_or_more_races", min: 0, max: 100}, 
       unknown: {name: "unknown", min: 0, max: 100}, 
       white: {name: "white", min: 0, max: 100},
-      average_age: {name:"average_age", min: 0, max: 100}, 
+      average_age: {name:"average_age", min: 0, max: 40}, 
       enrollment: {name: "enrollment", min: 0, max: 10000}
     };
     var StateFilter = [];
@@ -47,7 +49,9 @@ $(document).ready(function() {
     
     $('#state-list input').change(function() {
       $('#all-states input').prop('checked', false);
-      StateFilter = $('#state-list input:checked').map( function() { return this.name;});
+      StateFilter = [];
+      $('#state-list input:checked').map( function() { StateFilter.push(this.name);});
+      $('.state-filter-list').text(StateFilter + "");
       applyFilters()
     });
     
@@ -55,13 +59,16 @@ $(document).ready(function() {
       if (this.checked) {
         $('#state-list input:checked').prop('checked', false);
         StateFilter = [];
+        $('.state-filter-list').text("All States");
         applyFilters()
       }
     });
     
     $('#sport-list input').change(function() {
       $('#all-sports input').prop('checked', false);
-      SportFilter = $('#sport-list input:checked').map( function() { return this.name;});
+      SportFilter = [];
+      $('#sport-list input:checked').map( function() { SportFilter.push(this.name);});
+      //$('.sport-filter-list').text(SportFilter + "");
       applyFilters()
     });
     
@@ -69,6 +76,7 @@ $(document).ready(function() {
       if (this.checked) {
         $('#sport-list input:checked').prop('checked', false);
         SportFilter = [];
+        $('.sport-filter-list').text("All Sports");
         applyFilters()
       }
     });
@@ -87,6 +95,16 @@ $(document).ready(function() {
       }
     });
     
+    $('.school-list input').change(function() {
+      if ($('.school-list input:checked').size() > 0) {
+        $('.quote-button').attr('data-target','#modal').removeClass('disabled'); 
+      }
+      else {
+        $('.quote-button').attr('data-target','nothing').addClass('disabled'); 
+      }
+      
+      
+    });
     
     var VisibleMarkers = function() {
       var filtered = _.reject(FullMarkerList, function(marker) {

@@ -21,11 +21,11 @@
   overflow:auto;
 }
 
-#state-list ul, #conference-list ul, .school-list {
+#state-list ul, #conference-list ul, .school-list, #sport-list ul {
     list-style-type: none;
   }
   
-#state-list  li, #conference-list li {
+#state-list  li, #conference-list li, #sport-list li {
     display:inline-block;
     border:1px solid #c1c1c1;
     padding: 3px;
@@ -42,9 +42,7 @@
 }
 
 #school-list-holder {
-  float:left;
-  #height:412px;
-  width:49%;
+  width:100%;
   border: 1px solid #ccc;
 }
 
@@ -58,9 +56,9 @@
 
 .gmaps4rails_map {
   width:100%;
+  height:250px;
 }
 .map_container {
-  width:49%;
+  width:100%;
   max-width:500px;
-  float:left;
 }
