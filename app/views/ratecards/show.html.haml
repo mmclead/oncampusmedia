@@ -25,10 +25,10 @@
     %td= @ratecard.accept_by
   %tr
     %th Spot Length:
-    %td= @ratecard.spot_length
+    %td= "#{@ratecard.spot_length} seconds"
   %tr
     %th # of Weeks:
-    %td= @ratecard.prepared_by
+    %td= @ratecard.num_of_weeks
   %tr 
     %th Flight Date:
     %td= @ratecard.flight_date
@@ -48,7 +48,7 @@
     %th Estimated Impressions
     %td= @impressions
   %tr
-    %th 4 Week Total Cost
+    %th=  "#{@ratecard.num_of_weeks} Week Total Cost"
     %td
   %tr
     %th Cost per Spot

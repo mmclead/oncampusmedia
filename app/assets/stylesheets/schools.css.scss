@@ -3,6 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.accordian-group {
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+}
+
+.accordian-heading {
+  border-bottom: 1px solid #e5e5e5;
+  border-radius: 4px;
+}
 #school-count-range {
   width:300px;
 }
@@ -39,7 +48,9 @@
   border: 1px solid #ccc;
 }
 
-
+#conference-list {
+  width:60%;
+}
 .school-list {
   height:362px;
   overflow:auto;

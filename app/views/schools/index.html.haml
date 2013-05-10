@@ -8,16 +8,24 @@
       = render 'modal', f:f
 
 #clear
+.accordian#filters
+  .accordian-group
+    .accordian-heading
+    %h3= link_to 'Filter by State', '#states', { data: {toggle: "collapse", parent: "#filters"}}
+    #states.accordian-body.collapse
+      = render 'filters/states_list'
 
-%h3 Filter by State
-= render 'filters/states_list'
+  .accordian-group
+    .accordian-heading
+    %h3= link_to 'Filter by Sports', '#sports', { data: {toggle: "collapse", parent: "#filters"}}
+    #sports.accordian-body.collapse
+      = render 'filters/sports_list'
 
-%h3 Filter by Sports
-= render 'filters/sports_list'
-
-
-%h3 Filter by Demographics
-= render 'filters/demographics'
+  .accordian-group
+    .accordian-heading
+    %h3= link_to 'Filter by Demographics', '#demographics', { data: {toggle: "collapse", parent: "#filters"}}
+    #demographics.accordian-body.collapse
+      = render 'filters/demographics'
 
 
 
