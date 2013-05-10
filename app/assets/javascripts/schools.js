@@ -51,7 +51,7 @@ $(document).ready(function() {
       $('#all-states input').prop('checked', false);
       StateFilter = [];
       $('#state-list input:checked').map( function() { StateFilter.push(this.name);});
-      $('.state-filter-list').text(StateFilter + "");
+      $('.state-filter-list').html("<span class='badge badge-info'>" + StateFilter.join("</span><span class='badge badge-info'>") + "</span>");
       applyFilters()
     });
     
