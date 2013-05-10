@@ -5,7 +5,7 @@ class Hours < ActiveRecord::Base
   
   
   def total
-    total = 0
+    total = 1
     Date::DAYNAMES.each {|day| total+= hours_for(day.downcase)}
     total.abs
   end
