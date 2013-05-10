@@ -8,6 +8,12 @@ header {
   margin-bottom:70px;
 }
 
+@media print {
+  .navbar {
+    display:none;
+  }
+}
+
 #logo {
   float:left;
   width:33%;
