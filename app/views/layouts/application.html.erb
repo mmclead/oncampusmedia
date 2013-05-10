@@ -7,9 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-<%= yield :scripts %>
+  
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <ul class="nav">
+          <li> <%= image_tag 'logo.png', height: "50", class: "logo-top"%> <li>
+          <li> <%= link_to "Schools", schools_url %> </li>
+          <li> <%= link_to "Quotes", ratecards_url %> </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="container">
+    <%= yield %>
+  </div>
+  <%= yield :scripts %>
 
 </body>
 </html>
