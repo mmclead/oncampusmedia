@@ -102,9 +102,9 @@ $(document).ready(function() {
       else {
         $('.quote-button').attr('data-target','nothing').addClass('disabled'); 
       }
-      
-      
     });
+    
+
     
     var VisibleMarkers = function() {
       var filtered = _.reject(FullMarkerList, function(marker) {
@@ -133,6 +133,9 @@ $(document).ready(function() {
                                               value: marker.store_id}))
                   .append( $('<label/>').attr({'for': marker.title}).text(' ' + marker.title) )
                   .appendTo(list);
+        var liline = $('<li/>')
+                   .addClass('divider')
+                   .appendTo(list);
       });
     };
   }
