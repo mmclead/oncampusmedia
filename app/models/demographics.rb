@@ -19,4 +19,5 @@ class Demographics < ActiveRecord::Base
     }
   end
   
+  alias_attribute :latino, :hispanic_latino
 end

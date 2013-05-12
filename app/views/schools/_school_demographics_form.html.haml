@@ -1,0 +1,16 @@
+.accordian-group
+  .accordian-heading
+    %h3= link_to 'Demographics', '#demos', { data: {toggle: "collapse", parent: "#forms"}}
+  #demos.accordian-body.collapse    
+    = f.simple_fields_for :demographics do |demos|
+      = demos.input :enrollment 
+      = demos.input :average_age
+      = demos.input :african_american_black
+      = demos.input :american_indian_alaskan_native
+      = demos.input :asian
+      = demos.input :native_hawaiian_pacific_islander  
+      = demos.input :non_resident_alien
+      = demos.input :two_or_more_races
+      = demos.input :unknown
+      = demos.input :white
+      = demos.input :latino

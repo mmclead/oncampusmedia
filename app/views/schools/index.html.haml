@@ -14,21 +14,21 @@
     .accordian#filters
       .accordian-group
         .accordian-heading
-        %h3= link_to 'Filter by State', '#states', { data: {toggle: "collapse", parent: "#filters"}}
+          %h3= link_to 'Filter by State', '#states', { data: {toggle: "collapse", parent: "#filters"}}
         .state-filter-list
         #states.accordian-body.collapse
           = render 'filters/states_list'
     
       .accordian-group
         .accordian-heading
-        %h3= link_to 'Filter by Sports', '#sports', { data: {toggle: "collapse", parent: "#filters"}}
+          %h3= link_to 'Filter by Sports', '#sports', { data: {toggle: "collapse", parent: "#filters"}}
         .sport-filter-list
         #sports.accordian-body.collapse
           = render 'filters/sports_list'
     
       .accordian-group
         .accordian-heading
-        %h3= link_to 'Filter by Demographics', '#demographics', { data: {toggle: "collapse", parent: "#filters"}}
+          %h3= link_to 'Filter by Demographics', '#demographics', { data: {toggle: "collapse", parent: "#filters"}}
         .demographics-filter-list
         #demographics.accordian-body.collapse
           = render 'filters/demographics'

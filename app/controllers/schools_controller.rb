@@ -1,5 +1,18 @@
 class SchoolsController < ApplicationController
   
+  
+  def new
+    @school = School.new
+    @school.schedule = Schedule.new
+    @school.hours = Hours.new
+    @school.sports = Sports.new
+    @school.demographics = Demographics.new
+    @school.transactions = Transactions.new
+  end
+  
+  def create
+    
+  end
   def index
     @schools = School.all
     @json = @schools.to_gmaps4rails do |school, marker|
@@ -11,11 +24,11 @@ class SchoolsController < ApplicationController
     end
   end
   
-  def search
-    
+  def edit
+    @school = School.find(params[:id])
   end
   
-  def results
+  def update
     
   end
   

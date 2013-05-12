@@ -1,0 +1,25 @@
+.accordian-group
+  .accordian-heading
+    %h3= link_to 'Store Hours', '#hours', { data: {toggle: "collapse", parent: "#forms"}}
+  #hours.accordian-body.collapse
+    = f.simple_fields_for :hours do |hours|
+      = hours.input :sunday_open, :minute_step => 15
+      = hours.input :sunday_close, :minute_step => 15
+
+      = hours.input :monday_open, :minute_step => 15
+      = hours.input :monday_close, :minute_step => 15
+      
+      = hours.input :tuesday_open, :minute_step => 15
+      = hours.input :tuesday_close, :minute_step => 15
+      
+      = hours.input :wednesday_open, :minute_step => 15
+      = hours.input :wednesday_close, :minute_step => 15
+      
+      = hours.input :thursday_open, :minute_step => 15
+      = hours.input :thursday_close, :minute_step => 15
+      
+      = hours.input :friday_open, :minute_step => 15
+      = hours.input :friday_close, :minute_step => 15
+      
+      = hours.input :saturday_open, :minute_step => 15
+      = hours.input :saturday_close, :minute_step => 15

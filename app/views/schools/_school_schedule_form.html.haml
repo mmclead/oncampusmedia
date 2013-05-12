@@ -1,0 +1,14 @@
+.accordian-group
+  .accordian-heading
+    %h3= link_to 'School Schedule', '#sched', { data: {toggle: "collapse", parent: "#forms"}}
+  #sched.accordian-body.collapse
+    = f.simple_fields_for :schedule do |sched|
+      = sched.input :fall_first_classes
+      = sched.input :fall_finals_first
+      = sched.input :fall_finals_last
+      = sched.input :spring_first_classes
+      = sched.input :spring_finals_first
+      = sched.input :spring_finals_last
+      = sched.input :summer_first_classes
+      = sched.input :summer_finals_first
+      = sched.input :summer_finals_last

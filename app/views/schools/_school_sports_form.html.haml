@@ -1,0 +1,22 @@
+.accordian-group
+  .accordian-heading
+    %h3= link_to 'Sports', '#sports', { data: {toggle: "collapse", parent: "#forms"}}
+  #sports.accordian-body.collapse
+    = f.simple_fields_for :sports do |sports|
+      = sports.input :conference
+      = sports.input :naia_baseball_div_i_and_ii
+      = sports.input :naia_basketball_div_i_and_ii
+      = sports.input :naia_football_div_i_and_ii
+      = sports.input :ncaa_baseball_div_i
+      = sports.input :ncaa_baseball_div_ii
+      = sports.input :ncaa_baseball_div_iii
+      = sports.input :ncaa_basketball_div_i
+      = sports.input :ncaa_basketball_div_ii
+      = sports.input :ncaa_basketball_div_iii
+      = sports.input :ncaa_football_div_i
+      = sports.input :ncaa_football_div_ii
+      = sports.input :ncaa_football_div_iii
+      = sports.input :ncaa_naia_track_cross_country
+      = sports.input :njcaa_baseball_div_i
+      = sports.input :njcaa_basketball_div_i
+      = sports.input :njcaa_football_div_i

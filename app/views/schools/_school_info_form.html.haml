@@ -1,0 +1,11 @@
+.accordian-group
+  .accordian-heading
+    %h3= link_to 'School Store Information', '#info', { data: {toggle: "collapse", parent: "#forms"}}
+  #info.accordian-body.collapse
+    = f.input :school_name
+    = f.input :store_id
+    = f.input :address
+    = f.input :city
+    = f.input :state
+    = f.input :num_of_schools
+    = f.input :num_of_schools_included

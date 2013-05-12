@@ -1,0 +1,7 @@
+.accordian-group
+  .accordian-heading
+    %h3= link_to 'Transactions', '#trans', { data: {toggle: "collapse", parent: "#forms"}}
+  #trans.accordian-body.collapse    
+    = f.simple_fields_for :transactions do |trans|
+      - Date::MONTHNAMES.compact.each do |month|
+        = trans.input month.downcase.to_sym

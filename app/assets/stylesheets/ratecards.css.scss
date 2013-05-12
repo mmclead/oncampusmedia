@@ -19,21 +19,27 @@ header {
   width:33%;
 }
 
-
 #center-info{
   float:left;
   width:33%;
-
-
 }
 
 #right-info {
   float:left;
   width:33%;
-
 }
 
 .half-width {
   width:49%;
   float:left;
+}
+
+.accordian-heading {
+  padding: 10px;
+  margin-bottom:10px;
+  background:#f1f1f1;
+}
+
+.accordian-group {
+  margin-bottom:10px;
 }
