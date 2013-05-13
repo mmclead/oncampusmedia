@@ -1,5 +1,5 @@
 class School < ActiveRecord::Base
-  attr_accessible :address, :city, :num_of_schools, :num_of_schools_included, :school_name, :state, :store_id 
+  attr_accessible :address, :city, :num_of_schools, :num_of_schools_included, :school_name, :state, :store_id,:sports_attributes, :schedule_attributes, :demographics_attributes, :hours_attributes, :transactions_attributes
   
   acts_as_gmappable :validation => false
   

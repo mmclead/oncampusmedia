@@ -29,7 +29,12 @@ class SchoolsController < ApplicationController
   end
   
   def update
-    
+    @school = School.find(params[:id])
+    if @school.update_attributes(params[:school])
+      redirect_to schools_url, notice: "#{@school.name} updated successfully."
+    else
+      render action: 'edit'
+    end
   end
   
 end
