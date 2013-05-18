@@ -6,10 +6,8 @@
 = f.input :accept_by, input_html: { class: 'datepicker' }, as: :string
 = f.input :spot_length, collection: ([[':15',15], [':30',30], [':60',60]]), :hint => "seconds"
 = f.input :spot_rate, :hint => "spots per hour"
-= f.input :num_of_weeks, label: "# of Weeks"
-= f.input :flight_date, input_html: { class: 'datepicker' }, as: :string
-= f.input :end_date, input_html: { class: 'datepicker' }, as: :string
-= f.input :creative_due_date, input_html: {class: 'datepicker'}, as: :string
+= f.input :flight_date, input_html: { class: 'datepicker', id: 'start-date' }, as: :string
+= f.input :end_date, input_html: { class: 'datepicker', id: 'end-date' }, as: :string
 %br
 %ul.nav.nav-list
   %li.divider
@@ -25,3 +23,7 @@
   $('.datepicker').datepicker({
     format: 'mm-dd-yyyy'
   });
+  
+
+
+
