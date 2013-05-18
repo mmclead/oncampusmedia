@@ -67,5 +67,21 @@
     %td= @ratecard.spot_rate
     
     
+%table.table.table-bordered
+  %tr
+    %th Campus #
+    %th Campus Name
+    %th Type
+    %th Address
+    %th City
+    %th State
+    %th DMA
+    %th DMA Rank
+    %th No. of Screens
+    %th Current Enrollment
+    %th= "#{@ratecard.num_of_weeks} Week Impressions"
+    %th= "#{@ratecard.num_of_weeks} Week Cost Per Campus"
+  = render partial: 'school_for_quote', locals: {schools: @ratecard.schools}
 
+    
 

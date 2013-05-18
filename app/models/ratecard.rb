@@ -6,10 +6,10 @@ class Ratecard < ActiveRecord::Base
   
   
   def schools
-    store_ids..map {|store_id| School.where(store_id: store_id).first}
+    store_ids.map {|store_id| School.where(store_id: store_id).first}
   end
   
-  def calculate_impressions(schools)
+  def impressions(schools = self.schools)
     impressions = 0
     
     schools.each do |s|
@@ -19,14 +19,14 @@ class Ratecard < ActiveRecord::Base
     return impressions
   end
   
-  def impressions_per_spot(impressions, schools)
+  def impressions_per_spot
     
     per_spot = {}
     schools.each do |s|
       per_spot[s.name] = { 
                           store_id: s.store_id,
                           total_hours_per_week: s.hours.total, 
-                          impressions_per_spot: (calculate_impressions([s]) / (s.hours.total * spot_length_multiplier))
+                          impressions_per_spot: (impressions([s]) / (s.hours.total * spot_length_multiplier))
                          }
     end
     

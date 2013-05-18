@@ -1,0 +1,15 @@
+- schools.each do |school|
+  %tr
+    %td= school.store_id
+    %td= school.name
+    %td= school.school_type
+    %td= school.address
+    %td= school.city
+    %td= school.state
+    %td= school.dma
+    %td= school.dma_rank
+    %td= school.num_of_screens
+    %td= school.demographics.enrollment
+    %td= @impressions_per_spot[school.name][:impressions_per_spot].round(2)
+    %td= "$#{(@impressions_per_spot[school.name][:impressions_per_spot]*@ratecard.cpm).round(2)}"
+    

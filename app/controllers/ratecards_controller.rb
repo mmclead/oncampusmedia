@@ -21,9 +21,9 @@ class RatecardsController < ApplicationController
   
   def show
     @ratecard = Ratecard.find(params[:id])
-    @schools = @ratecard.store_ids.map {|store_id| School.where(store_id: store_id).first}
-    @impressions = @ratecard.calculate_impressions(@schools)
-    @impressions_per_spot = @ratecard.impressions_per_spot(@impressions, @schools)
+    @schools = @ratecard.schools
+    @impressions = @ratecard.impressions
+    @impressions_per_spot = @ratecard.impressions_per_spot
 
   end
 end

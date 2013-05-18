@@ -9,6 +9,7 @@ class School < ActiveRecord::Base
   has_one :hours
   has_one :transactions
   
+  default_scope order(:school_name)
   accepts_nested_attributes_for :sports, :schedule, :demographics, :hours, :transactions
   
   

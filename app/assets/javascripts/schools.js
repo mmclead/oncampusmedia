@@ -5,12 +5,17 @@
 
 $(document).ready(function() {
   
+  $('.school-list-item label').each(function() {
+    $(this).attr({'for': this.textContent.trim()} )
+  });
+  
   //$('.quote-button').removeAttr('data-target');
   Gmaps.map.callback = function() {
     
     
 
     var FullMarkerList = Gmaps.map.markers;
+    var CurrentMarkerList = [];
     var DemoList = {
       african_american_black: {name:"african_american_black", min: 0, max: 100}, 
       american_indian_alaskan_native: {name: "american_indian_alaskan_native", min: 0, max: 100}, 
@@ -94,14 +99,10 @@ $(document).ready(function() {
         applyFilters()
       }
     });
-    
-    $('.school-list-item input').click(function() {
-      if ($('.school-list-item input:checked').size() > 0) {
-       // $('.quote-button').attr('data-target','#modal').removeClass('disabled'); 
-      }
-      else {
-       // $('.quote-button').attr('data-target','nothing').addClass('disabled'); 
-      }
+  
+    $('.school-list-item input').change(function() {
+      if ($(this).is(':checked')) { addToSelectedList(this) }
+      else { removeFromSelectedList(this.value) }
     });
     
 
@@ -129,15 +130,52 @@ $(document).ready(function() {
                   .addClass('school-list-item')
                   .append($('<input/>').attr({type: 'checkbox', 
                                               id: marker.title, 
-                                              name: "schools["+marker.title+"]",
+                                              name: "throw["+marker.title+"]",
                                               value: marker.store_id}))
-                  .append( $('<label/>').attr({'for': marker.title}).text(' ' + marker.title) )
+                  .append( $('<label/>').attr({'for': marker.title}).text(' ' + marker.title + ' - ' + marker.store_id) )
                   .appendTo(list);
         var liline = $('<li/>')
                    .addClass('divider')
                    .appendTo(list);
       });
+      
+      $('.school-list-item input').change(function() {
+        if ($(this).is(':checked')) { addToSelectedList(this) }
+        else { removeFromSelectedList(this.value) }
+      });
+      
+      $('i.icon-remove-sign').click(function() {
+        removeFromSelectedList(this.id)
+      });
     };
+    
+    var addToSelectedList = function(school) {
+      var list = $('ul.selected-list');
+      var li =  $('<li/>')
+                .addClass('selected-school-item badge badge-info')
+                .attr({id: school.value})
+                .text(' ' + school.id + ' - ' + school.value + ' ')
+                .append($('<input/>').attr({type: 'hidden', 
+                                              id: school.id, 
+                                              name: "schools["+school.id+"]",
+                                              value: school.value}))
+                .append($('<i/>').attr({class: 'icon-remove-sign', id: school.value}))
+                .appendTo(list);
+      $('.quote-button').attr('data-target','#modal').removeClass('disabled'); 
+      //$('i.icon-remove-sign').hover(function() {$(this).addClass('icon-white')}, function() {$(this).removeClass('icon-white')});
+      $('i.icon-remove-sign').click(function() { removeFromSelectedList(this.id) });
+      //$(school.parentElement).add(school.parentElement.nextElementSibling).fadeOut();
+    };
+    
+    var removeFromSelectedList = function(school_id) {
+      $('#' + school_id +'.selected-school-item').remove()
+      $('input[value='+school_id+']').prop('checked', false);
+      var list = $('ul.selected-list');
+      if (list.size() == 0) {
+        $('.quote-button').attr('data-target','nothing').addClass('disabled'); 
+      }
+    };
+    
   }
 });
 

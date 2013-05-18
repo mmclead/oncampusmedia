@@ -1,5 +1,9 @@
-%li#school-list-item
-  = check_box_tag "schools[#{school.name.parameterize.underscore.to_sym}]",  school.store_id
-  = label_tag "schools[#{school.name.parameterize.underscore.to_sym}]", school.name.titleize
+%li.school-list-item
+  = check_box_tag "throw[#{school.name.parameterize.underscore.to_sym}]", school.store_id, false, id: school.name.titleize
+  <label for= 
+  = "#{school.name.titleize}"
+  > 
+  = "#{school.name.titleize}"
+  </label>
   = link_to 'Edit', [:edit, school]
 %li.divider
