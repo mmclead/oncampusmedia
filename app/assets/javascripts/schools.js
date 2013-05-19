@@ -12,6 +12,7 @@ $(document).ready(function() {
 
   $('#start-date.datepicker').datepicker().on('changeDate', function(e){
     $('#end-date.datepicker').datepicker('setStartDate', new Date(e.date.valueOf() + 7*24*60*60*1000))
+    $('#end-date.datepicker').datepicker('update', new Date(e.date.valueOf() + 7*24*60*60*1000))
   });
   //$('.quote-button').removeAttr('data-target');
   Gmaps.map.callback = function() {
