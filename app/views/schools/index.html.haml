@@ -7,6 +7,7 @@
           = link_to 'Create Quote', '#',{role: "button", class: "quote-button btn", data:{toggle: "modal", target:"#modal"}}
           %ul.selected-list.nav-list
           = render 'modal', f:f
+          = text_field_tag 'filter', nil, :placeholder => 'Search by Name or ID', id: 'text-filter'
           %ul.school-list.nav-list
             = render @schools
           
