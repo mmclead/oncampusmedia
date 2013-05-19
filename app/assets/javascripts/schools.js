@@ -14,7 +14,7 @@ $(document).ready(function() {
     $('#end-date.datepicker').datepicker('setStartDate', new Date(e.date.valueOf() + 7*24*60*60*1000))
     $('#end-date.datepicker').datepicker('update', new Date(e.date.valueOf() + 7*24*60*60*1000))
   });
-  //$('.quote-button').removeAttr('data-target');
+  $('.quote-button').removeAttr('data-target');
   Gmaps.map.callback = function() {
     
     
@@ -193,8 +193,9 @@ $(document).ready(function() {
                                               id: school.id, 
                                               name: "schools["+school.id+"]",
                                               value: school.value}))
-                .append($('<i/>').attr({class: 'icon-remove-sign', id: school.value}))
+                .append($('<i/>').attr({class: 'icon-remove-sign pull-right', id: school.value}))
                 .appendTo(list);
+      $('#school-count').text($('.selected-school-item').size() + ' selected')
       $('.quote-button').attr('data-target','#modal').removeClass('disabled'); 
       //$('i.icon-remove-sign').hover(function() {$(this).addClass('icon-white')}, function() {$(this).removeClass('icon-white')});
       $('i.icon-remove-sign').click(function() { removeFromSelectedList(this.id) });

@@ -55,6 +55,13 @@
   height:362px;
   overflow:auto;
 }
+.selected-list {
+  margin:0;
+}
+.selected-school-item {
+  white-space: normal !important;
+  display: inline-table !important;
+}
 
 .gmaps4rails_map {
   width:100%;

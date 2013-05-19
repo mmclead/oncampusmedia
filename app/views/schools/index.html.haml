@@ -1,40 +1,44 @@
-.row
-  .span6
-    #map-and-list
-      = gmaps4rails(@json)
-      #school-list-holder
-        = simple_form_for Ratecard.new, url: {controller: 'ratecards', action: 'create'}, html: {class: 'form-horizontal' } do |f|
-          = link_to 'Create Quote', '#',{role: "button", class: "quote-button btn", data:{toggle: "modal", target:"#modal"}}
-          %ul.selected-list.nav-list
+= simple_form_for Ratecard.new, url: {controller: 'ratecards', action: 'create'}, html: {class: 'form-horizontal' } do |f|  
+  .row
+    .span2
+      %h4#school-count
+        0 selected
+      %ul.selected-list
+      = link_to 'Create Quote', '#',{role: "button", class: "quote-button btn disabled", data:{toggle: "modal", target:"#modal"}}
+
+    .span5
+      #map-and-list
+        = gmaps4rails(@json)
+        #school-list-holder
           = render 'modal', f:f
           = text_field_tag 'filter', nil, :placeholder => 'Search by Name or ID', id: 'text-filter'
           %ul.school-list.nav-list
             = render @schools
-          
-  
-  .span6
-    .accordian#filters
-      .accordian-group
-        .accordian-heading
-          %h3= link_to 'Filter by State', '#states', { data: {toggle: "collapse", parent: "#filters"}}
-        .state-filter-list
-        #states.accordian-body.collapse
-          = render 'filters/states_list'
+            
     
-      .accordian-group
-        .accordian-heading
-          %h3= link_to 'Filter by Sports', '#sports', { data: {toggle: "collapse", parent: "#filters"}}
-        .sport-filter-list
-        #sports.accordian-body.collapse
-          = render 'filters/sports_list'
+    .span5
+      .accordian#filters
+        .accordian-group
+          .accordian-heading
+            %h3= link_to 'Filter by State', '#states', { data: {toggle: "collapse", parent: "#filters"}}
+          .state-filter-list
+          #states.accordian-body.collapse
+            = render 'filters/states_list'
+      
+        .accordian-group
+          .accordian-heading
+            %h3= link_to 'Filter by Sports', '#sports', { data: {toggle: "collapse", parent: "#filters"}}
+          .sport-filter-list
+          #sports.accordian-body.collapse
+            = render 'filters/sports_list'
+      
+        .accordian-group
+          .accordian-heading
+            %h3= link_to 'Filter by Demographics', '#demographics', { data: {toggle: "collapse", parent: "#filters"}}
+          .demographics-filter-list
+          #demographics.accordian-body.collapse
+            = render 'filters/demographics'
     
-      .accordian-group
-        .accordian-heading
-          %h3= link_to 'Filter by Demographics', '#demographics', { data: {toggle: "collapse", parent: "#filters"}}
-        .demographics-filter-list
-        #demographics.accordian-body.collapse
-          = render 'filters/demographics'
+    
   
   
-
-
