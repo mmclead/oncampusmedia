@@ -22,17 +22,17 @@ $(document).ready(function() {
     var FullMarkerList = Gmaps.map.markers;
     var CurrentMarkerList = [];
     var DemoList = {
-      african_american_black: {name:"african_american_black", min: 0, max: 100}, 
-      american_indian_alaskan_native: {name: "american_indian_alaskan_native", min: 0, max: 100}, 
-      asian: {name: "asian", min: 0, max: 100}, 
-      hispanic_latino: {name: "hispanic_latino", min: 0, max: 100}, 
-      native_hawaiian_pacific_islander: {name:"native_hawaiian_pacific_islander", min: 0, max: 100}, 
-      non_resident_alien: {name: "non_resident_alien", min: 0, max: 100}, 
-      two_or_more_races: {name: "two_or_more_races", min: 0, max: 100}, 
-      unknown: {name: "unknown", min: 0, max: 100}, 
-      white: {name: "white", min: 0, max: 100},
-      average_age: {name:"average_age", min: 0, max: 40}, 
-      enrollment: {name: "enrollment", min: 0, max: 10000}
+      african_american_black: {name:"african_american_black", min: 0, max: 100, percent: 1}, 
+      american_indian_alaskan_native: {name: "american_indian_alaskan_native", min: 0, max: 100, percent: 1}, 
+      asian: {name: "asian", min: 0, max: 100, percent: 1}, 
+      hispanic_latino: {name: "hispanic_latino", min: 0, max: 100, percent: 1}, 
+      native_hawaiian_pacific_islander: {name:"native_hawaiian_pacific_islander", min: 0, max: 100, percent: 1}, 
+      non_resident_alien: {name: "non_resident_alien", min: 0, max: 100, percent: 1}, 
+      two_or_more_races: {name: "two_or_more_races", min: 0, max: 100, percent: 1}, 
+      unknown: {name: "unknown", min: 0, max: 100, percent: 1}, 
+      white: {name: "white", min: 0, max: 100, percent: 1},
+      average_age: {name:"average_age", min: 0, max: 40, percent: 0}, 
+      enrollment: {name: "enrollment", min: 0, max: 10000, percent: 0}
     };
     var StateFilter = [];
     var ConferenceFilter = [];
@@ -65,7 +65,10 @@ $(document).ready(function() {
         max: demo.max,
         values: [ demo.min, demo.max ],
         slide: function(event, ui) {
-          $( "#filtered-"+demo.name ).val( (ui.values[ 0 ])+ " - " + (ui.values[ 1 ]))
+          if (demo.percent) {
+            $( "#filtered-"+demo.name ).val( (ui.values[ 0 ]) + "% - " + (ui.values[ 1 ]) + "%" )
+          }
+          else { $( "#filtered-"+demo.name ).val( (ui.values[ 0 ]) + " - " + (ui.values[ 1 ]) ) }
           demo.min = ui.values[ 0 ]
           demo.max = ui.values[ 1 ]
           applyFilters()
@@ -132,9 +135,9 @@ $(document).ready(function() {
     
     var VisibleMarkers = function() {
       var filtered = _.reject(FullMarkerList, function(marker) {
-        return !( (_.contains(StateFilter, marker.state) || ($('#all-states input').prop('checked'))) 
-        && ( _.some(marker.sports, function(sport) {return _.contains(SportFilter, sport)} ) || ($('#all-sports input').prop('checked')) ) 
-        && (_.contains(ConferenceFilter, marker.conference) || ($('#all-conferences input').prop('checked')))
+        return !( (($('#all-states input').prop('checked')) || (_.contains(StateFilter, marker.state) )) 
+        && (($('#all-sports input').prop('checked')) || ( _.some(marker.sports, function(sport) {return _.contains(SportFilter, sport)})) ) 
+        && (($('#all-conferences input').prop('checked')) || (_.contains(ConferenceFilter, marker.conference)) )
         && (_.every(marker.demographics, function(val, key) { return val >= DemoList[key].min && val <= DemoList[key].max; }))
         );
       });
@@ -205,10 +208,11 @@ $(document).ready(function() {
     var removeFromSelectedList = function(school_id) {
       $('#' + school_id +'.selected-school-item').remove()
       $('input[value='+school_id+']').prop('checked', false);
-      var list = $('ul.selected-list');
-      if (list.size() == 0) {
+      if ($('.selected-school-item').size() == 0) {
         $('.quote-button').attr('data-target','nothing').addClass('disabled'); 
       }
+      $('#school-count').text($('.selected-school-item').size() + ' selected')
+
     };
     
   }
