@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130519142939) do
+ActiveRecord::Schema.define(:version => 20130519224750) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "school_id"
@@ -173,6 +173,7 @@ ActiveRecord::Schema.define(:version => 20130519142939) do
     t.integer  "february"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "total"
   end
 
   add_index "transactions", ["school_id"], :name => "index_transactions_on_school_id"

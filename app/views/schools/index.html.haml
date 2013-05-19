@@ -12,32 +12,18 @@
         #school-list-holder
           = render 'modal', f:f
           = text_field_tag 'filter', nil, :placeholder => 'Search by Name or ID', id: 'text-filter'
+          #total-schools= "#{@schools.length} schools"
           %ul.school-list.nav-list
             = render @schools
             
     
     .span5
       .accordian#filters
-        .accordian-group
-          .accordian-heading
-            %h3= link_to 'Filter by State', '#states', { data: {toggle: "collapse", parent: "#filters"}}
-          .state-filter-list
-          #states.accordian-body.collapse
-            = render 'filters/states_list'
-      
-        .accordian-group
-          .accordian-heading
-            %h3= link_to 'Filter by Sports', '#sports', { data: {toggle: "collapse", parent: "#filters"}}
-          .sport-filter-list
-          #sports.accordian-body.collapse
-            = render 'filters/sports_list'
-      
-        .accordian-group
-          .accordian-heading
-            %h3= link_to 'Filter by Demographics', '#demographics', { data: {toggle: "collapse", parent: "#filters"}}
-          .demographics-filter-list
-          #demographics.accordian-body.collapse
-            = render 'filters/demographics'
+        = render 'filters/states_list'
+        = render 'filters/sports_list'
+        = render 'filters/demographics'
+        = render 'filters/transactions'
+        = render 'filters/store_info'
     
     
   

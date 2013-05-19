@@ -23,7 +23,7 @@
   overflow:auto;
 }
 
-#state-list ul, #conference-list ul, .school-list, #sport-list ul {
+#state-list ul, #conference-list ul, .school-list, #sport-list ul, #demographics-list ul, #transactions-list ul {
     list-style-type: none;
   }
   
@@ -52,7 +52,7 @@
   width:60%;
 }
 .school-list {
-  height:362px;
+  max-height:362px;
   overflow:auto;
 }
 .selected-list {

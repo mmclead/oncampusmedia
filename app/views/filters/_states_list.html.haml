@@ -1,10 +1,15 @@
-#all-states
-  = check_box_tag "All States", 'all', true
-  = label_tag "All States", "All States"
-  
-#state-list.well
-  %ul
-    - STATE_LIST.each do |state|  
-      %li
-        = check_box_tag "#{state}"
-        = label_tag "#{state}", "#{state}"
+.accordian-group
+  .accordian-heading
+    %h3= link_to 'Filter by State', '#states', { data: {toggle: "collapse", parent: "#filters"}}
+  .state-filter-list
+  #states.accordian-body.collapse
+    #all-states
+      = check_box_tag "All States", 'all', true
+      = label_tag "All States", "All States"
+      
+    #state-list.well
+      %ul
+        - STATE_LIST.each do |state|  
+          %li
+            = check_box_tag "#{state}"
+            = label_tag "#{state}", "#{state}"

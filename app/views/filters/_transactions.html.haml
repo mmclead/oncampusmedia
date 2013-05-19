@@ -1,0 +1,18 @@
+.accordian-group
+  .accordian-heading
+    %h3= link_to 'Filter by Transactions', '#transactions', { data: {toggle: "collapse", parent: "#filters"}}
+  .transactions-filter-list
+  #transactions.accordian-body.collapse
+    #transactions-list.well
+      %ul
+        %li
+          = label_tag "total-transactions", "Total Transactions"
+          .trans-range{id: "total-transactions"}
+          %input{id: "filtered-total-transactions", type: "text"}
+        - Date::MONTHNAMES.compact.each do |month|  
+          %li
+            = label_tag "#{month.downcase}", "#{month.titleize}"
+            .trans-range{id: "#{month.downcase}"}
+            %input{id: "filtered-#{month.downcase}", type: "text"}
+    
+     

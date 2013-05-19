@@ -1,9 +1,14 @@
-#demographics-list.well
-  %ul
-    - @schools[0].demographics.attributes.except("id", "created_at", "updated_at", "school_id").keys.each do |dem|  
-      %li
-        = label_tag "#{dem}", "#{dem.titleize}"
-        .range{id: "#{dem}"}
-        %input{id: "filtered-#{dem}", type: "text"}
-
- 
+.accordian-group
+  .accordian-heading
+    %h3= link_to 'Filter by Demographics', '#demographics', { data: {toggle: "collapse", parent: "#filters"}}
+  .demographics-filter-list
+  #demographics.accordian-body.collapse
+    #demographics-list.well
+      %ul
+        - @schools[0].demographics.hash_for_filter.keys.each do |dem|  
+          %li
+            = label_tag "#{dem}", "#{dem.to_s.titleize}"
+            .demo-range{id: "#{dem}"}
+            %input{id: "filtered-#{dem}", type: "text"}
+    
+     
