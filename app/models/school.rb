@@ -18,5 +18,15 @@ class School < ActiveRecord::Base
   end
   
 
+  def store_info
+    {
+      hours: hours.hash_for_filter,
+      coffee: {starbucks: starbucks, coffee_stations: coffee_stations},
+      dma: {dma: dma, dma_rank: dma_rank},
+      school_type: school_type,
+    }
+    
+  end
+  
   alias_attribute :name, :school_name
 end

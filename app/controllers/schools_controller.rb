@@ -19,7 +19,8 @@ class SchoolsController < ApplicationController
       marker.infowindow render_to_string(partial: "/schools/infowindow", locals: {school: school})
       marker.title "#{school.school_name}" 
       json = {store_id: school.store_id, sports: school.sports.active_in, conference: school.sports.conference, 
-              state: school.state, demographics: school.demographics.percentages}
+              state: school.state, demographics: school.demographics.hash_for_filter, store_info: school.store_info, 
+              transactions: school.transactions.hash_for_filter}
       marker.json(json)   
     end
   end

@@ -3,7 +3,7 @@ class Demographics < ActiveRecord::Base
   attr_accessible :african_american_black, :american_indian_alaskan_native, :asian, :average_age, :enrollment, :hispanic_latino, :native_hawaiian_pacific_islander, :non_resident_alien, :two_or_more_races, :unknown, :white, :latino
   
   
-  def percentages
+  def hash_for_filter
     {
       african_american_black: self.african_american_black, 
       american_indian_alaskan_native: self.american_indian_alaskan_native, 

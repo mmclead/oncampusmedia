@@ -3,6 +3,10 @@ class Transactions < ActiveRecord::Base
   attr_accessible :april, :august, :december, :february, :january, :july, :june, :march, :may, :november, :october, :september
   
   
+  def hash_for_filter
+    
+  end
+  
   def total
     sum=0
     Date::MONTHNAMES.compact.each { |month| sum += self.send(month.downcase) }
