@@ -31,9 +31,7 @@ class Ratecard < ActiveRecord::Base
                           impressions_per_spot: (impressions([s]) / (s.hours.total * spot_length_multiplier))
                          }
     end
-    
     per_spot["total"] = { total_spots: per_spot.inject(0) {|sum, spot| sum + spot[1][:total_hours_per_week].to_i }  * self.num_of_weeks.to_i * spot_rate.to_i  }
-    
     return per_spot
   end
   
