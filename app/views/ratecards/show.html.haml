@@ -28,7 +28,7 @@
     %td= "#{@ratecard.spot_length} seconds"
   %tr
     %th # of Weeks:
-    %td= @ratecard.num_of_weeks
+    %td= num_of_weeks_in_words(@ratecard)
   %tr 
     %th Flight Date:
     %td= @ratecard.flight_date
@@ -48,7 +48,7 @@
     %th Estimated Impressions
     %td= @impressions
   %tr
-    %th=  "#{@ratecard.num_of_weeks} Week Total Cost"
+    %th=  "#{num_of_weeks_in_words(@ratecard)} Total Cost"
     %td
   %tr
     %th Cost per Spot
@@ -79,8 +79,8 @@
     %th DMA Rank
     %th No. of Screens
     %th Current Enrollment
-    %th= "#{@ratecard.num_of_weeks} Week Impressions"
-    %th= "#{@ratecard.num_of_weeks} Week Cost Per Campus"
+    %th= "#{num_of_weeks_in_words(@ratecard)} Impressions"
+    %th= "#{num_of_weeks_in_words(@ratecard)} Cost Per Campus"
   = render partial: 'school_for_quote', locals: {schools: @ratecard.schools}
 
     

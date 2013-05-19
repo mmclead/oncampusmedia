@@ -3,7 +3,9 @@ class Ratecard < ActiveRecord::Base
 
   serialize :store_ids
   
+  validates_presence_of :store_ids, :prepared_for, :brand, :presented_to, :prepared_by, :quote_date, :accept_by, :spot_length, :spot_rate, :flight_date, :end_date, :cpm
   
+  after_create :set_dates_and_duration
   
   def schools
     store_ids.map {|store_id| School.where(store_id: store_id).first}
@@ -39,5 +41,13 @@ class Ratecard < ActiveRecord::Base
     return spot_length == 30 ? 1 : spot_length == 15 ? 0.5 : 2
   end
   
+  private
   
+  def set_dates_and_duration
+    self.num_of_weeks = ((self.end_date - self.flight_date)/7.0).to_f
+    self.creative_due_date = flight_date - 7.days
+    self.save
+  end
+  
+
 end

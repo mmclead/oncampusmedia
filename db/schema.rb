@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130509220255) do
+ActiveRecord::Schema.define(:version => 20130519142939) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "school_id"
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(:version => 20130509220255) do
     t.date     "quote_date"
     t.date     "accept_by"
     t.integer  "spot_length"
-    t.integer  "num_of_weeks"
+    t.float    "num_of_weeks"
     t.date     "flight_date"
     t.date     "end_date"
     t.date     "creative_due_date"
