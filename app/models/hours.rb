@@ -4,7 +4,9 @@ class Hours < ActiveRecord::Base
   
   
   def hash_for_filter
-    Date::DAYNAMES.map {|day| "#{day}"hours_for(day.downcase) } 
+    hash = {}
+    Date::DAYNAMES.each {|day| hash["#{day}"] = hours_for(day.downcase) } 
+    return hash
   end
   
   def total

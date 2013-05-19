@@ -4,7 +4,9 @@ class Transactions < ActiveRecord::Base
   
   
   def hash_for_filter
-    
+    hash = {}
+      Date::MONTHNAMES.compact.each {|month| hash["#{month}"] = self.send(month.downcase) } 
+    return hash
   end
   
   def total
