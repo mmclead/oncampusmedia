@@ -37,6 +37,7 @@ $(document).ready(function() {
 
     var StateFilter = [];
     var TypeFilter = [];
+    var CoffeeFilter = [];
     var ConferenceFilter = [];
     var SportFilter = [];
 
@@ -117,7 +118,7 @@ $(document).ready(function() {
     $('#school-type ul input').change(function() {
       $('#all-types input').prop('checked', false);
       TypeFilter = [];
-      $('#school-type input:checked').map( function() { TypeFilter.push(this.name);});
+      $('#school-type ul input:checked').map( function() { TypeFilter.push(this.name);});
       applyFilters()
     });
     
@@ -128,6 +129,22 @@ $(document).ready(function() {
         applyFilters()
       }
     });
+    
+    $('#coffee-station ul input').change(function() {
+      $('#all-coffee input').prop('checked', false);
+      CoffeeFilter = [];
+      $('#coffee-station ul input:checked').map( function() { CoffeeFilter.push(this.name);});
+      applyFilters()
+    });
+    
+    $('#all-coffee input').change(function() {
+      if (this.checked) {
+        $('#coffee-station ul input:checked').prop('checked', false);
+        CoffeeFilter = [];
+        applyFilters()
+      }
+    });
+    
     
     $('#sport-list input').change(function() {
       $('#all-sports input').prop('checked', false);
@@ -172,6 +189,7 @@ $(document).ready(function() {
         return !( 
            (($('#all-states input').prop('checked')) || (_.contains(StateFilter, marker.state) ))
         && (($('#all-types input').prop('checked')) || (_.contains(TypeFilter, marker.store_info.school_type) ))
+        && (($('#all-coffee input').prop('checked')) || ( _.some(marker.store_info.coffee, function(coffee) {return _.contains(CoffeeFilter, coffee)})) )
         && (($('#all-sports input').prop('checked')) || ( _.some(marker.sports, function(sport) {return _.contains(SportFilter, sport)})) ) 
         && (($('#all-conferences input').prop('checked')) || (_.contains(ConferenceFilter, marker.conference)) )
         && (_.every(marker.demographics, function(val, key) { return val >= DemoList[key].min && val <= DemoList[key].max; }))

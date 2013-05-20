@@ -1,0 +1,11 @@
+#coffee-station
+  %h4 Coffee Stations
+  #all-coffee
+    = check_box_tag "Any Type", 'all', true
+    = label_tag "Any Type", "Any Type (including none)"
+  %ul.well
+    - ["starbucks", "coffee_stations"].each do |coffee|  
+      %li
+        = check_box_tag "#{coffee}"
+        = label_tag "#{coffee}", "#{coffee.titleize}"
+

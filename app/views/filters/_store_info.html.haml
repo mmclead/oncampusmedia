@@ -4,14 +4,6 @@
   .store-info-filter-list
   #store-info.accordian-body.collapse
     #store-info-list
-      #school-type
-        %h4 School Type
-        #all-types
-          = check_box_tag "All Types", 'all', true
-          = label_tag "All Types", "All Types"
-        %ul.well
-          - ["4 Year", "CC"].each do |school_type|  
-            %li
-              = check_box_tag "#{school_type}"
-              = label_tag "#{school_type}", "#{school_type}"
+      = render 'filters/school_type'
+      = render 'filters/coffee_stations'
       

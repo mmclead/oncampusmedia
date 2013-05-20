@@ -13,6 +13,7 @@ class SchoolsController < ApplicationController
   def create
     
   end
+  
   def index
     @schools = School.all
     @json = @schools.to_gmaps4rails do |school, marker|

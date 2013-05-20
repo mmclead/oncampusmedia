@@ -7,8 +7,12 @@ namespace :importer do
       SCHOOLS_FILE = File.new(ENV["SCHOOLS_FILE"]).read.gsub("\r\r","\r")
       index = 0
       CSV.parse(SCHOOLS_FILE, {headers: true}) do |row|
-        school = School.new
-        school.store_id = row[0] 
+        store_id = row[0]
+        school = School.where(store_id: store_id).first
+        unless school.present?
+          school = School.new
+          school.store_id = row[0] 
+        end
         school.school_name = row[1]
         school.address = row[2]
         school.dma = row[3]
@@ -17,13 +21,14 @@ namespace :importer do
         school.dma_rank = row[12]
         school.school_type = row[10] 
         school.current_local_annual_traffic = row[55]
-        school.starbucks =  row[49] 
-        school.coffee_stations = row[50] 
+        school.starbucks =  row[49].present?
+        school.coffee_stations = row[50].present?
         school.num_of_screens = row[9]
         
         unless school.school_name.blank?
 
-          demographics = Demographics.new
+          demographics = school.demographics
+          demographics = Demographics.new unless demographics.present?
           demographics.average_age = row[11]
           demographics.non_resident_alien = row[30]
           demographics.african_american_black = row[31]
@@ -37,7 +42,8 @@ namespace :importer do
           demographics.enrollment = row[41]
           school.demographics = demographics
           
-          hours = Hours.new
+          hours = school.hours
+          hours = Hours.new unless hours.present?
           hours.monday_open = Time.parse(row[43].to_s.split(" - ")[0]) unless row[43] == "CLOSED" or row[43].blank?
           hours.monday_close = Time.parse(row[43].to_s.split(" - ")[1]) unless row[43] == "CLOSED" or row[43].blank?
           hours.tuesday_open = Time.parse(row[44].to_s.split(" - ")[0]) unless row[44] == "CLOSED" or row[44].blank?
@@ -54,7 +60,8 @@ namespace :importer do
           hours.sunday_close = Time.parse(row[42].to_s.split(" - ")[1]) unless row[42] == "CLOSED" or row[42].blank?
           school.hours = hours
           
-          sports = Sports.new
+          sports = school.sports
+          sports = Sports.new unless sports.present?
           sports.ncaa_basketball_div_i = row[13].present? 
           sports.ncaa_basketball_div_ii = row[14].present?
           sports.ncaa_basketball_div_iii = row[15].present? 
@@ -74,8 +81,8 @@ namespace :importer do
           sports.conference = row[29]
           school.sports = sports
           
-          
-          schedule = Schedule.new
+          schedule = school.schedule
+          schedule = Schedule.new unless schedule.present?
           schedule.quarter = row[39].present?
           schedule.semester = row[40].present?
           school.schedule = schedule
