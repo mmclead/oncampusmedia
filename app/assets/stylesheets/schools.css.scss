@@ -24,11 +24,11 @@
 }
 
 #state-list ul, #conference-list ul, .school-list, #sport-list ul, #demographics-list ul, 
-#transactions-list ul, #school-type ul, #coffee-station ul{
+#transactions-list ul, #school-type ul, #coffee-station ul, #store-hours ul{
     list-style-type: none;
   }
   
-#state-list  li, #conference-list li, #sport-list li, #school-type li, #coffee-station li {
+#state-list  li, #conference-list li, #sport-list li, #school-type li, #coffee-station li, #store-hours li {
     display:inline-block;
     border:1px solid #c1c1c1;
     padding: 3px;

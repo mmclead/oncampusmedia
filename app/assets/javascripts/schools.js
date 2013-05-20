@@ -146,6 +146,22 @@ $(document).ready(function() {
     });
     
     
+    $('#store-hours ul input').change(function() {
+      $('#all-hours input').prop('checked', false);
+      HoursFilter = [];
+      $('#store-hours ul input:checked').map( function() { HoursFilter.push(this.name);});
+      applyFilters()
+    });
+    
+    $('#all-hours input').change(function() {
+      if (this.checked) {
+        $('#store-hours ul input:checked').prop('checked', false);
+        HoursFilter = [];
+        applyFilters()
+      }
+    });
+    
+    
     $('#sport-list input').change(function() {
       $('#all-sports input').prop('checked', false);
       SportFilter = [];
@@ -190,6 +206,7 @@ $(document).ready(function() {
            (($('#all-states input').prop('checked')) || (_.contains(StateFilter, marker.state) ))
         && (($('#all-types input').prop('checked')) || (_.contains(TypeFilter, marker.store_info.school_type) ))
         && (($('#all-coffee input').prop('checked')) || ( _.some(marker.store_info.coffee, function(coffee) {return _.contains(CoffeeFilter, coffee)})) )
+        && (($('#all-hours input').prop('checked')) || ( _.every(HoursFilter, function(day) {return marker.store_info.hours[day]  > 0 })) )
         && (($('#all-sports input').prop('checked')) || ( _.some(marker.sports, function(sport) {return _.contains(SportFilter, sport)})) ) 
         && (($('#all-conferences input').prop('checked')) || (_.contains(ConferenceFilter, marker.conference)) )
         && (_.every(marker.demographics, function(val, key) { return val >= DemoList[key].min && val <= DemoList[key].max; }))

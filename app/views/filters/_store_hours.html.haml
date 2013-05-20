@@ -1,0 +1,11 @@
+#store-hours
+  %h4 Store Hours
+  #all-hours
+    = check_box_tag "Any Hours", 'all', true
+    = label_tag "Any Hours", "Any Hours"
+  %ul.well
+    - Date::DAYNAMES.each do |day|  
+      %li
+        = check_box_tag "#{day}"
+        = label_tag "#{day}", "Open on #{day.titleize}"
+
