@@ -23,11 +23,11 @@
   overflow:auto;
 }
 
-#state-list ul, #conference-list ul, .school-list, #sport-list ul, #demographics-list ul, #transactions-list ul {
+#state-list ul, #conference-list ul, .school-list, #sport-list ul, #demographics-list ul, #transactions-list ul, #school-type ul{
     list-style-type: none;
   }
   
-#state-list  li, #conference-list li, #sport-list li {
+#state-list  li, #conference-list li, #sport-list li, #school-type li {
     display:inline-block;
     border:1px solid #c1c1c1;
     padding: 3px;

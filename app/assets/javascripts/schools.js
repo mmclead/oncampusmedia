@@ -36,6 +36,7 @@ $(document).ready(function() {
     };
 
     var StateFilter = [];
+    var TypeFilter = [];
     var ConferenceFilter = [];
     var SportFilter = [];
 
@@ -113,6 +114,21 @@ $(document).ready(function() {
       }
     });
     
+    $('#school-type ul input').change(function() {
+      $('#all-types input').prop('checked', false);
+      TypeFilter = [];
+      $('#school-type input:checked').map( function() { TypeFilter.push(this.name);});
+      applyFilters()
+    });
+    
+    $('#all-types input').change(function() {
+      if (this.checked) {
+        $('#school-type ul input:checked').prop('checked', false);
+        TypeFilter = [];
+        applyFilters()
+      }
+    });
+    
     $('#sport-list input').change(function() {
       $('#all-sports input').prop('checked', false);
       SportFilter = [];
@@ -153,7 +169,9 @@ $(document).ready(function() {
     
     var VisibleMarkers = function() {
       var filtered = _.reject(FullMarkerList, function(marker) {
-        return !( (($('#all-states input').prop('checked')) || (_.contains(StateFilter, marker.state) )) 
+        return !( 
+           (($('#all-states input').prop('checked')) || (_.contains(StateFilter, marker.state) ))
+        && (($('#all-types input').prop('checked')) || (_.contains(TypeFilter, marker.store_info.school_type) ))
         && (($('#all-sports input').prop('checked')) || ( _.some(marker.sports, function(sport) {return _.contains(SportFilter, sport)})) ) 
         && (($('#all-conferences input').prop('checked')) || (_.contains(ConferenceFilter, marker.conference)) )
         && (_.every(marker.demographics, function(val, key) { return val >= DemoList[key].min && val <= DemoList[key].max; }))
