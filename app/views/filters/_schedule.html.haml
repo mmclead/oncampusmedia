@@ -1,13 +1,28 @@
 .accordian-group
   .accordian-heading
-    %h4= link_to 'Term Length', '#term', { data: {toggle: "collapse", parent: "#school-info-list"}}
-  #term.accordian-body.collapse
-    #all-terms
-      = check_box_tag "Any Term Length", 'all', true
-      = label_tag "Any Term Length", "Any Term Length"
-    %ul.well
-      = radio_button_tag("term", "semester", false)
-      = label_tag "term_semester", "Semester"
-      = radio_button_tag("term", "quarter", false)
-      = label_tag "term_quarter", "Quarter"
+    %h4= link_to 'Schedule', '#schedule', { data: {toggle: "collapse", parent: "#school-info-list"}}
+  #schedule.accordian-body.collapse
+    #all-schedules
+      = check_box_tag "Any Dates", 'all', true
+      = label_tag "Any Dates", "Any Dates"
+    %ul.nav-list.well
+      %li
+        .date-range
+          .date-input.pull-left
+            Start Date
+          .date-input.pull-right
+            End Date
+        .clearfix
+      %li.divider
+      - @schools[0].schedule.hash_for_filter.delete_if{|key,val| key == :term}.keys.each do |date|
+        %li
+          .date-range
+            .date-input.pull-left
+              = text_field_tag "#{date}_start", nil, class: 'datepicker'
+              = label_tag "#{date}_start", "#{date.to_s.titleize}"
+            .date-input.pull-right
+              = text_field_tag "#{date}_end", nil, class: 'datepicker'
+              = label_tag "#{date}_end", "#{date.to_s.titleize}"
+          .clearfix
 
+      .clearfix
