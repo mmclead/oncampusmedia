@@ -12,11 +12,11 @@ namespace :importer do
         
         if school.present?
           schedule = school.schedule
-          schedule.first_classes = begin Date.try(:strptime, row[5], '%m/%d/%Y') rescue nil end
-          schedule.spring_finals_first = begin Date.try(:strptime, row[3], '%m/%d/%Y') rescue nil end
-          schedule.spring_finals_last = begin Date.try(:strptime, row[4], '%m/%d/%Y') rescue nil end
-          schedule.fall_finals_first = begin Date.try(:strptime, row[6], '%m/%d/%Y') rescue nil end
-          schedule.fall_finals_last = begin Date.try(:strptime, row[7], '%m/%d/%Y') rescue nil end
+          schedule.spring_finals_first = begin Date.try(:strptime, row[3], '%m/%d/%y') rescue nil end
+          schedule.spring_finals_last = begin Date.try(:strptime, row[4], '%m/%d/%y') rescue nil end
+          schedule.fall_first_classes = begin Date.try(:strptime, row[5], '%m/%d/%y') rescue nil end
+          schedule.fall_finals_first = begin Date.try(:strptime, row[6], '%m/%d/%y') rescue nil end
+          schedule.fall_finals_last = begin Date.try(:strptime, row[7], '%m/%d/%y') rescue nil end
           
           puts 'saving school: ' + school.name.to_s 
           school.save!
