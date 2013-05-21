@@ -29,6 +29,8 @@ schools:
   - starbucks
   - coffee_stations
   - num_of_screens
+  - rotc
+  - store_name
   records: 
   - - 660
     - 418
@@ -46,7 +48,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:37.077564'
-    - '2013-05-20 15:06:18.192673'
+    - '2013-05-21 03:02:53.320938'
     - 34.726024
     - -86.64402
     - true
@@ -57,6 +59,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - University of Alabama in Huntsville Bookstore
   - - 661
     - 108
     - Southern Union State Community College Wadley Campus
@@ -73,7 +77,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:37.319129'
-    - '2013-05-20 15:06:18.298879'
+    - '2013-05-21 03:02:51.546003'
     - 33.1265269
     - -85.571373
     - true
@@ -84,6 +88,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Southern Union State Community College Wadley Campus Bookstore
   - - 662
     - 459
     - Gadsden State Community College
@@ -100,7 +106,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:37.551383'
-    - '2013-05-20 15:06:18.383992'
+    - '2013-05-21 03:02:53.450154'
     - 33.9952705
     - -85.9900442
     - true
@@ -111,6 +117,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Gadsden State Community College Bookstore
   - - 663
     - 109
     - Southern Union State Community College Opelika Campus
@@ -127,7 +135,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:37.788391'
-    - '2013-05-20 15:06:18.437736'
+    - '2013-05-21 03:02:51.551803'
     - 32.7339524
     - -85.4016052
     - true
@@ -138,6 +146,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Southern Union State Community College Opelika Campus Bookstore
   - - 664
     - 95
     - Troy University Phenix City
@@ -154,7 +164,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:38.020774'
-    - '2013-05-20 15:06:18.475769'
+    - '2013-05-21 03:02:51.512712'
     - 32.4236564
     - -85.0299217
     - true
@@ -165,6 +175,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Troy University Phenix City Bookstore
   - - 665
     - 536
     - University of Alabama @ Birmingham
@@ -181,7 +193,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:38.283827'
-    - '2013-05-20 15:06:18.542837'
+    - '2013-05-21 03:02:53.754992'
     - 33.501912
     - -86.8082232
     - true
@@ -192,6 +204,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - University of Alabama @ Birmingham Bookstore
   - - 666
     - 278
     - Jacksonville State University
@@ -208,7 +222,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:38.472937'
-    - '2013-05-20 15:06:18.721547'
+    - '2013-05-21 03:02:51.989664'
     - 33.82350479999999
     - -85.76333939999999
     - true
@@ -219,6 +233,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Jacksonville State University Bookstore
   - - 667
     - 94
     - Troy University Montgomery
@@ -235,7 +251,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:38.694425'
-    - '2013-05-20 15:06:18.825609'
+    - '2013-05-21 03:02:51.506638'
     - 32.376126
     - -86.310715
     - true
@@ -246,6 +262,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Troy University Montgomery Bookstore
   - - 668
     - 96
     - Troy University
@@ -262,7 +280,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:38.878915'
-    - '2013-05-20 15:06:18.991154'
+    - '2013-05-21 03:02:51.518864'
     - 31.8087678
     - -85.969951
     - true
@@ -273,6 +291,8 @@ schools:
     - true
     - false
     - 2
+    - true
+    - Troy University Bookstore
   - - 669
     - 456
     - University Of Arkansas/Little Rock
@@ -289,7 +309,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:39.115568'
-    - '2013-05-20 15:06:19.183887'
+    - '2013-05-21 03:02:53.436689'
     - 34.723175
     - -92.33974599999999
     - true
@@ -300,6 +320,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - University Of Arkansas/Little Rock Bookstore
   - - 670
     - 408
     - NorthWest Arkansas Community College
@@ -316,7 +338,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:39.312455'
-    - '2013-05-20 15:06:19.253733'
+    - '2013-05-21 03:02:53.283135'
     - 36.3597258
     - -94.1743987
     - true
@@ -327,6 +349,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - NorthWest Arkansas Community College Bookstore
   - - 671
     - 679
     - University of Arkansas @ Fort Smith
@@ -343,7 +367,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:39.515918'
-    - '2013-05-20 15:06:19.340891'
+    - '2013-05-21 03:02:54.373628'
     - 35.383579
     - -94.37442
     - true
@@ -354,6 +378,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - University of Arkansas Fort Smith Bookstore
   - - 672
     - 210
     - University of Central Arkansas
@@ -370,7 +396,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:39.707233'
-    - '2013-05-20 15:06:19.395784'
+    - '2013-05-21 03:02:51.721163'
     - 35.079269
     - -92.4542
     - true
@@ -381,6 +407,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - University of Central Arkansas Bookstore
   - - 673
     - 766
     - Cochise College
@@ -397,7 +425,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:39.994974'
-    - '2013-05-20 15:06:19.532420'
+    - '2013-05-21 03:02:54.745937'
     - 31.5605877
     - -110.2486677
     - true
@@ -408,6 +436,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Cochise College/S.V. Bookstore
   - - 674
     - 621
     - Central Arizona College - Signal Peak Campus
@@ -424,7 +454,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:40.195074'
-    - '2013-05-20 15:06:19.636597'
+    - '2013-05-21 03:02:54.122056'
     - 32.956505
     - -111.655243
     - true
@@ -435,6 +465,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Central Arizona College - Signal Peak Campus Bookstore
   - - 675
     - 475
     - Arizona Western College Bookstore
@@ -451,7 +483,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:40.484493'
-    - '2013-05-20 15:06:19.738953'
+    - '2013-05-21 03:02:53.486976'
     - 32.6840825
     - -114.6675498
     - true
@@ -462,6 +494,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Arizona Western College Bookstore
   - - 676
     - 420
     - Lake Tahoe Community College
@@ -478,7 +512,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:40.728119'
-    - '2013-05-20 15:06:19.837538'
+    - '2013-05-21 03:02:53.330014'
     - 38.92737030000001
     - -119.9732284
     - true
@@ -489,6 +523,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Lake Tahoe Community College Bookstore
   - - 677
     - 617
     - College of the Sequoias
@@ -505,7 +541,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:40.998090'
-    - '2013-05-20 15:06:19.947199'
+    - '2013-05-21 03:02:54.101238'
     - 36.324859
     - -119.314528
     - true
@@ -516,6 +552,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - College of the Sequoias Bookstore
   - - 678
     - 670
     - California State University - Los Angeles
@@ -532,7 +570,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:41.211862'
-    - '2013-05-20 15:06:20.065061'
+    - '2013-05-21 03:02:54.330089'
     - 34.06678290000001
     - -118.168893
     - true
@@ -543,6 +581,8 @@ schools:
     - false
     - true
     - 3
+    - true
+    - California State University/LA Bookstore
   - - 679
     - 376
     - Riverside City College
@@ -559,7 +599,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:41.850123'
-    - '2013-05-20 15:06:20.141261'
+    - '2013-05-21 03:02:53.091179'
     - 33.9715693
     - -117.384678
     - true
@@ -570,6 +610,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Riverside City College Bookstore
   - - 680
     - 388
     - Moreno Valley College
@@ -586,7 +628,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:42.080639'
-    - '2013-05-20 15:06:20.204421'
+    - '2013-05-21 03:02:53.157673'
     - 33.8860943
     - -117.2052013
     - true
@@ -597,6 +639,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Moreno Valley College Bookstore
   - - 681
     - 387
     - Norco College
@@ -613,7 +657,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:42.272941'
-    - '2013-05-20 15:06:20.268995'
+    - '2013-05-21 03:02:53.151205'
     - 33.9154212
     - -117.5687548
     - true
@@ -624,6 +668,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Norco College Bookstore
   - - 682
     - 496
     - California State University Monterey Bay
@@ -640,7 +686,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:42.556693'
-    - '2013-05-20 15:06:20.336659'
+    - '2013-05-21 03:02:53.554528'
     - 36.654265
     - -121.8080071
     - true
@@ -651,6 +697,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - California State University Monterey Bay Bookstore
   - - 683
     - 525
     - California State University- Stanislaus
@@ -667,7 +715,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:42.826996'
-    - '2013-05-20 15:06:20.376505'
+    - '2013-05-21 03:02:53.698106'
     - 37.5233926
     - -120.857141
     - true
@@ -678,6 +726,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - California State University- Stanislaus Bookstore
   - - 684
     - 312
     - Cuyamaca College
@@ -694,7 +744,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:43.068011'
-    - '2013-05-20 15:06:20.432112'
+    - '2013-05-21 03:02:52.145395'
     - 32.746504
     - -116.941028
     - true
@@ -705,6 +755,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Cuyamaca College Bookstore
   - - 685
     - 311
     - Grossmont College
@@ -721,7 +773,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:43.302779'
-    - '2013-05-20 15:06:20.472517'
+    - '2013-05-21 03:02:52.138017'
     - 32.8167834
     - -117.0061375
     - true
@@ -732,6 +784,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Grossmont College Bookstore
   - - 686
     - 758
     - Point Loma Nazarene University
@@ -748,7 +802,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:43.539553'
-    - '2013-05-20 15:06:20.507398'
+    - '2013-05-21 03:02:54.707036'
     - 32.716927
     - -117.251394
     - true
@@ -759,6 +813,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Point Loma Nazarene University Bookstore
   - - 687
     - 667
     - College Of Marin
@@ -775,7 +831,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:43.766809'
-    - '2013-05-20 15:06:20.554741'
+    - '2013-05-21 03:02:54.308563'
     - 37.9539987
     - -122.5486931
     - true
@@ -786,6 +842,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - College Of Marin Bookstore
   - - 688
     - 597
     - Mission College
@@ -802,7 +860,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:44.026890'
-    - '2013-05-20 15:06:20.606432'
+    - '2013-05-21 03:02:53.978842'
     - 37.391283
     - -121.980021
     - true
@@ -813,6 +871,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Mission College Bookstore
   - - 689
     - 499
     - Sonoma State University
@@ -829,7 +889,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:44.299810'
-    - '2013-05-20 15:06:20.644592'
+    - '2013-05-21 03:02:53.568560'
     - 38.3396637
     - -122.6735842
     - true
@@ -840,6 +900,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Sonoma State University Bookstore
   - - 690
     - 340
     - St. Mary's College of California
@@ -856,7 +918,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:44.568763'
-    - '2013-05-20 15:06:20.705110'
+    - '2013-05-21 03:02:52.997578'
     - 37.835153
     - -122.107101
     - true
@@ -867,6 +929,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - St. Mary's College of California Bookstore
   - - 691
     - 220
     - College of the Canyons Bookstore
@@ -883,7 +947,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:44.802833'
-    - '2013-05-20 15:06:20.815584'
+    - '2013-05-21 03:02:51.770933'
     - 34.4043507
     - -118.5682927
     - true
@@ -894,6 +958,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - College of the Canyons Bookstore
   - - 692
     - 691
     - University Of Redlands
@@ -910,7 +976,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:45.070693'
-    - '2013-05-20 15:06:20.860824'
+    - '2013-05-21 03:02:54.429739'
     - 34.0628727
     - -117.1633908
     - true
@@ -921,6 +987,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - University Of Redlands Bookstore
   - - 693
     - 339
     - Sierra College
@@ -937,7 +1005,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:45.343501'
-    - '2013-05-20 15:06:20.905656'
+    - '2013-05-21 03:02:52.991027'
     - 38.790306
     - -121.214862
     - true
@@ -948,6 +1016,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Sierra College Bookstore
   - - 694
     - 397
     - University of the Pacific
@@ -964,7 +1034,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:45.620773'
-    - '2013-05-20 15:06:20.956369'
+    - '2013-05-21 03:02:53.216798'
     - 37.98192969999999
     - -121.3116854
     - true
@@ -975,6 +1045,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - University of the Pacific Bookstore
   - - 695
     - 792
     - University of Colorado - Boulder
@@ -991,7 +1063,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:45.858837'
-    - '2013-05-20 15:06:21.029032'
+    - '2013-05-21 03:02:54.866364'
     - 40.0074564
     - -105.2751343
     - true
@@ -1002,6 +1074,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Colorado Off Campus
   - - 696
     - 259
     - Red Rocks Community College
@@ -1018,7 +1092,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:46.092925'
-    - '2013-05-20 15:06:21.061679'
+    - '2013-05-21 03:02:51.918079'
     - 39.7188242
     - -105.1534939
     - true
@@ -1029,6 +1103,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Red Rocks Community College Bookstore
   - - 697
     - 705
     - Central Connecticut State University
@@ -1045,7 +1121,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:46.284331'
-    - '2013-05-20 15:06:21.118617'
+    - '2013-05-21 03:02:54.481543'
     - 41.6930677
     - -72.76797119999999
     - true
@@ -1056,6 +1132,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Central Connecticut State Univ Bookstore
   - - 698
     - 751
     - Eastern Connecticut State University
@@ -1072,7 +1150,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:46.552666'
-    - '2013-05-20 15:06:21.165081'
+    - '2013-05-21 03:02:54.659265'
     - 41.7387767
     - -72.2186491
     - true
@@ -1083,6 +1161,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Eastern Connecticut State University Bookstore
   - - 699
     - 769
     - Southern Connecticut State University
@@ -1099,7 +1179,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:46.745649'
-    - '2013-05-20 15:06:21.218964'
+    - '2013-05-21 03:02:54.786909'
     - 41.331145
     - -72.945163
     - true
@@ -1110,6 +1190,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Southern Conn State University Bookstore
   - - 700
     - 581
     - Trinity College
@@ -1126,7 +1208,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:46.940965'
-    - '2013-05-20 15:06:21.262687'
+    - '2013-05-21 03:02:53.936338'
     - 41.747461
     - -72.6907373
     - true
@@ -1137,6 +1219,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Trinity College Bookstore
   - - 701
     - 321
     - Yale University
@@ -1153,7 +1237,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:47.150105'
-    - '2013-05-20 15:06:21.363726'
+    - '2013-05-21 03:02:52.903515'
     - 41.312231
     - -72.93123299999999
     - true
@@ -1164,6 +1248,8 @@ schools:
     - true
     - false
     - 2
+    - true
+    - The Yale Bookstore
   - - 702
     - 374
     - Western Connecticut State University
@@ -1180,7 +1266,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:47.374813'
-    - '2013-05-20 15:06:21.394691'
+    - '2013-05-21 03:02:53.082530'
     - 41.39879930000001
     - -73.4429598
     - true
@@ -1191,6 +1277,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Western Connecticut State University Bookstore
   - - 703
     - 647
     - Wesley College
@@ -1207,7 +1295,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:47.593204'
-    - '2013-05-20 15:06:21.432081'
+    - '2013-05-21 03:02:54.226908'
     - 39.18142479999999
     - -75.546832
     - true
@@ -1218,6 +1306,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Wesley College Bookstore
   - - 704
     - 341
     - Santa Fe College
@@ -1234,7 +1324,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:47.826184'
-    - '2013-05-20 15:06:21.469240'
+    - '2013-05-21 03:02:53.003628'
     - 29.6806736
     - -82.43015679999999
     - true
@@ -1245,6 +1335,8 @@ schools:
     - true
     - false
     - 3
+    - true
+    - Santa Fe  College Bookstore
   - - 705
     - 798
     - Florida Institute of Technology
@@ -1261,7 +1353,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:49.023532'
-    - '2013-05-20 15:06:21.500957'
+    - '2013-05-21 03:02:54.896197'
     - 28.0600848
     - -80.62442419999999
     - true
@@ -1272,6 +1364,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Florida Tech Bookstore
   - - 706
     - 258
     - The College of Central Florida
@@ -1288,7 +1382,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:49.349616'
-    - '2013-05-20 15:06:21.532415'
+    - '2013-05-21 03:02:51.911839'
     - 29.16265559999999
     - -82.17271
     - true
@@ -1299,6 +1393,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - The College of Central Florida Bookstore
   - - 707
     - 753
     - Florida A & M University
@@ -1315,7 +1411,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:49.637370'
-    - '2013-05-20 15:06:21.563102'
+    - '2013-05-21 03:02:54.673305'
     - 30.4286375
     - -84.2856279
     - true
@@ -1326,6 +1422,8 @@ schools:
     - false
     - true
     - 3
+    - true
+    - Florida A & M University Bookstore
   - - 708
     - 306
     - Florida Southern College
@@ -1342,7 +1440,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:49.909050'
-    - '2013-05-20 15:06:21.595982'
+    - '2013-05-21 03:02:52.116540'
     - 28.029571
     - -81.944255
     - true
@@ -1353,6 +1451,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Florida Southern College
   - - 709
     - 24
     - ! 'University of South Florida St. Petersburg '
@@ -1369,7 +1469,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:50.192896'
-    - '2013-05-20 15:06:21.629639'
+    - '2013-05-21 03:02:51.215467'
     - 27.7655203
     - -82.6368798
     - true
@@ -1380,6 +1480,8 @@ schools:
     - true
     - false
     - 1
+    - true
+    - University of South Florida St. Petersburg Campus Bookstore
   - - 710
     - 22
     - University of South Florida Tampa
@@ -1396,7 +1498,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:50.395359'
-    - '2013-05-20 15:06:21.665479'
+    - '2013-05-21 03:02:51.208289'
     - 28.0605512
     - -82.4076426
     - true
@@ -1407,6 +1509,8 @@ schools:
     - true
     - false
     - 1
+    - true
+    - University of South Florida Tampa Campus Bookstore
   - - 711
     - 794
     - Florida Atlantic University- Boca Raton
@@ -1423,7 +1527,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:50.646420'
-    - '2013-05-20 15:06:21.696714'
+    - '2013-05-21 03:02:55.074079'
     - 26.365668
     - -80.106093
     - true
@@ -1434,6 +1538,8 @@ schools:
     - false
     - false
     - 4
+    - true
+    - Florida Atlantic University Stadium Store
   - - 712
     - 784
     - Florida International University North Miami
@@ -1450,7 +1556,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:50.943673'
-    - '2013-05-20 15:06:21.728974'
+    - '2013-05-21 03:02:54.838079'
     - 25.9098504
     - -80.1441349
     - true
@@ -1461,6 +1567,8 @@ schools:
     - false
     - true
     - 2
+    - true
+    - Florida International Univ/N. Miami Bookstore
   - - 713
     - 785
     - Florida International University
@@ -1477,7 +1585,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:51.180860'
-    - '2013-05-20 15:06:21.763672'
+    - '2013-05-21 03:02:54.844987'
     - 25.7574192
     - -80.3760815
     - true
@@ -1488,6 +1596,8 @@ schools:
     - true
     - false
     - 5
+    - true
+    - Florida International University Bookstore
   - - 714
     - 778
     - Brevard Community College
@@ -1504,7 +1614,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:51.458166'
-    - '2013-05-20 15:06:21.795431'
+    - '2013-05-21 03:02:54.816549'
     - 28.1716908
     - -80.6717697
     - true
@@ -1515,6 +1625,8 @@ schools:
     - false
     - true
     - 2
+    - true
+    - Brevard Community College Bookstore
   - - 715
     - 488
     - Florida Atlantic University at Davie
@@ -1531,7 +1643,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:51.685395'
-    - '2013-05-20 15:06:21.830065'
+    - '2013-05-21 03:02:53.523045'
     - 26.0793519
     - -80.2385278
     - true
@@ -1542,6 +1654,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Florida Atlantic University at Davie Bookstore
   - - 716
     - 327
     - University Of Central Florida
@@ -1558,7 +1672,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:51.977215'
-    - '2013-05-20 15:06:21.860902'
+    - '2013-05-21 03:02:52.912666'
     - 28.6012689
     - -81.2028552
     - true
@@ -1569,6 +1683,8 @@ schools:
     - true
     - false
     - 1
+    - true
+    - University Of Central Florida Bookstore
   - - 717
     - 356
     - University of Tampa
@@ -1585,7 +1701,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:52.217245'
-    - '2013-05-20 15:06:21.898638'
+    - '2013-05-21 03:02:53.035540'
     - 27.945723
     - -82.46536139999999
     - true
@@ -1596,6 +1712,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - University of Tampa Bookstore
   - - 718
     - 757
     - Emory University
@@ -1612,7 +1730,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:52.455120'
-    - '2013-05-20 15:06:21.940229'
+    - '2013-05-21 03:02:54.700853'
     - 33.788727
     - -84.32648619999999
     - true
@@ -1623,6 +1741,8 @@ schools:
     - false
     - false
     - 5
+    - false
+    - Emory University Main Bookstore
   - - 719
     - 595
     - Georgia Gwinnett College
@@ -1639,7 +1759,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:52.649914'
-    - '2013-05-20 15:06:21.973487'
+    - '2013-05-21 03:02:53.973035'
     - 33.9805222
     - -84.0095825
     - true
@@ -1650,6 +1770,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Georgia Gwinnett College Bookstore
   - - 720
     - 576
     - Mercer University, Macon
@@ -1666,7 +1788,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:52.844028'
-    - '2013-05-20 15:06:22.004012'
+    - '2013-05-21 03:02:53.920314'
     - 32.832506
     - -83.650769
     - true
@@ -1677,6 +1799,8 @@ schools:
     - false
     - true
     - 1
+    - true
+    - Mercer University Bookstore
   - - 721
     - 577
     - Mercer University, Atlanta
@@ -1693,7 +1817,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:53.048092'
-    - '2013-05-20 15:06:22.035240'
+    - '2013-05-21 03:02:53.927517'
     - 33.873315
     - -84.262869
     - true
@@ -1704,6 +1828,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Mercer University- Atlanta Bookstore
   - - 722
     - 608
     - Bainbridge College
@@ -1720,7 +1846,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:53.259811'
-    - '2013-05-20 15:06:22.095902'
+    - '2013-05-21 03:02:54.002899'
     - 30.9035146
     - -84.5438868
     - true
@@ -1731,6 +1857,8 @@ schools:
     - false
     - true
     - 1
+    - false
+    - Bainbridge College Bookstore
   - - 723
     - 313
     - Benedictine University
@@ -1747,7 +1875,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:53.533152'
-    - '2013-05-20 15:06:22.134021'
+    - '2013-05-21 03:02:52.151200'
     - 41.7786157
     - -88.095004
     - true
@@ -1758,6 +1886,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Benedictine University Bookstore
   - - 724
     - 84
     - DePaul University - Lincoln Park
@@ -1774,7 +1904,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:53.763437'
-    - '2013-05-20 15:06:22.172165'
+    - '2013-05-21 03:02:51.469314'
     - 41.9260589
     - -87.6534738
     - true
@@ -1785,6 +1915,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - DePaul University - Lincoln Park Campus Bookstore
   - - 725
     - 85
     - DePaul University - Loop
@@ -1801,7 +1933,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:54.007827'
-    - '2013-05-20 15:06:22.221540'
+    - '2013-05-21 03:02:51.475912'
     - 41.8778533
     - -87.6268458
     - true
@@ -1812,6 +1944,8 @@ schools:
     - true
     - false
     - 2
+    - true
+    - DePaul University - Loop Campus Bookstore
   - - 726
     - 296
     - Illinois Institute of Technology
@@ -1828,7 +1962,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:54.254728'
-    - '2013-05-20 15:06:22.260251'
+    - '2013-05-21 03:02:52.097107'
     - 41.835453
     - -87.6259875
     - true
@@ -1839,6 +1973,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Illinois Institute of Technology Bookstore
   - - 727
     - 668
     - Northwestern University
@@ -1855,7 +1991,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:54.494831'
-    - '2013-05-20 15:06:22.298249'
+    - '2013-05-21 03:02:54.315951'
     - 42.0533173
     - -87.67278820000001
     - true
@@ -1866,6 +2002,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Northwestern University Bookstore
   - - 728
     - 425
     - Prairie State College
@@ -1882,7 +2020,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:54.722634'
-    - '2013-05-20 15:06:22.333742'
+    - '2013-05-21 03:02:53.343240'
     - 41.52766
     - -87.63579999999999
     - true
@@ -1893,6 +2031,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Prairie State College Bookstore
   - - 729
     - 500
     - University of St. Francis
@@ -1909,7 +2049,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:54.915387'
-    - '2013-05-20 15:06:22.365730'
+    - '2013-05-21 03:02:53.573924'
     - 41.533583
     - -88.098614
     - true
@@ -1920,6 +2060,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - University of St. Francis Bookstore
   - - 730
     - 550
     - Bradley University
@@ -1936,7 +2078,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:55.112359'
-    - '2013-05-20 15:06:22.405605'
+    - '2013-05-21 03:02:53.797937'
     - 40.697427
     - -89.614165
     - true
@@ -1947,6 +2089,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Bradley University Bookstore
   - - 731
     - 687
     - Rock Valley College
@@ -1963,7 +2107,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:55.341868'
-    - '2013-05-20 15:06:22.438846'
+    - '2013-05-21 03:02:54.408981'
     - 42.3081016
     - -88.9955959
     - true
@@ -1974,6 +2118,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Rock Valley College Bookstore
   - - 732
     - 265
     - Southwestern Illinois College
@@ -1990,7 +2136,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:55.571307'
-    - '2013-05-20 15:06:22.523640'
+    - '2013-05-21 03:02:51.952273'
     - 38.5184596
     - -89.9230001
     - true
@@ -2001,6 +2147,8 @@ schools:
     - false
     - false
     - 4
+    - true
+    - Southwestern Illinois College-Belleville Bookstore
   - - 733
     - 347
     - Roosevelt University
@@ -2017,7 +2165,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:55.792530'
-    - '2013-05-20 15:06:22.558297'
+    - '2013-05-21 03:02:53.017273'
     - 41.8764899
     - -87.625528
     - true
@@ -2028,6 +2176,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Roosevelt University Bookstore
   - - 734
     - 246
     - Illinois State University
@@ -2044,7 +2194,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:56.070237'
-    - '2013-05-20 15:06:22.594274'
+    - '2013-05-21 03:02:51.864326'
     - 40.5115762
     - -88.9933008
     - true
@@ -2055,6 +2205,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Illinois State University Bookstore
   - - 735
     - 625
     - Indiana University Northwest
@@ -2071,7 +2223,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:56.298460'
-    - '2013-05-20 15:06:22.631136'
+    - '2013-05-21 03:02:54.143402'
     - 41.5568398
     - -87.3369426
     - true
@@ -2082,6 +2234,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Indiana University Northwest Bookstore
   - - 736
     - 631
     - Indiana University - Purdue University Indianapolis
@@ -2098,7 +2252,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:56.563819'
-    - '2013-05-20 15:06:22.672695'
+    - '2013-05-21 03:02:54.173150'
     - 39.7741339
     - -86.175867
     - true
@@ -2109,6 +2263,8 @@ schools:
     - true
     - false
     - 3
+    - true
+    - Barnes & Noble @ IUPUI
   - - 737
     - 632
     - Indiana University Bloomington
@@ -2125,7 +2281,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:56.759168'
-    - '2013-05-20 15:06:22.709402'
+    - '2013-05-21 03:02:54.179602'
     - 39.1715504
     - -86.50886659999999
     - true
@@ -2136,6 +2292,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Indiana University Bloomington- Memorial Union Bookstore
   - - 738
     - 626
     - Indiana University Kokomo
@@ -2152,7 +2310,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:56.972705'
-    - '2013-05-20 15:06:22.743747'
+    - '2013-05-21 03:02:54.150382'
     - 40.4610701
     - -86.1337166
     - true
@@ -2163,6 +2321,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Indiana University Kokomo Bookstore
   - - 739
     - 624
     - Indiana University Southeast
@@ -2179,7 +2339,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:57.217896'
-    - '2013-05-20 15:06:22.779240'
+    - '2013-05-21 03:02:54.136883'
     - 38.34117699999999
     - -85.81940399999999
     - true
@@ -2190,6 +2350,8 @@ schools:
     - false
     - false
     - 4
+    - true
+    - Indiana University Southeast Bookstore
   - - 740
     - 623
     - Indiana University South Bend
@@ -2206,7 +2368,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:57.410637'
-    - '2013-05-20 15:06:22.821171'
+    - '2013-05-21 03:02:54.129697'
     - 41.6617679
     - -86.2203689
     - true
@@ -2217,6 +2379,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Indiana University South Bend Bookstore
   - - 741
     - 524
     - Indiana State University
@@ -2233,7 +2397,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:57.690397'
-    - '2013-05-20 15:06:22.856999'
+    - '2013-05-21 03:02:53.692141'
     - 39.4667423
     - -87.4125528
     - true
@@ -2244,6 +2408,8 @@ schools:
     - true
     - false
     - 4
+    - true
+    - Indiana State University Bookstore
   - - 742
     - 791
     - Emporia State University
@@ -2260,7 +2426,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:57.884841'
-    - '2013-05-20 15:06:22.876090'
+    - '2013-05-21 03:02:54.860197'
     - 38.4138306
     - -96.1800811
     - true
@@ -2271,6 +2437,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Emporia State University Bookstore
   - - 743
     - 403
     - Pittsburg State University
@@ -2287,7 +2455,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:58.169858'
-    - '2013-05-20 15:06:22.908828'
+    - '2013-05-21 03:02:53.261855'
     - 37.392303
     - -94.7014897
     - true
@@ -2298,6 +2466,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Pittsburg State University Bookstore
   - - 744
     - 58
     - KCTCS - South Central Kentucky Bowling Green Technical College
@@ -2314,7 +2484,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:58.405490'
-    - '2013-05-20 15:06:22.941992'
+    - '2013-05-21 03:02:51.340517'
     - 36.9841298
     - -86.4801098
     - true
@@ -2325,6 +2495,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - KCTCS - Bowling Green Technical College Bookstore
   - - 745
     - 66
     - KCTCS - Ashland Community and Technical College
@@ -2341,7 +2513,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:58.678594'
-    - '2013-05-20 15:06:22.979159'
+    - '2013-05-21 03:02:51.389918'
     - 38.4691637
     - -82.6519218
     - true
@@ -2352,6 +2524,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - KCTCS - Ashland Community and Technical College Bookstore
   - - 746
     - 67
     - KCTCS - Big Sandy Community and Technical College
@@ -2368,7 +2542,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:58.925412'
-    - '2013-05-20 15:06:23.010241'
+    - '2013-05-21 03:02:51.397264'
     - 37.6878684
     - -82.7780937
     - true
@@ -2379,6 +2553,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - KCTCS - Big Sandy Community and Technical College Bookstore
   - - 747
     - 65
     - KCTCS - Maysville Community and Technical College
@@ -2395,7 +2571,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:59.176740'
-    - '2013-05-20 15:06:23.028095'
+    - '2013-05-21 03:02:51.383702'
     - 38.61684109999999
     - -83.8097451
     - true
@@ -2406,6 +2582,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - KCTCS - Maysville Community and Technical College Bookstore
   - - 748
     - 56
     - KCTCS - Henderson Community College
@@ -2422,7 +2600,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:59.424140'
-    - '2013-05-20 15:06:23.057721'
+    - '2013-05-21 03:02:51.327111'
     - 37.797129
     - -87.65253539999999
     - true
@@ -2433,6 +2611,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - KCTCS - Henderson Community College Bookstore
   - - 749
     - 68
     - KCTCS - Owensboro Community and Technical College
@@ -2449,7 +2629,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:59.631872'
-    - '2013-05-20 15:06:23.090646'
+    - '2013-05-21 03:02:51.404343'
     - 37.717326
     - -87.083404
     - true
@@ -2460,6 +2640,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - KCTCS - Owensboro Community and Technical College Bookstore
   - - 750
     - 531
     - KCTCS Gateway CTC Boone Campus
@@ -2476,7 +2658,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:19:59.828998'
-    - '2013-05-20 15:06:23.117715'
+    - '2013-05-21 03:02:53.729003'
     - 38.9608454
     - -84.6329985
     - true
@@ -2487,6 +2669,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - KCTCS Gateway CTC Boone Campus Bookstore
   - - 751
     - 54
     - KCTCS - Southeast Community College
@@ -2503,7 +2687,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:00.023632'
-    - '2013-05-20 15:06:23.152573'
+    - '2013-05-21 03:02:51.314819'
     - 36.9661128
     - -82.99769859999999
     - true
@@ -2514,6 +2698,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - KCTCS - Southeast Community College Bookstore
   - - 752
     - 55
     - KCTCS - Southeast Middlesboro Campus
@@ -2530,7 +2716,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:00.294467'
-    - '2013-05-20 15:06:23.184737'
+    - '2013-05-21 03:02:51.320933'
     - 36.6126868
     - -83.7341433
     - true
@@ -2541,6 +2727,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - KCTCS - Southeast Middlesboro Campus Bookstore
   - - 753
     - 249
     - Eastern Kentucky University
@@ -2557,7 +2745,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:00.522042'
-    - '2013-05-20 15:06:23.218300'
+    - '2013-05-21 03:02:51.871033'
     - 37.7405011
     - -84.30008079999999
     - true
@@ -2568,6 +2756,8 @@ schools:
     - false
     - false
     - 4
+    - true
+    - Eastern Kentucky University Bookstore
   - - 754
     - 61
     - KCTCS - Central Kentucky Technical College
@@ -2584,7 +2774,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:00.748110'
-    - '2013-05-20 15:06:23.282409'
+    - '2013-05-21 03:02:51.363498'
     - 38.0676979
     - -84.53722330000001
     - true
@@ -2595,6 +2785,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - KCTCS - Central Kentucky Technical College Bookstore
   - - 755
     - 74
     - KCTCS - Hazard Community and Technical College
@@ -2611,7 +2803,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:00.970345'
-    - '2013-05-20 15:06:23.314941'
+    - '2013-05-21 03:02:51.438368'
     - 37.2868296
     - -83.21820919999999
     - true
@@ -2622,6 +2814,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - KCTCS - Hazard Community and Technical College Bookstore
   - - 756
     - 59
     - KCTCS - Somerset Community College
@@ -2638,7 +2832,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:01.196357'
-    - '2013-05-20 15:06:23.357201'
+    - '2013-05-21 03:02:51.347429'
     - 37.019724
     - -84.6287813
     - true
@@ -2649,6 +2843,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - KCTCS - Somerset Community College Bookstore
   - - 757
     - 60
     - KCTCS - Somerset Community College, Laurel Campus
@@ -2665,7 +2861,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:01.473546'
-    - '2013-05-20 15:06:23.390236'
+    - '2013-05-21 03:02:51.355451'
     - 37.11695
     - -84.0615231
     - true
@@ -2676,6 +2872,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - KCTCS - Somerset Community College, Laurel Campus Bookstore
   - - 758
     - 253
     - University of Louisville
@@ -2692,7 +2890,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:01.707438'
-    - '2013-05-20 15:06:23.425697'
+    - '2013-05-21 03:02:51.892095'
     - 38.216853
     - -85.754812
     - true
@@ -2703,6 +2901,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - University of Louisville Bookstore
   - - 759
     - 254
     - University of Louisville School of Medicine
@@ -2719,7 +2919,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:01.904232'
-    - '2013-05-20 15:06:23.460187'
+    - '2013-05-21 03:02:51.897998'
     - 38.2495963
     - -85.7489458
     - true
@@ -2730,6 +2930,8 @@ schools:
     - false
     - true
     - 1
+    - true
+    - University of LouisvilleSchool of Medicine Bookstore
   - - 760
     - 70
     - KCTCS - West Kentucky Community and Technical College
@@ -2746,7 +2948,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:02.602391'
-    - '2013-05-20 15:06:23.495752'
+    - '2013-05-21 03:02:51.419129'
     - 37.05680170000001
     - -88.65697139999999
     - true
@@ -2757,6 +2959,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - KCTCS - West Kentucky Community and Technical College Bookstore
   - - 761
     - 72
     - KCTCS - Gateway Community and Technical College
@@ -2773,7 +2977,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:02.847887'
-    - '2013-05-20 15:06:23.529495'
+    - '2013-05-21 03:02:51.431180'
     - 39.073892
     - -84.526062
     - true
@@ -2784,6 +2988,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - KCTCS - Gateway Community and Technical College Bookstore
   - - 762
     - 69
     - KCTCS - Madisonville Community College
@@ -2800,7 +3006,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:03.085897'
-    - '2013-05-20 15:06:23.560806'
+    - '2013-05-21 03:02:51.411850'
     - 37.362466
     - -87.51188599999999
     - true
@@ -2811,6 +3017,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - KCTCS - Madisonville Community College Bookstore
   - - 763
     - 401
     - KCTCS - Bluegrass Community & Technical College, Cooper Campus
@@ -2827,7 +3035,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:03.325445'
-    - '2013-05-20 15:06:23.596896'
+    - '2013-05-21 03:02:53.249510'
     - 38.0253994
     - -84.5009027
     - true
@@ -2838,6 +3046,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - KCTCS - Bluegrass Community & Technical College, Cooper  Campus Bookstore
   - - 764
     - 57
     - KCTCS - Elizabethtown Community and Technical College
@@ -2854,7 +3064,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:03.857777'
-    - '2013-05-20 15:06:23.684217'
+    - '2013-05-21 03:02:51.333478'
     - 37.6899247
     - -85.8813485
     - true
@@ -2865,6 +3075,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - KCTCS - Elizabethtown Community and Technical College Bookstore
   - - 765
     - 62
     - KCTCS - Jefferson Community and Technical College
@@ -2881,7 +3093,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:04.091442'
-    - '2013-05-20 15:06:23.715882'
+    - '2013-05-21 03:02:51.369853'
     - 38.2467037
     - -85.7531875
     - true
@@ -2892,6 +3104,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - KCTCS - Jefferson Community and Technical College Bookstore
   - - 766
     - 63
     - KCTCS - Jefferson Community and Technical College Southwest
@@ -2908,7 +3122,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:04.308571'
-    - '2013-05-20 15:06:23.748439'
+    - '2013-05-21 03:02:51.375852'
     - 38.1127946
     - -85.84402639999999
     - true
@@ -2919,6 +3133,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - KCTCS - Jefferson Community and Technical College Southwest Bookstore
   - - 767
     - 71
     - KCTCS - Hopkinsville Community College
@@ -2935,7 +3151,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:04.532543'
-    - '2013-05-20 15:06:23.784424'
+    - '2013-05-21 03:02:51.425233'
     - 36.880694
     - -87.4941845
     - true
@@ -2946,6 +3162,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - KCTCS - Hopkinsville Community College Bookstore
   - - 768
     - 77
     - Campbellsville University
@@ -2962,7 +3180,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:04.757276'
-    - '2013-05-20 15:06:23.819327'
+    - '2013-05-21 03:02:51.446374'
     - 37.3442904
     - -85.347983
     - true
@@ -2973,6 +3191,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Campbellsville University Bookstore
   - - 769
     - 261
     - Nicholls State University
@@ -2989,7 +3209,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:04.952529'
-    - '2013-05-20 15:06:23.854262'
+    - '2013-05-21 03:02:51.930587'
     - 29.795645
     - -90.8014767
     - true
@@ -3000,6 +3220,8 @@ schools:
     - false
     - false
     - 4
+    - false
+    - Nicholls State University Bookstore
   - - 770
     - 396
     - Louisiana State University
@@ -3016,7 +3238,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:05.156218'
-    - '2013-05-20 15:06:23.890755'
+    - '2013-05-21 03:02:53.210262'
     - 30.4906982
     - -91.0435062
     - true
@@ -3027,6 +3249,8 @@ schools:
     - true
     - false
     - 4
+    - true
+    - Barnes & Noble at LSU
   - - 771
     - 569
     - Tulane University
@@ -3043,7 +3267,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:05.392049'
-    - '2013-05-20 15:06:23.926045'
+    - '2013-05-21 03:02:53.900410'
     - 29.9397367
     - -90.1202086
     - true
@@ -3054,6 +3278,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Tulane University Bookstore
   - - 772
     - 14
     - Xavier University of Louisiana
@@ -3070,7 +3296,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:05.626835'
-    - '2013-05-20 15:06:23.958134'
+    - '2013-05-21 03:02:51.179616'
     - 29.9637363
     - -90.1052723
     - true
@@ -3081,6 +3307,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Xavier University of Louisiana Bookstore
   - - 773
     - 279
     - Delgado Community College
@@ -3097,7 +3325,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:05.866871'
-    - '2013-05-20 15:06:23.988417'
+    - '2013-05-21 03:02:51.996769'
     - 29.983885
     - -90.104817
     - true
@@ -3108,6 +3336,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Delgado Community College Bookstore
   - - 774
     - 107
     - Grambling State University
@@ -3124,7 +3354,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:06.139946'
-    - '2013-05-20 15:06:24.004766'
+    - '2013-05-21 03:02:51.540269'
     - 32.5215872
     - -92.7136307
     - true
@@ -3135,6 +3365,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Grambling State University Bookstore
   - - 775
     - 8001
     - Louisiana Tech University
@@ -3151,7 +3383,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:06.334189'
-    - '2013-05-20 15:06:24.034714'
+    - '2013-05-21 03:02:54.901952'
     - 32.5270368
     - -92.6491978
     - true
@@ -3162,6 +3394,8 @@ schools:
     - false
     - true
     - 4
+    - true
+    - Louisiana Tech University Bookstore
   - - 776
     - 638
     - Northwestern State University
@@ -3178,7 +3412,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:06.535768'
-    - '2013-05-20 15:06:24.064467'
+    - '2013-05-21 03:02:54.202140'
     - 31.7497163
     - -93.09658759999999
     - true
@@ -3189,6 +3423,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Northwestern State University Bookstore
   - - 777
     - 426
     - Babson College
@@ -3205,7 +3441,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:06.729036'
-    - '2013-05-20 15:06:24.102006'
+    - '2013-05-21 03:02:53.350885'
     - 42.2987084
     - -71.2595003
     - true
@@ -3216,6 +3452,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Babson College Bookstore
   - - 778
     - 482
     - Berklee College Of Music
@@ -3232,7 +3470,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:06.952398'
-    - '2013-05-20 15:06:24.136180'
+    - '2013-05-21 03:02:53.502790'
     - 42.3470892
     - -71.08844820000002
     - true
@@ -3243,6 +3481,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Berklee College Of Music Bookstore
   - - 779
     - 352
     - Bunker Hill Community College
@@ -3259,7 +3499,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:07.155445'
-    - '2013-05-20 15:06:24.168953'
+    - '2013-05-21 03:02:53.028808'
     - 42.3766005
     - -71.0693269
     - true
@@ -3270,6 +3510,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Bunker Hill Community College Bookstore
   - - 780
     - 99
     - Clark University
@@ -3286,7 +3528,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:07.433819'
-    - '2013-05-20 15:06:24.202780'
+    - '2013-05-21 03:02:51.532907'
     - 42.251389
     - -71.82058099999999
     - true
@@ -3297,6 +3539,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Clark University Bookstore
   - - 781
     - 484
     - Lesley University
@@ -3313,7 +3557,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:07.642010'
-    - '2013-05-20 15:06:24.239640'
+    - '2013-05-21 03:02:53.509459'
     - 42.387077
     - -71.1189875
     - true
@@ -3324,6 +3568,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Lesley University Bookstore
   - - 782
     - 629
     - Mount Wachusett Community College
@@ -3340,7 +3586,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:07.831628'
-    - '2013-05-20 15:06:24.267362'
+    - '2013-05-21 03:02:54.165736'
     - 42.5931424
     - -71.98697159999999
     - true
@@ -3351,6 +3597,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Mount Wachusett Community College Bookstore
   - - 783
     - 635
     - Simmons College
@@ -3367,7 +3615,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:08.062920'
-    - '2013-05-21 02:35:59.993846'
+    - '2013-05-21 03:02:54.188303'
     - 42.338939
     - -71.100441
     - true
@@ -3378,6 +3626,8 @@ schools:
     - false
     - false
     - 0
+    - false
+    - Simmons College Bookstore
   - - 784
     - 729
     - Tufts University
@@ -3394,7 +3644,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:08.661573'
-    - '2013-05-20 15:06:24.318007'
+    - '2013-05-21 03:02:54.571487'
     - 42.4184296
     - -71.1061639
     - true
@@ -3405,6 +3655,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Tufts University Bookstore
   - - 785
     - 795
     - Westfield State University
@@ -3421,7 +3673,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:08.866356'
-    - '2013-05-20 15:06:24.351231'
+    - '2013-05-21 03:02:54.881761'
     - 42.12961480000001
     - -72.7953236
     - true
@@ -3432,6 +3684,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Westfield State College Bookstore
   - - 786
     - 98
     - Worcester Polytechnic Institute
@@ -3448,7 +3702,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:09.064951'
-    - '2013-05-20 15:06:24.417338'
+    - '2013-05-21 03:02:51.526308'
     - 42.2743398
     - -71.8097734
     - true
@@ -3459,6 +3713,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Worcester Polytechnic Institute Bookstore
   - - 787
     - 752
     - Bentley University
@@ -3475,7 +3731,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:09.255150'
-    - '2013-05-20 15:06:24.458339'
+    - '2013-05-21 03:02:54.666733'
     - 42.38769629999999
     - -71.2202132
     - true
@@ -3486,6 +3742,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Barnes and Noble at Bentley University
   - - 788
     - 703
     - Brandeis University
@@ -3502,7 +3760,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:09.576524'
-    - '2013-05-20 15:06:24.503496'
+    - '2013-05-21 03:02:54.468098'
     - 42.3662483
     - -71.2588463
     - true
@@ -3513,6 +3771,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Brandeis University Bookstore
   - - 789
     - 487
     - Northern Essex Community College
@@ -3529,7 +3789,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:09.826437'
-    - '2013-05-20 15:06:24.548945'
+    - '2013-05-21 03:02:53.517084'
     - 42.79766
     - -71.05117969999999
     - true
@@ -3540,6 +3800,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Northern Essex Community College Bookstore
   - - 790
     - 714
     - Johns Hopkins University
@@ -3556,7 +3818,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:10.055438'
-    - '2013-05-20 15:06:24.609042'
+    - '2013-05-21 03:02:54.522001'
     - 39.32834649999999
     - -76.61626489999999
     - true
@@ -3567,6 +3829,8 @@ schools:
     - true
     - false
     - 1
+    - true
+    - Barnes & Noble Johns Hopkins
   - - 791
     - 777
     - Loyola University Maryland
@@ -3583,7 +3847,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:10.319612'
-    - '2013-05-20 15:06:24.651533'
+    - '2013-05-21 03:02:54.810360'
     - 39.3456808
     - -76.6186427
     - true
@@ -3594,6 +3858,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Loyola University Maryland Bookstore
   - - 792
     - 412
     - McDaniel College
@@ -3610,7 +3876,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:10.586526'
-    - '2013-05-20 15:06:24.720364'
+    - '2013-05-21 03:02:53.296536'
     - 39.5829886
     - -77.0036763
     - true
@@ -3621,6 +3887,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - McDaniel College Bookstore
   - - 793
     - 121
     - University of Baltimore, Market Place
@@ -3637,7 +3905,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:10.800556'
-    - '2013-05-20 15:06:24.743594'
+    - '2013-05-21 03:02:51.620611'
     - 39.305145
     - -76.617282
     - true
@@ -3648,6 +3916,8 @@ schools:
     - true
     - false
     - 4
+    - true
+    - University of Baltimore Market Place Bookstore
   - - 794
     - 639
     - University Of Maryland/Baltimore
@@ -3664,7 +3934,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:11.036226'
-    - '2013-05-20 15:06:24.812425'
+    - '2013-05-21 03:02:54.209043'
     - 39.2921483
     - -76.62714509999999
     - true
@@ -3675,6 +3945,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - University Of Maryland/Baltimore Bookstore
   - - 795
     - 29
     - Hood College Bookstore
@@ -3691,7 +3963,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:11.263691'
-    - '2013-05-20 15:06:24.863123'
+    - '2013-05-21 03:02:51.230692'
     - 39.4213829
     - -77.4202024
     - true
@@ -3702,6 +3974,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Hood College Bookstore
   - - 796
     - 189
     - Universities at Shady Grove
@@ -3718,7 +3992,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:11.456737'
-    - '2013-05-20 15:06:24.913485'
+    - '2013-05-21 03:02:51.690293'
     - 39.093046
     - -77.200113
     - true
@@ -3729,6 +4003,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Universities at Shady Grove Bookstore
   - - 797
     - 370
     - University of Maryland, College Park
@@ -3745,7 +4021,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:12.272469'
-    - '2013-05-20 15:06:25.034803'
+    - '2013-05-21 03:02:53.067684'
     - 38.9896967
     - -76.93776
     - true
@@ -3756,6 +4032,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - University of Maryland, College Park Bookstore
   - - 798
     - 683
     - Chesapeake College
@@ -3772,7 +4050,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:12.503180'
-    - '2013-05-20 15:06:25.066296'
+    - '2013-05-21 03:02:54.393474'
     - 38.95246179999999
     - -76.08453469999999
     - true
@@ -3783,6 +4061,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Chesapeake College Bookstore
   - - 799
     - 557
     - University of Baltimore
@@ -3799,7 +4079,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:12.744723'
-    - '2013-05-20 15:06:25.133920'
+    - '2013-05-21 03:02:53.861050'
     - 39.3065708
     - -76.6190953
     - true
@@ -3810,6 +4090,8 @@ schools:
     - true
     - false
     - 1
+    - true
+    - Barnes & Noble at University of Baltimore
   - - 800
     - 8002
     - Coppin State University
@@ -3826,7 +4108,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:12.962331'
-    - '2013-05-20 15:06:25.179136'
+    - '2013-05-21 03:02:54.909212'
     - 39.3100039
     - -76.65878889999999
     - true
@@ -3837,6 +4119,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Coppin State University Bookstore
   - - 801
     - 404
     - Notre Dame of Maryland University
@@ -3853,7 +4137,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:13.198248'
-    - '2013-05-20 15:06:25.237394'
+    - '2013-05-21 03:02:53.268229'
     - 39.351329
     - -76.620005
     - true
@@ -3864,6 +4148,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Notre Dame of Maryland University Bookstore
   - - 802
     - 641
     - Wor-Wic Community College
@@ -3880,7 +4166,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:13.474002'
-    - '2013-05-20 15:06:25.280685'
+    - '2013-05-21 03:02:54.214826'
     - 38.373672
     - -75.4997313
     - true
@@ -3891,6 +4177,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Wor-Wic Community College Bookstore
   - - 803
     - 743
     - The University of Michigan
@@ -3907,7 +4195,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:13.718025'
-    - '2013-05-20 15:06:25.343620'
+    - '2013-05-21 03:02:54.624703'
     - 42.2747647
     - -83.7407982
     - true
@@ -3918,6 +4206,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Barnes & Noble @ The University of Michigan
   - - 804
     - 489
     - Lawrence Technological University
@@ -3934,7 +4224,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:13.930436'
-    - '2013-05-20 15:06:25.379088'
+    - '2013-05-21 03:02:53.528862'
     - 42.47304829999999
     - -83.2509558
     - true
@@ -3945,6 +4235,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Lawrence Technological University Bookstore
   - - 805
     - 284
     - Washtenaw Community College
@@ -3961,7 +4253,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:14.137231'
-    - '2013-05-20 15:06:25.425312'
+    - '2013-05-21 03:02:52.032547'
     - 42.2618432
     - -83.66213320000001
     - true
@@ -3972,6 +4264,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Washtenaw Community College Bookstore
   - - 806
     - 740
     - Wayne State University
@@ -3988,7 +4282,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:14.326169'
-    - '2013-05-20 15:06:25.481322'
+    - '2013-05-21 03:02:54.610084'
     - 42.3568108
     - -83.06487969999999
     - true
@@ -3999,6 +4293,8 @@ schools:
     - true
     - false
     - 3
+    - true
+    - Wayne State University Bookstore
   - - 807
     - 428
     - Saginaw Valley State University
@@ -4015,7 +4311,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:14.585724'
-    - '2013-05-20 15:06:25.516531'
+    - '2013-05-21 03:02:53.357750'
     - 43.5145291
     - -83.96370759999999
     - true
@@ -4026,6 +4322,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Saginaw Valley State University Bookstore
   - - 808
     - 213
     - University of Michigan, Flint
@@ -4042,7 +4340,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:14.833820'
-    - '2013-05-20 15:06:25.550231'
+    - '2013-05-21 03:02:51.733644'
     - 43.0171714
     - -83.6916091
     - true
@@ -4053,6 +4351,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - University of Michigan/Flint Bookstore
   - - 809
     - 37
     - Muskegon Community College
@@ -4069,7 +4369,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:15.135486'
-    - '2013-05-20 15:06:25.595312'
+    - '2013-05-21 03:02:51.269430'
     - 43.2481868
     - -86.19389939999999
     - true
@@ -4080,6 +4380,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Muskegon Community College Bookstore
   - - 810
     - 537
     - Lake Michigan College
@@ -4096,7 +4398,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:15.362728'
-    - '2013-05-20 15:06:25.649841'
+    - '2013-05-21 03:02:53.761803'
     - 42.089608
     - -86.39245
     - true
@@ -4107,6 +4409,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Lake Michigan College Bookstore
   - - 811
     - 390
     - Ferris State University
@@ -4123,7 +4427,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:15.597913'
-    - '2013-05-20 15:06:25.685857'
+    - '2013-05-21 03:02:53.170045'
     - 43.69065190000001
     - -85.4784552
     - true
@@ -4134,6 +4438,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Ferris State University Bookstore
   - - 812
     - 30
     - Marygrove College
@@ -4150,7 +4456,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:15.796418'
-    - '2013-05-20 15:06:25.722058'
+    - '2013-05-21 03:02:51.239126'
     - 42.4154259
     - -83.15553299999999
     - true
@@ -4161,6 +4467,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Marygrove College Bookstore
   - - 813
     - 229
     - Walsh College
@@ -4177,7 +4485,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:16.129548'
-    - '2013-05-21 02:35:59.997506'
+    - '2013-05-21 03:02:51.802313'
     - 42.5737891
     - -83.1479975
     - true
@@ -4188,6 +4496,8 @@ schools:
     - false
     - false
     - 0
+    - false
+    - Walsh College Bookstore
   - - 814
     - 35
     - Lake Superior State University
@@ -4204,7 +4514,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:16.332657'
-    - '2013-05-20 15:06:25.770608'
+    - '2013-05-21 03:02:51.259953'
     - 46.4927425
     - -84.3645043
     - true
@@ -4215,6 +4525,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Lake Superior State University Bookstore
   - - 815
     - 680
     - University of Michigan, North Campus
@@ -4231,7 +4543,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:16.532314'
-    - '2013-05-20 15:06:25.802913'
+    - '2013-05-21 03:02:54.380152'
     - 42.291334
     - -83.717569
     - true
@@ -4242,6 +4554,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - University of Michigan/North Campus Bookstore
   - - 816
     - 417
     - Saint Mary's University Of Minnesota
@@ -4258,7 +4572,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:16.762844'
-    - '2013-05-20 15:06:25.840363'
+    - '2013-05-21 03:02:53.315056'
     - 44.042849
     - -91.69461400000002
     - true
@@ -4269,6 +4583,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Saint Mary's Univ. Of Minnesota Bookstore
   - - 817
     - 373
     - Minnesota State University at Mankato
@@ -4285,7 +4601,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:16.992141'
-    - '2013-05-20 15:06:25.876795'
+    - '2013-05-21 03:02:53.075765'
     - 44.1679628
     - -94.01671569999999
     - true
@@ -4296,6 +4612,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Minnesota State University at Mankato Bookstore
   - - 818
     - 592
     - Augsburg College
@@ -4312,7 +4630,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:17.226382'
-    - '2013-05-20 15:06:25.909846'
+    - '2013-05-21 03:02:53.964282'
     - 44.9672269
     - -93.2409668
     - true
@@ -4323,6 +4641,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Augsburg College Bookstore
   - - 819
     - 21
     - Southwest Minnesota State University
@@ -4339,7 +4659,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:17.499305'
-    - '2013-05-20 15:06:25.972472'
+    - '2013-05-21 03:02:51.202097'
     - 44.44716409999999
     - -95.7583385
     - true
@@ -4350,6 +4670,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Southwest MN State University Bookstore
   - - 820
     - 790
     - Northwest Missouri State University
@@ -4366,7 +4688,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:17.691346'
-    - '2013-05-20 15:06:26.004039'
+    - '2013-05-21 03:02:54.854222'
     - 40.3519243
     - -94.8838091
     - true
@@ -4377,6 +4699,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Northwest Missouri State University Bookstore
   - - 821
     - 533
     - Rockhurst University
@@ -4393,7 +4717,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:17.993235'
-    - '2013-05-20 15:06:26.038289'
+    - '2013-05-21 03:02:53.742201'
     - 39.0308145
     - -94.5728623
     - true
@@ -4404,6 +4728,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Rockhurst University Bookstore
   - - 822
     - 681
     - Missouri Western State University
@@ -4420,7 +4746,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:18.227188'
-    - '2013-05-20 15:06:26.070744'
+    - '2013-05-21 03:02:54.386033'
     - 39.7576384
     - -94.78551759999999
     - true
@@ -4431,6 +4757,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Missouri Western State University Bookstore
   - - 823
     - 657
     - Saint Louis University
@@ -4447,7 +4775,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:18.483568'
-    - '2013-05-20 15:06:26.107446'
+    - '2013-05-21 03:02:54.286192'
     - 38.633716
     - -90.233121
     - true
@@ -4458,6 +4786,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Saint Louis University Bookstore
   - - 824
     - 204
     - Mississippi State
@@ -4474,7 +4804,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:18.791534'
-    - '2013-05-20 15:06:26.149907'
+    - '2013-05-21 03:02:51.712478'
     - 33.456377
     - -88.795568
     - true
@@ -4485,6 +4815,8 @@ schools:
     - true
     - false
     - 1
+    - true
+    - Barnes & Noble @ Mississippi State
   - - 825
     - 45
     - University of Southern Mississippi
@@ -4501,7 +4833,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:19.036295'
-    - '2013-05-20 15:06:26.191914'
+    - '2013-05-21 03:02:51.289195'
     - 31.3226305
     - -89.3292982
     - true
@@ -4512,6 +4844,8 @@ schools:
     - false
     - false
     - 4
+    - true
+    - University of Southern Mississippi Bookstore
   - - 826
     - 15
     - William Carey University
@@ -4528,7 +4862,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:19.260978'
-    - '2013-05-20 15:06:26.231513'
+    - '2013-05-21 03:02:51.186046'
     - 31.305386
     - -89.289869
     - true
@@ -4539,6 +4873,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - William Carey University Bookstore
   - - 827
     - 317
     - University Of Mississippi - Ole Miss
@@ -4555,7 +4891,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:19.452525'
-    - '2013-05-20 15:06:26.589357'
+    - '2013-05-21 03:02:52.882906'
     - 
     - 
     - false
@@ -4566,6 +4902,8 @@ schools:
     - true
     - false
     - 1
+    - true
+    - Barnes & Noble @ Ole Miss
   - - 828
     - 413
     - Rowan-Cabarrus Community College, North Campus
@@ -4582,7 +4920,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:19.655331'
-    - '2013-05-20 15:06:26.629404'
+    - '2013-05-21 03:02:53.302559'
     - 35.6749193
     - -80.5029208
     - true
@@ -4593,6 +4931,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Rowan-Cabarrus Community College - North Campus Bookstore
   - - 829
     - 276
     - University of North Carolina at Charlotte
@@ -4609,7 +4949,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:19.948465'
-    - '2013-05-20 15:06:26.669616'
+    - '2013-05-21 03:02:51.976211'
     - 35.3038368
     - -80.72990700000001
     - true
@@ -4620,6 +4960,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - University of North Carolina at Charlotte Bookstore
   - - 830
     - 416
     - Elon University
@@ -4636,7 +4978,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:20.194203'
-    - '2013-05-20 15:06:26.703332'
+    - '2013-05-21 03:02:53.308822'
     - 36.101537
     - -79.506895
     - true
@@ -4647,6 +4989,8 @@ schools:
     - false
     - false
     - 4
+    - true
+    - Barnes & Noble at Elon University
   - - 831
     - 684
     - University Of North Carolina at Greensboro
@@ -4663,7 +5007,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:20.473955'
-    - '2013-05-20 15:06:26.734039'
+    - '2013-05-21 03:02:54.401315'
     - 36.0679971
     - -79.81130689999999
     - true
@@ -4674,6 +5018,8 @@ schools:
     - true
     - false
     - 1
+    - true
+    - University Of North Carolina at Greensboro Bookstore
   - - 832
     - 567
     - Mount Olive College
@@ -4690,7 +5036,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:20.707449'
-    - '2013-05-20 15:06:26.768343'
+    - '2013-05-21 03:02:53.891377'
     - 35.2082274
     - -78.0711372
     - true
@@ -4701,6 +5047,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Mount Olive College Book Bookstore
   - - 833
     - 277
     - Sandhills Community College
@@ -4717,7 +5065,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:20.905421'
-    - '2013-05-20 15:06:26.799746'
+    - '2013-05-21 03:02:51.983055'
     - 35.2189166
     - -79.4063151
     - true
@@ -4728,6 +5076,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Sandhills Community College Bookstore
   - - 834
     - 8008
     - Central Piedmont Community College, Central Campus
@@ -4744,7 +5094,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:21.104672'
-    - '2013-05-20 15:06:26.832631'
+    - '2013-05-21 03:02:54.932504'
     - 35.2154341
     - -80.8298762
     - true
@@ -4755,6 +5105,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - CPCC Bookstore- Central Bookstore
   - - 835
     - 8009
     - Central Piedmont Community College, Levine Campus
@@ -4771,7 +5123,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:21.295834'
-    - '2013-05-20 15:06:26.863795'
+    - '2013-05-21 03:02:54.939768'
     - 35.1064281
     - -80.69383979999999
     - true
@@ -4782,6 +5134,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - CPCC Bookstore- Levine Bookstore
   - - 836
     - 470
     - High Point University
@@ -4798,7 +5152,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:21.542303'
-    - '2013-05-20 15:06:26.898938'
+    - '2013-05-21 03:02:53.472173'
     - 35.993608
     - -80.00614499999999
     - true
@@ -4809,6 +5163,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - High Point University Bookstore
   - - 837
     - 91
     - Campbell University
@@ -4825,7 +5181,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:21.737734'
-    - '2013-05-20 15:06:26.932261'
+    - '2013-05-21 03:02:51.498312'
     - 35.408155
     - -78.738642
     - true
@@ -4836,6 +5192,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Campbell University Bookstore
   - - 838
     - 282
     - University of North Carolina at Wilmington
@@ -4852,7 +5210,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:21.943772'
-    - '2013-05-20 15:06:26.968780'
+    - '2013-05-21 03:02:52.009879'
     - 34.2274248
     - -77.87917929999999
     - true
@@ -4863,6 +5221,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - University of North Carolina at Wilmington Bookstore
   - - 839
     - 607
     - Minot State University
@@ -4879,7 +5239,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:22.241808'
-    - '2013-05-20 15:06:27.002045'
+    - '2013-05-21 03:02:53.994352'
     - 48.2255313
     - -101.2884363
     - true
@@ -4890,6 +5250,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Minot State University Bookstore
   - - 840
     - 47
     - Dartmouth College
@@ -4906,7 +5268,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:22.444220'
-    - '2013-05-20 15:06:27.043111'
+    - '2013-05-21 03:02:51.296338'
     - 43.7018454
     - -72.2895527
     - true
@@ -4917,6 +5279,8 @@ schools:
     - true
     - false
     - 1
+    - true
+    - Dartmouth Bookstore
   - - 841
     - 235
     - University of New Hampshire
@@ -4933,7 +5297,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:22.672333'
-    - '2013-05-20 15:06:27.079240'
+    - '2013-05-21 03:02:51.835544'
     - 43.1345527
     - -70.9300277
     - true
@@ -4944,6 +5308,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - University of New Hampshire Bookstore
   - - 842
     - 732
     - Kean University
@@ -4960,7 +5326,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:22.914100'
-    - '2013-05-20 15:06:27.114862'
+    - '2013-05-21 03:02:54.580072'
     - 40.681039
     - -74.235569
     - true
@@ -4971,6 +5337,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Kean University Bookstore
   - - 843
     - 409
     - Rutgers the State University of New Jersey Newark Campus
@@ -4987,7 +5355,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:23.108638'
-    - '2013-05-20 15:06:27.150545'
+    - '2013-05-21 03:02:53.289679'
     - 40.74047789999999
     - -74.1772929
     - true
@@ -4998,6 +5366,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Rutgers the State University of New Jersey Newark Campus Bookstore
   - - 844
     - 663
     - Rutgers University - Busch Campus
@@ -5014,7 +5384,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:23.327639'
-    - '2013-05-20 15:06:27.169086'
+    - '2013-05-21 03:02:54.299387'
     - 40.5234078
     - -74.458721
     - true
@@ -5025,6 +5395,8 @@ schools:
     - false
     - true
     - 2
+    - true
+    - Rutgers University - Bush Campus Convenience
   - - 845
     - 497
     - Camden County College
@@ -5041,7 +5413,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:23.556756'
-    - '2013-05-20 15:06:27.201786'
+    - '2013-05-21 03:02:53.560431'
     - 39.7843928
     - -75.04814429999999
     - true
@@ -5052,6 +5424,8 @@ schools:
     - false
     - true
     - 2
+    - false
+    - Camden County College Bookstore
   - - 846
     - 759
     - College Of New Jersey
@@ -5068,7 +5442,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:23.783916'
-    - '2013-05-20 15:06:27.253390'
+    - '2013-05-21 03:02:54.712741'
     - 40.2700304
     - -74.7771442
     - true
@@ -5079,6 +5453,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - College Of New Jersey Bookstore
   - - 847
     - 527
     - Gloucester County College
@@ -5095,7 +5471,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:24.014514'
-    - '2013-05-20 15:06:27.285755'
+    - '2013-05-21 03:02:53.710251'
     - 39.7807887
     - -75.121218
     - true
@@ -5106,6 +5482,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Gloucester County College Bookstore
   - - 848
     - 619
     - Rowan University
@@ -5122,7 +5500,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:24.256078'
-    - '2013-05-20 15:06:27.353385'
+    - '2013-05-21 03:02:54.108893'
     - 39.7050109
     - -75.11292519999999
     - true
@@ -5133,6 +5511,8 @@ schools:
     - true
     - false
     - 3
+    - true
+    - ! 'Barnes & Noble at Rowan University Bookstore '
   - - 849
     - 8006
     - Rutgers University Camden Campus
@@ -5149,7 +5529,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:24.499315'
-    - '2013-05-20 15:06:27.395312'
+    - '2013-05-21 03:02:54.924602'
     - 39.94686
     - -75.11866599999999
     - true
@@ -5160,6 +5540,8 @@ schools:
     - true
     - false
     - 3
+    - false
+    - University District Bookstore
   - - 850
     - 89
     - Cumberland County College
@@ -5176,7 +5558,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:24.729665'
-    - '2013-05-20 15:06:27.426659'
+    - '2013-05-21 03:02:51.485574'
     - 39.4415472
     - -75.054934
     - true
@@ -5187,6 +5569,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Cumberland County College Bookstore
   - - 851
     - 660
     - ! 'Rutgers University '
@@ -5203,7 +5587,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:24.935681'
-    - '2013-05-20 15:06:27.467265'
+    - '2013-05-21 03:02:54.291984'
     - 40.5688472
     - -74.4175301
     - true
@@ -5214,6 +5598,8 @@ schools:
     - true
     - false
     - 2
+    - true
+    - Rutgers University Bookstore
   - - 852
     - 613
     - Eastern New Mexico University
@@ -5230,7 +5616,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:25.164912'
-    - '2013-05-20 15:06:27.502938'
+    - '2013-05-21 03:02:54.020192'
     - 34.1861922
     - -103.3343978
     - true
@@ -5241,6 +5627,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Eastern New Mexico University Bookstore
   - - 853
     - 688
     - New Mexico State University
@@ -5257,7 +5645,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:25.413647'
-    - '2013-05-20 15:06:27.543529'
+    - '2013-05-21 03:02:54.416138'
     - 32.2850037
     - -106.7512614
     - true
@@ -5268,6 +5656,8 @@ schools:
     - true
     - false
     - 2
+    - true
+    - New Mexico State University - Main Campus Bookstore
   - - 854
     - 689
     - New Mexico State University- Dona Ana Community College
@@ -5284,7 +5674,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:25.648176'
-    - '2013-05-20 15:06:27.577062'
+    - '2013-05-21 03:02:54.422228'
     - 32.2850037
     - -106.7512614
     - true
@@ -5295,6 +5685,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - New Mexico State University- Dona Ana Community College Bookstore
   - - 855
     - 774
     - University Of Nevada Las Vegas
@@ -5311,7 +5703,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:25.951193'
-    - '2013-05-20 15:06:27.614841'
+    - '2013-05-21 03:02:54.801460'
     - 36.109511
     - -115.141935
     - true
@@ -5322,6 +5714,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - University Of Nevada/Las Vegas Bookstore
   - - 856
     - 738
     - SUNY Binghamton University
@@ -5338,7 +5732,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:26.208537'
-    - '2013-05-20 15:06:27.654680'
+    - '2013-05-21 03:02:54.602448'
     - 42.09542
     - -75.967455
     - true
@@ -5349,6 +5743,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Binghamton University Bookstore
   - - 857
     - 565
     - SUNY Delhi
@@ -5365,7 +5761,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:26.432642'
-    - '2013-05-20 15:06:27.745545'
+    - '2013-05-21 03:02:53.884275'
     - 42.27814009999999
     - -74.91599459999999
     - true
@@ -5376,6 +5772,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - SUNY Delhi Bookstore
   - - 858
     - 549
     - Alfred University
@@ -5392,7 +5790,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:26.627623'
-    - '2013-05-20 15:06:27.788799'
+    - '2013-05-21 03:02:53.791371'
     - 42.2542366
     - -77.7905509
     - true
@@ -5403,6 +5801,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Alfred University Bookstore
   - - 859
     - 760
     - Niagara County Community College
@@ -5419,7 +5819,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:26.896890'
-    - '2013-05-20 15:06:27.822951'
+    - '2013-05-21 03:02:54.718595'
     - 43.149897
     - -78.875776
     - true
@@ -5430,6 +5830,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Barnes and Noble at NCCC Bookstore
   - - 860
     - 674
     - D'Youville College
@@ -5446,7 +5848,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:27.146160'
-    - '2013-05-20 15:06:27.857062'
+    - '2013-05-21 03:02:54.337543'
     - 42.90226089999999
     - -78.8899869
     - true
@@ -5457,6 +5859,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - D'Youville College Bookstore
   - - 861
     - 768
     - Genesee Community College
@@ -5473,7 +5877,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:27.375305'
-    - '2013-05-20 15:06:27.896725'
+    - '2013-05-21 03:02:54.753835'
     - 43.0158518
     - -78.1404397
     - true
@@ -5484,6 +5888,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Genesee Community College Bookstore
   - - 862
     - 749
     - Niagara University
@@ -5500,7 +5906,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:27.586130'
-    - '2013-05-20 15:06:27.930009'
+    - '2013-05-21 03:02:54.652797'
     - 43.1386107
     - -79.0372189
     - true
@@ -5511,6 +5917,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Niagara University Bookstore
   - - 863
     - 701
     - Adelphi University
@@ -5527,7 +5935,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:27.877567'
-    - '2013-05-20 15:06:27.970034'
+    - '2013-05-21 03:02:54.461044'
     - 40.7220719
     - -73.6506244
     - true
@@ -5538,6 +5946,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Adelphi University Bookstore
   - - 864
     - 293
     - CUNY Borough of Manhattan Community College
@@ -5554,7 +5964,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:28.105665'
-    - '2013-05-20 15:06:28.005499'
+    - '2013-05-21 03:02:52.087742'
     - 40.717367
     - -74.01217799999999
     - true
@@ -5565,6 +5975,8 @@ schools:
     - false
     - false
     - 4
+    - false
+    - Borough of Manhattan Community College Bookstore
   - - 865
     - 431
     - CUNY College of Staten Island
@@ -5581,7 +5993,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:28.303763'
-    - '2013-05-20 15:06:28.042808'
+    - '2013-05-21 03:02:53.372486'
     - 40.6012463
     - -74.1503962
     - true
@@ -5592,6 +6004,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - College of Staten Island Bookstore
   - - 866
     - 709
     - Dowling College
@@ -5608,7 +6022,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:28.500233'
-    - '2013-05-20 15:06:28.075168'
+    - '2013-05-21 03:02:54.491315'
     - 40.7395576
     - -73.1490626
     - true
@@ -5619,6 +6033,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Dowling College Bookstore
   - - 867
     - 712
     - Fashion Institute of Technology
@@ -5635,7 +6051,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:28.727812'
-    - '2013-05-20 15:06:28.108455'
+    - '2013-05-21 03:02:54.509423'
     - 40.7474511
     - -73.9940503
     - true
@@ -5646,6 +6062,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Fashion Institute of Technology Bookstore
   - - 868
     - 736
     - Fordham University - Lincoln Center
@@ -5662,7 +6080,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:28.932044'
-    - '2013-05-20 15:06:28.143625'
+    - '2013-05-21 03:02:54.595385'
     - 40.7700404
     - -73.98467409999999
     - true
@@ -5673,6 +6091,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Fordham University/Lincoln Center Bookstore
   - - 869
     - 539
     - Fordham University - Rose Hill
@@ -5689,7 +6109,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:29.123957'
-    - '2013-05-20 15:06:28.176005'
+    - '2013-05-21 03:02:53.769457'
     - 40.8618662
     - -73.8855919
     - true
@@ -5700,6 +6120,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Fordham University/Rose Hill Bookstore
   - - 870
     - 292
     - CUNY Hostos Community College
@@ -5716,7 +6138,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:29.699223'
-    - '2013-05-20 15:06:28.211110'
+    - '2013-05-21 03:02:52.067666'
     - 40.8181119
     - -73.9275041
     - true
@@ -5727,6 +6149,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Hostos Community College Bookstore
   - - 871
     - 285
     - Iona College
@@ -5743,7 +6167,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:29.962959'
-    - '2013-05-20 15:06:28.248402'
+    - '2013-05-21 03:02:52.038634'
     - 40.9266099
     - -73.786035
     - true
@@ -5754,6 +6178,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Iona College Bookstore
   - - 872
     - 299
     - CUNY LaGuardia Community College
@@ -5770,7 +6196,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:30.275523'
-    - '2013-05-20 15:06:28.278759'
+    - '2013-05-21 03:02:52.104816'
     - 40.743951
     - -73.93515400000001
     - true
@@ -5781,6 +6207,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - LaGuardia Community College Bookstore
   - - 873
     - 200
     - Stern College, Yeshiva Univ, Cardozo Law, Ferkauf Graduate
@@ -5797,7 +6225,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:30.559574'
-    - '2013-05-20 15:06:28.317320'
+    - '2013-05-21 03:02:51.706618'
     - 40.7387324
     - -73.9918636
     - true
@@ -5808,6 +6236,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Main Store (Stern College, Yeshiva Univ, Cardozo Law, Ferkauf Graduate)
   - - 874
     - 10
     - ! 'CUNY Medgar Evers College '
@@ -5824,7 +6254,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:30.793678'
-    - '2013-05-20 15:06:28.355805'
+    - '2013-05-21 03:02:51.157471'
     - 40.665943
     - -73.95643799999999
     - true
@@ -5835,6 +6265,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Medgar Evers College Bookstore
   - - 875
     - 741
     - Nassau Community College
@@ -5851,7 +6283,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:31.072641'
-    - '2013-05-20 15:06:28.391673'
+    - '2013-05-21 03:02:54.616175'
     - 40.72686729999999
     - -73.6340075
     - true
@@ -5862,6 +6294,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Nassau Community College Bookstore
   - - 876
     - 271
     - Pace University, Pleasantville
@@ -5878,7 +6312,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:31.366458'
-    - '2013-05-20 15:06:28.429282'
+    - '2013-05-21 03:02:51.967586'
     - 41.128377
     - -73.808278
     - true
@@ -5889,6 +6323,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Pace University- Pleasantville Bookstore
   - - 877
     - 723
     - CUNY Queensborough Community College
@@ -5905,7 +6341,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:31.634885'
-    - '2013-05-20 15:06:28.458685'
+    - '2013-05-21 03:02:54.556308'
     - 40.7519469
     - -73.76096590000002
     - true
@@ -5916,6 +6352,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Queensborough Community College Bookstore
   - - 878
     - 242
     - SUNY Stony Brook University
@@ -5932,7 +6370,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:32.045185'
-    - '2013-05-20 15:06:28.494394'
+    - '2013-05-21 03:02:51.851974'
     - 40.9256538
     - -73.1409429
     - true
@@ -5943,6 +6381,8 @@ schools:
     - false
     - false
     - 4
+    - true
+    - Stony Brook University Bookstore
   - - 879
     - 395
     - Vassar College
@@ -5959,7 +6399,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:32.282357'
-    - '2013-05-20 15:06:28.557843'
+    - '2013-05-21 03:02:53.203829'
     - 41.6860037
     - -73.8974478
     - true
@@ -5970,6 +6410,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Vassar College Bookstore
   - - 880
     - 290
     - CUNY York College
@@ -5986,7 +6428,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:32.496753'
-    - '2013-05-20 15:06:28.591340'
+    - '2013-05-21 03:02:52.054147'
     - 40.7028206
     - -73.7957759
     - true
@@ -5997,6 +6439,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - York College Bookstore
   - - 881
     - 746
     - Nazareth College
@@ -6013,7 +6457,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:32.756751'
-    - '2013-05-20 15:06:28.629625'
+    - '2013-05-21 03:02:54.638139'
     - 43.1004265
     - -77.515148
     - true
@@ -6024,6 +6468,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Nazareth College Bookstore
   - - 882
     - 747
     - St. John Fisher College
@@ -6040,7 +6486,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:32.993969'
-    - '2013-05-20 15:06:28.664411'
+    - '2013-05-21 03:02:54.644854'
     - 43.116105
     - -77.511408
     - true
@@ -6051,6 +6497,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - St. John Fisher Bookstore
   - - 883
     - 763
     - SUNY Brockport
@@ -6067,7 +6515,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:33.218813'
-    - '2013-05-20 15:06:28.705945'
+    - '2013-05-21 03:02:54.733820'
     - 43.2113913
     - -77.9547245
     - true
@@ -6078,6 +6526,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - SUNY / Brockport Bookstore
   - - 884
     - 744
     - University Of Rochester
@@ -6094,7 +6544,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:33.468979'
-    - '2013-05-20 15:06:28.744834'
+    - '2013-05-21 03:02:54.630503'
     - 43.1297606
     - -77.628613
     - true
@@ -6105,6 +6555,8 @@ schools:
     - false
     - false
     - 4
+    - true
+    - University Of Rochester Bookstore
   - - 885
     - 511
     - Le Moyne College
@@ -6121,7 +6573,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:33.713644'
-    - '2013-05-20 15:06:28.791658'
+    - '2013-05-21 03:02:53.628024'
     - 43.047964
     - -76.09470499999999
     - true
@@ -6132,6 +6584,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Le Moyne College Bookstore
   - - 886
     - 337
     - SUNY Buffalo State College
@@ -6148,7 +6602,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:33.906324'
-    - '2013-05-20 15:06:28.832750'
+    - '2013-05-21 03:02:52.983409'
     - 42.9326142
     - -78.8769959
     - true
@@ -6159,6 +6613,8 @@ schools:
     - true
     - false
     - 4
+    - true
+    - Buffalo State College Bookstore
   - - 887
     - 315
     - CUNY Brooklyn College
@@ -6175,7 +6631,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:34.148529'
-    - '2013-05-20 15:06:28.874153'
+    - '2013-05-21 03:02:52.158746'
     - 40.6302756
     - -73.9555449
     - true
@@ -6186,6 +6642,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Brooklyn College Bookstore
   - - 888
     - 722
     - Long Island University, C.W. Post
@@ -6202,7 +6660,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:34.420724'
-    - '2013-05-20 15:06:28.966780'
+    - '2013-05-21 03:02:54.549391'
     - 40.8171154
     - -73.5977284
     - true
@@ -6213,6 +6671,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - LIU Post Campus Bookstore
   - - 889
     - 711
     - SUNY Farmingdale State College
@@ -6229,7 +6689,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:34.688651'
-    - '2013-05-20 15:06:28.996931'
+    - '2013-05-21 03:02:54.503548'
     - 40.7427642
     - -73.4359661
     - true
@@ -6240,6 +6700,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Farmingdale State College (SUNY) Bookstore
   - - 890
     - 308
     - Hofstra University
@@ -6256,7 +6718,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:34.887050'
-    - '2013-05-20 15:06:29.036424'
+    - '2013-05-21 03:02:52.130392'
     - 40.7138382
     - -73.602843
     - true
@@ -6267,6 +6729,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Hofstra University Bookstore
   - - 891
     - 716
     - CUNY John Jay College
@@ -6283,7 +6747,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:35.088108'
-    - '2013-05-20 15:06:29.068945'
+    - '2013-05-21 03:02:54.530363'
     - 40.7686052
     - -73.98960129999999
     - true
@@ -6294,6 +6758,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - John Jay College Bookstore
   - - 892
     - 718
     - Long Island University
@@ -6310,7 +6776,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:35.284434'
-    - '2013-05-20 15:06:29.308118'
+    - '2013-05-21 03:02:54.536627'
     - 40.6909987
     - -73.98107329999999
     - true
@@ -6321,6 +6787,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Long Island University Bookstore
   - - 893
     - 465
     - Marist College
@@ -6337,7 +6805,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:35.520204'
-    - '2013-05-20 15:06:29.343977'
+    - '2013-05-21 03:02:53.459318'
     - 41.72293699999999
     - -73.936533
     - true
@@ -6348,6 +6816,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Marist College Bookstore
   - - 894
     - 529
     - New York Institute of Technology- Old Westbury
@@ -6364,7 +6834,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:35.724917'
-    - '2013-05-20 15:06:29.376380'
+    - '2013-05-21 03:02:53.717379'
     - 40.7496807
     - -73.5782712
     - true
@@ -6375,6 +6845,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - New York Institute of Technology- Old Westbury Bookstore
   - - 895
     - 291
     - CUNY Bronx Community College
@@ -6391,7 +6863,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:35.930625'
-    - '2013-05-20 15:06:29.413462'
+    - '2013-05-21 03:02:52.061243'
     - 40.85667249999999
     - -73.9101268
     - true
@@ -6402,6 +6874,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Bronx Community College Bookstore
   - - 896
     - 530
     - New York Institute of Technology- Manhattan College
@@ -6418,7 +6892,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:36.196926'
-    - '2013-05-20 15:06:29.664729'
+    - '2013-05-21 03:02:53.723185'
     - 40.769571
     - -73.982595
     - true
@@ -6429,6 +6903,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - New York Institute of Technology- Manhattan College Bookstore
   - - 897
     - 614
     - Rochester Institute of Technology
@@ -6445,7 +6921,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:36.398462'
-    - '2013-05-20 15:06:29.709836'
+    - '2013-05-21 03:02:54.026310'
     - 43.0926842
     - -77.6560141
     - true
@@ -6456,6 +6932,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - ! 'Barnes & Noble @ RIT '
   - - 898
     - 543
     - The Culinary Institute of America
@@ -6472,7 +6950,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:36.639284'
-    - '2013-05-20 15:06:29.772024'
+    - '2013-05-21 03:02:53.776908'
     - 41.7451613
     - -73.93260939999999
     - true
@@ -6483,6 +6961,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - The Culinary Institute of America Bookstore
   - - 899
     - 611
     - SUNY Onondaga Community College
@@ -6499,7 +6979,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:36.877428'
-    - '2013-05-20 15:06:29.807983'
+    - '2013-05-21 03:02:54.012258'
     - 43.003691
     - -76.19736999999999
     - true
@@ -6510,6 +6990,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Onondaga Community College Bookstore
   - - 900
     - 393
     - Shawnee State University
@@ -6526,7 +7008,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:37.147025'
-    - '2013-05-20 15:06:30.043586'
+    - '2013-05-21 03:02:53.184371'
     - 38.7319205
     - -82.99598209999999
     - true
@@ -6537,6 +7019,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Shawnee State University Bookstore
   - - 901
     - 755
     - Cuyahoga Community College Metropolitan
@@ -6553,7 +7037,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:37.346058'
-    - '2013-05-20 15:06:30.076240'
+    - '2013-05-21 03:02:54.686356'
     - 41.4914617
     - -81.6685021
     - true
@@ -6564,6 +7048,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Cuyahoga Community College- Metro Campus Bookstore
   - - 902
     - 615
     - Cleveland State University
@@ -6580,7 +7066,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:37.581792'
-    - '2013-05-20 15:06:30.106513'
+    - '2013-05-21 03:02:54.093522'
     - 41.5014277
     - -81.67600279999999
     - true
@@ -6591,6 +7077,8 @@ schools:
     - false
     - false
     - 4
+    - true
+    - University Lofts Bookstore  (Cleveland State University) Bookstore
   - - 903
     - 112
     - University of Akron - Polsky
@@ -6607,7 +7095,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:37.887982'
-    - '2013-05-20 15:06:30.354384'
+    - '2013-05-21 03:02:51.558221'
     - 41.078866
     - -81.519542
     - true
@@ -6618,6 +7106,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - University of Akron/Polsky Bookstore
   - - 904
     - 218
     - The Ohio State University
@@ -6634,7 +7124,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:38.119664'
-    - '2013-05-20 15:06:30.390929'
+    - '2013-05-21 03:02:51.762571'
     - 39.9949194
     - -83.00702299999999
     - true
@@ -6645,6 +7135,8 @@ schools:
     - true
     - false
     - 2
+    - true
+    - Barnes & Noble - The Ohio State University Bookstore (OFF-CAMPUS)
   - - 905
     - 591
     - Wright State University
@@ -6661,7 +7153,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:38.341339'
-    - '2013-05-20 15:06:30.426902'
+    - '2013-05-21 03:02:53.957050'
     - 39.7798487
     - -84.0651941
     - true
@@ -6672,6 +7164,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Wright State University Bookstore
   - - 906
     - 606
     - University of Northwestern Ohio
@@ -6688,7 +7182,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:38.572286'
-    - '2013-05-20 15:06:30.462300'
+    - '2013-05-21 03:02:53.988154'
     - 40.7616329
     - -84.1567566
     - true
@@ -6699,6 +7193,8 @@ schools:
     - true
     - false
     - 3
+    - true
+    - University of Northwestern Ohio Bookstore
   - - 907
     - 230
     - Central Ohio Technical College
@@ -6715,7 +7211,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:38.804877'
-    - '2013-05-20 15:06:30.719687'
+    - '2013-05-21 03:02:51.807922'
     - 40.06963440000001
     - -82.4436133
     - true
@@ -6726,6 +7222,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Central Ohio Technical College Bookstore
   - - 908
     - 761
     - Ohio Dominican University
@@ -6742,7 +7240,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:39.032665'
-    - '2013-05-20 15:06:30.753344'
+    - '2013-05-21 03:02:54.725068'
     - 39.9927391
     - -82.9421005
     - true
@@ -6753,6 +7251,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Ohio Dominican University Bookstore, Barnes & Noble Bookstore
   - - 909
     - 756
     - Cuyahoga Community College Eastern
@@ -6769,7 +7269,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:39.245853'
-    - '2013-05-20 15:06:30.793800'
+    - '2013-05-21 03:02:54.693104'
     - 41.4454441
     - -81.5016717
     - true
@@ -6780,6 +7280,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Cuyahoga Community College- Eastern Campus Bookstore
   - - 910
     - 754
     - ! 'Cuyahoga Community College Western '
@@ -6796,7 +7298,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:39.903022'
-    - '2013-05-20 15:06:31.064970'
+    - '2013-05-21 03:02:54.679603'
     - 41.366841
     - -81.763837
     - true
@@ -6807,6 +7309,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Cuyahoga Community College- Western Campus Bookstore
   - - 911
     - 733
     - University of Akron
@@ -6823,7 +7327,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:40.108625'
-    - '2013-05-20 15:06:31.101065'
+    - '2013-05-21 03:02:54.586858'
     - 41.0752889
     - -81.51403239999999
     - true
@@ -6834,6 +7338,8 @@ schools:
     - false
     - false
     - 4
+    - true
+    - University of Akron Bookstore
   - - 912
     - 713
     - Capital University
@@ -6850,7 +7356,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:40.313311'
-    - '2013-05-20 15:06:31.135820'
+    - '2013-05-21 03:02:54.514881'
     - 39.956851
     - -82.940568
     - true
@@ -6861,6 +7367,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Capital University Bookstore
   - - 913
     - 573
     - University Of Toledo
@@ -6877,7 +7385,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:40.548245'
-    - '2013-05-20 15:06:31.404273'
+    - '2013-05-21 03:02:53.913792'
     - 41.6537348
     - -83.6218435
     - true
@@ -6888,6 +7396,8 @@ schools:
     - true
     - false
     - 2
+    - true
+    - University Of Toledo Bookstore
   - - 914
     - 399
     - Oberlin College
@@ -6904,7 +7414,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:40.742333'
-    - '2013-05-20 15:06:31.441977'
+    - '2013-05-21 03:02:53.228286'
     - 41.291413
     - -82.218614
     - true
@@ -6915,6 +7425,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Oberlin College Bookstore
   - - 915
     - 770
     - Franklin University
@@ -6931,7 +7443,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:41.303489'
-    - '2013-05-20 15:06:31.475869'
+    - '2013-05-21 03:02:54.793103'
     - 39.9585807
     - -82.9899372
     - true
@@ -6942,6 +7454,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Franklin University Bookstore
   - - 916
     - 215
     - Ohio Northern University
@@ -6958,7 +7472,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:41.502790'
-    - '2013-05-20 15:06:31.510070'
+    - '2013-05-21 03:02:51.742085'
     - 40.765952
     - -83.826967
     - true
@@ -6969,6 +7483,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Ohio Northern University Bookstore
   - - 917
     - 336
     - University Of Central Oklahoma
@@ -6985,7 +7501,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:41.741568'
-    - '2013-05-20 15:06:31.762370'
+    - '2013-05-21 03:02:52.976073'
     - 35.6617943
     - -97.4730635
     - true
@@ -6996,6 +7512,8 @@ schools:
     - false
     - false
     - 4
+    - true
+    - University Of Central Oklahoma Bookstore
   - - 918
     - 320
     - Southeastern Oklahoma State University
@@ -7012,7 +7530,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:41.988194'
-    - '2013-05-20 15:06:31.797197'
+    - '2013-05-21 03:02:52.898069'
     - 34.004818
     - -96.377684
     - true
@@ -7023,6 +7541,8 @@ schools:
     - false
     - true
     - 4
+    - false
+    - Southeastern Oklahoma State University Bookstore
   - - 919
     - 719
     - Northeastern State University - Tahlequah Campus
@@ -7039,7 +7559,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:42.182348'
-    - '2013-05-20 15:06:31.831005'
+    - '2013-05-21 03:02:54.542436'
     - 35.9194751
     - -94.9669434
     - true
@@ -7050,6 +7570,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Northeastern State University - Tahlequah Campus Bookstore
   - - 920
     - 260
     - Rogers State University
@@ -7066,7 +7588,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:42.393728'
-    - '2013-05-20 15:06:32.168909'
+    - '2013-05-21 03:02:51.924782'
     - 36.3194821
     - -95.6355035
     - true
@@ -7077,6 +7599,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Rogers State University Bookstore
   - - 921
     - 329
     - Pacific University
@@ -7093,7 +7617,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:42.592793'
-    - '2013-05-20 15:06:32.203068'
+    - '2013-05-21 03:02:52.919838'
     - 45.519564
     - -123.1107871
     - true
@@ -7104,6 +7628,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Pacific University Bookstore
   - - 922
     - 796
     - University Of Portland
@@ -7120,7 +7646,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:42.829349'
-    - '2013-05-20 15:06:32.241231'
+    - '2013-05-21 03:02:54.888039'
     - 45.5709054
     - -122.7262819
     - true
@@ -7131,6 +7657,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - University Of Portland Bookstore
   - - 923
     - 435
     - Penn State University
@@ -7147,7 +7675,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:43.033070'
-    - '2013-05-20 15:06:32.283228'
+    - '2013-05-21 03:02:53.381886'
     - 40.7959126
     - -77.8650195
     - true
@@ -7158,6 +7686,8 @@ schools:
     - false
     - false
     - 4
+    - true
+    - Penn State University Bookstore
   - - 924
     - 365
     - Cedar Crest College
@@ -7174,7 +7704,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:43.231423'
-    - '2013-05-20 15:06:32.520207'
+    - '2013-05-21 03:02:53.051199'
     - 40.5868197
     - -75.5150522
     - true
@@ -7185,6 +7715,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Cedar Crest College Bookstore
   - - 925
     - 457
     - Drexel University
@@ -7201,7 +7733,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:43.424760'
-    - '2013-05-20 15:06:32.549377'
+    - '2013-05-21 03:02:53.442795'
     - 39.9538343
     - -75.18696039999999
     - true
@@ -7212,6 +7744,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Drexel University / University City Main Campus Bookstore
   - - 926
     - 391
     - Holy Family University
@@ -7228,7 +7762,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:43.620380'
-    - '2013-05-20 15:06:32.581789'
+    - '2013-05-21 03:02:53.176720'
     - 40.061634
     - -74.988427
     - true
@@ -7239,6 +7773,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Holy Family University Bookstore
   - - 927
     - 332
     - Immaculata University
@@ -7255,7 +7791,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:43.814930'
-    - '2013-05-20 15:06:32.612637'
+    - '2013-05-21 03:02:52.961434'
     - 40.0294205
     - -75.5704411
     - true
@@ -7266,6 +7802,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Immaculata University Bookstore
   - - 928
     - 335
     - La Salle University
@@ -7282,7 +7820,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:44.021957'
-    - '2013-05-20 15:06:32.878422'
+    - '2013-05-21 03:02:52.969766'
     - 40.0378297
     - -75.1524934
     - true
@@ -7293,6 +7831,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - La Salle University Bookstore
   - - 929
     - 217
     - Lehigh University
@@ -7309,7 +7849,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:44.239813'
-    - '2013-05-20 15:06:32.915150'
+    - '2013-05-21 03:02:51.754754'
     - 40.3864432
     - -75.74363300000002
     - true
@@ -7320,6 +7860,8 @@ schools:
     - true
     - false
     - 4
+    - true
+    - Lehigh University Bookstore
   - - 930
     - 405
     - Montgomery County Community College Central Campus
@@ -7336,7 +7878,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:44.470755'
-    - '2013-05-20 15:06:32.946856'
+    - '2013-05-21 03:02:53.273727'
     - 40.1707084
     - -75.2756381
     - true
@@ -7347,6 +7889,8 @@ schools:
     - false
     - true
     - 2
+    - false
+    - Montgomery County Community College Central Campus Bookstore
   - - 931
     - 693
     - Temple University
@@ -7363,7 +7907,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:44.731046'
-    - '2013-05-20 15:06:32.983117'
+    - '2013-05-21 03:02:54.437355'
     - 40.3275894
     - -90.4204805
     - true
@@ -7374,6 +7918,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Temple University/Main Bookstore
   - - 932
     - 501
     - Community College Beaver County
@@ -7390,7 +7936,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:44.922914'
-    - '2013-05-20 15:06:33.242300'
+    - '2013-05-21 03:02:53.580094'
     - 40.6561137
     - -80.3092283
     - true
@@ -7401,6 +7947,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Community College Beaver County Bookstore
   - - 933
     - 764
     - Duquesne University
@@ -7417,7 +7965,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:45.116446'
-    - '2013-05-20 15:06:33.276153'
+    - '2013-05-21 03:02:54.740014'
     - 40.4379366
     - -79.9908904
     - true
@@ -7428,6 +7976,8 @@ schools:
     - true
     - false
     - 3
+    - true
+    - Duquesne University Bookstore
   - - 934
     - 16
     - Point Park University
@@ -7444,7 +7994,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:45.311886'
-    - '2013-05-20 15:06:33.315112'
+    - '2013-05-21 03:02:51.191977'
     - 40.43849700000001
     - -80.00127599999999
     - true
@@ -7455,6 +8005,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Point Park University Bookstore
   - - 935
     - 545
     - Robert Morris University
@@ -7471,7 +8023,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:45.549087'
-    - '2013-05-20 15:06:33.352200'
+    - '2013-05-21 03:02:53.783526'
     - 40.521728
     - -80.209717
     - true
@@ -7482,6 +8034,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Robert Morris University/Moon Bookstore
   - - 936
     - 439
     - Penn State University Erie
@@ -7498,7 +8052,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:45.746626'
-    - '2013-05-20 15:06:33.612311'
+    - '2013-05-21 03:02:53.398520'
     - 42.1202079
     - -79.9874701
     - true
@@ -7509,6 +8063,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Penn State University/Erie Bookstore
   - - 937
     - 441
     - Penn State University Harrisburg
@@ -7525,7 +8081,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:45.995972'
-    - '2013-05-20 15:06:33.642662'
+    - '2013-05-21 03:02:53.409931'
     - 40.1971926
     - -76.745504
     - true
@@ -7536,6 +8092,8 @@ schools:
     - false
     - false
     - 4
+    - true
+    - Penn State University/Harrisburg Bookstore
   - - 938
     - 437
     - Penn State University Altoona
@@ -7552,7 +8110,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:46.193439'
-    - '2013-05-20 15:06:33.680422'
+    - '2013-05-21 03:02:53.389187'
     - 40.5186809
     - -78.3947359
     - true
@@ -7563,6 +8121,8 @@ schools:
     - false
     - false
     - 4
+    - true
+    - Penn State University/Altoona Bookstore
   - - 939
     - 495
     - Drexel University College of Medicine
@@ -7579,7 +8139,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:46.435689'
-    - '2013-05-20 15:06:33.711290'
+    - '2013-05-21 03:02:53.548340'
     - 40.0194818
     - -75.17977259999999
     - true
@@ -7590,6 +8150,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Drexel University / College of Medicine Bookstore
   - - 940
     - 450
     - Penn State University Abington
@@ -7606,7 +8168,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:46.683616'
-    - '2013-05-20 15:06:33.975680'
+    - '2013-05-21 03:02:53.425893'
     - 40.11722839999999
     - -75.11056909999999
     - true
@@ -7617,6 +8179,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Penn State University/Abington Bookstore
   - - 941
     - 694
     - Temple University - Ambler
@@ -7633,7 +8197,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:47.282517'
-    - '2013-05-20 15:06:34.002214'
+    - '2013-05-21 03:02:54.444667'
     - 40.165804
     - -75.1951708
     - true
@@ -7644,6 +8208,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Temple University/Ambler Bookstore
   - - 942
     - 440
     - Penn State University Berks
@@ -7660,7 +8226,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:47.514490'
-    - '2013-05-20 15:06:34.066305'
+    - '2013-05-21 03:02:53.404252'
     - 40.3610289
     - -75.95973939999999
     - true
@@ -7671,6 +8237,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Penn State University/Berks-Lehigh Bookstore
   - - 943
     - 627
     - University of the Sciences
@@ -7687,7 +8255,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:47.740130'
-    - '2013-05-20 15:06:34.098582'
+    - '2013-05-21 03:02:54.157568'
     - 39.9475382
     - -75.20617159999999
     - true
@@ -7698,6 +8266,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - University of the Sciences Bookstore
   - - 944
     - 502
     - King's College
@@ -7714,7 +8284,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:47.947188'
-    - '2013-05-20 15:06:34.139079'
+    - '2013-05-21 03:02:53.586398'
     - 41.24537369999999
     - -75.8829599
     - true
@@ -7725,6 +8295,8 @@ schools:
     - true
     - false
     - 2
+    - true
+    - Barnes & Noble @ Wilkes - King's
   - - 945
     - 725
     - Providence College
@@ -7741,7 +8313,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:48.146101'
-    - '2013-05-20 15:06:34.173579'
+    - '2013-05-21 03:02:54.563425'
     - 41.8239891
     - -71.4128343
     - true
@@ -7752,6 +8324,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Providence College Bookstore
   - - 946
     - 551
     - Roger Williams University
@@ -7768,7 +8342,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:48.386235'
-    - '2013-05-20 15:06:34.211872'
+    - '2013-05-21 03:02:53.829643'
     - 41.646828
     - -71.258518
     - true
@@ -7779,6 +8353,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Roger Williams University Bookstore
   - - 947
     - 522
     - The Citadel
@@ -7795,7 +8371,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:48.615879'
-    - '2013-05-20 15:06:34.259111'
+    - '2013-05-21 03:02:53.680038'
     - 32.796617
     - -79.957764
     - true
@@ -7806,6 +8382,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - The Citadel Bookstore
   - - 948
     - 32
     - York Technical College
@@ -7822,7 +8400,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:48.858465'
-    - '2013-05-20 15:06:34.296052'
+    - '2013-05-21 03:02:51.251645'
     - 34.9347229
     - -80.9963145
     - true
@@ -7833,6 +8411,8 @@ schools:
     - false
     - true
     - 2
+    - false
+    - York Technical College Bookstore
   - - 949
     - 8005
     - Furman University
@@ -7849,7 +8429,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:49.148796'
-    - '2013-05-20 15:06:34.338898'
+    - '2013-05-21 03:02:54.917846'
     - 34.8772549
     - -82.40440710000001
     - true
@@ -7860,6 +8440,8 @@ schools:
     - true
     - false
     - 2
+    - true
+    - Furman University Bookstore
   - - 950
     - 503
     - Piedmont Technical College
@@ -7876,7 +8458,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:49.392724'
-    - '2013-05-20 15:06:34.373189'
+    - '2013-05-21 03:02:53.593040'
     - 34.2091939
     - -82.117299
     - true
@@ -7887,6 +8469,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Piedmont Technical College Bookstore
   - - 951
     - 421
     - College of Charleston
@@ -7903,7 +8487,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:49.675818'
-    - '2013-05-20 15:06:34.413254'
+    - '2013-05-21 03:02:53.336357'
     - 32.7867514
     - -79.9390652
     - true
@@ -7914,6 +8498,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - College of Charleston Bookstore
   - - 952
     - 240
     - University of South Carolina
@@ -7930,7 +8516,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:49.904729'
-    - '2013-05-20 15:06:34.505111'
+    - '2013-05-21 03:02:51.844476'
     - 33.9954892
     - -81.0294677
     - true
@@ -7941,6 +8527,8 @@ schools:
     - true
     - false
     - 3
+    - true
+    - University of South Carolina Bookstore
   - - 953
     - 257
     - Charleston Southern University
@@ -7957,7 +8545,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:50.188582'
-    - '2013-05-20 15:06:34.537675'
+    - '2013-05-21 03:02:51.905581'
     - 32.97714
     - -80.069693
     - true
@@ -7968,6 +8556,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Charleston Southern University Bookstore
   - - 954
     - 490
     - Clemson University
@@ -7984,7 +8574,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:50.406923'
-    - '2013-05-20 15:06:34.571012'
+    - '2013-05-21 03:02:53.535152'
     - 32.4887597
     - -80.3176938
     - true
@@ -7995,6 +8585,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Clemson University Bookstore
   - - 955
     - 394
     - Horry - Georgetown Technical College
@@ -8011,7 +8603,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:50.647039'
-    - '2013-05-20 15:06:34.601434'
+    - '2013-05-21 03:02:53.197741'
     - 33.7948054
     - -79.00276910000001
     - true
@@ -8022,6 +8614,8 @@ schools:
     - false
     - true
     - 2
+    - false
+    - Horry - Georgetown Technical College Bookstore
   - - 956
     - 283
     - University of South Dakota
@@ -8038,7 +8632,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:50.840072'
-    - '2013-05-20 15:06:34.642416'
+    - '2013-05-21 03:02:52.017069'
     - 42.7822478
     - -96.92818229999999
     - true
@@ -8049,6 +8643,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - University of South Dakota Bookstore
   - - 957
     - 430
     - University of Tennessee at Chattanooga
@@ -8065,7 +8661,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:51.043862'
-    - '2013-05-20 15:06:34.675024'
+    - '2013-05-21 03:02:53.366719'
     - 35.0503523
     - -85.3025627
     - true
@@ -8076,6 +8672,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - University of Tennessee/Chattanooga Bookstore
   - - 958
     - 514
     - Roane State Community College
@@ -8092,7 +8690,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:51.261237'
-    - '2013-05-20 15:06:34.709211'
+    - '2013-05-21 03:02:53.640236'
     - 35.879092
     - -84.621516
     - true
@@ -8103,6 +8701,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Roane State Community College Bookstore
   - - 959
     - 535
     - Walters State Community College
@@ -8119,7 +8719,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:51.460981'
-    - '2013-05-20 15:06:34.740775'
+    - '2013-05-21 03:02:53.748422'
     - 36.2117897
     - -83.2618363
     - true
@@ -8130,6 +8730,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Walters State Community College Bookstore
   - - 960
     - 637
     - University of Tennessee Health Sciences Center
@@ -8146,7 +8748,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:51.674499'
-    - '2013-05-20 15:06:34.900316'
+    - '2013-05-21 03:02:54.195400'
     - 35.14092
     - -90.02936500000001
     - true
@@ -8157,6 +8759,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - University of Tennessee Health Sciences Center Bookstore
   - - 961
     - 474
     - Tennessee Technical University
@@ -8173,7 +8777,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:51.904880'
-    - '2013-05-20 15:06:34.977345'
+    - '2013-05-21 03:02:53.480536'
     - 36.1757923
     - -85.5041226
     - true
@@ -8184,6 +8788,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Tennessee Technological University Bookstore
   - - 962
     - 288
     - University of Tennessee at Martin
@@ -8200,7 +8806,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:52.132484'
-    - '2013-05-20 15:06:35.043782'
+    - '2013-05-21 03:02:52.046747'
     - 36.3433965
     - -88.8503379
     - true
@@ -8211,6 +8817,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - University of Tennessee at Martin Bookstore
   - - 963
     - 31
     - East Tennessee State University
@@ -8227,7 +8835,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:52.949770'
-    - '2013-05-20 15:06:35.103423'
+    - '2013-05-21 03:02:51.245667'
     - 36.307299
     - -82.3636719
     - true
@@ -8238,6 +8846,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Student Book Exchange
   - - 964
     - 8021
     - Vanderbilt University
@@ -8254,7 +8864,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:53.163686'
-    - '2013-05-20 15:06:35.170653'
+    - '2013-05-21 03:02:54.963504'
     - 36.1467221
     - -86.8085078
     - true
@@ -8265,6 +8875,8 @@ schools:
     - true
     - false
     - 2
+    - true
+    - Barnes and Noble at Vanderbilt University
   - - 965
     - 268
     - Columbia State Community College
@@ -8281,7 +8893,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:53.395104'
-    - '2013-05-20 15:06:35.219920'
+    - '2013-05-21 03:02:51.962005'
     - 35.618666
     - -87.095418
     - true
@@ -8292,6 +8904,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Columbia State Community College Bookstore
   - - 966
     - 170
     - Austin Community College - Northridge
@@ -8308,7 +8922,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:53.658249'
-    - '2013-05-20 15:06:35.266794'
+    - '2013-05-21 03:02:51.667034'
     - 30.4033994
     - -97.70508439999999
     - true
@@ -8319,6 +8933,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Austin Community College - Northridge Bookstore
   - - 967
     - 252
     - Lamar State College - Port Arthur
@@ -8335,7 +8951,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:53.855555'
-    - '2013-05-20 15:06:35.343748'
+    - '2013-05-21 03:02:51.885884'
     - 29.87949519999999
     - -93.9257569
     - true
@@ -8346,6 +8962,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Lamar State College - Port Arthur Bookstore
   - - 968
     - 250
     - Lamar University
@@ -8362,7 +8980,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:54.086905'
-    - '2013-05-20 15:06:35.395203'
+    - '2013-05-21 03:02:51.878811'
     - 30.0437897
     - -94.0730499
     - true
@@ -8373,6 +8991,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Lamar University Bookstore
   - - 969
     - 402
     - Texas A&M-Corpus Christi
@@ -8389,7 +9009,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:54.332025'
-    - '2013-05-20 15:06:35.449504'
+    - '2013-05-21 03:02:53.255436'
     - 27.7135097
     - -97.3246818
     - true
@@ -8400,6 +9020,8 @@ schools:
     - false
     - false
     - 4
+    - true
+    - Texas A&M-Corpus Christi Bookstore
   - - 970
     - 526
     - Southern Methodist University
@@ -8416,7 +9038,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:54.603709'
-    - '2013-05-20 15:06:35.497614'
+    - '2013-05-21 03:02:53.703964'
     - 32.8365918
     - -96.781285
     - true
@@ -8427,6 +9049,8 @@ schools:
     - true
     - false
     - 3
+    - true
+    - Southern Methodist University Bookstore
   - - 971
     - 677
     - El Paso Community College - Rio Grande
@@ -8443,7 +9067,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:54.862713'
-    - '2013-05-20 15:06:35.528977'
+    - '2013-05-21 03:02:54.351152'
     - 31.763866
     - -106.493717
     - true
@@ -8454,6 +9078,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - El Paso CC/ Rio Grande Bookstore
   - - 972
     - 80
     - South Texas College
@@ -8470,7 +9096,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:55.088411'
-    - '2013-05-20 15:06:35.562956'
+    - '2013-05-21 03:02:51.454104'
     - 26.2169719
     - -98.25359499999999
     - true
@@ -8481,6 +9107,8 @@ schools:
     - false
     - true
     - 2
+    - true
+    - South Texas College Bookstore
   - - 973
     - 82
     - South Texas College - Mid Valley
@@ -8497,7 +9125,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:55.312188'
-    - '2013-05-20 15:06:35.627348'
+    - '2013-05-21 03:02:51.461152'
     - 26.1610637
     - -97.9967315
     - true
@@ -8508,6 +9136,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - South Texas College - Mid Valley Campus Bookstore
   - - 974
     - 28
     - The University of Texas at Brownsville / Texas Southmost College
@@ -8524,7 +9154,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:55.530457'
-    - '2013-05-20 15:06:35.664090'
+    - '2013-05-21 03:02:51.225054'
     - 25.9004237
     - -97.4924511
     - true
@@ -8535,6 +9165,8 @@ schools:
     - true
     - false
     - 4
+    - false
+    - The University of Texas at Brownsville / Texas Southmost College Bookstore
   - - 975
     - 281
     - Blinn College Bookstore - Brenham Campus
@@ -8551,7 +9183,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:55.728340'
-    - '2013-05-20 15:06:35.696539'
+    - '2013-05-21 03:02:52.003452'
     - 30.1615086
     - -96.40661589999999
     - true
@@ -8562,6 +9194,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Blinn College Bookstore - Brenham Campus
   - - 976
     - 515
     - Houston Community College
@@ -8578,7 +9212,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:55.930872'
-    - '2013-05-20 15:06:35.728482'
+    - '2013-05-21 03:02:53.646373'
     - 29.7386636
     - -95.3766624
     - true
@@ -8589,6 +9223,8 @@ schools:
     - false
     - true
     - 1
+    - true
+    - Houston Community College Bookstore
   - - 977
     - 516
     - Houston Community College - Westgate
@@ -8605,7 +9241,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:56.167465'
-    - '2013-05-20 15:06:35.743776'
+    - '2013-05-21 03:02:53.652592'
     - 29.7903451
     - -95.7140982
     - true
@@ -8616,6 +9252,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Houston Community College - Westgate Bookstore
   - - 978
     - 520
     - Houston Community College Town & Country
@@ -8632,7 +9270,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:56.440841'
-    - '2013-05-20 15:06:35.758717'
+    - '2013-05-21 03:02:53.672869'
     - 29.78996699999999
     - -95.561914
     - true
@@ -8643,6 +9281,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Houston Community College / Town & Country Center
   - - 979
     - 124
     - Rice University
@@ -8659,7 +9299,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:56.649025'
-    - '2013-05-20 15:06:35.796946'
+    - '2013-05-21 03:02:51.628833'
     - 29.7209747
     - -95.39541349999999
     - true
@@ -8670,6 +9310,8 @@ schools:
     - false
     - true
     - 2
+    - true
+    - Rice University C-Bookstore
   - - 980
     - 552
     - San Jacinto Community College Central
@@ -8686,7 +9328,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:56.879649'
-    - '2013-05-20 15:06:35.829914'
+    - '2013-05-21 03:02:53.837935'
     - 29.6595454
     - -95.11627960000001
     - true
@@ -8697,6 +9339,8 @@ schools:
     - true
     - false
     - 3
+    - true
+    - San Jacinto Community College- Central Bookstore
   - - 981
     - 554
     - San Jacinto Community College North
@@ -8713,7 +9357,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:57.119072'
-    - '2013-05-20 15:06:35.864724'
+    - '2013-05-21 03:02:53.852150'
     - 29.809984
     - -95.181556
     - true
@@ -8724,6 +9368,8 @@ schools:
     - true
     - false
     - 4
+    - true
+    - San Jacinto Community College- North Bookstore
   - - 982
     - 553
     - San Jacinto Community College South
@@ -8740,7 +9386,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:57.364401'
-    - '2013-05-20 15:06:35.898091'
+    - '2013-05-21 03:02:53.845560'
     - 29.5793389
     - -95.20461220000001
     - true
@@ -8751,6 +9397,8 @@ schools:
     - true
     - false
     - 4
+    - true
+    - San Jacinto Community College- South Bookstore
   - - 983
     - 710
     - Texas Southern University
@@ -8767,7 +9415,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:57.603390'
-    - '2013-05-20 15:06:35.934926'
+    - '2013-05-21 03:02:54.497334'
     - 29.7232315
     - -95.3657162
     - true
@@ -8778,6 +9426,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Texas Southern University Bookstore
   - - 984
     - 510
     - University Of Houston
@@ -8794,7 +9444,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:57.794033'
-    - '2013-05-20 15:06:36.021965'
+    - '2013-05-21 03:02:53.620940'
     - 29.7196583
     - -95.3432393
     - true
@@ -8805,6 +9455,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - University Of Houston Bookstore
   - - 985
     - 221
     - University of Houston - Clear Lake
@@ -8821,7 +9473,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:58.040636'
-    - '2013-05-20 15:06:36.053558'
+    - '2013-05-21 03:02:51.778733'
     - 29.5842049
     - -95.09899569999999
     - true
@@ -8832,6 +9484,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - University of Houston - Clear Lake Bookstore
   - - 986
     - 512
     - University Of Houston - Downtown
@@ -8848,7 +9502,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:58.322428'
-    - '2013-05-20 15:06:36.087778'
+    - '2013-05-21 03:02:53.634162'
     - 29.7631594
     - -95.3593726
     - true
@@ -8859,6 +9513,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - University Of Houston/Downtown Bookstore
   - - 987
     - 558
     - Wharton County Junior College
@@ -8875,7 +9531,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:58.557366'
-    - '2013-05-20 15:06:36.118752'
+    - '2013-05-21 03:02:53.868282'
     - 29.3234382
     - -96.08802179999999
     - true
@@ -8886,6 +9542,8 @@ schools:
     - false
     - true
     - 2
+    - false
+    - Wharton County Junior College Bookstore
   - - 988
     - 466
     - Laredo Community College
@@ -8902,7 +9560,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:58.810655'
-    - '2013-05-20 15:06:36.157567'
+    - '2013-05-21 03:02:53.466351'
     - 27.5087686
     - -99.51878099999999
     - true
@@ -8913,6 +9571,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Laredo Community College Bookstore
   - - 989
     - 118
     - Austin Community College- Round Rock
@@ -8929,7 +9589,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:59.047080'
-    - '2013-05-20 15:06:36.181919'
+    - '2013-05-21 03:02:51.612112'
     - 30.561581
     - -97.657045
     - true
@@ -8940,6 +9600,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Austin Community College- Round Rock Bookstore
   - - 990
     - 307
     - Trinity University
@@ -8956,7 +9618,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:59.282470'
-    - '2013-05-20 15:06:36.238550'
+    - '2013-05-21 03:02:52.122299'
     - 29.46466899999999
     - -98.482795
     - true
@@ -8967,6 +9629,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Trinity University Bookstore
   - - 991
     - 44
     - Stephen F. Austin State University
@@ -8983,7 +9647,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:59.548632'
-    - '2013-05-20 15:06:36.323431'
+    - '2013-05-21 03:02:51.282108'
     - 31.6204129
     - -94.6502864
     - true
@@ -8994,6 +9658,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Stephen F. Austin State University Bookstore
   - - 992
     - 782
     - University of Texas - Tyler
@@ -9010,7 +9676,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:59.771670'
-    - '2013-05-20 15:06:36.352336'
+    - '2013-05-21 03:02:54.831853'
     - 32.315394
     - -95.253434
     - true
@@ -9021,6 +9687,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - University of Texas at Tyler Bookstore
   - - 993
     - 532
     - Midwestern State University
@@ -9037,7 +9705,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:20:59.978831'
-    - '2013-05-20 15:06:36.388575'
+    - '2013-05-21 03:02:53.735820'
     - 33.8775957
     - -98.5184476
     - true
@@ -9048,6 +9716,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Midwestern State University Bookstore
   - - 994
     - 523
     - Austin Community College
@@ -9064,7 +9734,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:00.335635'
-    - '2013-05-20 15:06:36.416993'
+    - '2013-05-21 03:02:53.685960'
     - 30.388967
     - -97.715607
     - true
@@ -9075,6 +9745,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Austin Community College Bookstore
   - - 995
     - 358
     - Sam Houston State University
@@ -9091,7 +9763,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:00.630387'
-    - '2013-05-20 15:06:36.452594'
+    - '2013-05-21 03:02:53.042170'
     - 30.7150791
     - -95.5619571
     - true
@@ -9102,6 +9774,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - Sam Houston State University Bookstore
   - - 996
     - 698
     - Texas A&M University - Kingsville
@@ -9118,7 +9792,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:01.234994'
-    - '2013-05-20 15:06:36.483470'
+    - '2013-05-21 03:02:54.452745'
     - 27.5223338
     - -97.882466
     - true
@@ -9129,6 +9803,8 @@ schools:
     - false
     - true
     - 4
+    - true
+    - Texas A&M University/Kingsville Bookstore
   - - 997
     - 678
     - El Paso Community College - Trans Mountain
@@ -9145,7 +9821,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:01.491389'
-    - '2013-05-20 15:06:36.516738'
+    - '2013-05-21 03:02:54.365460'
     - 31.7640087
     - -106.3630825
     - true
@@ -9156,6 +9832,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - El Paso CC/Trans Mountain Bookstore
   - - 998
     - 676
     - El Paso Community College - Valle Verde
@@ -9172,7 +9850,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:01.741272'
-    - '2013-05-20 15:06:36.550448'
+    - '2013-05-21 03:02:54.344719'
     - 31.753527
     - -106.366913
     - true
@@ -9183,6 +9861,8 @@ schools:
     - false
     - false
     - 3
+    - true
+    - El Paso CC/Valle Verde Bookstore
   - - 999
     - 509
     - Houston Community College Eastside
@@ -9199,7 +9879,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:01.997656'
-    - '2013-05-20 15:06:36.573403'
+    - '2013-05-21 03:02:53.615012'
     - 29.705101
     - -95.29794199999999
     - true
@@ -9210,6 +9890,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Houston Community College - Eastside Bookstore
   - - 1000
     - 519
     - Houston Community College West Loop
@@ -9226,7 +9908,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:02.366870'
-    - '2013-05-20 15:06:36.590689'
+    - '2013-05-21 03:02:53.666250'
     - 29.7210781
     - -95.4597258
     - true
@@ -9237,6 +9919,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Houston Community College West Loop Bookstore
   - - 1001
     - 316
     - Blinn College - Bryan Campus
@@ -9253,7 +9937,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:02.627357'
-    - '2013-05-20 15:06:36.622160'
+    - '2013-05-21 03:02:52.164794'
     - 30.6631467
     - -96.3499689
     - true
@@ -9264,6 +9948,8 @@ schools:
     - false
     - true
     - 2
+    - false
+    - Blinn College Bookstore - Bryan Campus
   - - 1002
     - 398
     - University of Texas Health Science Center at San Antonio
@@ -9280,7 +9966,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:02.862360'
-    - '2013-05-20 15:06:36.653475'
+    - '2013-05-21 03:02:53.222489'
     - 29.5080361
     - -98.57398189999999
     - true
@@ -9291,6 +9977,8 @@ schools:
     - false
     - true
     - 2
+    - false
+    - University of Texas Health Science Center Bookstore
   - - 1003
     - 264
     - Texas Tech University Health Science Center
@@ -9307,7 +9995,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:03.507170'
-    - '2013-05-20 15:06:36.685458'
+    - '2013-05-21 03:02:51.938399'
     - 33.591475
     - -101.891949
     - true
@@ -9318,6 +10006,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Texas Tech Health Science Bookstore
   - - 1004
     - 518
     - Houston Community College - Southwest
@@ -9334,7 +10024,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:03.704403'
-    - '2013-05-20 15:06:36.700225'
+    - '2013-05-21 03:02:53.659939'
     - 29.6273
     - -95.5569761
     - true
@@ -9345,6 +10035,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Houston Community College - Southwest Bookstore
   - - 1005
     - 173
     - ! 'Austin Community College - Eastview '
@@ -9361,7 +10053,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:03.948012'
-    - '2013-05-20 15:06:36.713014'
+    - '2013-05-21 03:02:51.675064'
     - 30.2672023
     - -97.7079371
     - true
@@ -9372,6 +10064,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Austin Community College - Eastview Bookstore
   - - 1006
     - 211
     - Texas Tech University
@@ -9388,7 +10082,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:04.252142'
-    - '2013-05-20 15:06:36.745128'
+    - '2013-05-21 03:02:51.726965'
     - 32.676818
     - -81.1002749
     - true
@@ -9399,6 +10093,8 @@ schools:
     - true
     - false
     - 4
+    - true
+    - Texas Tech University Bookstore
   - - 1007
     - 572
     - Texas A & M University
@@ -9415,7 +10111,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:04.478844'
-    - '2013-05-20 15:06:36.828045'
+    - '2013-05-21 03:02:53.907384'
     - 30.6122508
     - -96.3416553
     - true
@@ -9426,6 +10122,8 @@ schools:
     - true
     - false
     - 1
+    - true
+    - Texas A&M University Bookstore
   - - 1008
     - 505
     - Norfolk State University
@@ -9442,7 +10140,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:04.727708'
-    - '2013-05-20 15:06:36.862601'
+    - '2013-05-21 03:02:53.600509'
     - 36.8466182
     - -76.2702221
     - true
@@ -9453,6 +10151,8 @@ schools:
     - false
     - true
     - 1
+    - true
+    - Norfolk State University Bookstore
   - - 1009
     - 620
     - Virginia Commonwealth University
@@ -9469,7 +10169,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:04.976207'
-    - '2013-05-20 15:06:36.904942'
+    - '2013-05-21 03:02:54.114950'
     - 37.5515064
     - -77.45192329999999
     - true
@@ -9480,6 +10180,8 @@ schools:
     - true
     - false
     - 2
+    - true
+    - ! 'Barnes & Noble @ VCU '
   - - 1010
     - 342
     - Longwood University
@@ -9496,7 +10198,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:05.199879'
-    - '2013-05-20 15:06:36.945446'
+    - '2013-05-21 03:02:53.010373'
     - 37.300849
     - -78.3920431
     - true
@@ -9507,6 +10209,8 @@ schools:
     - true
     - false
     - 3
+    - true
+    - Longwood University Bookstore
   - - 1011
     - 330
     - Liberty University
@@ -9523,7 +10227,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:05.401248'
-    - '2013-05-20 15:06:36.983315'
+    - '2013-05-21 03:02:52.926349'
     - 37.352613
     - -79.17906099999999
     - true
@@ -9534,6 +10238,8 @@ schools:
     - true
     - false
     - 4
+    - true
+    - Liberty University Bookstore
   - - 1012
     - 366
     - George Mason University
@@ -9550,7 +10256,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:05.620188'
-    - '2013-05-20 15:06:37.022420'
+    - '2013-05-21 03:02:53.058955'
     - 38.8329383
     - -77.308377
     - true
@@ -9561,6 +10267,8 @@ schools:
     - false
     - true
     - 3
+    - true
+    - George Mason University Bookstore
   - - 1013
     - 652
     - ! 'Northern Virg Community College Loudoun '
@@ -9577,7 +10285,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:05.896616'
-    - '2013-05-20 15:06:37.057034'
+    - '2013-05-21 03:02:54.246669'
     - 39.0279502
     - -77.39315289999999
     - true
@@ -9588,6 +10296,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Northern Virg Cc/Loudoun B Bookstore
   - - 1014
     - 653
     - Northern Virg Community College Manassas
@@ -9604,7 +10314,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:06.087481'
-    - '2013-05-20 15:06:37.085609'
+    - '2013-05-21 03:02:54.255575'
     - 38.8033229
     - -77.5207953
     - true
@@ -9615,6 +10325,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Northern Virg Cc/Manassas Bookstore
   - - 1015
     - 654
     - Northern Virg Community College Woodbridge
@@ -9631,7 +10343,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:06.337476'
-    - '2013-05-20 15:06:37.127792'
+    - '2013-05-21 03:02:54.269979'
     - 38.6185884
     - -77.29327510000002
     - true
@@ -9642,6 +10354,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Northern Virg CC/Woodbridge Bookstore
   - - 1016
     - 669
     - Marymount University
@@ -9658,7 +10372,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:06.540274'
-    - '2013-05-20 15:06:37.161682'
+    - '2013-05-21 03:02:54.322657'
     - 38.9052975
     - -77.1284699
     - true
@@ -9669,6 +10383,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Marymount University Bookstore
   - - 1017
     - 651
     - Northern Virginia Community College Annandale
@@ -9685,7 +10401,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:06.789219'
-    - '2013-05-20 15:06:37.200651'
+    - '2013-05-21 03:02:54.240791'
     - 38.8341753
     - -77.23665319999999
     - true
@@ -9696,6 +10412,8 @@ schools:
     - true
     - false
     - 3
+    - false
+    - Northern Virginia CC/Annandale Bookstore
   - - 1018
     - 650
     - Northern Virginia Community College Alexandria
@@ -9712,7 +10430,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:07.007870'
-    - '2013-05-20 15:06:37.288252'
+    - '2013-05-21 03:02:54.234233'
     - 38.8391622
     - -77.1113106
     - true
@@ -9723,6 +10441,8 @@ schools:
     - false
     - false
     - 3
+    - false
+    - Northern Virg Cc/Alexandria Bookstore
   - - 1019
     - 655
     - Northern Virginia Community College
@@ -9739,7 +10459,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:07.248374'
-    - '2013-05-21 02:35:59.953391'
+    - '2013-05-21 03:02:54.276715'
     - 38.76356639999999
     - -77.176527
     - true
@@ -9750,6 +10470,8 @@ schools:
     - false
     - false
     - 0
+    - false
+    - Northern Virginia Community College - Medical Education Campus Bookstore
   - - 1020
     - 226
     - Central Virginia Community College
@@ -9766,7 +10488,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:07.521528'
-    - '2013-05-20 15:06:37.336789'
+    - '2013-05-21 03:02:51.794601'
     - 37.35856
     - -79.183488
     - true
@@ -9777,6 +10499,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Central Virginia Community College Bookstore
   - - 1021
     - 507
     - Tidewater Community College
@@ -9793,7 +10517,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:07.722975'
-    - '2013-05-20 15:06:37.373433'
+    - '2013-05-21 03:02:53.607002'
     - 36.786606
     - -76.260975
     - true
@@ -9804,6 +10528,8 @@ schools:
     - true
     - false
     - 3
+    - true
+    - ! 'Barnes & Noble @ Tidewater Community College '
   - - 1022
     - 477
     - College Of William & Mary
@@ -9820,7 +10546,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:07.952737'
-    - '2013-05-20 15:06:37.413745'
+    - '2013-05-21 03:02:53.493186'
     - 37.271434
     - -76.705596
     - true
@@ -9831,6 +10557,8 @@ schools:
     - true
     - false
     - 1
+    - true
+    - College Of William & Mary Bookstore
   - - 1023
     - 234
     - North Seattle Community College
@@ -9847,7 +10575,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:08.239873'
-    - '2013-05-20 15:06:37.450689'
+    - '2013-05-21 03:02:51.828823'
     - 47.6987217
     - -122.3348778
     - true
@@ -9858,6 +10586,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - North Seattle Community College Bookstore
   - - 1024
     - 389
     - Seattle Pacific University
@@ -9874,7 +10604,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:08.557701'
-    - '2013-05-20 15:06:37.485389'
+    - '2013-05-21 03:02:53.163419'
     - 47.6504275
     - -122.3610036
     - true
@@ -9885,6 +10615,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - Seattle-Pacific University Bookstore
   - - 1025
     - 232
     - Seattle Central Community College
@@ -9901,7 +10633,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:08.831496'
-    - '2013-05-20 15:06:37.512917'
+    - '2013-05-21 03:02:51.816989'
     - 47.6165099
     - -122.3204876
     - true
@@ -9912,6 +10644,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - Seattle Central Community College Bookstore
   - - 1026
     - 233
     - South Seattle Community College
@@ -9928,7 +10662,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:09.057718'
-    - '2013-05-20 15:06:37.542646'
+    - '2013-05-21 03:02:51.823034'
     - 47.552414
     - -122.352239
     - true
@@ -9939,6 +10673,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - South Seattle Community College Bookstore
   - - 1027
     - 50
     - Washington State University
@@ -9955,7 +10691,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:09.255027'
-    - '2013-05-20 15:06:37.584062'
+    - '2013-05-21 03:02:51.303789'
     - 46.73065949999999
     - -117.1635231
     - true
@@ -9966,6 +10702,8 @@ schools:
     - true
     - false
     - 2
+    - true
+    - The Bookie, Washington State University
   - - 1028
     - 704
     - Fox Valley Technical College
@@ -9982,7 +10720,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:09.533979'
-    - '2013-05-20 15:06:37.621256'
+    - '2013-05-21 03:02:54.474241'
     - 44.282358
     - -88.459086
     - true
@@ -9993,6 +10731,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - Fox Valley Technical College Bookstore
   - - 1029
     - 90
     - Carthage College
@@ -10009,7 +10749,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:09.734910'
-    - '2013-05-20 15:06:37.654651'
+    - '2013-05-21 03:02:51.491602'
     - 42.622783
     - -87.82187499999999
     - true
@@ -10020,6 +10760,8 @@ schools:
     - false
     - false
     - 2
+    - true
+    - Carthage College Bookstore
   - - 1030
     - 223
     - University of Wisconsin Eau Claire
@@ -10036,7 +10778,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:09.957531'
-    - '2013-05-20 15:06:37.687410'
+    - '2013-05-21 03:02:51.785451'
     - 44.797292
     - -91.4976597
     - true
@@ -10047,6 +10789,8 @@ schools:
     - false
     - false
     - 1
+    - true
+    - University of WI Eau Claire Bookstore
   - - 1031
     - 319
     - West Virginia University at Parkersburg
@@ -10063,7 +10807,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:10.222204'
-    - '2013-05-20 15:06:37.719967'
+    - '2013-05-21 03:02:52.891569'
     - 39.2167554
     - -81.5057279
     - true
@@ -10074,6 +10818,8 @@ schools:
     - false
     - false
     - 2
+    - false
+    - West Virginia University/Parkersburg Bookstore
   - - 1032
     - 583
     - West Virginia University
@@ -10090,7 +10836,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:10.472877'
-    - '2013-05-20 15:06:37.757907'
+    - '2013-05-21 03:02:53.943187'
     - 39.6532594
     - -79.95704769999999
     - true
@@ -10101,6 +10847,8 @@ schools:
     - true
     - false
     - 4
+    - true
+    - West Virginia University/Downtown Bookstore
   - - 1033
     - 216
     - West Virginia Northern Community College
@@ -10117,7 +10865,7 @@ schools:
     - 
     - 
     - '2013-05-05 22:21:10.674364'
-    - '2013-05-20 15:06:37.788284'
+    - '2013-05-21 03:02:51.748753'
     - 40.0632024
     - -80.7218662
     - true
@@ -10128,6 +10876,8 @@ schools:
     - false
     - false
     - 1
+    - false
+    - West Virginia Northern CC Bookstore
 
 ---
 transactions:
