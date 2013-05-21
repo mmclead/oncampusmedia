@@ -112,6 +112,19 @@ $(document).ready(function() {
         applyFilters()
       }
     });
+    $("#screen-count-range").slider({
+      range: true,
+      step: 1,
+      min: 0,
+      max: 10,
+      values: [0, 10],
+      slide: function(event, ui) {
+        $( "#filtered-screen-count" ).val( (ui.values[ 0 ]) + " - " + (ui.values[ 1 ]) )
+      },
+      stop: function(event, ui) {
+        applyFilters()
+      }
+    });
   
     
     $('#state-list input').change(function() {
@@ -241,6 +254,7 @@ $(document).ready(function() {
         && (($('#all-conferences input').prop('checked')) || (_.contains(ConferenceFilter, marker.conference)) )
         && (($('#all-dma input').prop('checked')) || (_.contains(DMAFilter, marker.store_info.dma.dma)) )
         && ( marker.store_info.dma.dma_rank >= $('#dma-range').slider("values", 0) && marker.store_info.dma.dma_rank <= $('#dma-range').slider("values", 1) )
+        && ( marker.store_info.screen_count >= $('#screen-count-range').slider("values", 0) && marker.store_info.screen_count <= $('#screen-count-range').slider("values", 1) )
         && (_.every(marker.demographics, function(val, key) { return val >= DemoList[key].min && val <= DemoList[key].max; }))
         && (_.every(marker.transactions, function(val, key) { return val >= $('#'+key.toLowerCase()).slider("values", 0) && val <= $('#'+key.toLowerCase()).slider("values", 1); }))
         );

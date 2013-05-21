@@ -23,7 +23,8 @@ class School < ActiveRecord::Base
       hours: hours.hash_for_filter,
       coffee: [starbucks? ? "starbucks" : nil, coffee_stations? ? "coffee_stations": nil ].compact,
       dma: {dma: dma, dma_rank: dma_rank},
-      school_type: school_type
+      school_type: school_type,
+      screen_count: num_of_screens
     }
     
   end
