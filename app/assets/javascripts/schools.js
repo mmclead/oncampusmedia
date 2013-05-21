@@ -39,6 +39,7 @@ $(document).ready(function() {
     var TypeFilter = [];
     var CoffeeFilter = [];
     var ConferenceFilter = [];
+    var DMAFilter = [];
     var SportFilter = [];
 
     $('#text-filter').keyup(function(event) {
@@ -97,6 +98,21 @@ $(document).ready(function() {
       });
     });
     
+    
+    $("#dma-range").slider({
+      range: true,
+      step: 1,
+      min: 0,
+      max: 200,
+      values: [0, 200],
+      slide: function(event, ui) {
+        $( "#filtered-dma-rank" ).val( (ui.values[ 0 ]) + " - " + (ui.values[ 1 ]) )
+      },
+      stop: function(event, ui) {
+        applyFilters()
+      }
+    });
+  
     
     $('#state-list input').change(function() {
       $('#all-states input').prop('checked', false);
@@ -193,6 +209,20 @@ $(document).ready(function() {
       }
     });
   
+    $('#dma-list input').change(function() {
+      $('#all-dma input').prop('checked', false);
+      DMAFilter = $('#dma-list input:checked').map( function() { return this.name;});
+      applyFilters()
+    });
+    
+    $('#all-dma input').change(function() {
+      if (this.checked) {
+        $('#dma-list input:checked').prop('checked', false);
+        DMAFilter = [];
+        applyFilters()
+      }
+    });
+    
     $('.school-list-item input').change(function() {
       if ($(this).is(':checked')) { addToSelectedList(this) }
       else { removeFromSelectedList(this.value) }
@@ -209,6 +239,8 @@ $(document).ready(function() {
         && (($('#all-hours input').prop('checked')) || ( _.every(HoursFilter, function(day) {return marker.store_info.hours[day]  > 0 })) )
         && (($('#all-sports input').prop('checked')) || ( _.some(marker.sports, function(sport) {return _.contains(SportFilter, sport)})) ) 
         && (($('#all-conferences input').prop('checked')) || (_.contains(ConferenceFilter, marker.conference)) )
+        && (($('#all-dma input').prop('checked')) || (_.contains(DMAFilter, marker.store_info.dma.dma)) )
+        && ( marker.store_info.dma.dma_rank >= $('#dma-range').slider("values", 0) && marker.store_info.dma.dma_rank <= $('#dma-range').slider("values", 1) )
         && (_.every(marker.demographics, function(val, key) { return val >= DemoList[key].min && val <= DemoList[key].max; }))
         && (_.every(marker.transactions, function(val, key) { return val >= $('#'+key.toLowerCase()).slider("values", 0) && val <= $('#'+key.toLowerCase()).slider("values", 1); }))
         );
