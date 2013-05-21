@@ -1,0 +1,11 @@
+#term
+  %h4 Term Length 
+  #all-terms
+    = check_box_tag "Any Term Length", 'all', true
+    = label_tag "Any Term Length", "Any Term Length"
+  %ul.well
+    = radio_button_tag("term", "semester", false)
+    = label_tag "term_semester", "Semester"
+    = radio_button_tag("term", "quarter", false)
+    = label_tag "term_quarter", "Quarter"
+

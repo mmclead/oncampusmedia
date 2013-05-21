@@ -37,6 +37,7 @@ $(document).ready(function() {
 
     var StateFilter = [];
     var TypeFilter = [];
+    var TermFilter = [];
     var CoffeeFilter = [];
     var ConferenceFilter = [];
     var DMAFilter = [];
@@ -158,6 +159,21 @@ $(document).ready(function() {
         applyFilters()
       }
     });
+
+    $('#term ul input').change(function() {
+      $('#all-terms input').prop('checked', false);
+      TermFilter = [];
+      $('#term ul input:checked').map( function() { TermFilter.push(this.value);});
+      applyFilters()
+    });
+    
+    $('#all-terms input').change(function() {
+      if (this.checked) {
+        $('#term ul input:checked').prop('checked', false);
+        TermFilter = [];
+        applyFilters()
+      }
+    });
     
     $('#coffee-station ul input').change(function() {
       $('#all-coffee input').prop('checked', false);
@@ -262,6 +278,7 @@ $(document).ready(function() {
         return !( 
            (($('#all-states input').prop('checked')) || (_.contains(StateFilter, marker.state) ))
         && (($('#all-types input').prop('checked')) || (_.contains(TypeFilter, marker.store_info.school_type) ))
+        && (($('#all-terms input').prop('checked')) || (_.contains(TermFilter, marker.schedule.term) ))
         && (($('#all-coffee input').prop('checked')) || ( _.some(marker.store_info.coffee, function(coffee) {return _.contains(CoffeeFilter, coffee)})) )
         && (($('#all-hours input').prop('checked')) || ( _.every(HoursFilter, function(day) {return marker.store_info.hours[day]  > 0 })) )
         && (($('#all-sports input').prop('checked')) || ( _.some(marker.sports, function(sport) {return _.contains(SportFilter, sport)})) ) 
