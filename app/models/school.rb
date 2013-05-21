@@ -24,7 +24,8 @@ class School < ActiveRecord::Base
       coffee: [starbucks? ? "starbucks" : nil, coffee_stations? ? "coffee_stations": nil ].compact,
       dma: {dma: dma, dma_rank: dma_rank},
       school_type: school_type,
-      screen_count: num_of_screens
+      screen_count: num_of_screens,
+      rotc: rotc?
     }
     
   end
