@@ -53,7 +53,7 @@
   width:60%;
 }
 .school-list {
-  max-height:362px;
+  max-height:300px;
   overflow:auto;
 }
 .selected-list {
@@ -63,7 +63,12 @@
   white-space: normal !important;
   display: inline-table !important;
 }
-
+#school-counter {
+  width:140px;
+}
+#map-and-list {
+  width:380px;
+}
 .gmaps4rails_map {
   width:100%;
   height:250px;

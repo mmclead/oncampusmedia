@@ -1,22 +1,21 @@
 = simple_form_for Ratecard.new, url: {controller: 'ratecards', action: 'create'}, html: {class: 'form-horizontal' } do |f|  
   .row
     .span2
-      %h4#school-count
-        0 selected
-      %ul.selected-list
-      = link_to 'Create Quote', '#',{role: "button", class: "quote-button btn disabled", data:{toggle: "modal", target:"#modal"}}
+      #school-counter.affix
+        %h4#school-count
+          0 selected
+        %ul.selected-list
+        = link_to 'Create Quote', '#',{role: "button", class: "quote-button btn disabled", data:{toggle: "modal", target:"#modal"}}
 
     .span5
-      #map-and-list
+      #map-and-list.affix
         = gmaps4rails(@json)
         #school-list-holder
-          = render 'modal', f:f
           = text_field_tag 'filter', nil, :placeholder => 'Search by Name or ID', id: 'text-filter'
           #total-schools= "#{@schools.length} schools"
           %ul.school-list.nav-list
             = render @schools
             
-    
     .span5
       .accordian#filters
         = render 'filters/states_list'
@@ -28,4 +27,4 @@
     
     
   
-  
+  = render 'modal', f:f

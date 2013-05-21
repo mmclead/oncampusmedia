@@ -1,17 +1,21 @@
-#dma
-  %h4 DMA
-  #all-dma
-    = check_box_tag "Any DMA zone", 'all', true
-    = label_tag "Any DMA zone", "Any DMA zone"
-  #dma-list.well
-    %ul
-      - @schools.collect {|s| s.dma }.compact.uniq.sort.each do |dma|  
-        %li
-          = check_box_tag "#{dma}"
-          = label_tag "#{dma}", "#{dma.titleize}"
-          
-  #dma-rank.well
-    = label_tag "dma-rank", "DMA Rank"
-    #dma-range
-    %input{id: "filtered-dma-rank", type: "text"}
-
+.accordian-group
+  .accordian-heading
+    %h4= link_to 'DMA', '#dma', { data: {toggle: "collapse", parent: "#school-info-list"}}
+  #dma.accordian-body.collapse
+    #dma-rank.well
+      = label_tag "dma-rank", "DMA Rank"
+      #dma-range
+      %input{id: "filtered-dma-rank", type: "text"}
+      
+    #all-dma
+      = check_box_tag "Any DMA zone", 'all', true
+      = label_tag "Any DMA zone", "Any DMA zone"
+    #dma-list.well
+      %ul
+        - @schools.collect {|s| s.dma }.compact.uniq.sort.each do |dma|  
+          %li
+            = check_box_tag "#{dma}"
+            = label_tag "#{dma}", "#{dma.titleize}"
+            
+    
+  

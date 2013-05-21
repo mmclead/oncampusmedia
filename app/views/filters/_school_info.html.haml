@@ -3,7 +3,7 @@
     %h3= link_to 'Filter by School Information', '#school-info', { data: {toggle: "collapse", parent: "#filters"}}
   .school-info-filter-list
   #school-info.accordian-body.collapse
-    #school-info-list
+    .accordian#school-info-list
       = render 'filters/school_type'
       = render 'filters/rotc'
       = render 'filters/dma'

@@ -1,10 +1,11 @@
-#rotc
-  %h4 ROTC 
-  #all-rotc
-    = check_box_tag "Either", 'all', true
-    = label_tag "Either", "Either"
-  %ul.well
-    %li
+.accordian-group
+  .accordian-heading
+    %h4= link_to 'ROTC', '#rotc', { data: {toggle: "collapse", parent: "#school-info-list"}}
+  #rotc.accordian-body.collapse
+    #all-rotc
+      = check_box_tag "Either", 'all', true
+      = label_tag "Either", "Either"
+    %ul.well
       = radio_button_tag("ROTC", true, false)
       = label_tag "ROTC_true", "ROTC"
       = radio_button_tag("ROTC", false, false)
