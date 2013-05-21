@@ -5,15 +5,17 @@ class Schedule < ActiveRecord::Base
   def hash_for_filter
     {
       term: semester? ? "semester" : quarter? ? "quarter" : nil ,
-      fall_finals_first: fall_finals_first, 
-      fall_finals_last: fall_finals_last,
-      fall_first_classes: fall_first_classes, 
-      spring_finals_first: spring_finals_first, 
-      spring_finals_last: spring_finals_last, 
-      spring_first_classes: spring_first_classes, 
-      summer_first_classes: summer_first_classes, 
-      summer_finals_first: summer_finals_first, 
-      summer_finals_last: summer_finals_last
+      dates: {
+        fall_finals_first: fall_finals_first, 
+        fall_finals_last: fall_finals_last,
+        fall_first_classes: fall_first_classes, 
+        spring_finals_first: spring_finals_first, 
+        spring_finals_last: spring_finals_last, 
+        spring_first_classes: spring_first_classes, 
+        summer_first_classes: summer_first_classes, 
+        summer_finals_first: summer_finals_first, 
+        summer_finals_last: summer_finals_last
+      }
     }
     
   end

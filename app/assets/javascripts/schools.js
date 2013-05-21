@@ -42,6 +42,7 @@ $(document).ready(function() {
     var ConferenceFilter = [];
     var DMAFilter = [];
     var SportFilter = [];
+    var DateFilter = [];
 
     $('#text-filter').keyup(function(event) {
       //if esc is pressed or nothing is entered
@@ -266,6 +267,20 @@ $(document).ready(function() {
       }
     });
     
+    $('#schedule ul input').change(function() {
+      $('#all-schedules input').prop('checked', false);
+      DateFilter = $('#schedule ul input').map( function() { if($(this).val()) {return $(this)} });
+      applyFilters()
+    });
+    
+    $('#all-schedules input').change(function() {
+      if (this.checked) {
+        $('#schedule ul input').val('');
+        DateFilter = [];
+        applyFilters()
+      }
+    });
+    
     $('.school-list-item input').change(function() {
       if ($(this).is(':checked')) { addToSelectedList(this) }
       else { removeFromSelectedList(this.value) }
@@ -289,6 +304,11 @@ $(document).ready(function() {
         && ( marker.store_info.screen_count >= $('#screen-count-range').slider("values", 0) && marker.store_info.screen_count <= $('#screen-count-range').slider("values", 1) )
         && (_.every(marker.demographics, function(val, key) { return val >= DemoList[key].min && val <= DemoList[key].max; }))
         && (_.every(marker.transactions, function(val, key) { return val >= $('#'+key.toLowerCase()).slider("values", 0) && val <= $('#'+key.toLowerCase()).slider("values", 1); }))
+        && (($('#all-schedules input').prop('checked')) || _.every(DateFilter, function(date) { return  ($(date).val() ? 
+            ($(date).attr('id').indexOf('start') >= 0 ? 
+              new Date($(date).val()) <= new Date(marker.schedule.dates[$(date).attr('id').substring(0,$(date).attr('id').length-6)]) : 
+              new Date($(date).val()) >= new Date(marker.schedule.dates[$(date).attr('id').substring(0,$(date).attr('id').length-4)])) :
+            true ) } ) )
         );
       });
       return filtered

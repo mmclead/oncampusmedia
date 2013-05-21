@@ -14,7 +14,7 @@
             End Date
         .clearfix
       %li.divider
-      - @schools[0].schedule.hash_for_filter.delete_if{|key,val| key == :term}.keys.each do |date|
+      - @schools[0].schedule.hash_for_filter[:dates].keys.each do |date|
         %li
           .date-range
             .date-input.pull-left
