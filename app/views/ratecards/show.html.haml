@@ -11,10 +11,10 @@
     %td= @ratecard.brand
   %tr
     %th Presented To:
-    %td= @ratecard.presented_to
+    %td= simple_format @ratecard.presented_to
   %tr  
     %th Prepared By:
-    %td= @ratecard.prepared_by
+    %td= simple_format @ratecard.prepared_by
 
     
 %table.table.half-width 
