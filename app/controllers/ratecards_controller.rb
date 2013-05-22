@@ -26,7 +26,6 @@ class RatecardsController < ApplicationController
     if params['schools'].present?
       @ratecard.store_ids = params['schools'].values
       if @ratecard.save
-        redirect_to @ratecard, notice: 'Quote created successfully'
       else
         redirect_to schools_url, notice: 'Quote not created'
       end
