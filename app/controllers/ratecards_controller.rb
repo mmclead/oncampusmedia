@@ -5,8 +5,10 @@ class RatecardsController < ApplicationController
     if user_signed_in?
       if params["user"].present?
         @ratecards = current_user.ratecards
-      else
+      elsif current_user.internal?
         @ratecards = Ratecard.all  
+      else
+        @ratecards = current_user.ratecards + Ratecard.public_only
       end
     else
       @ratecards = Ratecard.public_only

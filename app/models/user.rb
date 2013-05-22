@@ -9,4 +9,9 @@ class User < ActiveRecord::Base
   attr_accessible :name, :phone, :title
   
   has_many :ratecards
+  
+  
+  def internal?
+    email.include?("@on-campusmedia.com")
+  end
 end
