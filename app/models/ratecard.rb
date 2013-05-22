@@ -57,5 +57,5 @@ class Ratecard < ActiveRecord::Base
       UserMailer.send_pdf_of_quote(self).deliver
     end
   end
-
+  
 end

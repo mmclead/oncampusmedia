@@ -1,5 +1,6 @@
 class RatecardsController < ApplicationController
   before_filter :create_dates_from_strings, only: [:create, :update]
+  after_filter :upload_to_dropbox, only: [:create]
   
   def index
     if user_signed_in?
@@ -32,16 +33,12 @@ class RatecardsController < ApplicationController
     else
       redirect_to schools_url, notice: 'No Schools Selected'
     end
-    @params = params
   end
   
   
   
   def show
     @ratecard = Ratecard.find(params[:id])
-    @schools = @ratecard.schools
-    @impressions = @ratecard.impressions
-    @impressions_per_spot = @ratecard.impressions_per_spot
     respond_to do |format|
       format.html
       format.pdf do
@@ -69,4 +66,15 @@ class RatecardsController < ApplicationController
       params[:ratecard][:accept_by] = DateTime.strptime(params[:ratecard][:accept_by], '%Y-%m-%d')
     end
   end
+  
+  def upload_to_dropbox
+    if user_signed_in? and current_user.internal?
+      client = Dropbox::API::Client.new(:token  => Dropbox_Token, :secret => Dropbox_Secret)
+      client.upload "#{@ratecard.user.name}/#{@ratecard.prepared_for}/#{@ratecard.brand}/quote-#{@ratecard.id}.pdf",   
+        render_to_string(pdf: "quote.pdf", template: 'ratecards/show.pdf.haml')        
+    end
+    
+    redirect_to @ratecard, notice: 'Quote Created, Emailed and Uploaded'
+  end
+  
 end

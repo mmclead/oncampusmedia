@@ -1,6 +1,7 @@
 = render 'layouts/quote_header'
-
-
+= link_to 'Download PDF of Quote', ratecard_path(@ratecard, :format => :pdf)
+.clearfix
+%p
 %table.table.half-width
   %tr
     %th Prepared For:
@@ -46,7 +47,7 @@
     %td= @ratecard.cpm
   %tr
     %th Estimated Impressions
-    %td= @impressions
+    %td= @ratecard.impressions
   %tr
     %th=  "#{num_of_weeks_in_words(@ratecard)} Total Cost"
     %td
@@ -61,7 +62,7 @@
     %td= @ratecard.store_ids.count
   %tr
     %th Est. Spots
-    %td= @impressions_per_spot['total'][:total_spots] 
+    %td= @ratecard.impressions_per_spot['total'][:total_spots] 
   %tr
     %th Spots per Hour
     %td= @ratecard.spot_rate
@@ -85,4 +86,3 @@
 
     
 
-= link_to 'Create PDF document', ratecard_path(@ratecard, :format => :pdf)

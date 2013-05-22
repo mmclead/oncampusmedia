@@ -16,6 +16,7 @@ gem 'yaml_db'
 gem 'devise'
 gem 'cancan'
 gem 'wicked_pdf'
+gem "dropbox-api"
 
 
 
