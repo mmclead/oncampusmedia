@@ -77,7 +77,7 @@ class RatecardsController < ApplicationController
       client.upload "#{@ratecard.user.name}/#{@ratecard.prepared_for}/#{@ratecard.brand}/quote-#{@ratecard.id}.pdf",   
         render_to_string(pdf: "quote.pdf", template: 'ratecards/show.pdf.haml')        
     end
-    
+    redirect_to @ratecard, notice: 'Quote created, emailed and uploaded'
   end
   
 end
