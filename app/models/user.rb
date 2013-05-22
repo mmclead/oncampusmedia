@@ -14,4 +14,8 @@ class User < ActiveRecord::Base
   def internal?
     email.include?("@on-campusmedia.com")
   end
+  
+  def contact_info
+    "#{name}\n#{title}\n#{email}\n#{phone}"
+  end
 end
