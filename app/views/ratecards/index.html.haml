@@ -7,4 +7,6 @@
     %th Spot Length
     %th CPM
     %th Owned By
+    - if user_signed_in? && current_user.internal?
+      %th Remove
   = render @ratecards

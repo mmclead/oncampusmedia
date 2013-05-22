@@ -67,6 +67,15 @@ class RatecardsController < ApplicationController
   
   end
   
+  def destroy
+    if Ratecard.find(params[:id]).delete
+      redirect_to ratecards_path, notice: "Quote Deleted"
+    else
+      redirect_to ratecards_path, notice: "Could not Delete Quote"
+    end
+    
+  end
+  
   
   private
   
