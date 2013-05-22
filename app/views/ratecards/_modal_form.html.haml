@@ -1,7 +1,7 @@
 = f.input :prepared_for, :hint => "name of client"
 = f.input :brand, label: 'Brand/Division'
 = f.input :presented_to, :input_html => {:rows => 6 }, :hint => "contact info"
-= f.input :prepared_by, :input_html => {:rows => 6, :value => current_user.contact_info  }, :hint => "contact info" 
+= f.input :prepared_by, :input_html => {:rows => 6, :value => user_signed_in? ? current_user.contact_info : ''  }, :hint => "contact info" 
 = f.input :quote_date, input_html: { class: 'datepicker' }, as: :string
 = f.input :accept_by, input_html: { class: 'datepicker' }, as: :string
 = f.input :spot_length, collection: ([[':15',15], [':30',30], [':60',60]]), :hint => "seconds"
