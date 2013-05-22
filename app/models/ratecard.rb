@@ -33,7 +33,7 @@ class Ratecard < ActiveRecord::Base
       per_spot[s.name] = { 
                           store_id: s.store_id,
                           total_hours_per_week: s.hours.total, 
-                          impressions_per_spot: (impressions([s]) / (s.hours.total * spot_length_multiplier))
+                          impressions_per_spot: s.hours.total > 0 ? (impressions([s]) / (s.hours.total * spot_length_multiplier)) : 0
                          }
     end
     per_spot["total"] = { total_spots: per_spot.inject(0) {|sum, spot| sum + spot[1][:total_hours_per_week].to_i }  * self.num_of_weeks.to_i * spot_rate.to_i  }
