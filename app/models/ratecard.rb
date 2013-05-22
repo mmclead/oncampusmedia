@@ -8,8 +8,8 @@ class Ratecard < ActiveRecord::Base
   
   validates_presence_of :store_ids, :prepared_for, :brand, :presented_to, :prepared_by, :quote_date, :accept_by, :spot_length, :spot_rate, :flight_date, :end_date, :cpm
   
-  after_create :set_dates_and_duration
-  
+  after_create :set_dates_and_duration, :email_pdf_to_creator
+    
   scope :public_only, where(user_id: nil)
   
   def schools
@@ -52,5 +52,10 @@ class Ratecard < ActiveRecord::Base
     self.save
   end
   
+  def email_pdf_to_creator
+    if self.user.present?
+      UserMailer.send_pdf_of_quote(self).deliver
+    end
+  end
 
 end

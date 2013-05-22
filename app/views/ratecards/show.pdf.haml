@@ -49,7 +49,7 @@
     %td= @ratecard.cpm
   %tr
     %th Estimated Impressions
-    %td= @impressions
+    %td= @ratecard.impressions
   %tr
     %th=  "#{num_of_weeks_in_words(@ratecard)} Total Cost"
     %td
@@ -64,7 +64,7 @@
     %td= @ratecard.store_ids.count
   %tr
     %th Est. Spots
-    %td= @impressions_per_spot['total'][:total_spots] 
+    %td= @ratecard.impressions_per_spot['total'][:total_spots] 
   %tr
     %th Spots per Hour
     %td= @ratecard.spot_rate
@@ -84,7 +84,7 @@
     %th Current Enrollment
     %th= "#{num_of_weeks_in_words(@ratecard)} Impressions"
     %th= "#{num_of_weeks_in_words(@ratecard)} Cost Per Campus"
-  = render partial: 'school_for_quote.html', locals: {schools: @ratecard.schools}
+  = render partial: 'ratecards/school_for_quote.html', locals: {schools: @ratecard.schools}
 
     
 
