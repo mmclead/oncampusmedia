@@ -141,6 +141,8 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.1.1)
       rack (>= 1.0)
+    wicked_pdf (0.9.6)
+      rails
     yaml_db (0.2.3)
 
 PLATFORMS
@@ -162,4 +164,5 @@ DEPENDENCIES
   simple_form
   sqlite3
   uglifier (>= 1.0.3)
+  wicked_pdf
   yaml_db

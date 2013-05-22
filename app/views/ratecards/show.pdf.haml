@@ -1,3 +1,6 @@
+= wicked_pdf_stylesheet_link_tag "application"
+= wicked_pdf_javascript_include_tag "application"
+  
 = render 'layouts/quote_header'
 
 
@@ -81,8 +84,7 @@
     %th Current Enrollment
     %th= "#{num_of_weeks_in_words(@ratecard)} Impressions"
     %th= "#{num_of_weeks_in_words(@ratecard)} Cost Per Campus"
-  = render partial: 'school_for_quote', locals: {schools: @ratecard.schools}
+  = render partial: 'school_for_quote.html', locals: {schools: @ratecard.schools}
 
     
 
-= link_to 'Create PDF document', ratecard_path(@ratecard, :format => :pdf)

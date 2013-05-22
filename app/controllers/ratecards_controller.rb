@@ -42,6 +42,14 @@ class RatecardsController < ApplicationController
     @schools = @ratecard.schools
     @impressions = @ratecard.impressions
     @impressions_per_spot = @ratecard.impressions_per_spot
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "quote-#{@ratecard.id}",
+               template: 'ratecards/show.pdf.haml',
+               disposition: 'attachment'
+      end
+    end
   end
   
   

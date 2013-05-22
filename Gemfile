@@ -15,6 +15,7 @@ gem 'jquery-ui-rails'
 gem 'yaml_db'
 gem 'devise'
 gem 'cancan'
+gem 'wicked_pdf'
 
 
 
