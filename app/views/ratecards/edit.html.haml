@@ -1,0 +1,6 @@
+%h2 Editing Quote
+
+= simple_form_for @ratecard, html: {class: 'form-horizontal' } do |f|  
+  = render 'modal_form', f:f
+  
+  = f.button :submit

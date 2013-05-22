@@ -53,6 +53,20 @@ class RatecardsController < ApplicationController
     end
   end
   
+  def edit
+    @ratecard = Ratecard.find(params[:id])
+  end
+  
+  def update
+    @ratecard = Ratecard.find(params[:id])
+    if @ratecard.update_attributes(params[:ratecard])
+      redirect_to @ratecard, notice: "Quote updated successfully."
+    else
+      render action: 'edit'
+    end
+  
+  end
+  
   
   private
   
@@ -76,8 +90,9 @@ class RatecardsController < ApplicationController
       client = Dropbox::API::Client.new(:token  => Dropbox_Token, :secret => Dropbox_Secret)
       client.upload "#{@ratecard.user.name}/#{@ratecard.prepared_for}/#{@ratecard.brand}/quote-#{@ratecard.id}.pdf",   
         render_to_string(pdf: "quote.pdf", template: 'ratecards/show.pdf.haml')        
+      redirect_to @ratecard, notice: 'Quote created, emailed and uploaded'
+
     end
-    redirect_to @ratecard, notice: 'Quote created, emailed and uploaded'
   end
   
 end

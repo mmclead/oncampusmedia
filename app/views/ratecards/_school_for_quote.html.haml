@@ -10,6 +10,5 @@
     %td= school.dma_rank
     %td= school.num_of_screens
     %td= school.demographics.enrollment
-    %td= @ratecard.impressions_per_spot[school.name][:impressions_per_spot].round(2)
-    %td= "$#{(@ratecard.impressions_per_spot[school.name][:impressions_per_spot]*@ratecard.cpm).round(2)}"
-    
+    %td= @ratecard.impressions([school])
+    %td= "$#{(@ratecard.total_cost([school]))}"

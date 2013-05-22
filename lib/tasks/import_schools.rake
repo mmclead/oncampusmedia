@@ -18,28 +18,28 @@ namespace :importer do
         school.dma = row[3]
         school.city = row[4]
         school.state = row[5]
-        school.dma_rank = row[12]
+        school.dma_rank = row[12].to_i
         school.school_type = row[10] 
         school.current_local_annual_traffic = row[55]
         school.starbucks =  row[49].present?
         school.coffee_stations = row[50].present?
-        school.num_of_screens = row[9]
+        school.num_of_screens = row[9].to_i
         
         unless school.school_name.blank?
 
           demographics = school.demographics
           demographics = Demographics.new unless demographics.present?
-          demographics.average_age = row[11]
-          demographics.non_resident_alien = row[30]
-          demographics.african_american_black = row[31]
-          demographics.two_or_more_races = row[32]
-          demographics.asian = row[33]
-          demographics.hispanic_latino = row[34]
-          demographics.white = row[35]
-          demographics.unknown = row[36]
-          demographics.american_indian_alaskan_native = row[37]
-          demographics.native_hawaiian_pacific_islander = row[38]
-          demographics.enrollment = row[41]
+          demographics.average_age = row[11].to_i
+          demographics.non_resident_alien = row[30].to_f
+          demographics.african_american_black = row[31].to_f
+          demographics.two_or_more_races = row[32].to_f
+          demographics.asian = row[33].to_f
+          demographics.hispanic_latino = row[34].to_f
+          demographics.white = row[35].to_f
+          demographics.unknown = row[36].to_f
+          demographics.american_indian_alaskan_native = row[37].to_f
+          demographics.native_hawaiian_pacific_islander = row[38].to_f
+          demographics.enrollment = row[41].to_i
           school.demographics = demographics
           
           hours = school.hours

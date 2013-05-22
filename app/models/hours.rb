@@ -19,7 +19,7 @@ class Hours < ActiveRecord::Base
     open = "#{day}_open"
     close = "#{day}_close"
     if self.send(close).present? and self.send(open).present?
-      (self.send(close) - self.send(open)).abs / 3600
+      (self.send(open) - self.send(close)).abs / 3600
     else
       0
     end

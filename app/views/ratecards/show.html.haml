@@ -1,5 +1,8 @@
 = render 'layouts/quote_header'
-= link_to 'Download PDF of Quote', ratecard_path(@ratecard, :format => :pdf)
+.navbar 
+  %ul.nav
+    %li= link_to 'Download PDF of Quote', ratecard_path(@ratecard, :format => :pdf)
+    %li.pull-right= link_to 'Edit Quote', edit_ratecard_path(@ratecard)
 .clearfix
 %p
 %table.table.half-width
@@ -49,14 +52,14 @@
     %th Estimated Impressions
     %td= @ratecard.impressions
   %tr
-    %th=  "#{num_of_weeks_in_words(@ratecard)} Total Cost"
-    %td
+    %th= "#{num_of_weeks_in_words(@ratecard)} Total Cost"
+    %td= "$#{@ratecard.total_cost}"
   %tr
     %th Cost per Spot
-    %td
+    %td= "$#{@ratecard.cost_per_spot}"
   %tr
-    %th Avg * Week Cost Per Spot
-    %td
+    %th= "Avg #{num_of_weeks_in_words(@ratecard)} Cost Per School"
+    %td= "$#{@ratecard.cost_per_school}"
   %tr
     %th Number of Schools
     %td= @ratecard.store_ids.count

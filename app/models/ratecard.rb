@@ -16,32 +16,44 @@ class Ratecard < ActiveRecord::Base
     store_ids.map {|store_id| School.where(store_id: store_id).first}
   end
   
+  
+  def total_cost(schools = self.schools)
+    (impressions(schools) * cpm).round(2)
+  end
+  
+  def cost_per_spot
+    (total_cost /  impressions_per_spot['total'][:total_spots]).round(2)
+  end
+  
+  def cost_per_school
+    (total_cost / store_ids.length).round(2)  
+  end
+  
   def impressions(schools = self.schools)
     impressions = 0
     
     schools.each do |s|
-      impressions += (s.transactions.per_week * 2) + ((s.num_of_screens-1) * s.transactions.per_week)
+      impressions += (s.transactions.per_week * 2) + (s.num_of_screens > 0 ? ((s.num_of_screens-1) * s.transactions.per_week) : 0)
     end
     
     return impressions
   end
   
   def impressions_per_spot
-    
     per_spot = {}
     schools.each do |s|
       per_spot[s.name] = { 
                           store_id: s.store_id,
-                          total_hours_per_week: s.hours.total, 
-                          impressions_per_spot: s.hours.total > 0 ? (impressions([s]) / (s.hours.total * spot_length_multiplier)) : 0
+                          total_hours_per_week: s.hours.total > 0 ? s.hours.total : 60, 
+                          impressions_per_spot: s.hours.total > 0 ? (impressions([s]) / (s.hours.total * spot_length_multiplier)) : 60
                          }
     end
-    per_spot["total"] = { total_spots: per_spot.inject(0) {|sum, spot| sum + spot[1][:total_hours_per_week].to_i }  * self.num_of_weeks.to_i * spot_rate.to_i  }
+    per_spot["total"] = { total_spots: per_spot.inject(0) {|sum, spot| sum + spot[1][:total_hours_per_week].to_i }  * num_of_weeks.to_f * spot_rate.to_i * spot_length_multiplier  }
     return per_spot
   end
   
   def spot_length_multiplier    
-    return spot_length == 30 ? 1 : spot_length == 15 ? 0.5 : 2
+    return (spot_length == 30 ? 1 : spot_length == 15 ? 0.5 : 2) 
   end
   
   private
