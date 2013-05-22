@@ -26,12 +26,17 @@ class RatecardsController < ApplicationController
     if params['schools'].present?
       @ratecard.store_ids = params['schools'].values
       if @ratecard.save
+        url = @ratecard
+        msg = 'Quote Created Successfully'
       else
-        redirect_to schools_url, notice: 'Quote not created'
+        url = schools_url
+        msg = 'Quote not created'
       end
     else
-      redirect_to schools_url, notice: 'No Schools Selected'
+      url = schools_url
+      msg = 'No Schools Selected'
     end
+    redirect_to url, notice: msg
   end
   
   
@@ -73,7 +78,6 @@ class RatecardsController < ApplicationController
         render_to_string(pdf: "quote.pdf", template: 'ratecards/show.pdf.haml')        
     end
     
-    redirect_to @ratecard, notice: 'Quote Created, Emailed and Uploaded'
   end
   
 end
