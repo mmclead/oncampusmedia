@@ -2,12 +2,24 @@ class RatecardsController < ApplicationController
   before_filter :create_dates_from_strings, only: [:create, :update]
   
   def index
-    @ratecards = Ratecard.all  
+    if user_signed_in?
+      if params["user"].present?
+        @ratecards = current_user.ratecards
+      else
+        @ratecards = Ratecard.all  
+      end
+    else
+      @ratecards = Ratecard.public_only
+    end
     
   end
   
   def create
     @ratecard = Ratecard.new(params[:ratecard])
+    if user_signed_in?
+      @ratecard.user = current_user
+    end
+    
     if params['schools'].present?
       @ratecard.store_ids = params['schools'].values
       if @ratecard.save
@@ -35,16 +47,16 @@ class RatecardsController < ApplicationController
   
   def create_dates_from_strings
     if params[:ratecard][:flight_date].present?
-      params[:ratecard][:flight_date] = DateTime.strptime(params[:ratecard][:flight_date], '%m-%d-%Y')
+      params[:ratecard][:flight_date] = DateTime.strptime(params[:ratecard][:flight_date], '%Y-%m-%d')
     end
     if params[:ratecard][:end_date].present?
-      params[:ratecard][:end_date] = DateTime.strptime(params[:ratecard][:end_date], '%m-%d-%Y')
+      params[:ratecard][:end_date] = DateTime.strptime(params[:ratecard][:end_date], '%Y-%m-%d')
     end
     if params[:ratecard][:quote_date].present?
-      params[:ratecard][:quote_date] = DateTime.strptime(params[:ratecard][:quote_date], '%m-%d-%Y')
+      params[:ratecard][:quote_date] = DateTime.strptime(params[:ratecard][:quote_date], '%Y-%m-%d')
     end
     if params[:ratecard][:accept_by].present?
-      params[:ratecard][:accept_by] = DateTime.strptime(params[:ratecard][:accept_by], '%m-%d-%Y')
+      params[:ratecard][:accept_by] = DateTime.strptime(params[:ratecard][:accept_by], '%Y-%m-%d')
     end
   end
 end

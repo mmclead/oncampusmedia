@@ -1,4 +1,7 @@
 class Ratecard < ActiveRecord::Base
+ 
+  belongs_to :user
+  
   attr_accessible :accept_by, :brand, :cpm, :creative_due_date, :end_date, :flight_date, :num_of_weeks, :prepared_for, :quote_date, :spot_length, :spot_rate, :presented_to, :prepared_by, :store_ids
 
   serialize :store_ids
@@ -6,6 +9,8 @@ class Ratecard < ActiveRecord::Base
   validates_presence_of :store_ids, :prepared_for, :brand, :presented_to, :prepared_by, :quote_date, :accept_by, :spot_length, :spot_rate, :flight_date, :end_date, :cpm
   
   after_create :set_dates_and_duration
+  
+  scope :public_only, where(user_id: nil)
   
   def schools
     store_ids.map {|store_id| School.where(store_id: store_id).first}

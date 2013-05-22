@@ -16,21 +16,44 @@
           <li class="dropdown"> <%= link_to 'Schools', "#",{ class:"dropdown-toggle", data: {toggle: "dropdown"} } %> 
               <ul class="dropdown-menu">
                 <li><%= link_to 'See all', schools_url %></li>
-                <li><%= link_to 'Create new', new_school_url %></li>
+                <% if user_signed_in? %> 
+                  <li><%= link_to 'Create new', new_school_url %></li>
+                <% end %>
               </ul>
           </li>
           <li class="dropdown"> <%= link_to 'Quotes', "#",{ class:"dropdown-toggle", data: {toggle: "dropdown"} } %> 
               <ul class="dropdown-menu">
                 <li><%= link_to 'See all', ratecards_url %></li>
+                <% if user_signed_in? %> 
+                  <li> <%= link_to 'See mine', ratecards_url( user: current_user)  %> </li> 
+                <% end %>
                 <li><%= link_to 'Create new', schools_url %></li>
               </ul>
           </li>
         </ul>
+        <ul class="nav pull-right">
+          <% if user_signed_in? %>
+            <li><%= link_to "Hello, #{current_user.name}", edit_user_registration_path(current_user)%>
+            <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+          <% else %>
+            <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+          <% end %>
       </div>
     </div>
   </div>
   <div class="clearfix"></div>
+
+  
   <div class="container">
+    <% if notice.present? %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+  
+    <% if alert.present? %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+    
     <%= yield %>
   </div>
   <%= yield :scripts %>

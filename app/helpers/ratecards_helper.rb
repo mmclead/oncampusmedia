@@ -8,5 +8,9 @@ module RatecardsHelper
     return s
   end
   
+  def owned_by(quote)
+    quote.user_id.present? ? "#{quote.user.name}" : "Public"
+  end
+  
   
 end

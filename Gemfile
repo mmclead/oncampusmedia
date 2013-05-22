@@ -13,6 +13,8 @@ gem 'factory_girl_rails'
 gem 'haml-rails'
 gem 'jquery-ui-rails'
 gem 'yaml_db'
+gem 'devise'
+gem 'cancan'
 
 
 
