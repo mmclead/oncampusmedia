@@ -33,7 +33,7 @@ class Ratecard < ActiveRecord::Base
     impressions = 0
     
     schools.each do |s|
-      impressions += (s.transactions.per_week * 2) + (s.num_of_screens > 0 ? ((s.num_of_screens-1) * s.transactions.per_week) : 0)
+      impressions += ((s.transactions.per_week * 2) + (s.num_of_screens > 0 ? ((s.num_of_screens-1) * s.transactions.per_week) : 0))*num_of_weeks
     end
     
     return impressions
