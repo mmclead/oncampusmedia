@@ -8,6 +8,17 @@ $(document).ready(function() {
   $('.school-list-item label').each(function() {
     $(this).attr({'for': this.textContent.trim()} )
   });
+
+  $('.school-list').height(function(index, height) {
+      return window.innerHeight - ($(this).offset().top + 50);
+  }); 
+    
+  $(window).bind('resize', function() {
+    $('.school-list').height(function(index, height) {
+      return window.innerHeight - ($(this).offset().top + 50);
+    }); 
+  });
+  
   
 
   $('#start-date.datepicker').datepicker().on('changeDate', function(e){
