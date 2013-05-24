@@ -27,7 +27,7 @@ class RatecardsController < ApplicationController
       @ratecard.store_ids = params['schools'].values
       if @ratecard.save
         url = @ratecard
-        msg = 'Quote Created Successfully'
+        msg = "Quote Created Successfully #{ENV['MAIL_USERNAME']}"
       else
         url = schools_url
         msg = 'Quote not created'
@@ -99,7 +99,7 @@ class RatecardsController < ApplicationController
       client = Dropbox::API::Client.new(:token  => Dropbox_Token, :secret => Dropbox_Secret)
       client.upload "#{@ratecard.user.name}/#{@ratecard.prepared_for}/#{@ratecard.brand}/quote-#{@ratecard.id}.pdf",   
         render_to_string(pdf: "quote.pdf", template: 'ratecards/show.pdf.haml')        
-      redirect_to @ratecard, notice: 'Quote created, emailed and uploaded'
+      redirect_to @ratecard, notice: "Quote created, emailed from #{ENV['MAIL_USERNAME']} and uploaded"
 
     end
   end

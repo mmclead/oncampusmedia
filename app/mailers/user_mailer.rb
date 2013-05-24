@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "mason@chewysystems.com"
+  default from: ENV['MAIL_USERNAME']
   add_template_helper(RatecardsHelper)
   
   def send_pdf_of_quote(quote)
