@@ -18,7 +18,19 @@ class Ratecard < ActiveRecord::Base
   
   
   def total_cost(schools = self.schools)
-    (impressions(schools) * cpm).round(2)
+    
+    total_hours = schools.inject(0) {|sum, school| sum + school.hours.total.to_i }
+    
+    weighted_impressions_per_hour = impressions(schools) / total_hours
+    
+    dwell_time = 3
+    
+    actual_impressions_per_hour = weighted_impressions_per_hour / dwell_time
+    
+    cost_per_spot = actual_impressions_per_hour / 1000 * cpm * spot_rate 
+    
+    total = (cost_per_spot * impressions_per_spot['total'][:total_spots]).round(2)
+    
   end
   
   def cost_per_spot
