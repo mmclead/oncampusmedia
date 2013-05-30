@@ -45,8 +45,8 @@ $(document).ready(function() {
     var FullMarkerList = Gmaps.map.markers;
     var CurrentMarkerList = [];
     var DemoList = {
-      average_age: {name:"average_age", min: 0, max: 40, percent: 0}, 
-      enrollment: {name: "enrollment", min: 0, max: 10000, percent: 0},
+      average_age: {name:"average_age", min: 0, max: 50, percent: 0}, 
+      enrollment: {name: "enrollment", min: 0, max: 100000, percent: 0},
       african_american_black: {name:"african_american_black", min: 0, max: 100, percent: 1}, 
       american_indian_alaskan_native: {name: "american_indian_alaskan_native", min: 0, max: 100, percent: 1}, 
       asian: {name: "asian", min: 0, max: 100, percent: 1}, 
@@ -325,7 +325,7 @@ $(document).ready(function() {
         && (($('#all-rotc input').prop('checked')) || (_.contains(ROTCFilter, marker.store_info.rotc.toString())) )
         && ( marker.store_info.dma.dma_rank >= $('#dma-range').slider("values", 0) && marker.store_info.dma.dma_rank <= $('#dma-range').slider("values", 1) )
         && ( marker.store_info.screen_count >= $('#screen-count-range').slider("values", 0) && marker.store_info.screen_count <= $('#screen-count-range').slider("values", 1) )
-        && (_.every(marker.demographics, function(val, key) { return val >= DemoList[key].min && val <= DemoList[key].max; }))
+        && (_.every(marker.demographics, function(val, key) { return val ? val >= DemoList[key].min && val <= DemoList[key].max : true }))
         && (_.every(marker.transactions, function(val, key) { return val >= $('#'+key.toLowerCase()).slider("values", 0) && val <= $('#'+key.toLowerCase()).slider("values", 1); }))
         && (($('#all-schedules input').prop('checked')) || _.every(DateFilter, function(date) { return  ($(date).val() ? 
             ($(date).attr('id').indexOf('start') >= 0 ? 
