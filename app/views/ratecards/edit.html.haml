@@ -1,6 +1,6 @@
 %h2 Editing Quote
 
-= simple_form_for @ratecard, html: {class: 'form-horizontal' } do |f|  
+= simple_form_for @ratecard, html: {class: 'form-horizontal', id: 'quote-form' } do |f|  
   = render 'modal_form', f:f
   
   = f.button :submit

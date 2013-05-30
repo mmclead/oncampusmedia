@@ -2,25 +2,25 @@
 = f.input :brand, label: 'Brand/Division'
 = f.input :presented_to, :input_html => {:rows => 6 }, :hint => "contact info"
 = f.input :prepared_by, :input_html => {:rows => 6, :value => user_signed_in? ? current_user.contact_info : @ratecard.present? ? @ratecard.prepared_by : '' }, :hint => "contact info" 
-= f.input :quote_date, input_html: { class: 'datepicker', id: 'quote-date' }, as: :string
-= f.input :accept_by, input_html: { class: 'datepicker', id: 'accept-date' }, as: :string
-= f.input :spot_length, collection: ([[':15',15], [':30',30], [':60',60]]), :selected => 30, :hint => "seconds"
-= f.input :spot_rate, :hint => "spots per hour", :input_html => {:value => 1}
-= f.input :flight_date, input_html: { class: 'datepicker', id: 'start-date' }, as: :string
-= f.input :end_date, input_html: { class: 'datepicker', id: 'end-date' }, as: :string
+= f.input :quote_date, input_html: { class: 'datepicker', id: 'quote-date', :value => @ratecard.present? ? @ratecard.quote_date : '' }, as: :string
+= f.input :accept_by, input_html: { class: 'datepicker', id: 'accept-date', :value => @ratecard.present? ? @ratecard.accept_by : ''  }, as: :string
+= f.input :spot_length, collection: ([[':15',15], [':30',30], [':60',60]]), :selected => @ratecard.present? ? @ratecard.spot_length : 30, :hint => "seconds"
+= f.input :spot_rate, :hint => "spots per hour", :input_html => {:value => @ratecard.present? ? @ratecard.spot_rate : 1}
+= f.input :flight_date, input_html: { class: 'datepicker', id: 'start-date', :value => @ratecard.present? ? @ratecard.flight_date : '' }, as: :string
+= f.input :end_date, input_html: { class: 'datepicker', id: 'end-date', :value => @ratecard.present? ? @ratecard.end_date : ''  }, as: :string
 %br
 %ul.nav.nav-list
   %li.divider
 %br
 
-= f.input :cpm, :input_html => {:value => 12}, label: 'CPM ($)'
+= f.input :cpm, :input_html => {:value => @ratecard.present? ? @ratecard.cpm : 12}, label: 'CPM ($)'
 
 
 
 
 :javascript
 
-  $('.datepicker').datepicker({
+  $('input.datepicker').datepicker({
     format: 'yyyy-mm-dd'
   });
   
