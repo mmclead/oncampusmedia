@@ -36,6 +36,7 @@ $(document).ready(function() {
   
   $('.quote-button').removeAttr('data-target');
   
+  $('#quote-form').validate();
   
   Gmaps.map.callback = function() {
     
