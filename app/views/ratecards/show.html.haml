@@ -50,7 +50,7 @@
     %td= @ratecard.cpm
   %tr
     %th Estimated Impressions
-    %td= @ratecard.impressions
+    %td= @ratecard.total_impressions
   %tr
     %th= "#{num_of_weeks_in_words(@ratecard)} Total Cost"
     %td= "$#{@ratecard.total_cost}"
@@ -65,7 +65,7 @@
     %td= @ratecard.store_ids.count
   %tr
     %th Est. Spots
-    %td= @ratecard.impressions_per_spot['total'][:total_spots] 
+    %td= @ratecard.total_spots
   %tr
     %th Spots per Hour
     %td= @ratecard.spot_rate

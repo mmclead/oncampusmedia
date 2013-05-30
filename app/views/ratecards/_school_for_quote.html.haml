@@ -10,5 +10,5 @@
     %td= school.dma_rank
     %td= school.num_of_screens
     %td= school.demographics.enrollment
-    %td= @ratecard.impressions([school])
+    %td= @ratecard.total_impressions([school])
     %td= "$#{(@ratecard.total_cost([school]))}"

@@ -12,7 +12,7 @@ class Hours < ActiveRecord::Base
   def total
     total = 0
     Date::DAYNAMES.each {|day| total+= hours_for(day.downcase)}
-    total.abs
+    total.abs > 0 ? total.abs : 60
   end
   
   def hours_for(day)
