@@ -47,25 +47,25 @@
 %table.table.table-bordered
   %tr
     %th CPM
-    %td= @ratecard.cpm
+    %td= number_to_currency(@ratecard.cpm)
   %tr
     %th Estimated Impressions
-    %td= @ratecard.total_impressions
+    %td= number_with_delimiter(@ratecard.total_impressions.to_i)
   %tr
     %th= "#{num_of_weeks_in_words(@ratecard)} Total Cost"
-    %td= "$#{@ratecard.total_cost}"
+    %td= number_to_currency(@ratecard.total_cost)
   %tr
     %th Cost per Spot
-    %td= "$#{@ratecard.cost_per_spot}"
+    %td= number_to_currency(@ratecard.cost_per_spot)
   %tr
     %th= "Avg #{num_of_weeks_in_words(@ratecard)} Cost Per School"
-    %td= "$#{@ratecard.cost_per_school}"
+    %td= number_to_currency(@ratecard.cost_per_school)
   %tr
     %th Number of Schools
     %td= @ratecard.store_ids.count
   %tr
     %th Est. Spots
-    %td= @ratecard.total_spots
+    %td= number_with_delimiter(@ratecard.total_spots.to_i)
   %tr
     %th Spots per Hour
     %td= @ratecard.spot_rate
