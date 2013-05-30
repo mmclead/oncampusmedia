@@ -44,3 +44,11 @@ header {
 .accordian-group {
   margin-bottom:10px;
 }
+
+.table tbody tr.success th {
+    background-color: #dff0d8;
+}
+
+.table tbody tr.info th {
+    background-color: #d9edf7;
+}

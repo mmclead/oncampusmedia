@@ -30,9 +30,6 @@
   %tr
     %th Spot Length:
     %td= "#{@ratecard.spot_length} seconds"
-  %tr
-    %th # of Weeks:
-    %td= num_of_weeks_in_words(@ratecard)
   %tr 
     %th Flight Date:
     %td= @ratecard.flight_date.strftime("%D")
@@ -40,40 +37,45 @@
     %th End Date:
     %td= @ratecard.end_date.strftime("%D")
   %tr
+    %th Air Time:
+    %td= num_of_weeks_in_words(@ratecard)
+  %tr
     %th Creative Due Date:
     %td= @ratecard.creative_due_date.strftime("%D")
     
     
-%table.table.table-bordered
+%table.table.table-bordered.table-hover
   %tr
-    %th CPM
-    %td= number_to_currency(@ratecard.cpm)
+    %th Spots per Hour
+    %td= @ratecard.spot_rate
   %tr
-    %th Estimated Impressions
-    %td= number_with_delimiter(@ratecard.total_impressions.to_i)
-  %tr
-    %th= "#{num_of_weeks_in_words(@ratecard)} Total Cost"
-    %td= number_to_currency(@ratecard.total_cost)
+    %th Estimated Spots
+    %td= number_with_delimiter(@ratecard.total_spots.to_i)
   %tr
     %th Cost per Spot
     %td= number_to_currency(@ratecard.cost_per_spot)
   %tr
-    %th= "Avg #{num_of_weeks_in_words(@ratecard)} Cost Per School"
-    %td= number_to_currency(@ratecard.cost_per_school)
-  %tr
     %th Number of Schools
     %td= @ratecard.store_ids.count
   %tr
-    %th Est. Spots
-    %td= number_with_delimiter(@ratecard.total_spots.to_i)
+    %th= "Avg #{num_of_weeks_in_words(@ratecard)} Cost Per Campus"
+    %td= number_to_currency(@ratecard.cost_per_school) 
   %tr
-    %th Spots per Hour
-    %td= @ratecard.spot_rate
+    %th Estimated Impressions
+    %td= number_with_delimiter(@ratecard.total_impressions.to_i)
+  %tr
+    %th CPM
+    %td= number_to_currency(@ratecard.cpm)
+  %tr.success
+    %th= "#{num_of_weeks_in_words(@ratecard)} Total Cost"
+    %td= number_to_currency(@ratecard.total_cost)
+ 
+
     
     
-%table.table.table-bordered
-  %tr
-    %th Campus #
+%table.table.table-bordered.table-hover
+  %tr.info
+    %th Campus No.
     %th Campus Name
     %th Type
     %th Address
@@ -83,8 +85,8 @@
     %th DMA Rank
     %th No. of Screens
     %th Current Enrollment
-    %th= "#{num_of_weeks_in_words(@ratecard)} Impressions"
-    %th= "#{num_of_weeks_in_words(@ratecard)} Cost Per Campus"
+    %th Impressions
+    %th Cost Per Campus
   = render partial: 'school_for_quote', locals: {schools: @ratecard.schools}
 
     
