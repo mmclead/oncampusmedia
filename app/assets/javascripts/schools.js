@@ -383,22 +383,24 @@ $(document).ready(function() {
     };
     
     var addToSelectedList = function(school) {
-      var list = $('ul.selected-list');
-      var li =  $('<li/>')
-                .addClass('selected-school-item badge badge-info')
-                .attr({id: school.value})
-                .text(' ' + school.id + ' - ' + school.value + ' ')
-                .append($('<input/>').attr({type: 'hidden', 
-                                              id: school.id, 
-                                              name: "schools["+school.id+"]",
-                                              value: school.value}))
-                .append($('<i/>').attr({class: 'icon-remove-sign pull-right', id: school.value}))
-                .appendTo(list);
-      $('#school-count').text($('.selected-school-item').size() + ' selected')
-      $('.quote-button').attr('data-target','#modal').removeClass('disabled'); 
-      //$('i.icon-remove-sign').hover(function() {$(this).addClass('icon-white')}, function() {$(this).removeClass('icon-white')});
-      $('i.icon-remove-sign').click(function() { removeFromSelectedList(this.id) });
-      //$(school.parentElement).add(school.parentElement.nextElementSibling).fadeOut();
+      if ($('#'+school.value + '.selected-school-item').size() == 0) {
+        var list = $('ul.selected-list');
+        var li =  $('<li/>')
+                  .addClass('selected-school-item badge badge-info')
+                  .attr({id: school.value})
+                  .text(' ' + school.id + ' - ' + school.value + ' ')
+                  .append($('<input/>').attr({type: 'hidden', 
+                                                id: school.id, 
+                                                name: "schools["+school.id+"]",
+                                                value: school.value}))
+                  .append($('<i/>').attr({class: 'icon-remove-sign pull-right', id: school.value}))
+                  .appendTo(list);
+        $('#school-count').text($('.selected-school-item').size() + ' selected')
+        $('.quote-button').attr('data-target','#modal').removeClass('disabled'); 
+        //$('i.icon-remove-sign').hover(function() {$(this).addClass('icon-white')}, function() {$(this).removeClass('icon-white')});
+        $('i.icon-remove-sign').click(function() { removeFromSelectedList(this.id) });
+        //$(school.parentElement).add(school.parentElement.nextElementSibling).fadeOut();
+      }
     };
     
     var removeFromSelectedList = function(school_id) {
