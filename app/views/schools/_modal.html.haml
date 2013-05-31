@@ -2,9 +2,9 @@
   .modal-header
     %button{type: "button", class:"close", data:{dismiss: "modal"} }
       &times
-    %h3 Create Quote
+    %h3 Create Proposal
   .modal-body
     = render 'ratecards/modal_form', f:f
   .modal-footer
     = link_to 'Close', {class: 'btn'}, data:{dismiss: "modal"}
-    = f.submit 'Create Quote'
+    = f.submit 'Create Proposal'

@@ -1,6 +1,6 @@
 %tr
-  %td= ratecard.quote_date.try(:strftime, "%D")
   %td= link_to "#{ratecard.id}", ratecard
+  %td= ratecard.quote_date.try(:strftime, "%D")
   %td= ratecard.store_ids.count
   %td= simple_format ratecard.prepared_by
   %td= ratecard.presented_to

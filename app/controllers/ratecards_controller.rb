@@ -100,8 +100,8 @@ class RatecardsController < ApplicationController
   def upload_to_dropbox
     if user_signed_in? and current_user.internal?
       client = Dropbox::API::Client.new(:token  => Dropbox_Token, :secret => Dropbox_Secret)
-      client.upload "#{@ratecard.user.name}/#{@ratecard.prepared_for}/#{@ratecard.brand}/quote-#{@ratecard.id}.pdf",   
-        render_to_string(pdf: "quote.pdf", template: 'ratecards/show.pdf.haml')        
+      client.upload "#{@ratecard.user.name}/#{@ratecard.prepared_for}/#{@ratecard.brand}/proposal-#{@ratecard.quote_date.strftime('%Y-%m-%d')}.pdf",   
+        render_to_string(pdf: "proposal.pdf", template: 'ratecards/show.pdf.haml')        
       redirect_to @ratecard, notice: "Quote created, emailed and uploaded"
 
     end
