@@ -8,6 +8,6 @@
     %th Spot Length
     %th CPM
     %th Owned By
-    - if user_signed_in? && current_user.internal?
+    - if can? :destroy, Ratecard
       %th Remove
   = render @ratecards

@@ -5,5 +5,5 @@
   > 
   = "#{school.name.titleize} - #{school.store_id}"
   </label>
-  = link_to 'Edit', [:edit, school]
+  = link_to 'Edit', [:edit, school] if can? :update, school
 %li.divider

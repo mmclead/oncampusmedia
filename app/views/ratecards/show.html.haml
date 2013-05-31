@@ -2,7 +2,7 @@
 .navbar 
   %ul.nav
     %li= link_to 'Download PDF of Quote', ratecard_path(@ratecard, :format => :pdf)
-    %li.pull-right= link_to 'Edit Quote', edit_ratecard_path(@ratecard)
+    %li.pull-right= link_to 'Edit Quote', edit_ratecard_path(@ratecard) if can? :update, @ratecard
 .clearfix
 %p
 %table.table.half-width
@@ -67,11 +67,10 @@
     %th CPM
     %td= number_to_currency(@ratecard.cpm)
   %tr.success
-    %th= "#{num_of_weeks_in_words(@ratecard)} Total Cost"
+    %th Total Cost
     %td= number_to_currency(@ratecard.total_cost)
  
 
-    
     
 %table.table.table-bordered.table-hover
   %tr.info

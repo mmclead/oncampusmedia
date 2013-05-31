@@ -13,6 +13,14 @@ class Ratecard < ActiveRecord::Base
   before_save :set_dates_and_duration
   
   scope :public_only, where(user_id: nil)
+  scope :owned, where("user_id != ?", nil)
+  #scope :public_and_mine, lambda { |user_id| public_only.or(self.arel_table[:user_id].eq(user_id) ) }
+  
+  
+  def self.public_and_mine(user_id)
+    r = self.arel_table
+    self.where(r[:user_id].eq(nil).or(r[:user_id].eq(user_id)))
+  end
   
   def schools
     store_ids.map {|store_id| School.where(store_id: store_id).first}

@@ -7,5 +7,5 @@
   %td= ratecard.spot_length
   %td= ratecard.cpm
   %td= owned_by(ratecard)
-  - if user_signed_in? && current_user.internal?
+  - if can? :destroy, ratecard
     %td= link_to "delete", ratecard, method: :delete, :confirm => 'Are you sure?'

@@ -1,4 +1,6 @@
 class RatecardsController < ApplicationController
+  load_and_authorize_resource
+  
   before_filter :create_dates_from_strings, only: [:create, :update]
   after_filter :upload_to_dropbox, only: [:create]
   
@@ -10,9 +12,9 @@ class RatecardsController < ApplicationController
       if params["user"].present?
         @ratecards = current_user.ratecards
       elsif current_user.internal?
-        @ratecards = Ratecard.all  
+        @ratecards = Ratecard.all
       else
-        @ratecards = current_user.ratecards + Ratecard.public_only
+        @ratecards = Ratecard.public_and_mine(current_user.id)
       end
     else
       @ratecards = Ratecard.public_only
@@ -30,10 +32,10 @@ class RatecardsController < ApplicationController
       @ratecard.store_ids = params['schools'].values
       if @ratecard.save
         url = @ratecard
-        msg = "Quote Created Successfully"
+        msg = "Proposal Created Successfully"
       else
         url = schools_url
-        msg = 'Quote not created'
+        msg = 'Proposal not created'
       end
     else
       url = schools_url
