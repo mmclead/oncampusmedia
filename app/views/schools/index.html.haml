@@ -12,7 +12,12 @@
         = gmaps4rails(@json)
         #school-list-holder
           = text_field_tag 'filter', nil, :placeholder => 'Search by Name or ID', id: 'text-filter'
-          #total-schools= "#{@schools.length} schools"
+          #school-tool-bar
+            #total-schools.pull-left= "#{@schools.length} schools"
+            #select-all-schools.hidden.pull-right
+              = check_box_tag "Select All Schools", 'all', false
+              = label_tag "Select All Schools", "Select All Schools"
+          .clearfix
           %ul.school-list.nav-list
             = render @schools
             

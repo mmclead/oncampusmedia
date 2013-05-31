@@ -348,9 +348,22 @@ $(document).ready(function() {
                    .appendTo(list);
       });
       $('#total-schools').text(markers.length + ' schools');
+      
+      
+      
       $('.school-list-item input').change(function() {
         if ($(this).is(':checked')) { addToSelectedList(this) }
         else { removeFromSelectedList(this.value) }
+      });
+      $('#select-all-schools').removeClass('hidden');
+      $('#select-all-schools input').change(function() {
+        if (this.checked) {
+          $('.school-list-item input').each(function() {
+            $(this).prop('checked', true);
+            addToSelectedList(this);
+          });
+          $(this).prop('checked', false)
+        }
       });
       
       $('i.icon-remove-sign').click(function() {
