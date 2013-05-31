@@ -14,7 +14,10 @@ Schools::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   resources :schools
-  resources :ratecards
+  resources :ratecards do 
+    get :autocomplete_ratecard_prepared_for, :on => :collection
+    get :autocomplete_ratecard_brand, :on => :collection
+  end
   
   
 

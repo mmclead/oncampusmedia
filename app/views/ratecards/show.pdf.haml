@@ -56,7 +56,7 @@
     %th Number of Schools
     %td= @ratecard.store_ids.count
   %tr
-    %th= "Avg #{num_of_weeks_in_words(@ratecard)} Cost Per Campus"
+    %th Avg Cost Per Campus
     %td= number_to_currency(@ratecard.cost_per_school) 
   %tr
     %th Estimated Impressions

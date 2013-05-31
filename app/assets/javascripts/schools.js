@@ -397,9 +397,7 @@ $(document).ready(function() {
                   .appendTo(list);
         $('#school-count').text($('.selected-school-item').size() + ' selected')
         $('.quote-button').attr('data-target','#modal').removeClass('disabled'); 
-        //$('i.icon-remove-sign').hover(function() {$(this).addClass('icon-white')}, function() {$(this).removeClass('icon-white')});
         $('i.icon-remove-sign').click(function() { removeFromSelectedList(this.id) });
-        //$(school.parentElement).add(school.parentElement.nextElementSibling).fadeOut();
       }
     };
     

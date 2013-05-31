@@ -17,6 +17,7 @@ gem 'devise'
 gem 'cancan'
 gem 'wicked_pdf'
 gem "dropbox-api"
+gem 'rails3-jquery-autocomplete'
 
 
 

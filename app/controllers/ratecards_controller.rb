@@ -2,6 +2,9 @@ class RatecardsController < ApplicationController
   before_filter :create_dates_from_strings, only: [:create, :update]
   after_filter :upload_to_dropbox, only: [:create]
   
+  autocomplete :ratecard, :prepared_for
+  autocomplete :ratecard, :brand
+  
   def index
     if user_signed_in?
       if params["user"].present?
@@ -27,7 +30,7 @@ class RatecardsController < ApplicationController
       @ratecard.store_ids = params['schools'].values
       if @ratecard.save
         url = @ratecard
-        msg = "Quote Created Successfully #{ENV['MAIL_USERNAME']}"
+        msg = "Quote Created Successfully"
       else
         url = schools_url
         msg = 'Quote not created'
@@ -99,7 +102,7 @@ class RatecardsController < ApplicationController
       client = Dropbox::API::Client.new(:token  => Dropbox_Token, :secret => Dropbox_Secret)
       client.upload "#{@ratecard.user.name}/#{@ratecard.prepared_for}/#{@ratecard.brand}/quote-#{@ratecard.id}.pdf",   
         render_to_string(pdf: "quote.pdf", template: 'ratecards/show.pdf.haml')        
-      redirect_to @ratecard, notice: "Quote created, emailed from #{ENV['MAIL_USERNAME']} and uploaded"
+      redirect_to @ratecard, notice: "Quote created, emailed and uploaded"
 
     end
   end
