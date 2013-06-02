@@ -1,0 +1,35 @@
+.hero-unit
+  %h2.text-center Total Cost Equation
+  
+  .lead
+    Transactions for period(flight_date, end_date) *
+    %strong
+      = @equation.impression_factor 
+    *  (Number of screens - 1  * 
+    %strong
+      = @equation.screen_weight_multiplier
+    )  *
+    %br
+    Spot length multiplier  *  spot_rate  = 
+    %strong
+      Total Impressions
+    %br
+    %br
+    %br
+    .text-center
+      %strong
+        Total Impressions 
+      * CPM
+    = "------------------------------------------------------------------------------------------------------"
+    %br
+    .text-center
+      %strong
+        = @equation.dwell_time
+      * 1000
+      
+        
+      
+        
+    
+    
+    

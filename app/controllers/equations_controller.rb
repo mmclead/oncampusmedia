@@ -1,11 +1,7 @@
 class EquationsController < ApplicationController
-  load_and_authorize_resource
-  
-  
-  def edit
-    
+  load_and_authorize_resource  
+  def edit    
   end
-  
   
   def update
     if @equation.update_attributes(params[:equation])

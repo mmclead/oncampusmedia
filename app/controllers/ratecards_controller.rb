@@ -69,7 +69,6 @@ class RatecardsController < ApplicationController
     else
       render action: 'edit'
     end
-  
   end
   
   def destroy
