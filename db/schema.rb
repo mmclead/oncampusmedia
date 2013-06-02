@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130531200931) do
+ActiveRecord::Schema.define(:version => 20130531230045) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "school_id"
@@ -42,6 +42,15 @@ ActiveRecord::Schema.define(:version => 20130531200931) do
   end
 
   add_index "demographics", ["school_id"], :name => "index_demographics_on_school_id"
+
+  create_table "equations", :force => true do |t|
+    t.float    "impression_factor"
+    t.float    "screen_weight_multiplier"
+    t.float    "dwell_time"
+    t.float    "spot_length_multiplier"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
 
   create_table "hours", :force => true do |t|
     t.integer  "school_id"

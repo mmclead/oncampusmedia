@@ -18,6 +18,7 @@ Schools::Application.routes.draw do
     get :autocomplete_ratecard_prepared_for, :on => :collection
     get :autocomplete_ratecard_brand, :on => :collection
   end
+  resources :equations
   
   
 

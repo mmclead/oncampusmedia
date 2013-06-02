@@ -1,0 +1,13 @@
+%h2 Editing Cost Equation
+
+= simple_form_for @equation, html: {class: 'form-horizontal' } do |f|
+
+  = f.input :impression_factor,  input_html: {class: 'equation', id: 'impression'}
+
+  = f.input :screen_weight_multiplier,  input_html: {class: 'equation', id: 'screen'}
+
+  = f.input :dwell_time,  input_html: {class: 'equation', id: 'dwell'}
+
+  //= f.input :spot_length_multiplier,  input_html: {class: 'equation', id: 'length'}
+  
+  = f.submit
