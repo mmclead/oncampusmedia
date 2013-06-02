@@ -30,7 +30,11 @@
                 <li><%= link_to 'Create new', schools_url %></li>
               </ul>
           </li>
+          <% if can? :edit, Equation %>
+          <li><%= link_to "Edit Equation", edit_equation_path(1)%>
+          <% end %> 
         </ul>
+        
         <ul class="nav pull-right">
           <% if user_signed_in? %>
             <li><%= link_to "Hello, #{current_user.name}", edit_user_registration_path(current_user)%>

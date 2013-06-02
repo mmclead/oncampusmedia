@@ -4,8 +4,10 @@
       #school-counter
         %h4#school-count
           0 selected
+        = link_to 'Create Proposal', '#',{role: "button", class: "quote-button btn disabled bottom-margin", data:{toggle: "modal", target:"#modal"}}
+        .clearfix
         %ul.selected-list
-        = link_to 'Create Proposal', '#',{role: "button", class: "quote-button btn disabled", data:{toggle: "modal", target:"#modal"}}
+        
 
     .span5
       #map-and-list.affix

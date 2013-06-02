@@ -53,7 +53,7 @@
     %td= number_with_delimiter(@ratecard.total_spots.to_i)
   %tr
     %th Cost per Spot
-    %td= number_to_currency(@ratecard.cost_per_spot)
+    %td= number_to_currency(@ratecard.cost_per_spot.round(2))
   %tr
     %th Number of Schools
     %td= @ratecard.store_ids.count
