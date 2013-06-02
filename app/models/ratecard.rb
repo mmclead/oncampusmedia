@@ -23,7 +23,7 @@ class Ratecard < ActiveRecord::Base
   end
   
   def schools
-    store_ids.map {|store_id| School.where(store_id: store_id).first}
+    School.where(store_id: store_ids)
   end
   
   def total_cost(schools = self.schools)
@@ -39,24 +39,20 @@ class Ratecard < ActiveRecord::Base
   end
   
   def cost_at_school(school)
-    weighted_impressions_per_hour = weekly_impressions([school]) / weekly_hours([school])
-    dwell_time = 3
-    actual_impressions_per_hour = weighted_impressions_per_hour / dwell_time
-    cost_per_spot = actual_impressions_per_hour / 1000 * cpm * spot_rate 
-    total_cost = cost_per_spot * total_spots([school])
+    dwell_time = Equation.first.dwell_time
+    actual_impressions = total_impressions([school]) / dwell_time
+    total_cost = (actual_impressions / 1000) * cpm 
+    cost_per_spot = total_cost / total_spots([school])
     return {cost_per_spot: cost_per_spot, total_cost: total_cost }
   end
   
-  def weekly_impressions(schools = self.schools)
+  def total_impressions(schools = self.schools)
     impressions = 0
+    puts schools.size
     schools.each do |s|
-      impressions += ((s.transactions.per_week * 2) + (s.num_of_screens > 0 ? ((s.num_of_screens-1) * 0.5 * s.transactions.per_week) : 0)) * spot_length_multiplier
+      impressions += s.transactions.for_period(flight_date, end_date) * Equation.first.impression_factor * s.screen_multiplier * spot_length_multiplier * spot_rate
     end
     return impressions
-  end
-  
-  def total_impressions(schools = self.schools)
-    weekly_impressions(schools) * num_of_weeks
   end
   
   def total_spots(schools = self.schools)
@@ -71,8 +67,9 @@ class Ratecard < ActiveRecord::Base
     schools.inject(0) {|sum, school| sum + school.hours.total.to_i }
   end
   
-  def spot_length_multiplier    
-    (spot_length == 30 ? 1 : spot_length == 15 ? 0.5 : 2) 
+  def spot_length_multiplier   
+    spot_length/30
+    #(spot_length == 30 ? 1 : spot_length == 15 ? 0.5 : 2) 
   end
   
   def impressions_per_spot
