@@ -54,7 +54,7 @@
     %th Cost per Spot
     %td= number_to_currency(@ratecard.cost_per_spot.round(2))
   %tr
-    %th Number of Schools
+    %th Number of Campuses
     %td= @ratecard.store_ids.count
   %tr
     %th Avg Cost Per Campus
@@ -66,7 +66,7 @@
     %th CPM
     %td= number_to_currency(@ratecard.cpm)
   %tr.warning
-    %th Total Cost
+    %th Total Net Cost
     %td= number_to_currency(@ratecard.total_cost)
 
     
