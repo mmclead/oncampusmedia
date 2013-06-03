@@ -5,7 +5,7 @@
     %li.pull-right= link_to 'Edit Quote', edit_ratecard_path(@ratecard) if can? :update, @ratecard
 .clearfix
 %p
-%table.table.half-width
+%table.table.half-width.table-hover
   %tr
     %th Prepared For:
     %td= @ratecard.prepared_for
@@ -20,18 +20,21 @@
     %td= simple_format @ratecard.prepared_by
 
     
-%table.table.half-width 
-  %tr
-    %th Quote Date:
-    %td= @ratecard.quote_date.strftime("%D")
-  %tr
-    %th Accept By (Expires):
-    %td= @ratecard.accept_by.strftime("%D")
+%table.table.half-width.table-hover
   %tr
     %th Spot Length:
     %td= "#{@ratecard.spot_length} seconds"
+  %tr
+    %th Quote Date:
+    %td= @ratecard.quote_date.strftime("%D")
+  %tr.warning
+    %th Accept By:
+    %td= @ratecard.accept_by.strftime("%D")
+  %tr
+    %th Creative Due Date:
+    %td= @ratecard.creative_due_date.strftime("%D")
   %tr 
-    %th Flight Date:
+    %th Start Date:
     %td= @ratecard.flight_date.strftime("%D")
   %tr 
     %th End Date:
@@ -39,9 +42,7 @@
   %tr
     %th Air Time:
     %td= num_of_weeks_in_words(@ratecard)
-  %tr
-    %th Creative Due Date:
-    %td= @ratecard.creative_due_date.strftime("%D")
+  
     
     
 %table.table.table-bordered.table-hover
@@ -76,14 +77,14 @@
   %tr.highlight
     %th Campus No.
     %th Campus Name
-    %th Type
+    %th Campus Type
     %th Address
     %th City
     %th State
     %th DMA
     %th DMA Rank
     %th No. of Screens
-    %th Current Enrollment
+    %th Student Enrollment
     %th Impressions
     %th Cost Per Campus
   = render partial: 'school_for_quote', locals: {schools: @ratecard.schools}
