@@ -4,10 +4,12 @@
 = f.input :prepared_by, :input_html => {:rows => 6, :value => user_signed_in? ? current_user.contact_info : @ratecard.present? ? @ratecard.prepared_by : '' }, :hint => "contact info" 
 = f.input :quote_date, input_html: { class: 'datepicker', id: 'quote-date', :value => @ratecard.present? ? @ratecard.quote_date : '' }, as: :string
 = f.input :accept_by, input_html: { class: 'datepicker', id: 'accept-date', :value => @ratecard.present? ? @ratecard.accept_by : ''  }, as: :string
+= f.input :creative_due_date, input_html: { class: 'datepicker', id: 'creative-date', :value => @ratecard.present? ? @ratecard.creative_due_date : '' }, as: :string
+= f.input :flight_date, label: "Start date", input_html: { class: 'datepicker', id: 'start-date', :value => @ratecard.present? ? @ratecard.flight_date : '' }, as: :string
+= f.input :end_date, input_html: { class: 'datepicker', id: 'end-date', :value => @ratecard.present? ? @ratecard.end_date : ''  }, as: :string
 = f.input :spot_length, collection: ([[':15',15], [':30',30], [':60',60]]), :selected => @ratecard.present? ? @ratecard.spot_length : 30, :hint => "seconds"
 = f.input :spot_rate, label: "Frequency", :hint => "spots per hour", :input_html => {:value => @ratecard.present? ? @ratecard.spot_rate : 1}
-= f.input :flight_date, input_html: { class: 'datepicker', id: 'start-date', :value => @ratecard.present? ? @ratecard.flight_date : '' }, as: :string
-= f.input :end_date, input_html: { class: 'datepicker', id: 'end-date', :value => @ratecard.present? ? @ratecard.end_date : ''  }, as: :string
+
 %br
 %ul.nav.nav-list
   %li.divider
@@ -23,6 +25,8 @@
   $('input.datepicker').datepicker({
     format: 'yyyy-mm-dd'
   });
+  
+
   
 
 
