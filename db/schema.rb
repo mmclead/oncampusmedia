@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130531230045) do
+ActiveRecord::Schema.define(:version => 20130603212339) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "school_id"
@@ -86,12 +86,13 @@ ActiveRecord::Schema.define(:version => 20130531230045) do
     t.date     "creative_due_date"
     t.integer  "spot_rate"
     t.float    "cpm"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
     t.text     "presented_to"
     t.text     "prepared_by"
     t.text     "store_ids"
     t.integer  "user_id"
+    t.text     "special_instructions"
   end
 
   create_table "schedules", :force => true do |t|

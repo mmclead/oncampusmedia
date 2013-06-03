@@ -2,7 +2,10 @@ class Ratecard < ActiveRecord::Base
  
   belongs_to :user
   
-  attr_accessible :accept_by, :brand, :cpm, :creative_due_date, :end_date, :flight_date, :num_of_weeks, :prepared_for, :quote_date, :spot_length, :spot_rate, :presented_to, :prepared_by, :store_ids
+  attr_accessible :accept_by, :brand, :cpm, :creative_due_date, 
+                  :end_date, :flight_date, :num_of_weeks, :prepared_for, 
+                  :quote_date, :spot_length, :spot_rate, :presented_to, 
+                  :prepared_by, :store_ids, :special_instructions
 
   serialize :store_ids
   

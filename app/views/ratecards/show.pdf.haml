@@ -69,9 +69,13 @@
     %th Total Net Cost
     %td= number_to_currency(@ratecard.total_cost)
 
+- if @ratecard.special_instructions.present?
+  .well
+    %h4 Special Instructions
+    = @ratecard.special_instructions
+        
     
-    
-%table.table.table-bordered.table-hover
+%table.table.table-bordered.table-hover.table-condensed
   %tr.highlight
     %th Campus No.
     %th Campus Name
