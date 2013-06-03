@@ -16,7 +16,7 @@
           = text_field_tag 'filter', nil, :placeholder => 'Search by Name or ID', id: 'text-filter'
           #school-tool-bar
             #total-schools.pull-left= "#{@schools.length} schools"
-            #select-all-schools.hidden.pull-right
+            #select-all-schools.pull-right
               = check_box_tag "Select All Schools", 'all', false
               = label_tag "Select All Schools", "Select All Schools"
           .clearfix

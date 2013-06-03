@@ -303,6 +303,16 @@ $(document).ready(function() {
       else { removeFromSelectedList(this.value) }
     });
 
+    $('#select-all-schools').removeClass('hidden');
+    $('#select-all-schools input').change(function() {
+      if (this.checked) {
+        $('.school-list-item input').each(function() {
+          $(this).prop('checked', true);
+          addToSelectedList(this);
+        });
+        $(this).prop('checked', false)
+      }
+    });
     
     var VisibleMarkers = function() {
       var filtered = _.reject(FullMarkerList, function(marker) {
