@@ -9,7 +9,7 @@ class School < ActiveRecord::Base
   has_one :hours
   has_one :transactions
   
-  default_scope order(:school_name)
+  default_scope includes(:demographics, :sports, :hours, :transactions, :schedule).order(:dma, :school_name)
   accepts_nested_attributes_for :sports, :schedule, :demographics, :hours, :transactions
   
   
@@ -17,6 +17,9 @@ class School < ActiveRecord::Base
     "#{address} #{city}, #{state}"
   end
   
+  def sorted
+    
+  end
 
   def store_info
     {
@@ -30,6 +33,7 @@ class School < ActiveRecord::Base
     
   end
   
+
   def screen_multiplier
     (num_of_screens > 1 ? ((num_of_screens-1) * Equation.first.screen_weight_multiplier) : 1)
   end
