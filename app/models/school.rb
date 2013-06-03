@@ -31,7 +31,7 @@ class School < ActiveRecord::Base
   end
   
   def screen_multiplier
-    (num_of_screens > 0 ? ((num_of_screens-1) * Equation.first.screen_weight_multiplier) : 1)
+    (num_of_screens > 1 ? ((num_of_screens-1) * Equation.first.screen_weight_multiplier) : 1)
   end
   
   alias_attribute :name, :school_name

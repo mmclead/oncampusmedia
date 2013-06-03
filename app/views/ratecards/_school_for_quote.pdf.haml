@@ -10,6 +10,6 @@
     %td= school.dma_rank
     %td= school.num_of_screens
     %td= school.demographics.enrollment
-    %td= @ratecard.impressions([school])
-    %td= "$#{(@ratecard.total_cost([school])}"
+    %td= number_with_delimiter(@ratecard.total_impressions([school]).to_i)
+    %td= number_to_currency(@ratecard.total_cost([school]))
     

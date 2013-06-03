@@ -68,7 +68,7 @@ class Ratecard < ActiveRecord::Base
   end
   
   def spot_length_multiplier   
-    spot_length/30
+    spot_length/30.to_f
     #(spot_length == 30 ? 1 : spot_length == 15 ? 0.5 : 2) 
   end
   
