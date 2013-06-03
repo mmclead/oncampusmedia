@@ -19,17 +19,19 @@ $(document).ready(function() {
     }); 
   });
   
-  
 
+    
   $('#quote-date.datepicker').datepicker().on('changeDate', function(e){
-    $('#accept-date.datepicker').datepicker('setStartDate', new Date(e.date.valueOf() + 10*24*60*60*1000))
+    $('#accept-date.datepicker').datepicker('setStartDate', new Date(e.date.valueOf()))
     $('#accept-date.datepicker').datepicker('update', new Date(e.date.valueOf() + 10*24*60*60*1000))
-    $('#start-date.datepicker').datepicker('setStartDate', new Date(e.date.valueOf() + 17*24*60*60*1000))
+    $('#creative-date.datepicker').datepicker('setStartDate', new Date(e.date.valueOf()))
+    $('#creative-date.datepicker').datepicker('update', new Date(e.date.valueOf() + 17*24*60*60*1000))
+    $('#start-date.datepicker').datepicker('setStartDate', new Date(e.date.valueOf()))
     $('#start-date.datepicker').datepicker('update', new Date(e.date.valueOf() + 17*24*60*60*1000))
   });
   
   $('#start-date.datepicker').datepicker().on('changeDate', function(e){
-    $('#end-date.datepicker').datepicker('setStartDate', new Date(e.date.valueOf() + 7*24*60*60*1000))
+    $('#end-date.datepicker').datepicker('setStartDate', new Date(e.date.valueOf()))
     $('#end-date.datepicker').datepicker('update', new Date(e.date.valueOf() + 7*24*60*60*1000))
   });
   
