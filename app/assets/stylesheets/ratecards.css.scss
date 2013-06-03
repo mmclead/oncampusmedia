@@ -50,5 +50,13 @@ header {
 }
 
 .table tbody tr.info th {
-    background-color: #d9edf7;
+  background-color: #d9edf7;
+}
+
+.table tbody tr.warning th {
+  background-color: #fcf8e3;
+}
+
+.table tbody tr.highlight th {
+  background-color: #d1d1d1;
 }
