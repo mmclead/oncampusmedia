@@ -67,6 +67,9 @@
   %tr
     %th CPM
     %td= number_to_currency(@ratecard.cpm)
+  %tr
+    %th Additional Cost
+    %td= number_to_currency(@ratecard.additional_cost.to_f)
   %tr.warning
     %th Total Net Cost
     %td= number_to_currency(@ratecard.total_cost)

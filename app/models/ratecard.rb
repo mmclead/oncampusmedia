@@ -5,7 +5,7 @@ class Ratecard < ActiveRecord::Base
   attr_accessible :accept_by, :brand, :cpm, :creative_due_date, 
                   :end_date, :flight_date, :num_of_weeks, :prepared_for, 
                   :quote_date, :spot_length, :spot_rate, :presented_to, 
-                  :prepared_by, :store_ids, :special_instructions
+                  :prepared_by, :store_ids, :special_instructions, :additional_cost
 
   serialize :store_ids
   
@@ -30,7 +30,7 @@ class Ratecard < ActiveRecord::Base
   end
   
   def total_cost(schools = self.schools)
-    schools.inject(0) {|sum, school| sum + cost_at_school(school)[:total_cost] }
+    schools.inject(0) {|sum, school| sum + cost_at_school(school)[:total_cost] } + additional_cost.to_f
   end
   
   def cost_per_spot(schools = self.schools)

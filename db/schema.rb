@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130603212339) do
+ActiveRecord::Schema.define(:version => 20130603215824) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "school_id"
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(:version => 20130603212339) do
     t.text     "store_ids"
     t.integer  "user_id"
     t.text     "special_instructions"
+    t.float    "additional_cost"
   end
 
   create_table "schedules", :force => true do |t|
