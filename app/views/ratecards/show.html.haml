@@ -77,7 +77,7 @@
 - if @ratecard.special_instructions.present?
   .well
     %h4 Special Instructions
-    = @ratecard.special_instructions
+    = simple_format @ratecard.special_instructions
     
 %table.table.table-bordered.table-hover.table-condensed
   %tr.highlight
