@@ -5,10 +5,12 @@
     Transactions for period(flight_date, end_date) *
     %strong
       = @equation.impression_factor 
-    *  (Number of screens - 1  * 
+    +
+    %br
+    ( (Number of screens - 1  * 
     %strong
       = @equation.screen_weight_multiplier
-    )  *
+    )  * Transactions for period(flight_date, end_date) ) * 
     %br
     Spot length multiplier  *  spot_rate  = 
     %strong
