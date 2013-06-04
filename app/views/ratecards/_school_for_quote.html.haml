@@ -1,5 +1,5 @@
 - schools.each do |school|
-  %tr
+  %tr{:id => "#{school.store_id}"}
     %td= school.store_id
     %td= school.name
     %td= school.school_type
@@ -12,3 +12,4 @@
     %td= number_with_delimiter(school.demographics.enrollment)
     %td= number_with_delimiter(@ratecard.total_impressions([school]).to_i)
     %td= number_to_currency(@ratecard.total_cost([school]))
+    %td= link_to "Remove", remove_school_ratecard_path(school)
