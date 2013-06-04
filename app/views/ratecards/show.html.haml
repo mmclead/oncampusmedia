@@ -5,7 +5,7 @@
     %li.pull-right= link_to 'Edit Quote', edit_ratecard_path(@ratecard) if can? :update, @ratecard
 .clearfix
 %p
-%table.table.half-width.table-hover
+%table.table.half-width.table-left.table-hover
   %tr
     %th Prepared For:
     %td= @ratecard.prepared_for
@@ -20,7 +20,7 @@
     %td= simple_format @ratecard.prepared_by
 
     
-%table.table.half-width.table-hover
+%table.table.half-width.table-right.table-hover
   %tr
     %th Spot Length:
     %td= "#{@ratecard.spot_length} seconds"
@@ -86,11 +86,11 @@
     %th Campus Type
     %th Address
     %th City
-    %th State
+    %th St
     %th DMA
     %th DMA Rank
-    %th No. of Screens
-    %th Student Enrollment
+    %th No. of TVs
+    %th Students Enrolled
     %th Impressions
     %th Cost Per Campus
   = render partial: 'school_for_quote', locals: {schools: @ratecard.schools}

@@ -12,7 +12,10 @@ header {
   .navbar {
     display:none;
   }
-  
+
+  .container {
+  width: 100%;
+}
 }
 
 #logo {
@@ -31,8 +34,15 @@ header {
 }
 
 .half-width {
-  width:49%;
+  width:48%;
+}
+
+.table-left {
   float:left;
+}
+
+.table-right {
+  float:right;
 }
 
 .accordian-heading {
