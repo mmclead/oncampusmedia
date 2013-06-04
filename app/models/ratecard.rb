@@ -51,11 +51,11 @@ class Ratecard < ActiveRecord::Base
   
   def total_impressions(schools = self.schools)
     impressions = 0
-    puts schools.size
+    equation = Equation.first
     schools.each do |s|
-      impressions += s.transactions.for_period(flight_date, end_date) * Equation.first.impression_factor * s.screen_multiplier * spot_length_multiplier * spot_rate
+      impressions += s.transactions.for_period(flight_date, end_date)  * s.screen_multiplier(equation.screen_weight_multiplier) 
     end
-    return impressions
+    return impressions * equation.impression_factor * spot_length_multiplier * spot_rate
   end
   
   def total_spots(schools = self.schools)
