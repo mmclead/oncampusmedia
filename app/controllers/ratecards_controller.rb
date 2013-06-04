@@ -44,8 +44,6 @@ class RatecardsController < ApplicationController
     redirect_to url, notice: msg
   end
   
-  
-  
   def show
     @ratecard = Ratecard.find(params[:id])
     respond_to do |format|
@@ -60,6 +58,16 @@ class RatecardsController < ApplicationController
   
   def edit
     @ratecard = Ratecard.find(params[:id])
+  end
+  
+  def remove_school(school)
+    @ratecard.store_ids = @ratecard.store_ids - [school.store_id]
+    @ratecard.save
+  end
+  
+  def add_school(school)
+    @ratecard.store_ids = @ratecard.store_ids + [school.store_id]
+    @ratecard.save
   end
   
   def update
