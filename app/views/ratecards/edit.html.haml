@@ -2,7 +2,9 @@
 
 = simple_form_for @ratecard, html: {class: 'form-horizontal', id: 'quote-form' } do |f|
   = f.button :submit, "Update Proposal"
-
+  %br
+  - if current_user.internal?
+    = f.association :user, label: "Change Ownership", include_blank: false
   = render 'modal_form', f:f
   
   %table.table.table-bordered.table-condensed.school-table
