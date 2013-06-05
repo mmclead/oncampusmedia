@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130603215824) do
+ActiveRecord::Schema.define(:version => 20130605195808) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "school_id"
@@ -73,6 +73,31 @@ ActiveRecord::Schema.define(:version => 20130603215824) do
   end
 
   add_index "hours", ["school_id"], :name => "index_hours_on_school_id"
+
+  create_table "imports", :force => true do |t|
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.string   "schools_file_file_name"
+    t.string   "schools_file_content_type"
+    t.integer  "schools_file_file_size"
+    t.datetime "schools_file_updated_at"
+    t.string   "transactions_file_file_name"
+    t.string   "transactions_file_content_type"
+    t.integer  "transactions_file_file_size"
+    t.datetime "transactions_file_updated_at"
+    t.string   "schedules_file_file_name"
+    t.string   "schedules_file_content_type"
+    t.integer  "schedules_file_file_size"
+    t.datetime "schedules_file_updated_at"
+    t.string   "summer_schedules_file_file_name"
+    t.string   "summer_schedules_file_content_type"
+    t.integer  "summer_schedules_file_file_size"
+    t.datetime "summer_schedules_file_updated_at"
+    t.string   "rotc_file_file_name"
+    t.string   "rotc_file_content_type"
+    t.integer  "rotc_file_file_size"
+    t.datetime "rotc_file_updated_at"
+  end
 
   create_table "ratecards", :force => true do |t|
     t.string   "prepared_for"
