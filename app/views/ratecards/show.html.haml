@@ -5,7 +5,7 @@
     %li.pull-right= link_to 'Edit Quote', edit_ratecard_path(@ratecard) if can? :update, @ratecard
 .clearfix
 %p
-%table.table.half-width.table-left.table-hover
+%table.table.table-hover
   %tr
     %th Prepared For:
     %td= @ratecard.prepared_for
@@ -17,10 +17,10 @@
     %td= simple_format @ratecard.presented_to
   %tr  
     %th Prepared By:
-    %td= simple_format @ratecard.prepared_by
+    %td= simple_format word_wrap @ratecard.prepared_by
 
     
-%table.table.half-width.table-right.table-hover
+%table.table.table-hover
   %tr
     %th Spot Length:
     %td= "#{@ratecard.spot_length} seconds"
