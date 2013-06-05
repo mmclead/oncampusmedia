@@ -63,8 +63,9 @@ class RatecardsController < ApplicationController
 
   def update
     @ratecard = Ratecard.find(params[:id])
-    puts params
-    params[:ratecard][:store_ids] = @ratecard.store_ids - params['remove_schools'].keys
+    if params['remove_schools']
+      params[:ratecard][:store_ids] = @ratecard.store_ids - params['remove_schools'].keys
+    end
     if @ratecard.update_attributes(params[:ratecard])
       redirect_to @ratecard, notice: "Quote updated successfully."
     else
