@@ -18,7 +18,7 @@ gem 'cancan'
 gem 'wicked_pdf'
 gem "dropbox-api"
 gem 'rails3-jquery-autocomplete'
-
+gem 'paperclip'
 
 
 # Gems used only for assets and not required
