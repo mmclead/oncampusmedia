@@ -17,7 +17,7 @@ class SchoolsController < ApplicationController
   def index
     @schools = School.all
     @json = @schools.to_gmaps4rails do |school, marker|
-      marker.infowindow render_to_string(partial: "/schools/infowindow", locals: {school: school})
+      #marker.infowindow render_to_string(partial: "/schools/infowindow", locals: {school: school})
       marker.title "#{school.school_name}" 
       json = {store_id: school.store_id, sports: school.sports.active_in, conference: school.sports.conference, 
               state: school.state, demographics: school.demographics.hash_for_filter, store_info: school.store_info, 
