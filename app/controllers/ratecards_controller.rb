@@ -58,8 +58,22 @@ class RatecardsController < ApplicationController
   
   def edit
     @ratecard = Ratecard.find(params[:id])
+    @edit = true
+  end
+
+  def update
+    @ratecard = Ratecard.find(params[:id])
+    puts params
+    params[:ratecard][:store_ids] = @ratecard.store_ids - params['remove_schools'].keys
+    if @ratecard.update_attributes(params[:ratecard])
+      redirect_to @ratecard, notice: "Quote updated successfully."
+    else
+      render action: 'edit'
+    end
   end
   
+  
+    
   def remove_school(school)
     @ratecard.store_ids = @ratecard.store_ids - [school.store_id]
     @ratecard.save
@@ -70,14 +84,6 @@ class RatecardsController < ApplicationController
     @ratecard.save
   end
   
-  def update
-    @ratecard = Ratecard.find(params[:id])
-    if @ratecard.update_attributes(params[:ratecard])
-      redirect_to @ratecard, notice: "Quote updated successfully."
-    else
-      render action: 'edit'
-    end
-  end
   
   def destroy
     if Ratecard.find(params[:id]).delete

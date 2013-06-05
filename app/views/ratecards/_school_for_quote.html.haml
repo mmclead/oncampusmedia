@@ -1,5 +1,5 @@
 - schools.each do |school|
-  %tr{:id => "#{school.store_id}"}
+  %tr.school-row{:id => "#{school.store_id}"}
     %td= school.store_id
     %td= school.name
     %td= school.school_type
@@ -12,3 +12,11 @@
     %td= number_with_delimiter(school.demographics.enrollment)
     %td= number_with_delimiter(@ratecard.total_impressions([school]).to_i)
     %td= number_to_currency(@ratecard.total_cost([school]))
+    - if @edit
+      %td
+        = check_box_tag "remove_schools[#{school.store_id}]", false
+        = label_tag "remove_schools[#{school.store_id}]", "Remove"
+
+
+    
+    

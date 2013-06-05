@@ -1,6 +1,29 @@
 %h2 Editing Proposal
 
-= simple_form_for @ratecard, html: {class: 'form-horizontal', id: 'quote-form' } do |f|  
+= simple_form_for @ratecard, html: {class: 'form-horizontal', id: 'quote-form' } do |f|
+  = f.button :submit, "Update Proposal"
+
   = render 'modal_form', f:f
   
-  = f.button :submit
+  %table.table.table-bordered.table-condensed.school-table
+    %tr.highlight
+      %th Campus No.
+      %th Campus Name
+      %th Campus Type
+      %th Address
+      %th City
+      %th ST
+      %th DMA
+      %th DMA Rank
+      %th No. of TVs
+      %th Students Enrolled
+      %th Impressions
+      %th Cost Per Campus
+    = render partial: 'school_for_quote', locals: {schools: @ratecard.schools}
+
+  
+  
+  = f.button :submit, "Update Proposal"
+
+
+    

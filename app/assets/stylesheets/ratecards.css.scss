@@ -15,7 +15,7 @@ header {
 
   .container {
   width: 100%;
-}
+ }
 }
 
 #logo {
@@ -70,3 +70,9 @@ header {
 .table tbody tr.highlight th {
   background-color: #d1d1d1;
 }
+
+.remove-school-button {
+  position: absolute; 
+  height:40px;
+}
+
