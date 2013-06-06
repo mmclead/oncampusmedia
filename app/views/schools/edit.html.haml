@@ -1,2 +1,4 @@
 %h2= "Editing #{@school.name}"
 = render 'form'
+
+= button_to 'Delete School', @school, :confirm => "Are you sure you want to delete this school?", :method => :delete

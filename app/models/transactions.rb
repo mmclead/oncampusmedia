@@ -45,7 +45,7 @@ class Transactions < ActiveRecord::Base
   
   def update_total
     sum=0
-    Date::MONTHNAMES.compact.each { |month| sum += self.send(month.downcase) }
+    Date::MONTHNAMES.compact.each { |month| sum += self.send(month.downcase).to_i }
     self.total=sum
   end
 end

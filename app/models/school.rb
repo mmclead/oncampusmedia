@@ -3,11 +3,11 @@ class School < ActiveRecord::Base
   
   acts_as_gmappable :validation => false
   
-  has_one :sports
-  has_one :schedule
-  has_one :demographics
-  has_one :hours
-  has_one :transactions
+  has_one :sports, dependent: :destroy
+  has_one :schedule, dependent: :destroy
+  has_one :demographics, dependent: :destroy
+  has_one :hours, dependent: :destroy
+  has_one :transactions, dependent: :destroy
   
   default_scope includes(:demographics, :sports, :hours, :transactions, :schedule).order(:dma, :school_name)
   accepts_nested_attributes_for :sports, :schedule, :demographics, :hours, :transactions

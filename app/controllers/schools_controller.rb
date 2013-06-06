@@ -11,7 +11,11 @@ class SchoolsController < ApplicationController
   end
   
   def create
-    
+    if @school.save
+      redirect_to schools_url, notice: "School Created"
+    else
+      render 'new'
+    end
   end
   
   def index
@@ -36,6 +40,14 @@ class SchoolsController < ApplicationController
       redirect_to schools_url, notice: "#{@school.name} updated successfully."
     else
       render action: 'edit'
+    end
+  end
+  
+  def destroy
+    if @school.destroy
+      redirect_to schools_url
+    else
+      redirect_to edit_school_path(@school)
     end
   end
   
