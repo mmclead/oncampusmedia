@@ -35,7 +35,7 @@ class Ratecard < ActiveRecord::Base
   end
   
   def cost_per_spot(schools = self.schools)
-    schools.inject(0) {|sum, school| sum + cost_at_school(school)[:cost_per_spot] } / schools.size
+    total_cost(schools) / total_spots(schools)
   end
   
   def cost_per_school(schools = self.schools)
@@ -45,9 +45,9 @@ class Ratecard < ActiveRecord::Base
   def cost_at_school(school)
     dwell_time = Equation.first.dwell_time
     actual_impressions = total_impressions([school]) / dwell_time
-    total_cost = (actual_impressions / 1000) * cpm 
-    cost_per_spot = total_cost / total_spots([school])
-    return {cost_per_spot: cost_per_spot, total_cost: total_cost }
+    cost = (actual_impressions / 1000) * cpm 
+    cost_per_spot = cost / total_spots([school])
+    return {cost_per_spot: cost_per_spot, total_cost: cost }
   end
   
   def total_impressions(schools = self.schools)

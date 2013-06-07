@@ -54,13 +54,13 @@
     %td= number_with_delimiter(@ratecard.total_spots.to_i)
   %tr
     %th Cost per Spot
-    %td= number_to_currency(@ratecard.cost_per_spot.round(2))
+    %td= number_to_currency(@ratecard.cost_per_spot, :precision => 3)
   %tr
     %th Number of Campuses
     %td= @ratecard.store_ids.count
   %tr
     %th Avg Cost Per Campus
-    %td= number_to_currency(@ratecard.cost_per_school) 
+    %td= number_to_currency(@ratecard.cost_per_school, :precistion => 3) 
   %tr
     %th Estimated Impressions
     %td= number_with_delimiter(@ratecard.total_impressions.to_i)

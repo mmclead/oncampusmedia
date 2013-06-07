@@ -16,9 +16,14 @@
           <li class="dropdown"> <%= link_to 'Campuses', "#",{ class:"dropdown-toggle", data: {toggle: "dropdown"} } %> 
               <ul class="dropdown-menu">
                 <li><%= link_to 'See all', schools_url %></li>
-                <% if user_signed_in? %> 
+                <% if can? :create, School %> 
+                  <li><%= link_to 'See inactive', schools_url(inactive: true) %></li>
                   <li><%= link_to 'Create new', new_school_url %></li>
                 <% end %>
+                <% if can? :create, Import %> 
+                  <li><%= link_to 'Import from File', new_import_url %></li>
+                <% end %>
+                
               </ul>
           </li>
           <li class="dropdown"> <%= link_to 'Proposals', "#",{ class:"dropdown-toggle", data: {toggle: "dropdown"} } %> 
