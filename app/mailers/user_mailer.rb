@@ -8,8 +8,8 @@ class UserMailer < ActionMailer::Base
     attachments["proposal.pdf"] = WickedPdf.new.pdf_from_string(
           render_to_string(pdf: "proposal", template: 'ratecards/show.pdf.haml')
         )
-    mail(:to => @user.email, :subject => "Your Recent Proposal from On-Campus Media") 
-
+    self.instance_variable_set(:@lookup_context, nil)
+    mail(:to => @user.email, :subject => "Your Recent Proposal from On-Campus Media", 
+         :bcc => [ENV['BCC_EMAIL']] ) 
   end
-  
 end
