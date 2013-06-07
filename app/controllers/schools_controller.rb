@@ -19,7 +19,10 @@ class SchoolsController < ApplicationController
   end
   
   def index
-    @schools = School.all
+    if params[:inactive]
+      @schools = School.unscoped.inactive
+    end
+    
     @json = @schools.to_gmaps4rails do |school, marker|
       #marker.infowindow render_to_string(partial: "/schools/infowindow", locals: {school: school})
       marker.title "#{school.school_name}" 

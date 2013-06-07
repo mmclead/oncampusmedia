@@ -14,15 +14,17 @@
             End Date
         .clearfix
       %li.divider
-      - @schools[0].schedule.hash_for_filter[:dates].keys.each do |date|
-        %li
-          .date-range
-            .date-input.pull-left
-              = text_field_tag "#{date}_start", nil, class: 'datepicker'
-              = label_tag "#{date}_start", "#{date.to_s.titleize}"
-            .date-input.pull-right
-              = text_field_tag "#{date}_end", nil, class: 'datepicker'
-              = label_tag "#{date}_end", "#{date.to_s.titleize}"
-          .clearfix
+      - if @schools.size > 0
+
+        - @schools[0].schedule.hash_for_filter[:dates].keys.each do |date|
+          %li
+            .date-range
+              .date-input.pull-left
+                = text_field_tag "#{date}_start", nil, class: 'datepicker'
+                = label_tag "#{date}_start", "#{date.to_s.titleize}"
+              .date-input.pull-right
+                = text_field_tag "#{date}_end", nil, class: 'datepicker'
+                = label_tag "#{date}_end", "#{date.to_s.titleize}"
+            .clearfix
 
       .clearfix

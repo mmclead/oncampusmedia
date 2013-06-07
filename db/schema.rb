@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130605195808) do
+ActiveRecord::Schema.define(:version => 20130606224629) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "school_id"
@@ -155,8 +155,8 @@ ActiveRecord::Schema.define(:version => 20130605195808) do
     t.string   "sunday_hours"
     t.integer  "num_of_schools"
     t.integer  "num_of_schools_included"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "gmaps"
@@ -169,6 +169,7 @@ ActiveRecord::Schema.define(:version => 20130605195808) do
     t.integer  "num_of_screens"
     t.boolean  "rotc"
     t.string   "store_name"
+    t.boolean  "active",                       :default => true
   end
 
   create_table "sports", :force => true do |t|

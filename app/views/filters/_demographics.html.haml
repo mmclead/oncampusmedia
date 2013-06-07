@@ -5,10 +5,11 @@
   #demographics.accordian-body.collapse
     #demographics-list.well
       %ul
-        - @schools[0].demographics.hash_for_filter.keys.each do |dem|  
-          %li
-            = label_tag "#{dem}", "#{dem.to_s.titleize}"
-            .demo-range{id: "#{dem}"}
-            %input{id: "filtered-#{dem}", type: "text"}
+        - if @schools.size > 0
+          - @schools[0].demographics.hash_for_filter.keys.each do |dem|  
+            %li
+              = label_tag "#{dem}", "#{dem.to_s.titleize}"
+              .demo-range{id: "#{dem}"}
+              %input{id: "filtered-#{dem}", type: "text"}
     
      

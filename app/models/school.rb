@@ -9,7 +9,9 @@ class School < ActiveRecord::Base
   has_one :hours, dependent: :destroy
   has_one :transactions, dependent: :destroy
   
-  default_scope includes(:demographics, :sports, :hours, :transactions, :schedule).order(:dma, :school_name)
+  default_scope where(active: true)
+  default_scope includes(:demographics, :sports, :hours, :transactions, :schedule).order(:dma, :school_name) 
+  scope :inactive, where(active: false)
   accepts_nested_attributes_for :sports, :schedule, :demographics, :hours, :transactions
   
   
