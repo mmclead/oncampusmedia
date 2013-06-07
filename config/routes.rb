@@ -21,7 +21,7 @@ Schools::Application.routes.draw do
     post :add_school, :on => :member
   end
   resources :equations
-  
+  resources :imports
   
 
   # Sample resource route with options:
