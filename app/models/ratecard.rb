@@ -14,7 +14,7 @@ class Ratecard < ActiveRecord::Base
   
   after_create :email_pdf_to_creator
     
-  before_save :set_dates_and_duration
+  before_save :set_dates_and_duration, :update_prepared_by
   
   scope :public_only, where(user_id: nil)
   scope :owned, where("user_id != ?", nil)
@@ -101,6 +101,13 @@ class Ratecard < ActiveRecord::Base
     if self.user.present?
       UserMailer.send_pdf_of_quote(self).deliver
     end
+  end
+  
+  def update_prepared_by
+    if user_id_changed?
+      puts user_id_change
+      self.prepared_by = User.find(user_id).contact_info
+    end  
   end
   
 end
