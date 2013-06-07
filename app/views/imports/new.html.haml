@@ -1,0 +1,135 @@
+%h2 Import School Information
+.well.lead
+  %p.text-info
+    Upload one, many, or all files listed here.  
+  %p.text-info
+    Any existing Schools that are referenced will be updated.
+  %p.text-info
+    New Schools are only created by uploading a file in the Schools section.
+  
+= simple_form_for @import, html: {class: 'form-horizontal' } do |f|  
+  %h3 Schools
+  = f.file_field :schools_file
+  %p.text-warning
+    The file you upload must look EXACTLY like this
+  %table.table.table-bordered.well
+    %tr 
+      %th Store #		
+      %th Address	
+      %th DMA	
+      %th City	
+      %th State	
+      %th Select School (1,0)	
+      %th School Selected	
+      %th School Selected and Included	
+      %th # of Screens	
+      %th Type of School	
+      %th AVERAGE AGE	
+      %th DMA Rank	
+      %th NCAA BASKETBALL Div I	
+      %th NCAA BASKETBALL Div II	
+      %th NCAA BASKETBALL Div III	
+      %th NAIA BASKETBALL Div I & II	
+      %th NCAA FOOTBALL Div I	
+      %th NCAA FOOTBALL Div II	
+      %th NCAA FOOTBALL Div III	
+      %th NAIA FOOTBALL Div I & II	
+      %th NCAA BASEBALL Div I	
+      %th NCAA BASEBALL Div II	
+      %th NCAA BASEBALL Div III	
+      %th NAIA BASEBALL Div I & II	
+      %th NCAA/NAIA Track/Cross Country   	
+      %th NJCAA FOOTBALL Div I	
+      %th NJCAA BASEBALL Div I	
+      %th NJCAA BASKETBALL Div I	
+      %th CONFERENCE
+      %th % Non-Resident Alien	
+      %th % African-American/Black
+      %th % Two or More Races
+      %th % Asian	% Hispanic/Latino
+      %th % White
+      %th % Ethnicity Unknown	
+      %th % American Indian/Alaskan Native
+      %th % Native Hawaiian/Pacific Islander	
+      %th Quarter Schedule	
+      %th Semester Schedule	 
+      %th Enrollment	
+      %th Sunday Hours	
+      %th Monday Hours	
+      %th Tuesday Hours	
+      %th Wednesday Hours	
+      %th Thursday Hours	
+      %th Friday Hours	
+      %th Saturday Hours	
+      %th Starbucks Cafe 	
+      %th Coffee Stations	
+  %h3 Transactions
+  = f.file_field :transactions_file
+
+  %p.text-warning
+    The file you upload must look EXACTLY like this
+
+  %table.table.well.table-bordered
+    %tr
+      %th Store #	
+      %th University Name	
+      %th March # Trans	
+      %th Apl# Trans	
+      %th May # Trans	
+      %th June # Trans	
+      %th July # Trans	
+      %th Aug # Trans	
+      %th Sept # Trans	
+      %th Oct # Trans	
+      %th Nov # Trans	
+      %th Dec # Trans	
+      %th Jan # Trans	
+      %th Feb # Trans	
+      %th TOTAL
+  
+  %h3 Schedules
+  = f.file_field :schedules_file
+ 
+  %p.text-warning
+    The file you upload must look EXACTLY like this
+
+  %table.table.well.table-bordered
+    %tr
+      %th ID	
+      %th Store No.	
+      %th University Name	
+      %th Winter Spring Finals First	
+      %th Winter Spring Finals Last	
+      %th Fall Class First	
+      %th Fall Finals First	
+      %th Fall Finals Last
+      
+  
+  %h3 Summer Schedules
+  = f.file_field :summer_schedules_file
+
+  %p.text-warning
+    The file you upload must look EXACTLY like this
+
+  %table.table.well.table-bordered
+    %tr
+      %th Store	
+      %th Store Name	
+      %th 1st_Classes
+      %th 1st_Finals
+      %th Last_Finals
+      
+  %h3 ROTC
+  = f.file_field :rotc_file
+
+  %p.text-warning
+    The file you upload must look EXACTLY like this
+
+  %table.table.well.table-bordered
+    %tr
+      %th Store #  	
+      %th Store Name	
+      %th University Name	
+      %th ROTC
+  
+  = f.submit
