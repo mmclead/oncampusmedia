@@ -1,5 +1,8 @@
 class School < ActiveRecord::Base
-  attr_accessible :address, :city, :num_of_schools, :num_of_schools_included, :school_name, :state, :store_id,:sports_attributes, :schedule_attributes, :demographics_attributes, :hours_attributes, :transactions_attributes
+  attr_accessible :address, :city, :num_of_schools, :num_of_schools_included, :school_name, 
+                  :state, :store_id,:sports_attributes, :schedule_attributes, :demographics_attributes, 
+                  :hours_attributes, :transactions_attributes, :active, :num_of_screens, :school_type, 
+                  :dma, :dma_rank, :starbucks, :coffee_stations, :rotc
   
   acts_as_gmappable :validation => false
   
@@ -9,8 +12,8 @@ class School < ActiveRecord::Base
   has_one :hours, dependent: :destroy
   has_one :transactions, dependent: :destroy
   
-  default_scope where(active: true)
   default_scope includes(:demographics, :sports, :hours, :transactions, :schedule).order(:dma, :school_name) 
+  scope :active, where(active: true)
   scope :inactive, where(active: false)
   accepts_nested_attributes_for :sports, :schedule, :demographics, :hours, :transactions
   
