@@ -3,7 +3,9 @@
   %td= ratecard.quote_date.try(:strftime, "%D")
   %td= ratecard.store_ids.count
   %td= simple_format ratecard.prepared_by
-  %td= ratecard.presented_to
+  %td= ratecard.prepared_for
+  %td= ratecard.brand
+  %td= simple_format ratecard.presented_to
   %td= ratecard.spot_length
   %td= ratecard.cpm
   %td= owned_by(ratecard)
