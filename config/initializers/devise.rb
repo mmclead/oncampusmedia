@@ -4,7 +4,7 @@ Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
-  config.mailer_sender = "contact@on-campusmedia.com"
+  config.mailer_sender = ENV['MAIL_USERNAME']
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
@@ -206,6 +206,7 @@ Devise.setup do |config|
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
+  config.allow_unconfirmed_access_for = 2.hours
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
