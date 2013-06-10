@@ -51,7 +51,8 @@ class RatecardsController < ApplicationController
       format.pdf do
         render pdf: "quote-#{@ratecard.id}",
                template: 'ratecards/show.pdf.haml',
-               disposition: 'attachment'
+               disposition: 'attachment',
+               show_as_html: params[:debug]
       end
     end
   end
