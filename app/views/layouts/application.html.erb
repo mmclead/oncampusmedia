@@ -19,6 +19,9 @@
                 <% if can? :create, School %> 
                   <li><%= link_to 'See inactive', schools_url(inactive: true) %></li>
                   <li><%= link_to 'Create new', new_school_url %></li>
+                  <% if can? :create, Import %> 
+                    <li><%= link_to 'Import from File', new_import_url %></li>
+                  <% end %>
                 <% end %>
 
                 

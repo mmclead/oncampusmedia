@@ -19,8 +19,7 @@ gem 'wicked_pdf'
 gem "dropbox-api"
 gem 'rails3-jquery-autocomplete'
 gem 'paperclip'
-gem "paperclip-dropbox"
-
+gem 'aws-sdk'
 
 # Gems used only for assets and not required
 # in production environments by default.

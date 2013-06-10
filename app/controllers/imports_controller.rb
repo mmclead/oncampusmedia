@@ -7,7 +7,7 @@ class ImportsController < ApplicationController
   def create
     @import = Import.new(params[:import])
     @import.save
-    respond_with @import  
+    redirect_to @import
   end
   
   def show

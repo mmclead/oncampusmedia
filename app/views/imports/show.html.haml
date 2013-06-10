@@ -1,0 +1,7 @@
+%h1= "Import #{@import.id}"
+
+%h2 Files Included
+%ul
+  - @import.files.each do |file|
+    %li= file.name.to_s.titleize
+    
