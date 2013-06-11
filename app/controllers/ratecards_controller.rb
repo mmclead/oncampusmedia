@@ -49,7 +49,7 @@ class RatecardsController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "quote-#{@ratecard.id}",
+        render pdf: "proposal-#{@ratecard.brand}-#{@ratecard.quote_date}",
                template: 'ratecards/show.pdf.haml',
                disposition: 'attachment',
                show_as_html: params[:debug]
@@ -106,7 +106,7 @@ class RatecardsController < ApplicationController
     if user_signed_in?
       client = Dropbox::API::Client.new(:token  => Dropbox_Token, :secret => Dropbox_Secret)
       client.upload "#{@ratecard.user.name}/#{@ratecard.prepared_for}/#{@ratecard.brand}/proposal-#{@ratecard.quote_date.strftime('%Y-%m-%d')}.pdf",   
-        render_to_string(pdf: "proposal.pdf", template: 'ratecards/show.pdf.haml')        
+        render_to_string(pdf: "proposal-#{@ratecard.brand}-#{@ratecard.quote_date}", template: 'ratecards/show.pdf.haml')        
       redirect_to @ratecard, notice: "Quote created, emailed and uploaded"
 
     end
