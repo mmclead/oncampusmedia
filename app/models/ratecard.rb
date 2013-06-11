@@ -6,11 +6,19 @@ class Ratecard < ActiveRecord::Base
                   :end_date, :flight_date, :num_of_weeks, :prepared_for, 
                   :quote_date, :spot_length, :spot_rate, :presented_to, 
                   :prepared_by, :store_ids, :special_instructions, :additional_cost,
-                  :user_id
+                  :user_id, :logo
 
   serialize :store_ids
   
   validates_presence_of :store_ids, :prepared_for, :brand, :presented_to, :prepared_by, :quote_date, :accept_by, :creative_due_date, :spot_length, :spot_rate, :flight_date, :end_date, :cpm
+  
+  has_attached_file :logo, styles: {
+      thumb: '100x100>',
+      square: '150x150#',
+      medium: '150x150>',
+      pdf: '400x400#'
+    },
+    path: 'logos/:id/:style_:filename'
   
   after_create :email_pdf_to_creator
     

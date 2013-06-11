@@ -20,8 +20,11 @@
 %br
 = f.input :special_instructions, :input_html => {:rows => 6 }
 = f.input :additional_cost, label: 'Additional Cost ($)'
-
-
+%br
+%ul.nav.nav-list
+  %li.divider
+%br
+= f.input :logo
 :javascript
 
   $('input.datepicker').datepicker({
