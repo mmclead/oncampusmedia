@@ -69,7 +69,7 @@ module Schools
         :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
       },
       :path => "imports/:id/:filename",
-      :url => ENV['AWS_BUCKET']+"s3.amazonaws.com"
+      :url => ENV['AWS_BUCKET']+".s3.amazonaws.com"
     }
   end
 end
