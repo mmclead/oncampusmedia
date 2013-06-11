@@ -12,7 +12,7 @@
   
       
   #right-info
-    = image_tag @ratecard.logo.url(:square) if @ratecard.logo.present?
+    = image_tag ("http://"+ENV['AWS_BUCKET']+".s3.amazonaws.com/logos/" + @ratecard.id.to_s + "/square_" + @ratecard.logo_file_name) if @ratecard.logo.present?
 
       
   .clearfix

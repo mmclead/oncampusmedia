@@ -18,7 +18,8 @@ class Ratecard < ActiveRecord::Base
       medium: '150x150>',
       pdf: '400x400#'
     },
-    path: 'logos/:id/:style_:filename'
+    path: 'logos/:id/:style_:filename',
+    url: ENV['AWS_BUCKET']+'.s3.amazonaws.com'
   
   after_create :email_pdf_to_creator
     
