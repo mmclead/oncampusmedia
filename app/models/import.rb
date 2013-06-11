@@ -8,7 +8,6 @@ class Import < ActiveRecord::Base
   has_attached_file :schedules_file
   has_attached_file :summer_schedules_file
   
-  #after_save :create_and_update_schools
   
   def files
     list = []
@@ -20,12 +19,4 @@ class Import < ActiveRecord::Base
     return list
   end
   
-  
-  
-  #def create_and_update_schools
-  #  backup = School.backup
-    
-    
-    
-  #end
 end
