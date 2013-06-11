@@ -6,7 +6,7 @@ class Ratecard < ActiveRecord::Base
                   :end_date, :flight_date, :num_of_weeks, :prepared_for, 
                   :quote_date, :spot_length, :spot_rate, :presented_to, 
                   :prepared_by, :store_ids, :special_instructions, :additional_cost,
-                  :user_id, :logo
+                  :user_id, :logo, :logo_file_name
 
   serialize :store_ids
   
