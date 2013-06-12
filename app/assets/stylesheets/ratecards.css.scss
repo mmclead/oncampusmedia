@@ -29,8 +29,12 @@ header {
 }
 
 #right-info {
-  float:left;
+  float:right;
   width:33%;
+}
+
+#right-info img {
+  float: right;
 }
 
 .half-width {
