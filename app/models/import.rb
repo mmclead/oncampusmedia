@@ -19,4 +19,6 @@ class Import < ActiveRecord::Base
     return list
   end
   
+  
+  
 end
