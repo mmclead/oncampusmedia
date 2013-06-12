@@ -19,6 +19,9 @@ class Import < ActiveRecord::Base
     return list
   end
   
-  
+  def headers(file_name)
+    text = open(self.send(file_name).url) {|f| f.readlines[0,4] }
+    return text
+  end
   
 end

@@ -3,5 +3,17 @@
 %h2 Files Included
 %ul
   - @import.files.each do |file|
-    %li= file.name.to_s.titleize
-    
+    %h3= file.name.to_s.titleize
+    You uploaded a file named: 
+    .well
+      = @import.send(file.name.to_s + "_file_name")
+    The first few lines look like this:
+    .well
+      %table.table
+        - @import.headers(file.name).each do |row|
+          %tr
+            - row.split(",").each do |cell|
+              %td= cell.to_s
+    Are you ready to import this?
+    = link_to "Import", '#', confirm: "This will update any existing schools that are referenced.  If there is bad data in the file, there will be bad data in your systems.", class: "btn btn-large btn-danger"
+        
