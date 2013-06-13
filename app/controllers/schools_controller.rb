@@ -21,8 +21,12 @@ class SchoolsController < ApplicationController
   def index
     if params[:inactive]
       @schools = School.unscoped.inactive
-    else
+    elsif params[:include_not_deployed]
       @schools = School.active
+    elsif params[:not_deployed_only]
+      @schools = School.active.not_deployed
+    else
+      @schools = School.active.deployed
     end
     @json = @schools.to_gmaps4rails do |school, marker|
       #marker.infowindow render_to_string(partial: "/schools/infowindow", locals: {school: school})

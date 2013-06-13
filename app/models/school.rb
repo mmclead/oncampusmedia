@@ -15,6 +15,8 @@ class School < ActiveRecord::Base
   default_scope includes(:demographics, :sports, :hours, :transactions, :schedule).order(:dma, :school_name) 
   scope :active, where(active: true)
   scope :inactive, where(active: false)
+  scope :deployed, where("num_of_screens > 0")
+  scope :not_deployed, where(num_of_screens: 0)
   accepts_nested_attributes_for :sports, :schedule, :demographics, :hours, :transactions
   
   
