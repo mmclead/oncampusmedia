@@ -5,6 +5,9 @@
 
 $(document).ready(function() {
   
+  
+  $('a').tooltip();
+  
   $('.school-list-item label').each(function() {
     $(this).attr({'for': this.textContent.trim()} )
   });
