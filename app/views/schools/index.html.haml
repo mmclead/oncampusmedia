@@ -26,23 +26,19 @@
     .span5
       #buttons-with-tooltips
         .btn-group.bottom-margin
-          %button.btn
-            = link_to schools_url, :data => {:toggle=>"tooltip"}, :title=>"Active Campuses"  do
-              %i.icon-eye-open
-          %button.btn
-            = link_to schools_url(include_not_deployed: true), :data => {:toggle=>"tooltip"}, :title=>"Include Campuses with No Screens"  do 
-              %i.icon-eye-open 
-              + (No
-              %i.icon-film
-              )
-          %button.btn
-            = link_to schools_url(not_deployed_only: true), :data => {:toggle=>"tooltip"}, :title=>"Campuses with No Screens"  do
-              No
-              %i.icon-film
-              Only
-          %button.btn
-            = link_to schools_url(inactive: true), :data => {:toggle=>"tooltip"}, :title=>"Inactive Campuses"  do 
-              %i.icon-eye-close
+          = link_to schools_url, role: "button", class: "btn", :data => {:toggle=>"tooltip"}, :title=>"Active Campuses"  do
+            %i.icon-eye-open
+          = link_to schools_url(include_not_deployed: true), role: "button", class: "btn", :data => {:toggle=>"tooltip"}, :title=>"Include Campuses with No Screens"  do 
+            %i.icon-eye-open 
+            + (No
+            %i.icon-film
+            )
+          = link_to schools_url(not_deployed_only: true), role: "button", class: "btn", :data => {:toggle=>"tooltip"}, :title=>"Campuses with No Screens"  do
+            No
+            %i.icon-film
+            Only
+          = link_to schools_url(inactive: true), role: "button", class: "btn", :data => {:toggle=>"tooltip"}, :title=>"Inactive Campuses"  do 
+            %i.icon-eye-close
       .clearfix
       .accordian#filters
         = render 'filters/states_list'
