@@ -8,12 +8,26 @@
     .well
       = @import.send(file.name.to_s + "_file_name")
     The first few lines look like this:
-    .well
+    .well.auto-over
       %table.table
         - @import.headers(file.name).each do |row|
           %tr
             - row.split(",").each do |cell|
               %td= cell.to_s
-    Are you ready to import this?
-    = link_to "Import", '#', confirm: "This will update any existing schools that are referenced.  If there is bad data in the file, there will be bad data in your system.", class: "btn btn-large btn-danger"
+              
+    
+    - case instance_variable_get('@'+file.name.to_s + "_import_status")
+    - when nil
+      Are you ready to import this?
+      = link_to "Import", run_import_import_path(type: file.name.to_s), method: 'post', confirm: "This will update any existing schools that are referenced.  If there is bad data in the file, there will be bad data in your system.", class: "btn btn-large btn-danger"
+    - when false
+      = "Importing... (reload to see updates)"
+    - when true
+      Import complete
+      - @import.send('imported_'+file.name.to_s.slice(0..-6)).each do |list|
+        %table.table
+          - list.each do |row|
+            %tr
+              - row.split(",").each do |cell|
+                %td= cell.to_s
         
