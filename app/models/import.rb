@@ -145,7 +145,7 @@ class Import < ActiveRecord::Base
         if school.new_record? 
           new_school_list.append(school.name)
         else
-          updated_school_list.append(school.name)
+          updated_school_list.append({name: school.name, id: school.id, changed_attrs: school.changes.merge(sports.changes).merge(hours.changes).merge(demographics.changes)})
         end
         school.save!
         
@@ -157,6 +157,100 @@ class Import < ActiveRecord::Base
     return [new_school_list, updated_school_list]
   end
   
+  def import_rotc
+    rotc_text = open(rotc_file.url) {|f| f.read}      
+    index = 0
+    CSV.parse(rotc_text, {headers: true}) do |row|
+      store_id = row[0]
+      school = School.where(store_id: store_id).first
+      
+      if school.present?
+        school.store_name = row[1]
+        school.rotc = row[3].present?
+        updated_school_list.append({name: school.name, id: school.id, changed_attrs: school.changes})
+        school.save!
+      else
+        puts 'bad data at row' + index.to_s
+      end
+      index+=1
+    end    
+  end
   
+  def import_schedule
+    schedule_text = open(schedule_file.url) {|f| f.read}
+    index = 0
+    CSV.parse(schedule_text, {headers: true}) do |row|
+      store_id = row[1]
+      school = School.where(store_id: store_id).first
+      
+      if school.present?
+        schedule = school.schedule
+        schedule.spring_finals_first = begin Date.try(:strptime, row[3], '%m/%d/%y') rescue nil end
+        schedule.spring_finals_last = begin Date.try(:strptime, row[4], '%m/%d/%y') rescue nil end
+        schedule.fall_first_classes = begin Date.try(:strptime, row[5], '%m/%d/%y') rescue nil end
+        schedule.fall_finals_first = begin Date.try(:strptime, row[6], '%m/%d/%y') rescue nil end
+        schedule.fall_finals_last = begin Date.try(:strptime, row[7], '%m/%d/%y') rescue nil end
+        
+        updated_school_list.append({name: school.name, id: school.id, changed_attrs: schedule.changes}) 
+        school.save!
+      else
+        puts 'bad data at row' + index.to_s
+      end
+      index+=1
+    end
+  end
+  
+  def import_transactions
+    transactions_text = open(transactions_file.url) {|f| f.read}
+    index = 0
+    CSV.parse(transactions_text, {headers: true}) do |row|
+      store_id = row[0]
+      school = School.where(store_id: store_id).first
+      
+      if school.present?
+        transaction = Transactions.new
+        transaction.march = row[2].to_i
+        transaction.april = row[3].to_i
+        transaction.may = row[4].to_i
+        transaction.june = row[5].to_i
+        transaction.july = row[6].to_i
+        transaction.august = row[7].to_i
+        transaction.september = row[8].to_i
+        transaction.october = row[9].to_i
+        transaction.november = row[10].to_i
+        transaction.december = row[11].to_i
+        transaction.january = row[12].to_i
+        transaction.february = row[13].to_i
+        school.transactions = transaction
+        updated_school_list.append({name: school.name, id: school.id, changed_attrs: transaction.changes}) 
+        school.save!
+      else
+        puts 'bad data at row' + index.to_s
+      end
+      index+=1
+    end
+  end
+  
+  def import_summer_schedule
+    summer_schedule_text = open(summer_schedules_file.url) {|f| f.read}
+    index = 0
+    CSV.parse(summer_schedule_text, {headers: true}) do |row|
+      store_id = row[0]
+      school = School.where(store_id: store_id).first
+      
+      if school.present?
+        schedule = school.schedule
+        schedule.summer_first_classes = begin Date.try(:strptime, row[2], '%m/%d/%y') rescue nil end
+        schedule.summer_finals_first = begin Date.try(:strptime, row[3], '%m/%d/%y') rescue nil end
+        schedule.summer_finals_last = begin Date.try(:strptime, row[4], '%m/%d/%y') rescue nil end
+        
+        updated_school_list.append({name: school.name, id: school.id, changed_attrs: schedule.changes}) 
+        school.save!
+      else
+        puts 'bad data at row' + index.to_s
+      end
+      index+=1
+    end
+  end
   
 end
