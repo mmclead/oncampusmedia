@@ -1,0 +1,164 @@
+%table.table
+  %tr
+    %th
+    %th Name
+    %th Store ID
+    %th Address
+    %th City
+    %th State
+    %th Number of Screens
+    %th Campus Type
+    %th DMA
+    %th DMA Rank
+    %th Has Starbucks?
+    %th Has Coffee Stations?
+    %th ROTC?
+    %th Semesters?
+    %th Quarters?
+    %th fall_first_classes
+    %th fall_finals_first
+    %th fall_finals_last
+    %th spring_first_classes
+    %th spring_finals_first
+    %th spring_finals_last
+    %th summer_first_classes
+    %th summer_finals_first
+    %th summer_finals_last
+    %th sunday_open
+    %th sunday_close
+    %th monday Open
+    %th Monday Close
+    %th Tueday Open
+    %th Tuesday Close
+    %th Wednesday Open
+    %th Wednesday Close
+    %th Thursday Open
+    %th Thursday Close
+    %th Friday Open
+    %th Friday Close
+    %th Saturday Open
+    %th Saturday Close
+    %th Conference
+    %th NAIA Basebal Div I and II
+    %th NAIA Basketball Div I and II
+    %th NAIA Football Div I and II
+    %th NCAA Baseball Div I
+    %th NCAA Baseball Div II
+    %th NCAA Baseball Div III
+    %th NCAA Basketball Div I
+    %th NCAA Basketball Div II
+    %th NCAA Basketball Div III
+    %th NCAA Football Div I
+    %th NCAA Football Div II
+    %th NCAA Football Div III
+    %th NCAA / NAIA Track Cross Country
+    %th NJCAA Baseball Div I
+    %th NJCAA Basketball Div I
+    %th NJCAA Football Div I
+    %th Enrollment
+    %th Average Age
+    %th African American / Black
+    %th American Indian / Alaskan Native
+    %th Asian
+    %th Native Hawaiian / Pacific Islander
+    %th Non Resident Alien
+    %th Two or more Races
+    %th Unknown
+    %th White
+    %th Hispanic / Latino
+    %th January
+    %th February
+    %th March
+    %th April
+    %th May
+    %th June
+    %th July
+    %th August
+    %th September
+    %th October
+    %th November 
+    %th December
+  
+
+  - schools.each do |school|
+    %tr
+      %td= link_to "Edit", edit_school_path(school)
+      %td= school.school_name
+      %td= school.store_id
+      %td= school.address
+      %td= school.city
+      %td= school.state
+      %td= school.num_of_screens
+      %td= school.school_type
+      %td= school.dma
+      %td= school.dma_rank
+      %td= school.starbucks
+      %td= school.coffee_stations
+      %td= school.rotc
+      %td= school.schedule.semester
+      %td= school.schedule.quarter
+      %td= school.schedule.fall_first_classes
+      %td= school.schedule.fall_finals_first
+      %td= school.schedule.fall_finals_last
+      %td= school.schedule.spring_first_classes
+      %td= school.schedule.spring_finals_first
+      %td= school.schedule.spring_finals_last
+      %td= school.schedule.summer_first_classes
+      %td= school.schedule.summer_finals_first
+      %td= school.schedule.summer_finals_last
+      %td= school.hours.sunday_open
+      %td= school.hours.sunday_close
+      %td= school.hours.monday_open
+      %td= school.hours.monday_close
+      %td= school.hours.tuesday_open
+      %td= school.hours.tuesday_close
+      %td= school.hours.wednesday_open
+      %td= school.hours.wednesday_close
+      %td= school.hours.thursday_open
+      %td= school.hours.thursday_close
+      %td= school.hours.friday_open
+      %td= school.hours.friday_close
+      %td= school.hours.saturday_open
+      %td= school.hours.saturday_close
+      %td= school.sports.conference
+      %td= school.sports.naia_baseball_div_i_and_ii
+      %td= school.sports.naia_basketball_div_i_and_ii
+      %td= school.sports.naia_football_div_i_and_ii
+      %td= school.sports.ncaa_baseball_div_i
+      %td= school.sports.ncaa_baseball_div_ii
+      %td= school.sports.ncaa_baseball_div_iii
+      %td= school.sports.ncaa_basketball_div_i
+      %td= school.sports.ncaa_basketball_div_ii
+      %td= school.sports.ncaa_basketball_div_iii
+      %td= school.sports.ncaa_football_div_i
+      %td= school.sports.ncaa_football_div_ii
+      %td= school.sports.ncaa_football_div_iii
+      %td= school.sports.ncaa_naia_track_cross_country
+      %td= school.sports.njcaa_baseball_div_i
+      %td= school.sports.njcaa_basketball_div_i
+      %td= school.sports.njcaa_football_div_i
+      %td= school.demographics.enrollment 
+      %td= school.demographics.average_age
+      %td= school.demographics.african_american_black
+      %td= school.demographics.american_indian_alaskan_native
+      %td= school.demographics.asian
+      %td= school.demographics.native_hawaiian_pacific_islander  
+      %td= school.demographics.non_resident_alien
+      %td= school.demographics.two_or_more_races
+      %td= school.demographics.unknown
+      %td= school.demographics.white
+      %td= school.demographics.hispanic_latino
+      %td= school.transactions.january
+      %td= school.transactions.february
+      %td= school.transactions.march
+      %td= school.transactions.april
+      %td= school.transactions.may
+      %td= school.transactions.june
+      %td= school.transactions.july
+      %td= school.transactions.august
+      %td= school.transactions.september
+      %td= school.transactions.october
+      %td= school.transactions.november
+      %td= school.transactions.december
+      
+      

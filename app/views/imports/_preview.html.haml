@@ -1,0 +1,9 @@
+The first few lines look like this:
+.well.auto-over
+  %table.table
+    - @import.headers(file.name).each do |row|
+      %tr
+        - row.split(",").each do |cell|
+          %td= cell.to_s
+Are you ready to import this?
+= link_to "Import", run_import_import_path(type: file.name.to_s), method: 'post', confirm: "This will update any existing schools that are referenced.  If there is bad data in the file, there will be bad data in your system.", class: "btn btn-large btn-danger"
