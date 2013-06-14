@@ -1,7 +1,15 @@
 class Import < ActiveRecord::Base
   attr_accessible :schools_file, :transactions_file, :rotc_file, 
                   :schedules_file, :summer_schedules_file
+                  :schedules_file, :summer_schedules_file, :schools_import_has_run,
+                  :transactions_import_has_run, :rotc_import_has_run,:schedules_import_has_run,
+                  :summer_schedules_import_has_run
                   
+  serialize :imported_schools
+  serialize :imported_transactions
+  serialize :imported_rotc 
+  serialize :imported_schedules
+  serialize :imported_summer_schedules
   has_attached_file :schools_file
   has_attached_file :transactions_file   
   has_attached_file :rotc_file

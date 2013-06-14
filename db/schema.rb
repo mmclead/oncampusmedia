@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130610223204) do
+ActiveRecord::Schema.define(:version => 20130614011002) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "school_id"
@@ -23,6 +23,22 @@ ActiveRecord::Schema.define(:version => 20130610223204) do
   end
 
   add_index "addresses", ["school_id"], :name => "index_addresses_on_school_id"
+
+  create_table "delayed_jobs", :force => true do |t|
+    t.integer  "priority",   :default => 0
+    t.integer  "attempts",   :default => 0
+    t.text     "handler"
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
   create_table "demographics", :force => true do |t|
     t.integer  "school_id"
@@ -97,6 +113,16 @@ ActiveRecord::Schema.define(:version => 20130610223204) do
     t.string   "rotc_file_content_type"
     t.integer  "rotc_file_file_size"
     t.datetime "rotc_file_updated_at"
+    t.text     "imported_schools"
+    t.text     "imported_transactions"
+    t.text     "imported_rotc"
+    t.text     "imported_schedules"
+    t.text     "imported_summer_schedules"
+    t.boolean  "schools_import_has_run"
+    t.boolean  "transactions_import_has_run"
+    t.boolean  "rotc_import_has_run"
+    t.boolean  "schedules_import_has_run"
+    t.boolean  "summer_schedules_import_has_run"
   end
 
   create_table "ratecards", :force => true do |t|
