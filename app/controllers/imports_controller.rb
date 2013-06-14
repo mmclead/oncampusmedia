@@ -11,6 +11,13 @@ class ImportsController < ApplicationController
   end
   
   def show
+    @schools_file_import_status = @import.schools_import_has_run
+    @transactions_file_import_status = @import.transactions_import_has_run
+    @rotc_file_import_status = @import.rotc_import_has_run
+    @schedules_file_import_status = @import.schedules_import_has_run
+    @summer_schedules_file_import_status = @import.summer_schedules_import_has_run
+
+  end
     
   end
 end
