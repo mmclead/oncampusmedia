@@ -20,6 +20,7 @@ gem "dropbox-api"
 gem 'rails3-jquery-autocomplete'
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'delayed_job_active_record'
 
 # Gems used only for assets and not required
 # in production environments by default.
