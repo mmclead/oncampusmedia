@@ -1,0 +1,15 @@
+%dl
+  - schools.each do |school|
+    %dt
+      = school[:name]
+      = link_to "edit", edit_school_path(school[:id])
+    %dd
+      %dl
+        - school[:changed_attrs].each do |attr|
+          %dt= attr[0]
+          %dd
+            %strong From: 
+            = attr[1][0]
+            %strong , To: 
+            = attr[1][1]
+            

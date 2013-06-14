@@ -16,8 +16,10 @@ class ImportsController < ApplicationController
     @rotc_file_import_status = @import.rotc_import_has_run
     @schedules_file_import_status = @import.schedules_import_has_run
     @summer_schedules_file_import_status = @import.summer_schedules_import_has_run
-    @new_schools = School.where(school_name: @import.imported_schools[0])
-    @updated_schools = School.where(school_name: @import.imported_schools[1])
+    if @import.schools_import_has_run
+      @new_schools = School.where(school_name: @import.imported_schools[0])
+      @updated_schools = @import.imported_schools[1]
+    end
   end
   
   def run_import

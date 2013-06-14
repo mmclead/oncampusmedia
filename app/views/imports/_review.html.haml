@@ -4,5 +4,5 @@
   = render partial: 'schools/full_school_record', locals: {schools: @new_schools}
 
 %h4 Updated Schools
-.well.auto-over
-  = render partial: 'schools/full_school_record', locals: {schools: @updated_schools}
+.well.auto-over.limit-height
+  = render partial: 'changed_attrs', locals: {schools: @updated_schools}
