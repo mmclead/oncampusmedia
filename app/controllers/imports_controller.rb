@@ -18,6 +18,13 @@ class ImportsController < ApplicationController
     @summer_schedules_file_import_status = @import.summer_schedules_import_has_run
 
   end
+  
+  def run_import
+    type = params[:type].slice(0..-6)
+    @import.mark_as_running(type)
+    @import.delay.import_file(params[:type])
     
+    redirect_to @import, notice: "Import Started"
   end
+  
 end
