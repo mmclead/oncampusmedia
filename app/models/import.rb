@@ -203,6 +203,7 @@ class Import < ActiveRecord::Base
   def import_transactions
     transactions_text = open(transactions_file.url) {|f| f.read}
     index = 0
+    updated_transaction_list = []
     CSV.parse(transactions_text, {headers: true}) do |row|
       store_id = row[0]
       school = School.where(store_id: store_id).first
@@ -229,6 +230,7 @@ class Import < ActiveRecord::Base
       end
       index+=1
     end
+    return [ [], updated_transaction_list]
   end
   
   def import_summer_schedule
