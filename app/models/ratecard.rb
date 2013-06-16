@@ -108,7 +108,7 @@ class Ratecard < ActiveRecord::Base
   
   def email_pdf_to_creator
     if self.user.present?
-      UserMailer.send_pdf_of_quote(self).deliver
+      UserMailer.delay.send_pdf_of_quote(self)
     end
   end
   
