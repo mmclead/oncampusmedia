@@ -27,7 +27,7 @@ class Import < ActiveRecord::Base
   end
   
   def headers(file_name)
-    text = open(self.send(file_name).url) {|f| f.read.gsub("\r\r","\r")}
+    text = open(self.send(file_name).url) {|f| f.read.gsub("\r\r","\r").gsub("\n","\r") }
     return text.split("\r")[0,4]
   end
   
@@ -62,7 +62,7 @@ class Import < ActiveRecord::Base
   end
   
   def import_schools
-    schools_text = open(schools_file.url) {|f| f.read}
+    schools_text = open(schools_file.url) {|f| f.read.gsub("\r\r","\r")}
     index = 0
     new_school_list = []
     updated_school_list = []
@@ -190,7 +190,7 @@ class Import < ActiveRecord::Base
   end
   
   def import_rotc
-    rotc_text = open(rotc_file.url) {|f| f.read}      
+    rotc_text = open(rotc_file.url) {|f| f.read.gsub("\r\r","\r")}      
     index = 0
     updated_school_list = []
     CSV.parse(rotc_text, {headers: true}) do |row|
@@ -210,8 +210,8 @@ class Import < ActiveRecord::Base
     return [[], updated_school_list]
   end
   
-  def import_schedule
-    schedule_text = open(schedule_file.url) {|f| f.read}
+  def import_schedules
+    schedule_text = open(schedules_file.url) {|f| f.read.gsub("\r\r","\r")}
     index = 0
     updated_school_list = []
     CSV.parse(schedule_text, {headers: true}) do |row|
@@ -237,7 +237,7 @@ class Import < ActiveRecord::Base
   end
   
   def import_transactions
-    transactions_text = open(transactions_file.url) {|f| f.read}
+    transactions_text = open(transactions_file.url) {|f| f.read.gsub("\r\r","\r")}
     index = 0
     updated_school_list = []
     CSV.parse(transactions_text, {headers: true}) do |row|
@@ -269,8 +269,8 @@ class Import < ActiveRecord::Base
     return [ [], updated_school_list]
   end
   
-  def import_summer_schedule
-    summer_schedule_text = open(summer_schedules_file.url) {|f| f.read}
+  def import_summer_schedules
+    summer_schedule_text = open(summer_schedules_file.url) {|f| f.read.gsub("\r\r","\r")}
     index = 0
     updated_school_list = []
     CSV.parse(summer_schedule_text, {headers: true}) do |row|
