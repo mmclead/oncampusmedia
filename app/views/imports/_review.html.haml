@@ -1,7 +1,8 @@
 %h3 Import complete
-%h4 Newly Created Schools
-.well.auto-over
-  = render partial: 'schools/full_school_record', locals: {schools: @new_schools}
+- if @new_schools.present?
+  %h4 Newly Created Schools
+  .well.auto-over
+    = render partial: 'schools/full_school_record', locals: {schools: @new_schools}
 
 %h4 Updated Schools
 .well.auto-over.limit-height
