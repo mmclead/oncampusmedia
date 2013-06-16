@@ -7,3 +7,4 @@ The first few lines look like this:
           %td= cell.to_s
 Are you ready to import this?
 = link_to "Import", run_import_import_path(type: file.name.to_s), method: 'post', confirm: "This will update any existing schools that are referenced.  If there is bad data in the file, there will be bad data in your system.", class: "btn btn-large btn-danger"
+= link_to "Edit", edit_import_path(@import)
