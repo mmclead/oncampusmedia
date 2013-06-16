@@ -11,7 +11,7 @@ class Import < ActiveRecord::Base
   serialize :imported_summer_schedules
   
   has_attached_file :schools_file
-  has_attached_file :transactions_file   
+  has_attached_file :transactions_file 
   has_attached_file :rotc_file
   has_attached_file :schedules_file
   has_attached_file :summer_schedules_file
@@ -34,6 +34,10 @@ class Import < ActiveRecord::Base
   def mark_as_running(type)
     self.send(type+"_import_has_run=", false)
     self.save
+  end
+  
+  def import_files
+    files.each {|f| import_file(f.name)}
   end
   
   def import_file(file_name)
@@ -100,20 +104,48 @@ class Import < ActiveRecord::Base
         
         hours = school.hours
         hours = Hours.new unless hours.present?
-        hours.monday_open = Time.parse(row[43].to_s.split(" - ")[0]) unless row[43] == "CLOSED" or row[43].blank?
-        hours.monday_close = Time.parse(row[43].to_s.split(" - ")[1]) unless row[43] == "CLOSED" or row[43].blank?
-        hours.tuesday_open = Time.parse(row[44].to_s.split(" - ")[0]) unless row[44] == "CLOSED" or row[44].blank?
-        hours.tuesday_close = Time.parse(row[44].to_s.split(" - ")[1]) unless row[44] == "CLOSED" or row[44].blank?
-        hours.wednesday_open = Time.parse(row[45].to_s.split(" - ")[0]) unless row[45] == "CLOSED" or row[45].blank?
-        hours.wednesday_close = Time.parse(row[45].to_s.split(" - ")[1]) unless row[45] == "CLOSED" or row[45].blank?
-        hours.thursday_open = Time.parse(row[46].to_s.split(" - ")[0]) unless row[46] == "CLOSED" or row[46].blank?
-        hours.thursday_close = Time.parse(row[46].to_s.split(" - ")[1]) unless row[46] == "CLOSED" or row[46].blank?
-        hours.friday_open = Time.parse(row[47].to_s.split(" - ")[0]) unless row[47] == "CLOSED" or row[47].blank?
-        hours.friday_close = Time.parse(row[47].to_s.split(" - ")[0]) unless row[47] == "CLOSED" or row[47].blank?
-        hours.saturday_open = Time.parse(row[48].to_s.split(" - ")[0]) unless row[48] == "CLOSED" or row[48].blank?
-        hours.saturday_close = Time.parse(row[48].to_s.split(" - ")[0]) unless row[48] == "CLOSED" or row[48].blank?
-        hours.sunday_open = Time.parse(row[42].to_s.split(" - ")[0]) unless row[42] == "CLOSED" or row[42].blank?
-        hours.sunday_close = Time.parse(row[42].to_s.split(" - ")[1]) unless row[42] == "CLOSED" or row[42].blank?
+        unless row[43] == "CLOSED" or row[43].blank?
+          t = Time.parse(row[43].to_s.split(" - ")[0], Time.utc(2000)) 
+          hours.monday_open = (t + t.gmtoff).getutc
+          t = Time.parse(row[43].to_s.split(" - ")[1], Time.utc(2000))        
+          hours.monday_close =  (t + t.gmtoff).getutc
+        end
+        unless row[44] == "CLOSED" or row[44].blank?
+          t = Time.parse(row[44].to_s.split(" - ")[0], Time.utc(2000))
+          hours.tuesday_open = (t + t.gmtoff).getutc
+          t = Time.parse(row[44].to_s.split(" - ")[1], Time.utc(2000))
+          hours.tuesday_close = (t + t.gmtoff).getutc
+        end
+        unless row[45] == "CLOSED" or row[45].blank?
+          t = Time.parse(row[45].to_s.split(" - ")[0], Time.utc(2000))
+          hours.wednesday_open = (t + t.gmtoff).getutc
+          t = Time.parse(row[45].to_s.split(" - ")[1], Time.utc(2000))
+          hours.wednesday_close = (t + t.gmtoff).getutc          
+        end
+        unless row[46] == "CLOSED" or row[46].blank?
+          t = Time.parse(row[46].to_s.split(" - ")[0], Time.utc(2000))
+          hours.thursday_open = (t + t.gmtoff).getutc
+          t = Time.parse(row[46].to_s.split(" - ")[1], Time.utc(2000))
+          hours.thursday_close = (t + t.gmtoff).getutc
+        end
+        unless row[47] == "CLOSED" or row[47].blank?
+          t = Time.parse(row[47].to_s.split(" - ")[0], Time.utc(2000))
+          hours.friday_open = (t + t.gmtoff).getutc
+          t = Time.parse(row[47].to_s.split(" - ")[1], Time.utc(2000))
+          hours.friday_close = (t + t.gmtoff).getutc
+        end
+        unless row[48] == "CLOSED" or row[48].blank?
+          t = Time.parse(row[48].to_s.split(" - ")[0], Time.utc(2000))
+          hours.saturday_open = (t + t.gmtoff).getutc
+          t = Time.parse(row[48].to_s.split(" - ")[1], Time.utc(2000))
+          hours.saturday_close = (t + t.gmtoff).getutc
+        end
+        unless row[42] == "CLOSED" or row[42].blank?
+          t = Time.parse(row[42].to_s.split(" - ")[0], Time.utc(2000))
+          hours.sunday_open = (t + t.gmtoff).getutc
+          t = Time.parse(row[42].to_s.split(" - ")[1], Time.utc(2000))
+          hours.sunday_close = (t + t.gmtoff).getutc
+        end
         school.hours = hours
         
         sports = school.sports
@@ -144,8 +176,8 @@ class Import < ActiveRecord::Base
         school.schedule = schedule
         if school.new_record? 
           new_school_list.append(school.name)
-        else
-          updated_school_list.append({name: school.name, id: school.id, changed_attrs: school.changes.merge(sports.changes).merge(hours.changes).merge(demographics.changes)})
+        elsif (school.changed? or sports.changed? or hours.changed? or demographics.changed?)
+          updated_school_list.append({name: school.name, id: school.id, changed_attrs: school.changes.merge(sports.changes).merge(hours.changes).merge(demographics.changes)})  
         end
         school.save!
         
@@ -160,6 +192,7 @@ class Import < ActiveRecord::Base
   def import_rotc
     rotc_text = open(rotc_file.url) {|f| f.read}      
     index = 0
+    updated_school_list = []
     CSV.parse(rotc_text, {headers: true}) do |row|
       store_id = row[0]
       school = School.where(store_id: store_id).first
@@ -167,18 +200,20 @@ class Import < ActiveRecord::Base
       if school.present?
         school.store_name = row[1]
         school.rotc = row[3].present?
-        updated_school_list.append({name: school.name, id: school.id, changed_attrs: school.changes})
+        updated_school_list.append({name: school.name, id: school.id, changed_attrs: school.changes}) if school.changed?
         school.save!
       else
         puts 'bad data at row' + index.to_s
       end
       index+=1
-    end    
+    end 
+    return [[], updated_school_list]
   end
   
   def import_schedule
     schedule_text = open(schedule_file.url) {|f| f.read}
     index = 0
+    updated_school_list = []
     CSV.parse(schedule_text, {headers: true}) do |row|
       store_id = row[1]
       school = School.where(store_id: store_id).first
@@ -191,19 +226,20 @@ class Import < ActiveRecord::Base
         schedule.fall_finals_first = begin Date.try(:strptime, row[6], '%m/%d/%y') rescue nil end
         schedule.fall_finals_last = begin Date.try(:strptime, row[7], '%m/%d/%y') rescue nil end
         
-        updated_school_list.append({name: school.name, id: school.id, changed_attrs: schedule.changes}) 
+        updated_school_list.append({name: school.name, id: school.id, changed_attrs: schedule.changes}) if schedule.changed?
         school.save!
       else
         puts 'bad data at row' + index.to_s
       end
       index+=1
     end
+    return [[], updated_school_list]
   end
   
   def import_transactions
     transactions_text = open(transactions_file.url) {|f| f.read}
     index = 0
-    updated_transaction_list = []
+    updated_school_list = []
     CSV.parse(transactions_text, {headers: true}) do |row|
       store_id = row[0]
       school = School.where(store_id: store_id).first
@@ -223,19 +259,20 @@ class Import < ActiveRecord::Base
         transaction.january = row[12].to_i
         transaction.february = row[13].to_i
         school.transactions = transaction
-        updated_school_list.append({name: school.name, id: school.id, changed_attrs: transaction.changes}) 
+        updated_school_list.append({name: school.name, id: school.id, changed_attrs: transaction.changes}) if transaction.changed?
         school.save!
       else
         puts 'bad data at row' + index.to_s
       end
       index+=1
     end
-    return [ [], updated_transaction_list]
+    return [ [], updated_school_list]
   end
   
   def import_summer_schedule
     summer_schedule_text = open(summer_schedules_file.url) {|f| f.read}
     index = 0
+    updated_school_list = []
     CSV.parse(summer_schedule_text, {headers: true}) do |row|
       store_id = row[0]
       school = School.where(store_id: store_id).first
@@ -246,13 +283,14 @@ class Import < ActiveRecord::Base
         schedule.summer_finals_first = begin Date.try(:strptime, row[3], '%m/%d/%y') rescue nil end
         schedule.summer_finals_last = begin Date.try(:strptime, row[4], '%m/%d/%y') rescue nil end
         
-        updated_school_list.append({name: school.name, id: school.id, changed_attrs: schedule.changes}) 
+        updated_school_list.append({name: school.name, id: school.id, changed_attrs: schedule.changes}) if schedule.changed?
         school.save!
       else
         puts 'bad data at row' + index.to_s
       end
       index+=1
     end
+    return [[], updated_school_list]
   end
   
 end
