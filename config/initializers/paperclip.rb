@@ -1,1 +1,1 @@
-Paperclip::Attachment.default_options[:url] = ENV['AWS_BUCKET']+'.s3.amazonaws.com' if ENV['AWS_BUCKET']
+Paperclip::Attachment.default_options[:url] = ":s3_domain_url"
