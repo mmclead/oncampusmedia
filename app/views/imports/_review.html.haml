@@ -5,4 +5,4 @@
 
 %h4 Updated Schools
 .well.auto-over.limit-height
-  = render partial: 'changed_attrs', locals: {schools: @updated_schools}
+  = render partial: 'changed_attrs', locals: {schools: @import.send("imported_"+file.name.to_s.slice(0..-6))[1]}
