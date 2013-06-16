@@ -21,6 +21,20 @@ class ImportsController < ApplicationController
       @updated_schools = @import.imported_schools[1]
     end
   end
+
+  def edit
+    
+  end
+  
+  def update
+    if @import.update_attributes(params[:import])
+      redirect_to @import
+    else
+      render 'edit'
+    end
+  end
+  
+  
   
   def run_import
     type = params[:type].slice(0..-6)
