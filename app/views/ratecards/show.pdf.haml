@@ -3,97 +3,10 @@
   
 = render 'layouts/quote_header'
 
-%table.table.table-hover
-  %tr
-    %th Prepared For:
-    %td= @ratecard.prepared_for
-  %tr
-    %th Brand/Division:
-    %td= @ratecard.brand
-  %tr
-    %th Presented To:
-    %td= simple_format @ratecard.presented_to
-  %tr  
-    %th Prepared By:
-    %td= simple_format word_wrap @ratecard.prepared_by
+= render partial: 'ratecard_tables'
 
-    
-%table.table.table-hover
-  %tr
-    %th Spot Length:
-    %td= "#{@ratecard.spot_length} seconds"
-  %tr
-    %th Quote Date:
-    %td= @ratecard.quote_date.strftime("%D")
-  %tr
-    %th Accept By:
-    %td= @ratecard.accept_by.strftime("%D")
-  %tr
-    %th Creative Due Date:
-    %td= @ratecard.creative_due_date.strftime("%D")
-  %tr 
-    %th Start Date:
-    %td= @ratecard.flight_date.strftime("%D")
-  %tr 
-    %th End Date:
-    %td= @ratecard.end_date.strftime("%D")
-  %tr
-    %th Air Time:
-    %td= num_of_weeks_in_words(@ratecard)
-  
-    
-    
-%table.table.table-bordered.table-hover
-  %tr
-    %th Spots per Hour
-    %td= @ratecard.spot_rate
-  %tr
-    %th Estimated Spots
-    %td= number_with_delimiter(@ratecard.total_spots.to_i)
-  %tr
-    %th Cost per Spot
-    %td= number_to_currency(@ratecard.cost_per_spot.round(2))
-  %tr
-    %th Number of Campuses
-    %td= @ratecard.store_ids.count
-  %tr
-    %th Avg Cost Per Campus
-    %td= number_to_currency(@ratecard.cost_per_school) 
-  %tr
-    %th Estimated Impressions
-    %td= number_with_delimiter(@ratecard.total_impressions.to_i)
-  %tr
-    %th CPM
-    %td= number_to_currency(@ratecard.cpm)
-  %tr
-    %th Additional Cost
-    %td= number_to_currency(@ratecard.additional_cost.to_f)
-  %tr.warning
-    %th Total Net Cost
-    %td= number_to_currency(@ratecard.total_cost)
-
-- if @ratecard.special_instructions.present?
-  .well
-    %h4 Special Instructions
-    = @ratecard.special_instructions
-        
 .page-break
 
-%table.table.table-bordered.table-hover.table-condensed
-  %tr.highlight
-    %th Campus No.
-    %th Campus Name
-    %th Campus Type
-    %th Address
-    %th City
-    %th ST
-    %th DMA
-    %th DMA Rank
-    %th No. of TVs
-    %th Students Enrolled
-    %th Impressions
-    %th Cost Per Campus
-  = render partial: 'ratecards/school_for_quote.html', locals: {schools: @ratecard.schools}
 
-    
+= render 'school_list'
 

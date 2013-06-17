@@ -1,0 +1,19 @@
+= wicked_pdf_stylesheet_link_tag "application"
+= wicked_pdf_javascript_include_tag "application"
+
+.content
+  = render 'layouts/contract_header'
+  
+  = render 'ratecard_tables'
+  
+  .always-break
+    
+  = render 'contract_signatures'
+  
+  .always-break
+    
+  = render 'school_list'
+  
+  .always-break
+    
+  = render 'contract_terms'

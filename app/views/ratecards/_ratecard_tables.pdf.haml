@@ -1,12 +1,4 @@
-= render 'layouts/quote_header.html'
-.navbar 
-  %ul.nav
-    %li= link_to 'Download PDF of Quote', ratecard_path(@ratecard, :format => :pdf)
-    %li= link_to 'Download PDF of Contract', ratecard_path(@ratecard, :format => :pdf, contract: true)
-    %li.pull-right= link_to 'Edit Quote', edit_ratecard_path(@ratecard) if can? :update, @ratecard
-.clearfix
-%p
-%table.table.table-hover
+%table.table.table-fixed
   %tr
     %th Prepared For:
     %td= @ratecard.prepared_for
@@ -21,7 +13,7 @@
     %td= simple_format word_wrap @ratecard.prepared_by
 
     
-%table.table.table-hover
+%table.table.table-fixed
   %tr
     %th Spot Length:
     %td= "#{@ratecard.spot_length} seconds"
@@ -46,7 +38,7 @@
   
     
     
-%table.table.table-bordered.table-hover
+%table.table.table-bordered.table-fixed
   %tr
     %th Spots per Hour
     %td= @ratecard.spot_rate
@@ -55,13 +47,13 @@
     %td= number_with_delimiter(@ratecard.total_spots.to_i)
   %tr
     %th Cost per Spot
-    %td= number_to_currency(@ratecard.cost_per_spot, :precision => 3)
+    %td= number_to_currency(@ratecard.cost_per_spot.round(2))
   %tr
     %th Number of Campuses
     %td= @ratecard.store_ids.count
   %tr
     %th Avg Cost Per Campus
-    %td= number_to_currency(@ratecard.cost_per_school, :precistion => 3) 
+    %td= number_to_currency(@ratecard.cost_per_school) 
   %tr
     %th Estimated Impressions
     %td= number_with_delimiter(@ratecard.total_impressions.to_i)
@@ -78,25 +70,4 @@
 - if @ratecard.special_instructions.present?
   .well
     %h4 Special Instructions
-    = simple_format @ratecard.special_instructions
-    
-%table.table.table-bordered.table-hover.table-condensed.school-table
-  %tr.highlight
-    %th Campus No.
-    %th Campus Name
-    %th Campus Type
-    %th Address
-    %th City
-    %th ST
-    %th DMA
-    %th DMA Rank
-    %th No. of TVs
-    %th Students Enrolled
-    %th Impressions
-    %th Cost Per Campus
-  = render partial: 'school_for_quote', locals: {schools: @ratecard.schools}
-
-    
-
-  
-
+    = @ratecard.special_instructions

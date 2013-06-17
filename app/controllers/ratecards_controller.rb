@@ -48,11 +48,20 @@ class RatecardsController < ApplicationController
     @ratecard = Ratecard.find(params[:id])
     respond_to do |format|
       format.html
-      format.pdf do
-        render pdf: "proposal-#{@ratecard.brand}-#{@ratecard.quote_date}",
-               template: 'ratecards/show.pdf.haml',
-               disposition: 'attachment',
-               show_as_html: params[:debug]
+      if params[:contract].present?
+        format.pdf do
+          render pdf: "contract-#{@ratecard.prepared_for}-#{Time.now.to_formatted_s(:date)}",
+                 template: 'ratecards/contract.pdf.haml',
+                 disposition: 'attachment',
+                 show_as_html: params[:debug]
+        end
+      else
+        format.pdf do
+          render pdf: "proposal-#{@ratecard.brand}-#{@ratecard.quote_date}",
+                 template: 'ratecards/show.pdf.haml',
+                 disposition: 'attachment',
+                 show_as_html: params[:debug]
+        end
       end
     end
   end
