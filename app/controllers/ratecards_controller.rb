@@ -6,6 +6,7 @@ class RatecardsController < ApplicationController
   before_filter :create_dates_from_strings, only: [:create, :update]
 
   after_filter :upload_to_dropbox, only: [:create]
+  after_filter :upload_to_dropbox, only: [:create, :update]
   
   autocomplete :ratecard, :prepared_for
   autocomplete :ratecard, :brand
