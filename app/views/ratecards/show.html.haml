@@ -2,7 +2,7 @@
 .navbar 
   %ul.nav
     %li= link_to 'Download PDF of Quote', ratecard_path(@ratecard, :format => :pdf)
-    %li= link_to 'Download PDF of Contract', ratecard_path(@ratecard, :format => :pdf, contract: true)
+    %li= link_to 'Download PDF of Contract', ratecard_path(@ratecard, :format => :pdf, contract: true) if current_user.internal?
     %li.pull-right= link_to 'Edit Quote', edit_ratecard_path(@ratecard) if can? :update, @ratecard
 .clearfix
 %p

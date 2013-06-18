@@ -1,15 +1,21 @@
 %header 
-  #logo
-    = image_tag 'logo.png', width: "150px"     
-  #center-info
-    %p
-      %span.orange 
-        ON
-      Campus Media 
-    %p      3434 Overland Ave | Los Angeles | CA | 90034      %p 
-      310-558-8888    %p
-      www.on-campusmedia.com 
   
+  - if current_user.barnes?
+    #logo
+      = image_tag "barneslogo.png", width: "250px"
+    #center-info
+  - else
+    #logo
+      = image_tag 'logo.png', width: "150px" 
+    #center-info
+      %p
+        %span.orange 
+          ON
+        Campus Media 
+      %p        3434 Overland Ave | Los Angeles | CA | 90034        %p 
+        310-558-8888      %p
+        www.on-campusmedia.com 
+    
       
   #right-info
     = image_tag @ratecard.logo.url(:medium) if @ratecard.logo.present?

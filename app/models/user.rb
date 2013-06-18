@@ -16,6 +16,10 @@ class User < ActiveRecord::Base
     email.include?("@on-campusmedia.com")
   end
   
+  def barnes?
+    email.include?("@bncollege.com")
+  end
+  
   def contact_info
     "#{name}\n#{title}\n#{email}\n#{phone}"
   end
