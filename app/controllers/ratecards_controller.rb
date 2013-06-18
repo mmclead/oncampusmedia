@@ -4,7 +4,8 @@ class RatecardsController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   before_filter :create_dates_from_strings, only: [:create, :update]
- 
+
+  after_filter :upload_to_dropbox, only: [:create]
   
   autocomplete :ratecard, :prepared_for
   autocomplete :ratecard, :brand
@@ -124,5 +125,14 @@ class RatecardsController < ApplicationController
     end
   end
   
+  def upload_to_dropbox
+    if user_signed_in?
+      client = Dropbox::API::Client.new(:token  => Dropbox_Token, :secret => Dropbox_Secret)
+      client.delay.upload "#{@ratecard.user.name}/#{@ratecard.prepared_for}/#{@ratecard.brand}/proposal-#{@ratecard.quote_date.strftime('%Y-%m-%d')}.pdf",   
+        render_to_string(pdf: "proposal-#{@ratecard.brand}-#{@ratecard.quote_date}", template: 'ratecards/show.pdf.haml')        
+      redirect_to @ratecard, notice: "Quote created, emailed and uploaded"
+
+    end
+  end
   
 end

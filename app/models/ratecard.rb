@@ -20,7 +20,7 @@ class Ratecard < ActiveRecord::Base
     },
     path: 'logos/:id/:style_:filename'
   
-  after_create :email_pdf_to_creator, :create_pdf_for_dropbox
+  after_create :email_pdf_to_creator
     
   before_save :set_dates_and_duration, :update_prepared_by
   
@@ -113,14 +113,6 @@ class Ratecard < ActiveRecord::Base
     if self.user.present?
       UserMailer.delay.send_pdf_of_quote(self)
     end
-  end
-  
-  def create_pdf_for_dropbox
-    client = Dropbox::API::Client.new(:token  => Dropbox_Token, :secret => Dropbox_Secret)
-    ac = ApplicationController.new
-    ac.instance_variable_set("@ratecard", self)                                                                                                           
-    client.delay.upload "#{user.name}/#{prepared_for}/#{brand}/proposal-#{quote_date.strftime('%Y-%m-%d')}.pdf",   
-      ac.render_to_string(pdf: "proposal-#{brand}-#{quote_date}", template: 'ratecards/show.pdf.haml')        
   end
   
   def update_prepared_by
