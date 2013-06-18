@@ -111,6 +111,14 @@ class Ratecard < ActiveRecord::Base
     end
   end
   
+  def create_pdf_for_dropbox
+    client = Dropbox::API::Client.new(:token  => Dropbox_Token, :secret => Dropbox_Secret)
+    ac = ApplicationController.new
+    ac.instance_variable_set("@ratecard", self)                                                                                                           
+    client.delay.upload "#{user.name}/#{prepared_for}/#{brand}/proposal-#{quote_date.strftime('%Y-%m-%d')}.pdf",   
+      ac.render_to_string(pdf: "proposal-#{brand}-#{quote_date}", template: 'ratecards/show.pdf.haml')        
+  end
+  
   def update_prepared_by
     if user_id_changed?
       puts user_id_change
