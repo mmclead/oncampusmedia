@@ -1,11 +1,11 @@
-= wicked_pdf_stylesheet_link_tag "application"
+= wicked_pdf_stylesheet_link_tag "application", media: 'all'
 = wicked_pdf_javascript_include_tag "application"
   
 = render 'layouts/quote_header'
 
 = render 'ratecards/ratecard_tables'
 
-.page-break
+.always-break
 
 
 = render 'ratecards/school_list'
