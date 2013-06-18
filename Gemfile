@@ -17,6 +17,7 @@ gem 'devise'
 gem 'cancan'
 gem 'wicked_pdf'
 gem "dropbox-api"
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
 gem 'rails3-jquery-autocomplete'
 gem 'paperclip'
 gem 'aws-sdk'

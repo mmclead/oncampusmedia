@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require jquery.ui.slider
+ *= require dataTables/jquery.dataTables.bootstrap
  *= require_tree .
  */
 

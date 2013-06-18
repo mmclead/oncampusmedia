@@ -9,21 +9,23 @@
 
 = render partial: 'ratecard_tables'
     
-%table.table.table-bordered.table-hover.table-condensed.school-table
-  %tr.highlight
-    %th= sortable "store_id", "Campus No."
-    %th= sortable "school_name", "Campus Name"
-    %th= sortable "school_type" "Campus Type"
-    %th= sortable "address"
-    %th= sortable "city"
-    %th= sortable "state",  "ST"
-    %th= sortable "dma", "DMA"
-    %th= sortable "dma_rank"
-    %th= sortable "num_of_screens",  "No. of TVs"
-    %th Students Enrolled
-    %th Impressions
-    %th Cost Per Campus
-  = render partial: 'school_for_quote'
+%table#schools.table.table-bordered.table-hover.table-condensed.school-table
+  %thead
+    %tr.highlight
+      %th Campus No.
+      %th Campus Name
+      %th Campus Type
+      %th Address
+      %th City
+      %th ST
+      %th DMA
+      %th DMA Rank
+      %th No. of TVs
+      %th Students Enrolled
+      %th Impressions
+      %th Cost Per Campus
+  %tbody
+    = render partial: 'school_for_quote'
 
     
 
