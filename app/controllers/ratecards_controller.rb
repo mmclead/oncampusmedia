@@ -1,7 +1,10 @@
 class RatecardsController < ApplicationController
   load_and_authorize_resource
   
+  helper_method :sort_column, :sort_direction
+  
   before_filter :create_dates_from_strings, only: [:create, :update]
+ 
   
   autocomplete :ratecard, :prepared_for
   autocomplete :ratecard, :brand
@@ -31,20 +34,20 @@ class RatecardsController < ApplicationController
       @ratecard.store_ids = params['schools'].values
       if @ratecard.save
         url = @ratecard
-        msg = "Proposal Created Successfully"
+        msg = "Proposal created, emailed and uploaded"
       else
         url = schools_url
-        msg = 'Proposal not created'
+        msg = "Proposal not Created"
       end
     else
       url = schools_url
-      msg = 'No Schools Selected'
+      msg = "No Schools Selected"
     end
     redirect_to url, notice: msg
   end
   
   def show
-    @ratecard = Ratecard.find(params[:id])
+    @schools = @ratecard.schools(sort_column, sort_direction, true)
     respond_to do |format|
       format.html
       if params[:contract].present?
@@ -66,6 +69,7 @@ class RatecardsController < ApplicationController
   end
   
   def edit
+    @schools = @ratecard.schools(sort_column, sort_direction)
     @ratecard = Ratecard.find(params[:id])
     @edit = true
   end
@@ -94,6 +98,16 @@ class RatecardsController < ApplicationController
   
   
   private
+  
+  
+  def sort_column
+    School.column_names.include?(params[:sort]) ? params[:sort] : "dma"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+  
   
   def create_dates_from_strings
     if params[:ratecard][:flight_date].present?

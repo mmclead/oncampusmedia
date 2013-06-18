@@ -20,7 +20,7 @@ class Ratecard < ActiveRecord::Base
     },
     path: 'logos/:id/:style_:filename'
   
-  after_create :email_pdf_to_creator
+  after_create :email_pdf_to_creator, :create_pdf_for_dropbox
     
   before_save :set_dates_and_duration, :update_prepared_by
   
@@ -34,8 +34,12 @@ class Ratecard < ActiveRecord::Base
     self.where(r[:user_id].eq(nil).or(r[:user_id].eq(user_id)))
   end
   
-  def schools
-    School.where(store_id: store_ids)
+  def schools(sort_column = 'dma', sort_direction = 'asc', unscoped = false)
+    if unscoped
+      School.unscoped.includes(:demographics, :sports, :hours, :transactions, :schedule).where(store_id: store_ids).order(sort_column + " " + sort_direction)
+    else
+      School.where(store_id: store_ids).order(sort_column + " " + sort_direction)
+    end
   end
   
   def total_cost(schools = self.schools)
