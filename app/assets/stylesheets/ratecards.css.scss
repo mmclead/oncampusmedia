@@ -25,7 +25,7 @@ header {
   }
   .no-break{ 
     page-break-inside: avoid;
-    /* http://code.google.com/p/wkhtmltopdf/issues/detail?id=9#c21 */
+    /*http://code.google.com/p/wkhtmltopdf/issues/detail?id=9#c21*/
   }
 }
 
@@ -73,7 +73,7 @@ header {
 }
 
 .table tbody tr.success th {
-    background-color: #dff0d8;
+  background-color: #dff0d8;
 }
 
 .table tbody tr.info th {
@@ -93,7 +93,17 @@ header {
   table-layout: fixed; 
 }
 
-
 .dataTables_info {
   display: none;
+}
+.always-break { 
+  page-break-after:always; 
+}
+
+.no-break:before { 
+  clear:both; 
+}
+.no-break{ 
+  page-break-inside: avoid;
+  /*http://code.google.com/p/wkhtmltopdf/issues/detail?id=9#c21*/
 }
