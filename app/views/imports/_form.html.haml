@@ -3,57 +3,57 @@
   = f.file_field :schools_file
   %p.text-warning
     The file you upload must look EXACTLY like this
-  %table.table.table-bordered.well
-    %tr 
-      %th Store #		
-      %th Address	
-      %th DMA	
-      %th City	
-      %th State	
-      %th Select School (1,0)	
-      %th School Selected	
-      %th School Selected and Included	
-      %th # of Screens	
-      %th Type of School	
-      %th AVERAGE AGE	
-      %th DMA Rank	
-      %th NCAA BASKETBALL Div I	
-      %th NCAA BASKETBALL Div II	
-      %th NCAA BASKETBALL Div III	
-      %th NAIA BASKETBALL Div I & II	
-      %th NCAA FOOTBALL Div I	
-      %th NCAA FOOTBALL Div II	
-      %th NCAA FOOTBALL Div III	
-      %th NAIA FOOTBALL Div I & II	
-      %th NCAA BASEBALL Div I	
-      %th NCAA BASEBALL Div II	
-      %th NCAA BASEBALL Div III	
-      %th NAIA BASEBALL Div I & II	
-      %th NCAA/NAIA Track/Cross Country   	
-      %th NJCAA FOOTBALL Div I	
-      %th NJCAA BASEBALL Div I	
-      %th NJCAA BASKETBALL Div I	
-      %th CONFERENCE
-      %th % Non-Resident Alien	
-      %th % African-American/Black
-      %th % Two or More Races
-      %th % Asian	% Hispanic/Latino
-      %th % White
-      %th % Ethnicity Unknown	
-      %th % American Indian/Alaskan Native
-      %th % Native Hawaiian/Pacific Islander	
-      %th Quarter Schedule	
-      %th Semester Schedule	 
-      %th Enrollment	
-      %th Sunday Hours	
-      %th Monday Hours	
-      %th Tuesday Hours	
-      %th Wednesday Hours	
-      %th Thursday Hours	
-      %th Friday Hours	
-      %th Saturday Hours	
-      %th Starbucks Cafe 	
-      %th Coffee Stations	
+  .auto-over
+    %table.table.table-bordered.well
+      %tr 
+        %th Store #	
+        %th University Name
+        %th Address	
+        %th City	
+        %th State	
+        %th DMA	
+        %th DMA Rank
+        %th # of Screens	
+        %th Type of School	
+        %th AVERAGE AGE	
+        %th NCAA BASKETBALL Div I	
+        %th NCAA BASKETBALL Div II	
+        %th NCAA BASKETBALL Div III	
+        %th NAIA BASKETBALL Div I & II	
+        %th NCAA FOOTBALL Div I	
+        %th NCAA FOOTBALL Div II	
+        %th NCAA FOOTBALL Div III	
+        %th NAIA FOOTBALL Div I & II	
+        %th NCAA BASEBALL Div I	
+        %th NCAA BASEBALL Div II	
+        %th NCAA BASEBALL Div III	
+        %th NAIA BASEBALL Div I & II	
+        %th NCAA/NAIA Track/Cross Country   	
+        %th NJCAA FOOTBALL Div I	
+        %th NJCAA BASEBALL Div I	
+        %th NJCAA BASKETBALL Div I	
+        %th CONFERENCE
+        %th % Non-Resident Alien	
+        %th % African-American/Black
+        %th % Two or More Races
+        %th % Asian	% Hispanic/Latino
+        %th % White
+        %th % Ethnicity Unknown	
+        %th % American Indian/Alaskan Native
+        %th % Native Hawaiian/Pacific Islander	
+        %th Quarter Schedule	
+        %th Semester Schedule	 
+        %th Enrollment	
+        %th Sunday Hours	
+        %th Monday Hours	
+        %th Tuesday Hours	
+        %th Wednesday Hours	
+        %th Thursday Hours	
+        %th Friday Hours	
+        %th Saturday Hours	
+        %th Starbucks Cafe 	
+        %th Coffee Stations	
+        %th ROTC
   %h3 Transactions
   = f.file_field :transactions_file
 
@@ -63,7 +63,8 @@
   %table.table.well.table-bordered
     %tr
       %th Store #	
-      %th University Name	
+      %th Jan # Trans	
+      %th Feb # Trans	
       %th March # Trans	
       %th Apl# Trans	
       %th May # Trans	
@@ -74,8 +75,7 @@
       %th Oct # Trans	
       %th Nov # Trans	
       %th Dec # Trans	
-      %th Jan # Trans	
-      %th Feb # Trans	
+      
       %th TOTAL
   
   %h3 Schedules
@@ -86,41 +86,15 @@
 
   %table.table.well.table-bordered
     %tr
-      %th ID	
-      %th Store No.	
-      %th University Name	
-      %th Winter Spring Finals First	
-      %th Winter Spring Finals Last	
+      %th Store ID	
       %th Fall Class First	
       %th Fall Finals First	
       %th Fall Finals Last
+      %th Spring Class First
+      %th Spring Finals First	
+      %th Spring Finals Last
+      %th Summer Class First
+      %th Summer Finals First	
+      %th Summer Finals Last
       
-  
-  %h3 Summer Schedules
-  = f.file_field :summer_schedules_file
-
-  %p.text-warning
-    The file you upload must look EXACTLY like this
-
-  %table.table.well.table-bordered
-    %tr
-      %th Store	
-      %th Store Name	
-      %th 1st_Classes
-      %th 1st_Finals
-      %th Last_Finals
-      
-  %h3 ROTC
-  = f.file_field :rotc_file
-
-  %p.text-warning
-    The file you upload must look EXACTLY like this
-
-  %table.table.well.table-bordered
-    %tr
-      %th Store #  	
-      %th Store Name	
-      %th University Name	
-      %th ROTC
-  
   = f.submit

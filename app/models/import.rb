@@ -48,15 +48,9 @@ class Import < ActiveRecord::Base
       when "transactions_file"
         self.imported_transactions = import_transactions
         self.transactions_import_has_run = true
-      when "rotc_file"
-        self.imported_rotc = import_rotc
-        self.rotc_import_has_run = true
       when "schedules_file"
         self.imported_schedules = import_schedules
         self.schedules_import_has_run = true
-      when "summer_schedules_file"
-        self.imported_summer_schedules = import_summer_schedules
-        self.summer_schedules_import_has_run = true
     end
     self.save
   end
@@ -75,104 +69,105 @@ class Import < ActiveRecord::Base
       end
       school.school_name = row[1]
       school.address = row[2]
-      school.dma = row[3]
-      school.city = row[4]
-      school.state = row[5]
-      school.dma_rank = row[12].to_i
-      school.school_type = row[10] 
-      school.current_local_annual_traffic = row[55]
-      school.starbucks =  row[49].present?
-      school.coffee_stations = row[50].present?
-      school.num_of_screens = row[9].to_i
+      school.city = row[3]
+      school.state = row[4]
+      school.dma = row[5]
+      school.dma_rank = row[6].to_i
+      school.num_of_screens = row[7].to_i
+      school.school_type = row[8] 
+      school.starbucks =  row[46].present?
+      school.coffee_stations = row[47].present?
+      school.rotc = row[48].present?
       
       unless school.school_name.blank?
 
         demographics = school.demographics
         demographics = Demographics.new unless demographics.present?
-        demographics.average_age = row[11].to_i
-        demographics.non_resident_alien = row[30].to_f
-        demographics.african_american_black = row[31].to_f
-        demographics.two_or_more_races = row[32].to_f
-        demographics.asian = row[33].to_f
-        demographics.hispanic_latino = row[34].to_f
-        demographics.white = row[35].to_f
-        demographics.unknown = row[36].to_f
-        demographics.american_indian_alaskan_native = row[37].to_f
-        demographics.native_hawaiian_pacific_islander = row[38].to_f
-        demographics.enrollment = row[41].to_i
+        demographics.average_age = row[9].to_i
+        demographics.non_resident_alien = row[27].to_f
+        demographics.african_american_black = row[28].to_f
+        demographics.two_or_more_races = row[29].to_f
+        demographics.asian = row[30].to_f
+        demographics.hispanic_latino = row[31].to_f
+        demographics.white = row[32].to_f
+        demographics.unknown = row[33].to_f
+        demographics.american_indian_alaskan_native = row[34].to_f
+        demographics.native_hawaiian_pacific_islander = row[35].to_f
+        demographics.enrollment = row[38].to_i
         school.demographics = demographics
         
         hours = school.hours
         hours = Hours.new unless hours.present?
-        unless row[43] == "CLOSED" or row[43].blank?
-          t = Time.parse(row[43].to_s.split(" - ")[0], Time.utc(2000)) 
+        unless row[39] == "CLOSED" or row[39].blank?
+          t = Time.parse(row[39].to_s.split(" - ")[0], Time.utc(2000))
+          hours.sunday_open = (t + t.gmtoff).getutc
+          t = Time.parse(row[39].to_s.split(" - ")[1], Time.utc(2000))
+          hours.sunday_close = (t + t.gmtoff).getutc
+        end
+        unless row[40] == "CLOSED" or row[40].blank?
+          t = Time.parse(row[40].to_s.split(" - ")[0], Time.utc(2000)) 
           hours.monday_open = (t + t.gmtoff).getutc
-          t = Time.parse(row[43].to_s.split(" - ")[1], Time.utc(2000))        
+          t = Time.parse(row[40].to_s.split(" - ")[1], Time.utc(2000))        
           hours.monday_close =  (t + t.gmtoff).getutc
         end
-        unless row[44] == "CLOSED" or row[44].blank?
-          t = Time.parse(row[44].to_s.split(" - ")[0], Time.utc(2000))
+        unless row[41] == "CLOSED" or row[41].blank?
+          t = Time.parse(row[41].to_s.split(" - ")[0], Time.utc(2000))
           hours.tuesday_open = (t + t.gmtoff).getutc
-          t = Time.parse(row[44].to_s.split(" - ")[1], Time.utc(2000))
+          t = Time.parse(row[41].to_s.split(" - ")[1], Time.utc(2000))
           hours.tuesday_close = (t + t.gmtoff).getutc
-        end
-        unless row[45] == "CLOSED" or row[45].blank?
-          t = Time.parse(row[45].to_s.split(" - ")[0], Time.utc(2000))
-          hours.wednesday_open = (t + t.gmtoff).getutc
-          t = Time.parse(row[45].to_s.split(" - ")[1], Time.utc(2000))
-          hours.wednesday_close = (t + t.gmtoff).getutc          
-        end
-        unless row[46] == "CLOSED" or row[46].blank?
-          t = Time.parse(row[46].to_s.split(" - ")[0], Time.utc(2000))
-          hours.thursday_open = (t + t.gmtoff).getutc
-          t = Time.parse(row[46].to_s.split(" - ")[1], Time.utc(2000))
-          hours.thursday_close = (t + t.gmtoff).getutc
-        end
-        unless row[47] == "CLOSED" or row[47].blank?
-          t = Time.parse(row[47].to_s.split(" - ")[0], Time.utc(2000))
-          hours.friday_open = (t + t.gmtoff).getutc
-          t = Time.parse(row[47].to_s.split(" - ")[1], Time.utc(2000))
-          hours.friday_close = (t + t.gmtoff).getutc
-        end
-        unless row[48] == "CLOSED" or row[48].blank?
-          t = Time.parse(row[48].to_s.split(" - ")[0], Time.utc(2000))
-          hours.saturday_open = (t + t.gmtoff).getutc
-          t = Time.parse(row[48].to_s.split(" - ")[1], Time.utc(2000))
-          hours.saturday_close = (t + t.gmtoff).getutc
         end
         unless row[42] == "CLOSED" or row[42].blank?
           t = Time.parse(row[42].to_s.split(" - ")[0], Time.utc(2000))
-          hours.sunday_open = (t + t.gmtoff).getutc
+          hours.wednesday_open = (t + t.gmtoff).getutc
           t = Time.parse(row[42].to_s.split(" - ")[1], Time.utc(2000))
-          hours.sunday_close = (t + t.gmtoff).getutc
+          hours.wednesday_close = (t + t.gmtoff).getutc          
         end
+        unless row[43] == "CLOSED" or row[43].blank?
+          t = Time.parse(row[43].to_s.split(" - ")[0], Time.utc(2000))
+          hours.thursday_open = (t + t.gmtoff).getutc
+          t = Time.parse(row[43].to_s.split(" - ")[1], Time.utc(2000))
+          hours.thursday_close = (t + t.gmtoff).getutc
+        end
+        unless row[44] == "CLOSED" or row[44].blank?
+          t = Time.parse(row[44].to_s.split(" - ")[0], Time.utc(2000))
+          hours.friday_open = (t + t.gmtoff).getutc
+          t = Time.parse(row[44].to_s.split(" - ")[1], Time.utc(2000))
+          hours.friday_close = (t + t.gmtoff).getutc
+        end
+        unless row[45] == "CLOSED" or row[45].blank?
+          t = Time.parse(row[45].to_s.split(" - ")[0], Time.utc(2000))
+          hours.saturday_open = (t + t.gmtoff).getutc
+          t = Time.parse(row[45].to_s.split(" - ")[1], Time.utc(2000))
+          hours.saturday_close = (t + t.gmtoff).getutc
+        end
+
         school.hours = hours
         
         sports = school.sports
         sports = Sports.new unless sports.present?
-        sports.ncaa_basketball_div_i = row[13].present? 
-        sports.ncaa_basketball_div_ii = row[14].present?
-        sports.ncaa_basketball_div_iii = row[15].present? 
-        sports.naia_basketball_div_i_and_ii = row[16].present? 
-        sports.ncaa_football_div_i = row[17].present? 
-        sports.ncaa_football_div_ii = row[18].present? 
-        sports.ncaa_football_div_iii = row[19].present? 
-        sports.naia_football_div_i_and_ii = row[20].present? 
-        sports.ncaa_baseball_div_i = row[21].present?
-        sports.ncaa_baseball_div_ii = row[22].present? 
-        sports.ncaa_baseball_div_iii = row[23].present? 
-        sports.naia_baseball_div_i_and_ii = row[24].present? 
-        sports.ncaa_naia_track_cross_country = row[25].present? 
-        sports.njcaa_football_div_i = row[26].present? 
-        sports.njcaa_baseball_div_i = row[27].present? 
-        sports.njcaa_basketball_div_i = row[28].present? 
-        sports.conference = row[29]
+        sports.ncaa_basketball_div_i = row[10].present? 
+        sports.ncaa_basketball_div_ii = row[11].present?
+        sports.ncaa_basketball_div_iii = row[12].present? 
+        sports.naia_basketball_div_i_and_ii = row[13].present? 
+        sports.ncaa_football_div_i = row[14].present? 
+        sports.ncaa_football_div_ii = row[15].present? 
+        sports.ncaa_football_div_iii = row[16].present? 
+        sports.naia_football_div_i_and_ii = row[17].present? 
+        sports.ncaa_baseball_div_i = row[18].present?
+        sports.ncaa_baseball_div_ii = row[19].present? 
+        sports.ncaa_baseball_div_iii = row[20].present? 
+        sports.naia_baseball_div_i_and_ii = row[21].present? 
+        sports.ncaa_naia_track_cross_country = row[22].present? 
+        sports.njcaa_football_div_i = row[23].present? 
+        sports.njcaa_baseball_div_i = row[24].present? 
+        sports.njcaa_basketball_div_i = row[25].present? 
+        sports.conference = row[26]
         school.sports = sports
         
         schedule = school.schedule
         schedule = Schedule.new unless schedule.present?
-        schedule.quarter = row[39].present?
-        schedule.semester = row[40].present?
+        schedule.quarter = row[36].present?
+        schedule.semester = row[37].present?
         school.schedule = schedule
         if school.new_record? 
           school.transactions = Transaction.new
@@ -190,27 +185,6 @@ class Import < ActiveRecord::Base
     return [new_school_list, updated_school_list]
   end
   
-  def import_rotc
-    rotc_text = open(rotc_file.url) {|f| f.read.gsub("\r\r","\r")}      
-    index = 0
-    updated_school_list = []
-    CSV.parse(rotc_text, {headers: true}) do |row|
-      store_id = row[0]
-      school = School.where(store_id: store_id).first
-      
-      if school.present?
-        school.store_name = row[1]
-        school.rotc = row[3].present?
-        updated_school_list.append({name: school.name, id: school.id, changed_attrs: school.changes}) if school.changed?
-        school.save!
-      else
-        puts 'bad data at row' + index.to_s
-      end
-      index+=1
-    end 
-    return [[], updated_school_list]
-  end
-  
   def import_schedules
     schedule_text = open(schedules_file.url) {|f| f.read.gsub("\r\r","\r")}
     index = 0
@@ -221,11 +195,15 @@ class Import < ActiveRecord::Base
       
       if school.present?
         schedule = school.schedule
-        schedule.spring_finals_first = begin Date.try(:strptime, row[3], '%m/%d/%y') rescue nil end
-        schedule.spring_finals_last = begin Date.try(:strptime, row[4], '%m/%d/%y') rescue nil end
-        schedule.fall_first_classes = begin Date.try(:strptime, row[5], '%m/%d/%y') rescue nil end
-        schedule.fall_finals_first = begin Date.try(:strptime, row[6], '%m/%d/%y') rescue nil end
-        schedule.fall_finals_last = begin Date.try(:strptime, row[7], '%m/%d/%y') rescue nil end
+        schedule.fall_first_classes = begin Date.try(:strptime, row[1], '%m/%d/%y') rescue nil end
+        schedule.fall_finals_first = begin Date.try(:strptime, row[2], '%m/%d/%y') rescue nil end
+        schedule.fall_finals_last = begin Date.try(:strptime, row[3], '%m/%d/%y') rescue nil end
+        schedule.spring_first_classes = begin Date.try(:strptime, row[4], '%m/%d/%y') rescue nil end
+        schedule.spring_finals_first = begin Date.try(:strptime, row[5], '%m/%d/%y') rescue nil end
+        schedule.spring_finals_last = begin Date.try(:strptime, row[6], '%m/%d/%y') rescue nil end
+        schedule.summer_first_classes = begin Date.try(:strptime, row[7], '%m/%d/%y') rescue nil end
+        schedule.summer_finals_first = begin Date.try(:strptime, row[8], '%m/%d/%y') rescue nil end
+        schedule.summer_finals_last = begin Date.try(:strptime, row[9], '%m/%d/%y') rescue nil end
         
         updated_school_list.append({name: school.name, id: school.id, changed_attrs: schedule.changes}) if schedule.changed?
         school.save!
@@ -247,18 +225,19 @@ class Import < ActiveRecord::Base
       
       if school.present?
         transaction = Transactions.new
-        transaction.march = row[2].to_i
-        transaction.april = row[3].to_i
-        transaction.may = row[4].to_i
-        transaction.june = row[5].to_i
-        transaction.july = row[6].to_i
-        transaction.august = row[7].to_i
-        transaction.september = row[8].to_i
-        transaction.october = row[9].to_i
-        transaction.november = row[10].to_i
-        transaction.december = row[11].to_i
-        transaction.january = row[12].to_i
-        transaction.february = row[13].to_i
+        transaction.january = row[1].to_i
+        transaction.february = row[2].to_i
+        transaction.march = row[3].to_i
+        transaction.april = row[4].to_i
+        transaction.may = row[5].to_i
+        transaction.june = row[6].to_i
+        transaction.july = row[7].to_i
+        transaction.august = row[8].to_i
+        transaction.september = row[9].to_i
+        transaction.october = row[10].to_i
+        transaction.november = row[11].to_i
+        transaction.december = row[12].to_i
+        
         school.transactions = transaction
         updated_school_list.append({name: school.name, id: school.id, changed_attrs: transaction.changes}) if transaction.changed?
         school.save!
@@ -268,30 +247,6 @@ class Import < ActiveRecord::Base
       index+=1
     end
     return [ [], updated_school_list]
-  end
-  
-  def import_summer_schedules
-    summer_schedule_text = open(summer_schedules_file.url) {|f| f.read.gsub("\r\r","\r")}
-    index = 0
-    updated_school_list = []
-    CSV.parse(summer_schedule_text, {headers: true}) do |row|
-      store_id = row[0]
-      school = School.where(store_id: store_id).first
-      
-      if school.present?
-        schedule = school.schedule
-        schedule.summer_first_classes = begin Date.try(:strptime, row[2], '%m/%d/%y') rescue nil end
-        schedule.summer_finals_first = begin Date.try(:strptime, row[3], '%m/%d/%y') rescue nil end
-        schedule.summer_finals_last = begin Date.try(:strptime, row[4], '%m/%d/%y') rescue nil end
-        
-        updated_school_list.append({name: school.name, id: school.id, changed_attrs: schedule.changes}) if schedule.changed?
-        school.save!
-      else
-        puts 'bad data at row' + index.to_s
-      end
-      index+=1
-    end
-    return [[], updated_school_list]
   end
   
 end
