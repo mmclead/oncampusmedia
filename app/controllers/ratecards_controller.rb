@@ -5,7 +5,7 @@ class RatecardsController < ApplicationController
   
   before_filter :create_dates_from_strings, only: [:create, :update]
 
-  after_filter :upload_to_dropbox, only: [:create, :update]
+  after_filter :start_upload, only: [:create, :update]
   
   autocomplete :ratecard, :prepared_for
   autocomplete :ratecard, :brand
@@ -53,7 +53,7 @@ class RatecardsController < ApplicationController
       format.html
       if params[:contract].present?
         format.pdf do
-          upload_contract_to_dropbox unless params[:debug]
+          RatecardsController.delay.upload_contract_to_dropbox(@ratecard) unless params[:debug]
           render pdf: "contract-#{@ratecard.prepared_for}-#{Time.now.to_formatted_s(:date)}",
                  template: 'ratecards/contract.pdf.haml',
                  disposition: 'attachment',
@@ -125,18 +125,27 @@ class RatecardsController < ApplicationController
       params[:ratecard][:accept_by] = DateTime.strptime(params[:ratecard][:accept_by], '%Y-%m-%d')
     end
   end
-  
-  def upload_contract_to_dropbox
-    client = Dropbox::API::Client.new(:token  => Dropbox_Token, :secret => Dropbox_Secret)
-    client.delay.upload "#{@ratecard.user.name}/#{@ratecard.prepared_for}/#{@ratecard.brand}/contract-#{Time.now.strftime('%Y-%m-%d')}.pdf",   
-      render_to_string(pdf: "contract-#{@ratecard.brand}-#{Time.now.strftime('%Y-%m-%d')}", template: 'ratecards/contract.pdf.haml')        
+
+  def start_upload
+    RatecardsController.delay.upload_to_dropbox(@ratecard)
   end
   
-  def upload_to_dropbox
+  def self.upload_contract_to_dropbox(ratecard)
+    @ratecard = ratecard
+    ac = ApplicationController.new
+    ac.instance_variable_set(:@ratecard, ratecard)
+    puts @ratecard
     client = Dropbox::API::Client.new(:token  => Dropbox_Token, :secret => Dropbox_Secret)
-    client.delay.upload "#{@ratecard.user.name}/#{@ratecard.prepared_for}/#{@ratecard.brand}/proposal-#{@ratecard.quote_date.strftime('%Y-%m-%d')}.pdf",   
-      render_to_string(pdf: "proposal-#{@ratecard.brand}-#{@ratecard.quote_date}", template: 'ratecards/show.pdf.haml')        
-    redirect_to @ratecard, notice: "Quote created successfully"
+    client.upload "#{@ratecard.user.name}/#{@ratecard.prepared_for}/#{@ratecard.brand}/contract-#{Time.now.strftime('%Y-%m-%d')}.pdf",   
+      ac.render_to_string(pdf: "contract-#{@ratecard.brand}-#{Time.now.strftime('%Y-%m-%d')}", template: 'ratecards/contract.pdf.haml')        
+  end
+  
+  def self.upload_to_dropbox(ratecard)
+    ac = ApplicationController.new
+    ac.instance_variable_set(:@ratecard, ratecard)
+    client = Dropbox::API::Client.new(:token  => Dropbox_Token, :secret => Dropbox_Secret)
+    client.upload "#{@ratecard.user.name}/#{@ratecard.prepared_for}/#{@ratecard.brand}/proposal-#{@ratecard.quote_date.strftime('%Y-%m-%d')}.pdf",   
+      ac.render_to_string(pdf: "proposal-#{@ratecard.brand}-#{@ratecard.quote_date}", template: 'ratecards/show.pdf.haml')        
   end
   
 end
