@@ -10,7 +10,9 @@ else
   WickedPdf.config = {
     :exe_path => '/usr/local/bin/wkhtmltopdf',
     :dpi => '300',
-    :page_size  => "Letter",
+    :orientation => 'Portrait',
+    :page_height => '11in', 
+    :page_width => '8in'
   }
 end
   
