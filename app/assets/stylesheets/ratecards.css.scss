@@ -98,6 +98,10 @@ header {
 .dataTables_filter {
   display: none;
 }
+.pdf-table {
+  width: 9.5in !important;
+}
+
 .always-break { 
   page-break-after:always; 
 }
