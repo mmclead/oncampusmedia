@@ -1,5 +1,5 @@
 %header 
-  - if current_user.barnes?
+  - if @user.barnes?
     #logo
       = wicked_pdf_image_tag "barneslogo.png", width: "250px"
     #center-info
