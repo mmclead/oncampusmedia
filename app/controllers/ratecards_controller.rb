@@ -53,7 +53,7 @@ class RatecardsController < ApplicationController
       format.html
       if params[:contract].present?
         format.pdf do
-          upload_contract_to_dropbox
+          upload_contract_to_dropbox unless params[:debug]
           render pdf: "contract-#{@ratecard.prepared_for}-#{Time.now.to_formatted_s(:date)}",
                  template: 'ratecards/contract.pdf.haml',
                  disposition: 'attachment',
