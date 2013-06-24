@@ -53,6 +53,7 @@ class RatecardsController < ApplicationController
       format.html
       if params[:contract].present?
         format.pdf do
+          upload_contract_to_dropbox
           render pdf: "contract-#{@ratecard.prepared_for}-#{Time.now.to_formatted_s(:date)}",
                  template: 'ratecards/contract.pdf.haml',
                  disposition: 'attachment',
@@ -123,6 +124,12 @@ class RatecardsController < ApplicationController
     if params[:ratecard][:accept_by].present?
       params[:ratecard][:accept_by] = DateTime.strptime(params[:ratecard][:accept_by], '%Y-%m-%d')
     end
+  end
+  
+  def upload_contract_to_dropbox
+    client = Dropbox::API::Client.new(:token  => Dropbox_Token, :secret => Dropbox_Secret)
+    client.delay.upload "#{@ratecard.user.name}/#{@ratecard.prepared_for}/#{@ratecard.brand}/contract-#{Time.now.strftime('%Y-%m-%d')}.pdf",   
+      render_to_string(pdf: "contract-#{@ratecard.brand}-#{Time.now.strftime('%Y-%m-%d')}", template: 'ratecards/contract.pdf.haml')        
   end
   
   def upload_to_dropbox
