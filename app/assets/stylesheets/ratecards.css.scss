@@ -8,6 +8,10 @@ header {
   margin-bottom:70px;
 }
 
+.pdf-header {
+  width:9.5in;
+}
+
 @media print {
   .navbar {
     display:none;
