@@ -23,3 +23,23 @@
 .container {
   width: 1200px;
 }
+
+@media print {
+  .navbar {
+    display:none;
+  }
+  .table {
+    width: 9.5in !important;
+  }
+  .always-break { 
+    page-break-after:always; 
+  }
+  
+  .no-break:before { 
+    clear:both; 
+  }
+  .no-break{ 
+    page-break-inside: avoid;
+    /*http://code.google.com/p/wkhtmltopdf/issues/detail?id=9#c21*/
+  }
+}
