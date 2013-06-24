@@ -1,7 +1,7 @@
 = f.input :prepared_for, :hint => "name of client", :url => autocomplete_ratecard_prepared_for_ratecards_path, :as => :autocomplete
 = f.input :brand, label: 'Brand/Division', :url => autocomplete_ratecard_brand_ratecards_path, :as => :autocomplete
 = f.input :presented_to, :input_html => {:rows => 6 }, :hint => "contact info"
-= f.input :prepared_by, :input_html => {:rows => 6, :value => user_signed_in? ? current_user.contact_info : @ratecard.present? ? @ratecard.prepared_by : '' }, :hint => "contact info" 
+= f.input :prepared_by, :input_html => {:rows => 6, :value => @ratecard.present? ? @ratecard.prepared_by : current_user.contact_info }, :hint => "contact info" 
 = f.input :quote_date, input_html: { class: 'datepicker', id: 'quote-date', :value => @ratecard.present? ? @ratecard.quote_date : '' }, as: :string
 = f.input :accept_by, input_html: { class: 'datepicker', id: 'accept-date', :value => @ratecard.present? ? @ratecard.accept_by : ''  }, as: :string
 = f.input :creative_due_date, input_html: { class: 'datepicker', id: 'creative-date', :value => @ratecard.present? ? @ratecard.creative_due_date : '' }, as: :string
