@@ -1,4 +1,4 @@
-%table.table.table-hover
+%table.table.table-hover.table-fixed
   %tr
     %th Prepared For:
     %td= @ratecard.prepared_for
@@ -13,7 +13,7 @@
     %td= simple_format word_wrap @ratecard.prepared_by
 
     
-%table.table.table-hover
+%table.table.table-hover.table-fixed
   %tr
     %th Spot Length:
     %td= "#{@ratecard.spot_length} seconds"
@@ -38,7 +38,7 @@
   
     
     
-%table.table.table-bordered.table-hover
+%table.table.table-bordered.table-hover.table-fixed
   %tr
     %th Spots per Hour
     %td= @ratecard.spot_rate
