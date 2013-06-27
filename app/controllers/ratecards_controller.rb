@@ -141,6 +141,7 @@ class RatecardsController < ApplicationController
   end
   
   def self.upload_to_dropbox(ratecard)
+    @ratecard = ratecard
     ac = ApplicationController.new
     ac.instance_variable_set(:@ratecard, ratecard)
     client = Dropbox::API::Client.new(:token  => Dropbox_Token, :secret => Dropbox_Secret)
