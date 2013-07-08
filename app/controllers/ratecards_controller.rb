@@ -132,9 +132,9 @@ class RatecardsController < ApplicationController
   
   def self.upload_contract_to_dropbox(ratecard)
     @ratecard = ratecard
+    @user = ratecard.user
     ac = ApplicationController.new
     ac.instance_variable_set(:@ratecard, ratecard)
-    puts @ratecard
     client = Dropbox::API::Client.new(:token  => Dropbox_Token, :secret => Dropbox_Secret)
     client.upload "#{@ratecard.user.name}/#{@ratecard.prepared_for}/#{@ratecard.brand}/contract-#{Time.now.strftime('%Y-%m-%d')}.pdf",   
       ac.render_to_string(pdf: "contract-#{@ratecard.brand}-#{Time.now.strftime('%Y-%m-%d')}", template: 'ratecards/contract.pdf.haml')        
@@ -142,6 +142,7 @@ class RatecardsController < ApplicationController
   
   def self.upload_to_dropbox(ratecard)
     @ratecard = ratecard
+    @user = ratecard.user
     ac = ApplicationController.new
     ac.instance_variable_set(:@ratecard, ratecard)
     client = Dropbox::API::Client.new(:token  => Dropbox_Token, :secret => Dropbox_Secret)

@@ -1,5 +1,5 @@
 %header.pdf-header
-  - if (@user and @user.barnes?) or (current_user and current_user.barnes?)
+  - if (@ratecard.user and @ratecard.user.barnes?)
     #logo
       = wicked_pdf_image_tag "barneslogo.png", width: "250px"
     #center-info
