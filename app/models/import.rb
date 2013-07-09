@@ -1,4 +1,5 @@
 class Import < ActiveRecord::Base
+  require 'csv'    
   attr_accessible :schools_file, :transactions_file, :rotc_file, 
                   :schedules_file, :summer_schedules_file, :schools_import_has_run,
                   :transactions_import_has_run, :rotc_import_has_run,:schedules_import_has_run,
@@ -60,21 +61,21 @@ class Import < ActiveRecord::Base
     index = 0
     new_school_list = []
     updated_school_list = []
-    CSV.parse(schools_text, {headers: true}) do |row|
+    CSV.parse(schools_text.chomp, {headers: true, :row_sep => :auto}) do |row|
       store_id = row[0]
       school = School.where(store_id: store_id).first
       unless school.present?
         school = School.new
         school.store_id = row[0] 
       end
-      school.school_name = row[1]
-      school.address = row[2]
-      school.city = row[3]
-      school.state = row[4]
-      school.dma = row[5]
+      school.school_name = row[1].to_s.encode!('UTF-8', 'UTF-8', :invalid => :replace)
+      school.address = row[2].to_s.encode!('UTF-8', 'UTF-8', :invalid => :replace)
+      school.city = row[3].to_s.encode!('UTF-8', 'UTF-8', :invalid => :replace)
+      school.state = row[4].to_s.encode!('UTF-8', 'UTF-8', :invalid => :replace)
+      school.dma = row[5].to_s.encode!('UTF-8', 'UTF-8', :invalid => :replace)
       school.dma_rank = row[6].to_i
       school.num_of_screens = row[7].to_i
-      school.school_type = row[8] 
+      school.school_type = row[8].to_s.encode!('UTF-8', 'UTF-8', :invalid => :replace)
       school.starbucks =  row[46].present?
       school.coffee_stations = row[47].present?
       school.rotc = row[48].present?
@@ -99,45 +100,45 @@ class Import < ActiveRecord::Base
         hours = school.hours
         hours = Hours.new unless hours.present?
         unless row[39] == "CLOSED" or row[39].blank?
-          t = Time.parse(row[39].to_s.split(" - ")[0], Time.utc(2000))
+          t = Time.parse(row[39].to_s.split("-")[0], Time.utc(2000))
           hours.sunday_open = (t + t.gmtoff).getutc
-          t = Time.parse(row[39].to_s.split(" - ")[1], Time.utc(2000))
+          t = Time.parse(row[39].to_s.split("-")[1], Time.utc(2000))
           hours.sunday_close = (t + t.gmtoff).getutc
         end
         unless row[40] == "CLOSED" or row[40].blank?
-          t = Time.parse(row[40].to_s.split(" - ")[0], Time.utc(2000)) 
+          t = Time.parse(row[40].to_s.split("-")[0], Time.utc(2000)) 
           hours.monday_open = (t + t.gmtoff).getutc
-          t = Time.parse(row[40].to_s.split(" - ")[1], Time.utc(2000))        
+          t = Time.parse(row[40].to_s.split("-")[1], Time.utc(2000))        
           hours.monday_close =  (t + t.gmtoff).getutc
         end
         unless row[41] == "CLOSED" or row[41].blank?
-          t = Time.parse(row[41].to_s.split(" - ")[0], Time.utc(2000))
+          t = Time.parse(row[41].to_s.split("-")[0], Time.utc(2000))
           hours.tuesday_open = (t + t.gmtoff).getutc
-          t = Time.parse(row[41].to_s.split(" - ")[1], Time.utc(2000))
+          t = Time.parse(row[41].to_s.split("-")[1], Time.utc(2000))
           hours.tuesday_close = (t + t.gmtoff).getutc
         end
         unless row[42] == "CLOSED" or row[42].blank?
-          t = Time.parse(row[42].to_s.split(" - ")[0], Time.utc(2000))
+          t = Time.parse(row[42].to_s.split("-")[0], Time.utc(2000))
           hours.wednesday_open = (t + t.gmtoff).getutc
-          t = Time.parse(row[42].to_s.split(" - ")[1], Time.utc(2000))
+          t = Time.parse(row[42].to_s.split("-")[1], Time.utc(2000))
           hours.wednesday_close = (t + t.gmtoff).getutc          
         end
         unless row[43] == "CLOSED" or row[43].blank?
-          t = Time.parse(row[43].to_s.split(" - ")[0], Time.utc(2000))
+          t = Time.parse(row[43].to_s.split("-")[0], Time.utc(2000))
           hours.thursday_open = (t + t.gmtoff).getutc
-          t = Time.parse(row[43].to_s.split(" - ")[1], Time.utc(2000))
+          t = Time.parse(row[43].to_s.split("-")[1], Time.utc(2000))
           hours.thursday_close = (t + t.gmtoff).getutc
         end
         unless row[44] == "CLOSED" or row[44].blank?
-          t = Time.parse(row[44].to_s.split(" - ")[0], Time.utc(2000))
+          t = Time.parse(row[44].to_s.split("-")[0], Time.utc(2000))
           hours.friday_open = (t + t.gmtoff).getutc
-          t = Time.parse(row[44].to_s.split(" - ")[1], Time.utc(2000))
+          t = Time.parse(row[44].to_s.split("-")[1], Time.utc(2000))
           hours.friday_close = (t + t.gmtoff).getutc
         end
         unless row[45] == "CLOSED" or row[45].blank?
-          t = Time.parse(row[45].to_s.split(" - ")[0], Time.utc(2000))
+          t = Time.parse(row[45].to_s.split("-")[0], Time.utc(2000))
           hours.saturday_open = (t + t.gmtoff).getutc
-          t = Time.parse(row[45].to_s.split(" - ")[1], Time.utc(2000))
+          t = Time.parse(row[45].to_s.split("-")[1], Time.utc(2000))
           hours.saturday_close = (t + t.gmtoff).getutc
         end
 
