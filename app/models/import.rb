@@ -179,6 +179,7 @@ class Import < ActiveRecord::Base
         end
         school.save!
         
+        
       else
         puts 'bad data at row' + index.to_s
       end
