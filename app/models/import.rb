@@ -94,7 +94,7 @@ class Import < ActiveRecord::Base
         demographics.unknown = row[33].to_f
         demographics.american_indian_alaskan_native = row[34].to_f
         demographics.native_hawaiian_pacific_islander = row[35].to_f
-        demographics.enrollment = row[38].to_i
+        demographics.enrollment = row[38].gsub(",","").to_i
         school.demographics = demographics
         
         hours = school.hours
@@ -228,18 +228,18 @@ class Import < ActiveRecord::Base
       
       if school.present?
         transaction = Transactions.new
-        transaction.january = row[1].to_i
-        transaction.february = row[2].to_i
-        transaction.march = row[3].to_i
-        transaction.april = row[4].to_i
-        transaction.may = row[5].to_i
-        transaction.june = row[6].to_i
-        transaction.july = row[7].to_i
-        transaction.august = row[8].to_i
-        transaction.september = row[9].to_i
-        transaction.october = row[10].to_i
-        transaction.november = row[11].to_i
-        transaction.december = row[12].to_i
+        transaction.january = row[1].gsub(",","").to_i
+        transaction.february = row[2].gsub(",","").to_i
+        transaction.march = row[3].gsub(",","").to_i
+        transaction.april = row[4].gsub(",","").to_i
+        transaction.may = row[5].gsub(",","").to_i
+        transaction.june = row[6].gsub(",","").to_i
+        transaction.july = row[7].gsub(",","").to_i
+        transaction.august = row[8].gsub(",","").to_i
+        transaction.september = row[9].gsub(",","").to_i
+        transaction.october = row[10].gsub(",","").to_i
+        transaction.november = row[11].gsub(",","").to_i
+        transaction.december = row[12].gsub(",","").to_i
         
         school.transactions = transaction
         updated_school_list.append({name: school.name, id: school.id, changed_attrs: transaction.changes}) if transaction.changed?
