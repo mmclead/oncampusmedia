@@ -61,7 +61,7 @@ class RatecardsController < ApplicationController
         end
       else
         format.pdf do
-          render pdf: "proposal-#{@ratecard.brand}-#{@ratecard.quote_date}",
+          render pdf: "proposal-#{@ratecard.brand.strip}-#{@ratecard.quote_date}",
                  template: 'ratecards/show.pdf.haml',
                  disposition: 'attachment',
                  show_as_html: params[:debug]
@@ -136,8 +136,8 @@ class RatecardsController < ApplicationController
     ac = ApplicationController.new
     ac.instance_variable_set(:@ratecard, ratecard)
     client = Dropbox::API::Client.new(:token  => Dropbox_Token, :secret => Dropbox_Secret)
-    client.upload "#{@ratecard.user.name}/#{@ratecard.prepared_for}/#{@ratecard.brand}/contract-#{Time.now.strftime('%Y-%m-%d')}.pdf",   
-      ac.render_to_string(pdf: "contract-#{@ratecard.brand}-#{Time.now.strftime('%Y-%m-%d')}", template: 'ratecards/contract.pdf.haml')        
+    client.upload "#{@ratecard.user.name.strip}/#{@ratecard.prepared_for.strip}/#{@ratecard.brand.strip}/contract-#{Time.now.strftime('%Y-%m-%d')}.pdf",   
+      ac.render_to_string(pdf: "contract-#{@ratecard.brand.strip}-#{Time.now.strftime('%Y-%m-%d')}", template: 'ratecards/contract.pdf.haml')        
   end
   
   def self.upload_to_dropbox(ratecard)
@@ -146,8 +146,8 @@ class RatecardsController < ApplicationController
     ac = ApplicationController.new
     ac.instance_variable_set(:@ratecard, ratecard)
     client = Dropbox::API::Client.new(:token  => Dropbox_Token, :secret => Dropbox_Secret)
-    client.upload "#{@ratecard.user.name}/#{@ratecard.prepared_for}/#{@ratecard.brand}/proposal-#{@ratecard.quote_date.strftime('%Y-%m-%d')}.pdf",   
-      ac.render_to_string(pdf: "proposal-#{@ratecard.brand}-#{@ratecard.quote_date}", template: 'ratecards/show.pdf.haml')        
+    client.upload "#{@ratecard.user.name.strip}/#{@ratecard.prepared_for.strip}/#{@ratecard.brand.strip}/proposal-#{@ratecard.quote_date.strftime('%Y-%m-%d')}.pdf",   
+      ac.render_to_string(pdf: "proposal-#{@ratecard.brand.strip}-#{@ratecard.quote_date}", template: 'ratecards/show.pdf.haml')        
   end
   
 end
