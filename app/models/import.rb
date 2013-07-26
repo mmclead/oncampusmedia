@@ -173,7 +173,7 @@ class Import < ActiveRecord::Base
         if school.new_record? 
           school.transactions = Transactions.new
           new_school_list.append(school.name)
-          sleep(500)  #avoid gmaps OVER_QUERY_LIMIT. when geolocating lots of schools
+          sleep(250)  #avoid gmaps OVER_QUERY_LIMIT. when geolocating lots of schools
         elsif (school.changed? or sports.changed? or hours.changed? or demographics.changed?)
           updated_school_list.append({name: school.name, id: school.id, changed_attrs: school.changes.merge(sports.changes).merge(hours.changes).merge(demographics.changes)})  
         end
