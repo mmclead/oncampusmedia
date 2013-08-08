@@ -331,7 +331,7 @@ $(document).ready(function() {
         && (($('#all-rotc input').prop('checked')) || (_.contains(ROTCFilter, marker.store_info.rotc.toString())) )
         && ( marker.store_info.dma.dma_rank >= $('#dma-range').slider("values", 0) && marker.store_info.dma.dma_rank <= $('#dma-range').slider("values", 1) )
         && ( marker.store_info.screen_count >= $('#screen-count-range').slider("values", 0) && marker.store_info.screen_count <= $('#screen-count-range').slider("values", 1) )
-        && (_.every(marker.demographics, function(val, key) { return val ? val >= DemoList[key].min && val <= DemoList[key].max : true }))
+        && (_.every(marker.demographics, function(val, key) { return val >= DemoList[key].min && val <= DemoList[key].max}))
         && (_.every(marker.transactions, function(val, key) { return val >= $('#'+key.toLowerCase()).slider("values", 0) && val <= $('#'+key.toLowerCase()).slider("values", 1); }))
         && (($('#all-schedules input').prop('checked')) || _.every(DateFilter, function(date) { return  ($(date).val() ? 
             ($(date).attr('id').indexOf('start') >= 0 ? 
