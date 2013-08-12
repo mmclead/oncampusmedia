@@ -192,7 +192,7 @@ class Import < ActiveRecord::Base
     schedule_text = open(schedules_file.url) {|f| f.read.gsub("\r\r","\r")}
     index = 0
     updated_school_list = []
-    CSV.parse(schedule_text, {headers: true}) do |row|
+    CSV.parse(schedule_text.chomp, {headers: true}) do |row|
       store_id = row[1]
       school = School.where(store_id: store_id).first
       
@@ -222,7 +222,7 @@ class Import < ActiveRecord::Base
     transactions_text = open(transactions_file.url) {|f| f.read.gsub("\r\r","\r")}
     index = 0
     updated_school_list = []
-    CSV.parse(transactions_text, {headers: true}) do |row|
+    CSV.parse(transactions_text.chomp, {headers: true}) do |row|
       store_id = row[0]
       school = School.where(store_id: store_id).first
       
