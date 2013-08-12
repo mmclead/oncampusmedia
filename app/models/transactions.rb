@@ -19,22 +19,22 @@ class Transactions < ActiveRecord::Base
     months_between = (end_date.year * 12 + end_date.month) - (start_date.year * 12 + start_date.month)
     total = 0
     if months_between > 0
-      total+= self.send(start_date.strftime('%B').downcase) * 
+      total+= self.send(start_date.strftime('%B').downcase).to_f * 
               ((((Date.new(start_date.year, start_date.next_month.month)-1).mday - start_date.mday)+1).to_f / 
               (Date.new(start_date.year, start_date.next_month.month)-1).mday).to_f
-      total+= self.send(end_date.strftime('%B').downcase) * 
+      total+= self.send(end_date.strftime('%B').downcase).to_f * 
               (end_date.mday.to_f / (Date.new(end_date.year, end_date.next_month.month)-1).mday).to_f
       if months_between > 1
         this_month = start_date
         (months_between-1).times do 
           this_month = this_month.next_month
-          total += self.send(this_month.strftime('%B').downcase)
+          total += self.send(this_month.strftime('%B').downcase).to_f
         end
       end
       
     else
       
-      total+= self.send(start_date.strftime('%B').downcase) * 
+      total+= self.send(start_date.strftime('%B').downcase).to_f * 
               (((end_date.mday - start_date.mday)+1).to_f / 
               (Date.new(start_date.year, start_date.next_month.month)-1).mday).to_f
     end
