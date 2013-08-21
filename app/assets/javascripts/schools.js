@@ -354,7 +354,7 @@ $(document).ready(function() {
      }
 
     var applyFilters = function(options) {
-      $('#spinner').show();
+      $('#facebookG').show();
       var markers = VisibleMarkers();
       if (options) { locationFilter(markers, options.place, options.range ) }
       Gmaps.map.replaceMarkers(markers)
@@ -397,7 +397,7 @@ $(document).ready(function() {
         removeFromSelectedList(this.id)
       });
       
-      $('#spinner').hide();
+      $('#facebookG').hide();
     };
     
     
@@ -412,6 +412,7 @@ $(document).ready(function() {
     };
     
     var locationFilter = function(list, place, range) {
+      $('#facebookG').show();
       if (list.length > 30) {
         alert("Please narrow down your search to 30 schools or less before doing a location search");
         return;
@@ -431,6 +432,7 @@ $(document).ready(function() {
     
     
     function continueLocationFilter(service, request, marker) {
+      $('#facebookG').show();
       service.nearbySearch(request, function(results, status) {
         console.log(status)
         if (status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
@@ -481,6 +483,7 @@ $(document).ready(function() {
     };
     
   }
+  $('#facebookG').hide();
 });
 
 
