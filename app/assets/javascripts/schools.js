@@ -357,7 +357,6 @@ $(document).ready(function() {
       $('#spinner').show();
       var markers = VisibleMarkers();
       if (options) { locationFilter(markers, options.place, options.range ) }
-      console.log(markers)
       Gmaps.map.replaceMarkers(markers)
       var list = $('ul.school-list');
       list.text("");
@@ -413,17 +412,20 @@ $(document).ready(function() {
     };
     
     var locationFilter = function(list, place, range) {
+      if (list.length > 30) {
+        alert("Please narrow down your search to 30 schools or less before doing a location search");
+        return;
+      } 
       var service = new google.maps.places.PlacesService(Gmaps.map.map);
       ajaxCount = list.length
-      var currentIndex = 1;
       _.each(list, function(marker) {
         var request = {
           keyword: $.trim(place),
           radius: range,
           location: new google.maps.LatLng(marker.lat, marker.lng)
         };
-        setTimeout(continueLocationFilter(service, request, marker), (500*currentIndex) );
-        currentIndex++;
+        
+        continueLocationFilter(service, request, marker)
       });
     };
     
@@ -431,14 +433,21 @@ $(document).ready(function() {
     function continueLocationFilter(service, request, marker) {
       service.nearbySearch(request, function(results, status) {
         console.log(status)
-        if (status != google.maps.places.PlacesServiceStatus.OK) {
-          locationFilteredList.push(marker)
+        if (status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
+          setTimeout(function() {
+                continueLocationFilter(service, request, marker); 
+              }, 1000);
         }
-        ajaxCount--; 
-        if (ajaxCount <= 0) {
-            applyFilters();
+        else {
+          if (status != google.maps.places.PlacesServiceStatus.OK) {
+            locationFilteredList.push(marker)
+          }
+          ajaxCount--; 
+          if (ajaxCount <= 0) {
+              applyFilters();
+          }
         }
-      }) 
+      })
     }
 
     
