@@ -11,7 +11,7 @@
 
     .span5
       #map-and-list.affix
-        = gmaps4rails(@json)
+        = gmaps("markers" => { "data" => @json, "options" => {:do_clustering => true} }, "map_options" => {"libraries" => ["places"], "auto_adjust" => true })
         #school-list-holder
           = text_field_tag 'filter', nil, :placeholder => 'Search by Name or ID', id: 'text-filter'
           #school-tool-bar
