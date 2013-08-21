@@ -1,4 +1,4 @@
-%li.school-list-item
+%li.school-list-item{:data => {:lat => "#{school.latitude}", :lng => "#{school.longitude}" } }
   = check_box_tag "throw[#{school.name.parameterize.underscore.to_sym}]", school.store_id, false, id: school.name.titleize
   <label for= 
   = "#{school.name.titleize}"

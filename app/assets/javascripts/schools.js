@@ -352,6 +352,7 @@ $(document).ready(function() {
       _.each(markers, function(marker) {
         var li =  $('<li/>')
                   .addClass('school-list-item')
+                  .data({"lat": marker.lat, "lng": marker.lng})
                   .append($('<input/>').attr({type: 'checkbox', 
                                               id: marker.title, 
                                               name: "throw["+marker.title+"]",
