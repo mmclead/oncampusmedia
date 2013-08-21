@@ -48,6 +48,8 @@ $(document).ready(function() {
     
 
     var FullMarkerList = Gmaps.map.markers;
+    var locationFilteredList = [];
+    var ajaxCount = 0;
     var CurrentMarkerList = [];
     var DemoList = {
       average_age: {name:"average_age", min: 0, max: 50, percent: 0}, 
@@ -80,6 +82,12 @@ $(document).ready(function() {
       else {
         textFilter('.school-list li', $(this).val());
       }
+    });
+    
+    $('#location-search-button').click(function(event) {
+      locationFilteredList = []
+      applyFilters({place: $('#location-filter').val(), range: $('#location-radius').val()})
+      //locationFilter('.school-list li', $('#location-filter').val(), $('#location-radius').val())
     });
     
     $(".demo-range").each(function() {
@@ -338,14 +346,18 @@ $(document).ready(function() {
               new Date($(date).val()) <= new Date(marker.schedule.dates[$(date).attr('id').substring(0,$(date).attr('id').length-6)]) : 
               new Date($(date).val()) >= new Date(marker.schedule.dates[$(date).attr('id').substring(0,$(date).attr('id').length-4)])) :
             true ) } ) )
+        && (locationFilteredList.length == 0 || !(_.contains(locationFilteredList, marker) ) )
         );
       });
       return filtered
       
      }
 
-    var applyFilters = function() {
+    var applyFilters = function(options) {
+      $('#spinner').show();
       var markers = VisibleMarkers();
+      if (options) { locationFilter(markers, options.place, options.range ) }
+      console.log(markers)
       Gmaps.map.replaceMarkers(markers)
       var list = $('ul.school-list');
       list.text("");
@@ -385,18 +397,50 @@ $(document).ready(function() {
       $('i.icon-remove-sign').click(function() {
         removeFromSelectedList(this.id)
       });
+      
+      $('#spinner').hide();
     };
     
     
     //filter schools based on query
     var textFilter = function(selector, query) {
       query	=	$.trim(query); //trim white space
-      query = query.replace(/ /gi, '|'); //add OR for regex query
+      //query = query.replace(/ /gi, '|'); //add OR for regex query
     
       $(selector).each(function() {
         ($(this).text().search(new RegExp(query, "i")) < 0) ? $(this).add($(this).nextSibling).hide().removeClass('visible') : $(this).add($(this).nextSibling).show().addClass('visible');
       });
     };
+    
+    var locationFilter = function(list, place, range) {
+      var service = new google.maps.places.PlacesService(Gmaps.map.map);
+      ajaxCount = list.length
+      var currentIndex = 1;
+      _.each(list, function(marker) {
+        var request = {
+          keyword: $.trim(place),
+          radius: range,
+          location: new google.maps.LatLng(marker.lat, marker.lng)
+        };
+        setTimeout(continueLocationFilter(service, request, marker), (500*currentIndex) );
+        currentIndex++;
+      });
+    };
+    
+    
+    function continueLocationFilter(service, request, marker) {
+      service.nearbySearch(request, function(results, status) {
+        console.log(status)
+        if (status != google.maps.places.PlacesServiceStatus.OK) {
+          locationFilteredList.push(marker)
+        }
+        ajaxCount--; 
+        if (ajaxCount <= 0) {
+            applyFilters();
+        }
+      }) 
+    }
+
     
     var addToSelectedList = function(school) {
       if ($('#'+school.value + '.selected-school-item').size() == 0) {
