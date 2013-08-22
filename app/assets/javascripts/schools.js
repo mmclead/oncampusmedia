@@ -49,6 +49,7 @@ $(document).ready(function() {
 
     var FullMarkerList = Gmaps.map.markers;
     var locationFilteredList = [];
+    var locationSearchPhrase;
     var ajaxCount = 0;
     var CurrentMarkerList = [];
     var DemoList = {
@@ -86,6 +87,7 @@ $(document).ready(function() {
     
     $('#location-search-button').click(function(event) {
       locationFilteredList = []
+      locationSearchPhrase = $('#location-filter').val();
       applyFilters({place: $('#location-filter').val(), range: $('#location-radius').val()})
       //locationFilter('.school-list li', $('#location-filter').val(), $('#location-radius').val())
     });
@@ -370,6 +372,9 @@ $(document).ready(function() {
                                               value: marker.store_id}))
                   .append( $('<label/>').attr({'for': marker.title}).text(' ' + marker.title + ' - ' + marker.store_id) )
                   .appendTo(list);
+        if (marker.nearbyResults) {
+          $('<p/>').text(marker.nearbyResults.length + ' ' + locationSearchPhrase + ' nearby').appendTo(li)
+        }
         var liline = $('<li/>')
                    .addClass('divider')
                    .appendTo(list);
@@ -443,6 +448,9 @@ $(document).ready(function() {
         else {
           if (status != google.maps.places.PlacesServiceStatus.OK) {
             locationFilteredList.push(marker)
+          }
+          else {
+            marker['nearbyResults'] = results
           }
           ajaxCount--; 
           if (ajaxCount <= 0) {
