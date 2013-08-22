@@ -413,10 +413,10 @@ $(document).ready(function() {
     
     var locationFilter = function(list, place, range) {
       $('#facebookG').show();
-      if (list.length > 30) {
+      /*if (list.length > 30) {
         alert("Please narrow down your search to 30 schools or less before doing a location search");
         return;
-      } 
+      } */
       var service = new google.maps.places.PlacesService(Gmaps.map.map);
       ajaxCount = list.length
       _.each(list, function(marker) {
