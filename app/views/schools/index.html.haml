@@ -19,6 +19,8 @@
         = gmaps("markers" => { "data" => @json, "options" => {:do_clustering => true} }, "map_options" => {"libraries" => ["places"], "auto_adjust" => true })
         #school-list-holder
           = text_field_tag 'filter', nil, :placeholder => 'Search by Name or ID', id: 'text-filter'
+          = link_to 'Search',  '#text-filter', id: 'text-filter-button', class: "btn btn-primary"
+
           #school-tool-bar
             #total-schools.pull-left= "#{@schools.length} schools"
             #select-all-schools.pull-right

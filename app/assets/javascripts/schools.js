@@ -49,9 +49,9 @@ $(document).ready(function() {
 
     var FullMarkerList = Gmaps.map.markers;
     var locationFilteredList = [];
+    var textFilterList = [];
     var locationSearchPhrase;
     var ajaxCount = 0;
-    var CurrentMarkerList = [];
     var DemoList = {
       average_age: {name:"average_age", min: 0, max: 50, percent: 0}, 
       enrollment: {name: "enrollment", min: 0, max: 100000, percent: 0},
@@ -75,21 +75,14 @@ $(document).ready(function() {
     var SportFilter = [];
     var DateFilter = [];
 
-    $('#text-filter').keyup(function(event) {
-      if (event.keyCode == 27 || $(this).val() == '') {
-        $(this).val('');
-        $('.school-list li').removeClass('visible').show().addClass('visible');
-      }
-      else {
-        textFilter('.school-list li', $(this).val());
-      }
+    $('#text-filter-button').click(function(event) {
+        applyFilters();
     });
     
     $('#location-search-button').click(function(event) {
       locationFilteredList = []
       locationSearchPhrase = $('#location-filter').val();
       applyFilters({place: $('#location-filter').val(), range: $('#location-radius').val()})
-      //locationFilter('.school-list li', $('#location-filter').val(), $('#location-radius').val())
     });
     
     $(".demo-range").each(function() {
@@ -348,6 +341,7 @@ $(document).ready(function() {
               new Date($(date).val()) <= new Date(marker.schedule.dates[$(date).attr('id').substring(0,$(date).attr('id').length-6)]) : 
               new Date($(date).val()) >= new Date(marker.schedule.dates[$(date).attr('id').substring(0,$(date).attr('id').length-4)])) :
             true ) } ) )
+        && ( ( (marker.title + ' ' + marker.store_id).search(new RegExp($.trim($('#text-filter').val()), "i")) > 0))
         && (locationFilteredList.length == 0 || !(_.contains(locationFilteredList, marker) ) )
         );
       });
@@ -373,14 +367,13 @@ $(document).ready(function() {
                   .append( $('<label/>').attr({'for': marker.title}).text(' ' + marker.title + ' - ' + marker.store_id) )
                   .appendTo(list);
         if (marker.nearbyResults) {
-          $('<p/>').text(marker.nearbyResults.length + ' ' + locationSearchPhrase + ' nearby').appendTo(li)
+          $('<p/>').text(marker.nearbyResults.length + ' ' + $('#location-filter').val() + ' within ' + $('#location-radius').find(':selected').text() ).appendTo(li)
         }
         var liline = $('<li/>')
                    .addClass('divider')
                    .appendTo(list);
       });
       $('#total-schools').text(markers.length + ' schools');
-      
       
       
       $('.school-list-item input').change(function() {
@@ -406,22 +399,9 @@ $(document).ready(function() {
     };
     
     
-    //filter schools based on query
-    var textFilter = function(selector, query) {
-      query	=	$.trim(query); //trim white space
-      //query = query.replace(/ /gi, '|'); //add OR for regex query
-    
-      $(selector).each(function() {
-        ($(this).text().search(new RegExp(query, "i")) < 0) ? $(this).add($(this).nextSibling).hide().removeClass('visible') : $(this).add($(this).nextSibling).show().addClass('visible');
-      });
-    };
     
     var locationFilter = function(list, place, range) {
       $('#facebookG').show();
-      /*if (list.length > 30) {
-        alert("Please narrow down your search to 30 schools or less before doing a location search");
-        return;
-      } */
       var service = new google.maps.places.PlacesService(Gmaps.map.map);
       ajaxCount = list.length
       _.each(list, function(marker) {
