@@ -12,4 +12,6 @@
     %th Students Enrolled
     %th Impressions
     %th Cost Per Campus
+    - if @ratecard.store_ids[0]['nearbyName']
+      %th Nearby Locations
   = render partial: 'ratecards/school_for_quote'

@@ -12,6 +12,11 @@ module RatecardsHelper
     quote.user_id.present? ? "#{quote.user.name}" : "Public"
   end
   
+  def nearbyLocationsOfSchool(store_ids, school)    
+    index = store_ids.index { |store| store["id"].to_i == school.store_id }
+    return "#{store_ids[index]['nearbyCount']} #{store_ids[index]['nearbyName']} nearby"
+  end
+  
   def sortable(column, title = nil)
     title ||= column.titleize
     css_class = column == sort_column ? "current #{sort_direction}" : nil
