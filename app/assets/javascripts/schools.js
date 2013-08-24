@@ -341,7 +341,7 @@ $(document).ready(function() {
               new Date($(date).val()) <= new Date(marker.schedule.dates[$(date).attr('id').substring(0,$(date).attr('id').length-6)]) : 
               new Date($(date).val()) >= new Date(marker.schedule.dates[$(date).attr('id').substring(0,$(date).attr('id').length-4)])) :
             true ) } ) )
-        && ( ( (marker.title + ' ' + marker.store_id).search(new RegExp($.trim($('#text-filter').val()), "i")) > 0))
+        && ( $('#text-filter').val().length == 0 || ( (marker.title + ' ' + marker.store_id).search(new RegExp($.trim($('#text-filter').val()), "i")) > 0))
         && (locationFilteredList.length == 0 || !(_.contains(locationFilteredList, marker) ) )
         );
       });
@@ -363,7 +363,9 @@ $(document).ready(function() {
                   .append($('<input/>').attr({type: 'checkbox', 
                                               id: marker.title, 
                                               name: "throw["+marker.title+"]",
-                                              value: marker.store_id}))
+                                              value: marker.store_id})
+                                        .data("nearbyName", $('#location-filter').val())
+                                        .data("nearbyCount", marker.nearbyResults ? marker.nearbyResults.length : ""))
                   .append( $('<label/>').attr({'for': marker.title}).text(' ' + marker.title + ' - ' + marker.store_id) )
                   .appendTo(list);
         if (marker.nearbyResults) {
@@ -451,7 +453,8 @@ $(document).ready(function() {
                   .append($('<input/>').attr({type: 'hidden', 
                                                 id: school.id, 
                                                 name: "schools["+school.id+"]",
-                                                value: school.value}))
+                                                value: "{:id=>"+school.value+", :nearbyName=> "+$(school).data('nearbyName')+", :nearbyCount=>"+$(school).data('nearbyCount')+"}", 
+                                              }))
                   .append($('<i/>').attr({class: 'icon-remove-sign pull-right', id: school.value}))
                   .appendTo(list);
         $('#school-count').text($('.selected-school-item').size() + ' selected')

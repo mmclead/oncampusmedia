@@ -32,7 +32,9 @@ class RatecardsController < ApplicationController
     end
     
     if params['schools'].present?
-      @ratecard.store_ids = params['schools'].values
+      puts params['schools']
+      @ratecard.store_ids = params['schools'].values.collect { |val| val.gsub(/[{}:]/,'').split(', ').map{|h| h1,h2 = h.split('=>'); {h1 => h2}}.reduce(:merge)
+ } 
       if @ratecard.save
         url = @ratecard
         msg = "Proposal created successully"
