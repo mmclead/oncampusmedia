@@ -367,6 +367,7 @@ $(document).ready(function() {
                                         .data("nearbyName", $('#location-filter').val())
                                         .data("nearbyCount", marker.nearbyResults ? marker.nearbyResults.length : ""))
                   .append( $('<label/>').attr({'for': marker.title}).text(' ' + marker.title + ' - ' + marker.store_id) )
+                  .append( $('<a/>').attr({'href': '/schools/'+marker.id+'/edit/'}).text("Edit"))
                   .appendTo(list);
         if (marker.nearbyResults) {
           $('<p/>').text(marker.nearbyResults.length + ' ' + $('#location-filter').val() + ' within ' + $('#location-radius').find(':selected').text() ).appendTo(li)
