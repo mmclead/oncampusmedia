@@ -12,7 +12,7 @@
     %td= number_with_delimiter(school.demographics.enrollment)
     %td= number_with_delimiter(@ratecard.total_impressions([school]).to_i)
     %td= number_to_currency(@ratecard.total_cost([school]))
-    - if @ratecard.store_ids[0]['nearbyName']
+    - if @ratecard.store_ids[0]['nearbyName'].present?
       %td= nearbyLocationsOfSchool(@ratecard.store_ids, school)
     - if @edit
       %td
