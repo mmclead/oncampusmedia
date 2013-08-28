@@ -34,7 +34,7 @@ class Ratecard < ActiveRecord::Base
     self.where(r[:user_id].eq(nil).or(r[:user_id].eq(user_id)))
   end
   
-  def schools(sort_column = 'dma', sort_direction = 'asc', unscoped = false)
+  def schools(sort_column= "dma", sort_direction = "asc", unscoped = false)
     ids = (store_ids[0].class == String) ? store_ids : store_ids.collect{ |s| s["id"] }
     if unscoped
       School.unscoped.includes(:demographics, :sports, :hours, :transactions, :schedule).where(store_id: ids).order(sort_column + " " + sort_direction)

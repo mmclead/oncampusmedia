@@ -50,7 +50,14 @@ class RatecardsController < ApplicationController
   end
   
   def show
-    @schools = @ratecard.schools(sort_column, sort_direction, true)
+    if params[:sortCol] && params[:sortDir]
+      column_array = ["store_id", "name", "school_type", "address", "city", "state", "dma", "dma_rank", "num_of_screens"]
+      sort_column = column_array[params[:sortCol].to_i]
+      sort_direction = params[:sortDir]
+      @schools = @ratecard.schools(sort_column, sort_direction, true)
+    else
+      @schools = @ratecard.schools()
+    end
     respond_to do |format|
       format.html
       if params[:contract].present?
@@ -63,6 +70,7 @@ class RatecardsController < ApplicationController
         end
       else
         format.pdf do
+          
           render pdf: "proposal-#{@ratecard.brand.strip}-#{@ratecard.quote_date}",
                  template: 'ratecards/show.pdf.haml',
                  disposition: 'attachment',
