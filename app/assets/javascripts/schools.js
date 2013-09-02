@@ -364,8 +364,9 @@ $(document).ready(function() {
                                               id: marker.title, 
                                               name: "throw["+marker.title+"]",
                                               value: marker.store_id})
-                                        .data("nearbyName", $('#location-filter').val())
-                                        .data("nearbyCount", marker.nearbyResults ? marker.nearbyResults.length : ""))
+                                        .data("nearbyname", $('#location-filter').val())
+                                        .data("nearbycount", marker.nearbyResults ? marker.nearbyResults.length : ""))
+                                        .data("nearbyrange", $('#location-radius').find(':selected').text())
                   .append( $('<label/>').attr({'for': marker.title}).text(' ' + marker.title + ' - ' + marker.store_id) )
                   .append( $('<a/>').attr({'href': '/schools/'+marker.id+'/edit/'}).text("Edit"))
                   .appendTo(list);
@@ -454,7 +455,7 @@ $(document).ready(function() {
                   .append($('<input/>').attr({type: 'hidden', 
                                                 id: school.id, 
                                                 name: "schools["+school.id+"]",
-                                                value: "{:id=>"+school.value+", :nearbyName=> "+$(school).data('nearbyName')+", :nearbyCount=>"+$(school).data('nearbyCount')+"}", 
+                                                value: "{:id=>"+school.value+", :nearbyName=> "+$(school).data('nearbyname')+", :nearbyCount=>"+$(school).data('nearbycount')+", :nearbyRange=>"+$(school).data('nearbyrange')+"}", 
                                               }))
                   .append($('<i/>').attr({class: 'icon-remove-sign pull-right', id: school.value}))
                   .appendTo(list);

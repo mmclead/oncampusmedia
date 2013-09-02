@@ -1,5 +1,5 @@
-%li.school-list-item{:data => {:lat => "#{school.latitude}", :lng => "#{school.longitude}" } }
-  = check_box_tag "throw[#{school.name.parameterize.underscore.to_sym}]", school.store_id, false, id: school.name.titleize
+%li.school-list-item{:data => {:lat => "#{school.latitude}", :lng => "#{school.longitude}"} }
+  = check_box_tag "throw[#{school.name.parameterize.underscore.to_sym}]", school.store_id, false, id: school.name.titleize, data: {:nearbyname => " ", :nearbycount => " ", :nearbyrange => " " } 
   <label for= 
   = "#{school.name.titleize}"
   > 
