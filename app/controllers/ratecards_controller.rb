@@ -81,15 +81,16 @@ class RatecardsController < ApplicationController
   end
   
   def edit
-    @schools = @ratecard.schools(sort_column, sort_direction)
     @ratecard = Ratecard.find(params[:id])
+    @schools = @ratecard.schools(sort_column, sort_direction)
     @edit = true
   end
 
   def update
     @ratecard = Ratecard.find(params[:id])
     if params['remove_schools']
-      params[:ratecard][:store_ids] = @ratecard.store_ids - params['remove_schools'].keys
+      params[:ratecard][:store_ids] = @ratecard.store_ids.delete_if { |x| params['remove_schools'].keys.include?(x["id"]) }
+      puts "In it", params
     end
     if @ratecard.update_attributes(params[:ratecard])
       redirect_to @ratecard, notice: "Quote updated successfully."
