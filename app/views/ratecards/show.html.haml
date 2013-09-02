@@ -25,7 +25,7 @@
       %th Impressions
       %th Cost Per Campus
       - if @ratecard.store_ids[0]['nearbyName'].present?
-        %th Nearby Locations
+        %th= "Locations in #{@ratecard.store_ids[0]['nearbyRange']}" 
   %tbody
     = render partial: 'school_for_quote'
 
