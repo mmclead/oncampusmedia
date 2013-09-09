@@ -411,7 +411,7 @@ $(document).ready(function() {
       ajaxCount = list.length
       _.each(list, function(marker) {
         var request = {
-          keyword: $.trim(place),
+          name: $.trim(place),
           radius: range,
           location: new google.maps.LatLng(marker.lat, marker.lng)
         };
