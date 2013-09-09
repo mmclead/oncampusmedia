@@ -3,10 +3,12 @@
     %h3= link_to 'School Store Information', '#info', { data: {toggle: "collapse", parent: "#forms"}}
   #info.accordian-body.collapse
     = f.input :school_name
+    = f.input :network
     = f.input :store_id, label: "Store ID #"
     = f.input :address
     = f.input :city
     = f.input :state
+    = f.input :zip
     = f.input :num_of_screens
     = f.input :school_type, collection: (['4 year','CC'])
     = f.input :dma

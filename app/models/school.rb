@@ -1,8 +1,8 @@
 class School < ActiveRecord::Base
   attr_accessible :address, :city, :num_of_schools, :num_of_schools_included, :school_name, 
-                  :state, :store_id,:sports_attributes, :schedule_attributes, :demographics_attributes, 
+                  :state, :zip, :store_id,:sports_attributes, :schedule_attributes, :demographics_attributes, 
                   :hours_attributes, :transactions_attributes, :active, :num_of_screens, :school_type, 
-                  :dma, :dma_rank, :starbucks, :coffee_stations, :rotc
+                  :dma, :dma_rank, :starbucks, :coffee_stations, :rotc, :network
   
   acts_as_gmappable :validation => false
   

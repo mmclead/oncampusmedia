@@ -68,77 +68,79 @@ class Import < ActiveRecord::Base
         school = School.new
         school.store_id = row[0] 
       end
-      school.school_name = row[1].to_s.encode!('UTF-8', 'UTF-8', :invalid => :replace)
-      school.address = row[2].to_s.encode!('UTF-8', 'UTF-8', :invalid => :replace)
-      school.city = row[3].to_s.encode!('UTF-8', 'UTF-8', :invalid => :replace)
-      school.state = row[4].to_s.encode!('UTF-8', 'UTF-8', :invalid => :replace)
-      school.dma = row[5].to_s.encode!('UTF-8', 'UTF-8', :invalid => :replace)
-      school.dma_rank = row[6].to_i
-      school.num_of_screens = row[7].to_i
-      school.school_type = row[8].to_s.encode!('UTF-8', 'UTF-8', :invalid => :replace)
-      school.starbucks =  row[46].present?
-      school.coffee_stations = row[47].present?
-      school.rotc = row[48].present?
+      school.network = row[1].to_s.encode!('UTF-8', 'UTF-8', :invalid => :replace)
+      school.school_name = row[2].to_s.encode!('UTF-8', 'UTF-8', :invalid => :replace)
+      school.address = row[3].to_s.encode!('UTF-8', 'UTF-8', :invalid => :replace)
+      school.city = row[4].to_s.encode!('UTF-8', 'UTF-8', :invalid => :replace)
+      school.state = row[5].to_s.encode!('UTF-8', 'UTF-8', :invalid => :replace)
+      school.zip = row[6].to_s.encode!('UTF-8', 'UTF-8', :invalid => :replace)
+      school.dma = row[7].to_s.encode!('UTF-8', 'UTF-8', :invalid => :replace)
+      school.dma_rank = row[8].to_i
+      school.num_of_screens = row[9].to_i
+      school.school_type = row[10].to_s.encode!('UTF-8', 'UTF-8', :invalid => :replace)
+      school.starbucks =  row[48].present?
+      school.coffee_stations = row[49].present?
+      school.rotc = row[50].present?
       
       unless school.school_name.blank?
 
         demographics = school.demographics
         demographics = Demographics.new unless demographics.present?
-        demographics.average_age = row[9].to_i
-        demographics.non_resident_alien = row[27].to_f
-        demographics.african_american_black = row[28].to_f
-        demographics.two_or_more_races = row[29].to_f
-        demographics.asian = row[30].to_f
-        demographics.hispanic_latino = row[31].to_f
-        demographics.white = row[32].to_f
-        demographics.unknown = row[33].to_f
-        demographics.american_indian_alaskan_native = row[34].to_f
-        demographics.native_hawaiian_pacific_islander = row[35].to_f
-        demographics.enrollment = row[38].to_s.gsub(",","").to_i
+        demographics.average_age = row[11].to_i
+        demographics.non_resident_alien = row[29].to_f
+        demographics.african_american_black = row[30].to_f
+        demographics.two_or_more_races = row[31].to_f
+        demographics.asian = row[32].to_f
+        demographics.hispanic_latino = row[33].to_f
+        demographics.white = row[34].to_f
+        demographics.unknown = row[35].to_f
+        demographics.american_indian_alaskan_native = row[36].to_f
+        demographics.native_hawaiian_pacific_islander = row[37].to_f
+        demographics.enrollment = row[40].to_s.gsub(",","").to_i
         school.demographics = demographics
         
         hours = school.hours
         hours = Hours.new unless hours.present?
-        unless row[39] == "CLOSED" or row[39].blank?
-          t = Time.parse(row[39].to_s.split("-")[0], Time.utc(2000))
-          hours.sunday_open = (t + t.gmtoff).getutc
-          t = Time.parse(row[39].to_s.split("-")[1], Time.utc(2000))
-          hours.sunday_close = (t + t.gmtoff).getutc
-        end
-        unless row[40] == "CLOSED" or row[40].blank?
-          t = Time.parse(row[40].to_s.split("-")[0], Time.utc(2000)) 
-          hours.monday_open = (t + t.gmtoff).getutc
-          t = Time.parse(row[40].to_s.split("-")[1], Time.utc(2000))        
-          hours.monday_close =  (t + t.gmtoff).getutc
-        end
         unless row[41] == "CLOSED" or row[41].blank?
           t = Time.parse(row[41].to_s.split("-")[0], Time.utc(2000))
-          hours.tuesday_open = (t + t.gmtoff).getutc
+          hours.sunday_open = (t + t.gmtoff).getutc
           t = Time.parse(row[41].to_s.split("-")[1], Time.utc(2000))
-          hours.tuesday_close = (t + t.gmtoff).getutc
+          hours.sunday_close = (t + t.gmtoff).getutc
         end
         unless row[42] == "CLOSED" or row[42].blank?
-          t = Time.parse(row[42].to_s.split("-")[0], Time.utc(2000))
-          hours.wednesday_open = (t + t.gmtoff).getutc
-          t = Time.parse(row[42].to_s.split("-")[1], Time.utc(2000))
-          hours.wednesday_close = (t + t.gmtoff).getutc          
+          t = Time.parse(row[42].to_s.split("-")[0], Time.utc(2000)) 
+          hours.monday_open = (t + t.gmtoff).getutc
+          t = Time.parse(row[42].to_s.split("-")[1], Time.utc(2000))        
+          hours.monday_close =  (t + t.gmtoff).getutc
         end
         unless row[43] == "CLOSED" or row[43].blank?
           t = Time.parse(row[43].to_s.split("-")[0], Time.utc(2000))
-          hours.thursday_open = (t + t.gmtoff).getutc
+          hours.tuesday_open = (t + t.gmtoff).getutc
           t = Time.parse(row[43].to_s.split("-")[1], Time.utc(2000))
-          hours.thursday_close = (t + t.gmtoff).getutc
+          hours.tuesday_close = (t + t.gmtoff).getutc
         end
         unless row[44] == "CLOSED" or row[44].blank?
           t = Time.parse(row[44].to_s.split("-")[0], Time.utc(2000))
-          hours.friday_open = (t + t.gmtoff).getutc
+          hours.wednesday_open = (t + t.gmtoff).getutc
           t = Time.parse(row[44].to_s.split("-")[1], Time.utc(2000))
-          hours.friday_close = (t + t.gmtoff).getutc
+          hours.wednesday_close = (t + t.gmtoff).getutc          
         end
         unless row[45] == "CLOSED" or row[45].blank?
           t = Time.parse(row[45].to_s.split("-")[0], Time.utc(2000))
-          hours.saturday_open = (t + t.gmtoff).getutc
+          hours.thursday_open = (t + t.gmtoff).getutc
           t = Time.parse(row[45].to_s.split("-")[1], Time.utc(2000))
+          hours.thursday_close = (t + t.gmtoff).getutc
+        end
+        unless row[46] == "CLOSED" or row[46].blank?
+          t = Time.parse(row[46].to_s.split("-")[0], Time.utc(2000))
+          hours.friday_open = (t + t.gmtoff).getutc
+          t = Time.parse(row[46].to_s.split("-")[1], Time.utc(2000))
+          hours.friday_close = (t + t.gmtoff).getutc
+        end
+        unless row[47] == "CLOSED" or row[47].blank?
+          t = Time.parse(row[47].to_s.split("-")[0], Time.utc(2000))
+          hours.saturday_open = (t + t.gmtoff).getutc
+          t = Time.parse(row[47].to_s.split("-")[1], Time.utc(2000))
           hours.saturday_close = (t + t.gmtoff).getutc
         end
 
@@ -146,29 +148,29 @@ class Import < ActiveRecord::Base
         
         sports = school.sports
         sports = Sports.new unless sports.present?
-        sports.ncaa_basketball_div_i = row[10].present? 
-        sports.ncaa_basketball_div_ii = row[11].present?
-        sports.ncaa_basketball_div_iii = row[12].present? 
-        sports.naia_basketball_div_i_and_ii = row[13].present? 
-        sports.ncaa_football_div_i = row[14].present? 
-        sports.ncaa_football_div_ii = row[15].present? 
-        sports.ncaa_football_div_iii = row[16].present? 
-        sports.naia_football_div_i_and_ii = row[17].present? 
-        sports.ncaa_baseball_div_i = row[18].present?
-        sports.ncaa_baseball_div_ii = row[19].present? 
-        sports.ncaa_baseball_div_iii = row[20].present? 
-        sports.naia_baseball_div_i_and_ii = row[21].present? 
-        sports.ncaa_naia_track_cross_country = row[22].present? 
-        sports.njcaa_football_div_i = row[23].present? 
-        sports.njcaa_baseball_div_i = row[24].present? 
-        sports.njcaa_basketball_div_i = row[25].present? 
-        sports.conference = row[26]
+        sports.ncaa_basketball_div_i = row[12].present? 
+        sports.ncaa_basketball_div_ii = row[13].present?
+        sports.ncaa_basketball_div_iii = row[14].present? 
+        sports.naia_basketball_div_i_and_ii = row[15].present? 
+        sports.ncaa_football_div_i = row[16].present? 
+        sports.ncaa_football_div_ii = row[17].present? 
+        sports.ncaa_football_div_iii = row[18].present? 
+        sports.naia_football_div_i_and_ii = row[19].present? 
+        sports.ncaa_baseball_div_i = row[20].present?
+        sports.ncaa_baseball_div_ii = row[21].present? 
+        sports.ncaa_baseball_div_iii = row[22].present? 
+        sports.naia_baseball_div_i_and_ii = row[23].present? 
+        sports.ncaa_naia_track_cross_country = row[24].present? 
+        sports.njcaa_football_div_i = row[25].present? 
+        sports.njcaa_baseball_div_i = row[26].present? 
+        sports.njcaa_basketball_div_i = row[27].present? 
+        sports.conference = row[28]
         school.sports = sports
         
         schedule = school.schedule
         schedule = Schedule.new unless schedule.present?
-        schedule.quarter = row[36].present?
-        schedule.semester = row[37].present?
+        schedule.quarter = row[38].present?
+        schedule.semester = row[39].present?
         school.schedule = schedule
         if school.new_record? 
           school.transactions = Transactions.new

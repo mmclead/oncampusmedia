@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130614011002) do
+ActiveRecord::Schema.define(:version => 20130909193738) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "school_id"
@@ -200,6 +200,8 @@ ActiveRecord::Schema.define(:version => 20130614011002) do
     t.boolean  "rotc"
     t.string   "store_name"
     t.boolean  "active",                       :default => true
+    t.string   "zip"
+    t.string   "network"
   end
 
   create_table "sports", :force => true do |t|

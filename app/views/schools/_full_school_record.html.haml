@@ -2,10 +2,12 @@
   %tr
     %th
     %th Name
+    %th Network
     %th Store ID
     %th Address
     %th City
     %th State
+    %th Zip
     %th Number of Screens
     %th Campus Type
     %th DMA
@@ -84,10 +86,12 @@
     %tr
       %td= link_to "Edit", edit_school_path(school)
       %td= school.school_name
+      %td= school.network
       %td= school.store_id
       %td= school.address
       %td= school.city
       %td= school.state
+      %td= school.zip
       %td= school.num_of_screens
       %td= school.school_type
       %td= school.dma
