@@ -383,8 +383,9 @@ $(document).ready(function() {
                                         .data("nearbyname", $('#location-filter').val())
                                         .data("nearbyrange", $('#location-radius').find(':selected').text())
                                         .data("nearbycount", marker.nearbyResults ? marker.nearbyResults.length : "")
+                                        .data("network", marker.network)
                           )
-                  .append( $('<label/>').attr({'for': marker.title}).text(' ' + marker.title + ' - ' + marker.store_id) )
+                  .append( $('<label/>').attr({'for': marker.title}).text(' ' + marker.network + ' - ' + marker.title + ' - ' + marker.store_id) )
                   .append( $('<a/>').attr({'href': '/schools/'+marker.id+'/edit/'}).text("Edit"))
                   .appendTo(list);
         if (marker.nearbyResults) {
@@ -468,7 +469,7 @@ $(document).ready(function() {
         var li =  $('<li/>')
                   .addClass('selected-school-item badge badge-info')
                   .attr({id: school.value})
-                  .text(' ' + school.id + ' - ' + school.value + ' ')
+                  .text(' ' + $(school).data('network') + ' - ' + school.id + ' - ' + school.value + ' ')
                   .append($('<input/>').attr({type: 'hidden', 
                                                 id: school.id, 
                                                 name: "schools["+school.id+"]",

@@ -1,9 +1,9 @@
 %li.school-list-item{:data => {:lat => "#{school.latitude}", :lng => "#{school.longitude}"} }
-  = check_box_tag "throw[#{school.name.parameterize.underscore.to_sym}]", school.store_id, false, id: school.name.titleize, data: {:nearbyname => " ", :nearbycount => " ", :nearbyrange => " " } 
+  = check_box_tag "throw[#{school.name.parameterize.underscore.to_sym}]", school.store_id, false, id: school.name.titleize, data: {:nearbyname => " ", :nearbycount => " ", :nearbyrange => " ", :network => "#{school.network}" } 
   <label for= 
   = "#{school.name.titleize}"
   > 
-  = "#{school.name.titleize} - #{school.store_id}"
+  = "#{school.network} - #{school.name.titleize} - #{school.store_id}"
   </label>
   = link_to 'Edit', [:edit, school] if can? :update, school
 %li.divider

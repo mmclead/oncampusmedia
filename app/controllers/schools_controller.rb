@@ -31,7 +31,7 @@ class SchoolsController < ApplicationController
     @json = @schools.to_gmaps4rails do |school, marker|
       #marker.infowindow render_to_string(partial: "/schools/infowindow", locals: {school: school})
       marker.title "#{school.school_name}" 
-      json = {id: school.id, store_id: school.store_id, sports: school.sports.active_in, conference: school.sports.conference, 
+      json = {id: school.id, store_id: school.store_id, network: school.network, sports: school.sports.active_in, conference: school.sports.conference, 
               state: school.state, demographics: school.demographics.hash_for_filter, store_info: school.store_info, 
               transactions: school.transactions.hash_for_filter, schedule: school.schedule.hash_for_filter}
       marker.json(json)   
