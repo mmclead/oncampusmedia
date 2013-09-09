@@ -30,6 +30,7 @@ class School < ActiveRecord::Base
 
   def store_info
     {
+      zip: zip,
       hours: hours.hash_for_filter,
       coffee: [starbucks? ? "starbucks" : nil, coffee_stations? ? "coffee_stations": nil ].compact,
       dma: {dma: dma, dma_rank: dma_rank},

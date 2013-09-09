@@ -72,6 +72,7 @@ $(document).ready(function() {
     var CoffeeFilter = [];
     var ConferenceFilter = [];
     var DMAFilter = [];
+    var ZipFilter = [];
     var SportFilter = [];
     var DateFilter = [];
 
@@ -290,6 +291,20 @@ $(document).ready(function() {
       }
     });
     
+    $('#zip-list input').change(function() {
+      $('#all-zip input').prop('checked', false);
+      ZipFilter = $('#zip-list input:checked').map( function() { return this.name;});
+      applyFilters()
+    });
+    
+    $('#all-zip input').change(function() {
+      if (this.checked) {
+        $('#zip-list input:checked').prop('checked', false);
+        ZipFilter = [];
+        applyFilters()
+      }
+    });
+    
     $('#schedule ul input').change(function() {
       $('#all-schedules input').prop('checked', false);
       DateFilter = $('#schedule ul input').map( function() { if($(this).val()) {return $(this)} });
@@ -331,6 +346,7 @@ $(document).ready(function() {
         && (($('#all-sports input').prop('checked')) || ( _.some(marker.sports, function(sport) {return _.contains(SportFilter, sport)})) ) 
         && (($('#all-conferences input').prop('checked')) || (_.contains(ConferenceFilter, marker.conference)) )
         && (($('#all-dma input').prop('checked')) || (_.contains(DMAFilter, marker.store_info.dma.dma)) )
+        && (($('#all-zip input').prop('checked')) || (_.contains(ZipFilter, marker.store_info.zip)) )
         && (($('#all-rotc input').prop('checked')) || (_.contains(ROTCFilter, marker.store_info.rotc.toString())) )
         && ( marker.store_info.dma.dma_rank >= $('#dma-range').slider("values", 0) && marker.store_info.dma.dma_rank <= $('#dma-range').slider("values", 1) )
         && ( marker.store_info.screen_count >= $('#screen-count-range').slider("values", 0) && marker.store_info.screen_count <= $('#screen-count-range').slider("values", 1) )

@@ -1,0 +1,16 @@
+.accordian-group
+  .accordian-heading
+    %h3= link_to 'Filter by Zip Code', '#zip', { data: {toggle: "collapse", parent: "#school-info-list"}}
+  #zip.accordian-body.collapse
+    #all-zip
+      = check_box_tag "Any zip code", 'all', true
+      = label_tag "Any zip code", "Any zip code"
+    #zip-list.well
+      %ul
+        - @schools.collect {|s| s.zip }.compact.uniq.sort.each do |zip|  
+          %li
+            = check_box_tag "#{zip}"
+            = label_tag "#{zip}", "#{zip.titleize}"
+            
+    
+  
