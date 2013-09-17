@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130909193738) do
+ActiveRecord::Schema.define(:version => 20130917214507) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "school_id"
@@ -171,7 +171,7 @@ ActiveRecord::Schema.define(:version => 20130909193738) do
   add_index "schedules", ["school_id"], :name => "index_schedules_on_school_id"
 
   create_table "schools", :force => true do |t|
-    t.integer  "store_id"
+    t.string   "store_id"
     t.string   "school_name"
     t.string   "address"
     t.string   "city"
