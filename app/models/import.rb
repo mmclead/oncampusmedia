@@ -87,15 +87,15 @@ class Import < ActiveRecord::Base
         demographics = school.demographics
         demographics = Demographics.new unless demographics.present?
         demographics.average_age = row[11].to_i
-        demographics.non_resident_alien = row[29].to_f
-        demographics.african_american_black = row[30].to_f
-        demographics.two_or_more_races = row[31].to_f
-        demographics.asian = row[32].to_f
-        demographics.hispanic_latino = row[33].to_f
-        demographics.white = row[34].to_f
-        demographics.unknown = row[35].to_f
-        demographics.american_indian_alaskan_native = row[36].to_f
-        demographics.native_hawaiian_pacific_islander = row[37].to_f
+        demographics.non_resident_alien = row[29].to_f * 100
+        demographics.african_american_black = row[30].to_f * 100
+        demographics.two_or_more_races = row[31].to_f  * 100
+        demographics.asian = row[32].to_f * 100
+        demographics.hispanic_latino = row[33].to_f * 100
+        demographics.white = row[34].to_f * 100
+        demographics.unknown = row[35].to_f * 100
+        demographics.american_indian_alaskan_native = row[36].to_f * 100
+        demographics.native_hawaiian_pacific_islander = row[37].to_f * 100
         demographics.enrollment = row[40].to_s.gsub(",","").to_i
         school.demographics = demographics
         
