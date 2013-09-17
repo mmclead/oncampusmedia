@@ -1,4 +1,4 @@
-%table#schools.table.table-bordered.table-hover.table-condensed.pdf-table{:data =>{:sortCol => "#{params[:sortCol]}" || 6, :sortDir => "#{params[:sortDir]}" || "desc" } }
+%table#schools.table.table-bordered.table-hover.table-condensed.pdf-table{:data =>{:sortCol => "#{params[:sortCol] || 6}", :sortDir => "#{params[:sortDir] || 'desc' }"} }
   %thead.higlight
     %tr.highlight.no-break
       %th Campus No.

@@ -9,7 +9,7 @@
 
 = render partial: 'ratecard_tables'
     
-%table#schools.table.table-bordered.table-hover.table-condensed.school-table
+%table#schools.table.table-bordered.table-hover.table-condensed.school-table{:data =>{:sortCol => "#{params[:sortCol] || 6}", :sortDir => "#{params[:sortDir] || 'desc' }"} }
   %thead.highlight
     %tr.highlight
       %th Campus No.
