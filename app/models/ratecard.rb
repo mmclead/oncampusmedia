@@ -35,13 +35,13 @@ class Ratecard < ActiveRecord::Base
   end
   
   def schools(sort_column= "dma", sort_direction = "asc", unscoped = false)
+    sort_column = "dma" if sort_column == nil
     ids = (store_ids[0].class == String) ? store_ids : store_ids.collect{ |s| s["id"] }
     if unscoped
       School.unscoped.includes(:demographics, :sports, :hours, :transactions, :schedule).where(store_id: ids).order(sort_column + " " + sort_direction)
     else
       School.where(store_id: ids).order(sort_column + " " + sort_direction)
     end
-    
   end
   
   def total_cost(schools = self.schools)

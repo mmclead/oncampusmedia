@@ -362,7 +362,6 @@ $(document).ready(function() {
         );
       });
       return filtered
-      
      }
 
     var applyFilters = function(options) {

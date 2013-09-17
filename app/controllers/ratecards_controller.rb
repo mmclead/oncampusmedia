@@ -52,7 +52,7 @@ class RatecardsController < ApplicationController
   def show
     if params[:sortCol] && params[:sortDir]
       column_array = ["store_id", "name", "school_type", "address", "city", "state", "dma", "dma_rank", "num_of_screens"]
-      sort_column = column_array[params[:sortCol].to_i]
+      sort_column = column_array[params[:sortCol].to_i].present? ? column_array[params[:sortCol].to_i] : nil
       sort_direction = params[:sortDir]
       @schools = @ratecard.schools(sort_column, sort_direction, true)
     else

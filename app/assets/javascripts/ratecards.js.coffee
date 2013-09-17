@@ -7,8 +7,10 @@
 
 
 jQuery ->
+        col = $('#schools').data('sortcol')
+        dir = $('#schools').data('sortdir')
         $('#schools').dataTable( {
-          "aaSorting": [[ 6, "asc" ]],
+          "aaSorting": [[ col, dir ]],
           "aoColumnDefs": [ { "sType": "formatted-num", "aTargets": [ 7, 9, 10, 11 ] }]
           "bPaginate": false
           "fnDrawCallback": (oSettings) ->
