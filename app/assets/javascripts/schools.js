@@ -357,7 +357,7 @@ $(document).ready(function() {
               new Date($(date).val()) <= new Date(marker.schedule.dates[$(date).attr('id').substring(0,$(date).attr('id').length-6)]) : 
               new Date($(date).val()) >= new Date(marker.schedule.dates[$(date).attr('id').substring(0,$(date).attr('id').length-4)])) :
             true ) } ) )
-        && ( $('#text-filter').val().length == 0 || ( (marker.title + ' ' + marker.store_id).search(new RegExp($.trim($('#text-filter').val()), "i")) > 0))
+        && ( $('#text-filter').val().length == 0 || ( (' ' + marker.title + ' - ' + marker.store_id).search(new RegExp($.trim($('#text-filter').val()), "i")) > 0))
         && (locationFilteredList.length == 0 || !(_.contains(locationFilteredList, marker) ) )
         );
       });
