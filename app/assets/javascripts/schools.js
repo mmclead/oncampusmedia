@@ -73,6 +73,7 @@ $(document).ready(function() {
     var ConferenceFilter = [];
     var DMAFilter = [];
     var ZipFilter = [];
+    var NetworkFilter = [];
     var SportFilter = [];
     var DateFilter = [];
 
@@ -305,6 +306,20 @@ $(document).ready(function() {
       }
     });
     
+    $('#network-list input').change(function() {
+      $('#all-network input').prop('checked', false);
+      NetworkFilter = $('#network-list input:checked').map( function() { return this.name;});
+      applyFilters()
+    });
+    
+    $('#all-network input').change(function() {
+      if (this.checked) {
+        $('#network-list input:checked').prop('checked', false);
+        NetworkFilter = [];
+        applyFilters()
+      }
+    });
+    
     $('#schedule ul input').change(function() {
       $('#all-schedules input').prop('checked', false);
       DateFilter = $('#schedule ul input').map( function() { if($(this).val()) {return $(this)} });
@@ -347,6 +362,7 @@ $(document).ready(function() {
         && (($('#all-conferences input').prop('checked')) || (_.contains(ConferenceFilter, marker.conference)) )
         && (($('#all-dma input').prop('checked')) || (_.contains(DMAFilter, marker.store_info.dma.dma)) )
         && (($('#all-zip input').prop('checked')) || (_.contains(ZipFilter, marker.store_info.zip)) )
+        && (($('#all-network input').prop('checked')) || (_.contains(NetworkFilter, marker.network)) )
         && (($('#all-rotc input').prop('checked')) || (_.contains(ROTCFilter, marker.store_info.rotc.toString())) )
         && ( marker.store_info.dma.dma_rank >= $('#dma-range').slider("values", 0) && marker.store_info.dma.dma_rank <= $('#dma-range').slider("values", 1) )
         && ( marker.store_info.screen_count >= $('#screen-count-range').slider("values", 0) && marker.store_info.screen_count <= $('#screen-count-range').slider("values", 1) )

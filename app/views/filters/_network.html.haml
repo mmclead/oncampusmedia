@@ -1,0 +1,16 @@
+.accordian-group
+  .accordian-heading
+    %h3= link_to 'Filter by Network', '#network', { data: {toggle: "collapse", parent: "#school-info-list"}}
+  #network.accordian-body.collapse
+    #all-network
+      = check_box_tag "Any network ", 'all', true
+      = label_tag "Any network", "Any network"
+    #network-list.well
+      %ul
+        - @schools.collect {|s| s.network }.compact.uniq.sort.each do |network|  
+          %li
+            = check_box_tag "#{network}"
+            = label_tag "#{network}", "#{network}"
+            
+    
+  
