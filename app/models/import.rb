@@ -63,6 +63,7 @@ class Import < ActiveRecord::Base
     updated_school_list = []
     CSV.parse(schools_text.chomp, {headers: true, :row_sep => :auto}) do |row|
       store_id = row[0].to_s
+      puts store_id
       school = School.where(store_id: store_id).first
       unless school.present?
         school = School.new
