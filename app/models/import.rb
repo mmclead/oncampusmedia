@@ -62,11 +62,11 @@ class Import < ActiveRecord::Base
     new_school_list = []
     updated_school_list = []
     CSV.parse(schools_text.chomp, {headers: true, :row_sep => :auto}) do |row|
-      store_id = row[0]
+      store_id = row[0].to_s
       school = School.where(store_id: store_id).first
       unless school.present?
         school = School.new
-        school.store_id = row[0] 
+        school.store_id = row[0].to_s
       end
       school.network = row[1].to_s.encode!('UTF-8', 'UTF-8', :invalid => :replace)
       school.school_name = row[2].to_s.encode!('UTF-8', 'UTF-8', :invalid => :replace)
