@@ -1,15 +1,18 @@
-%table.table
-  %tr
-    %th ID
-    %th Date
-    %th # of Stores
-    %th Prepared By
-    %th Prepared for
-    %th Brand / Division
-    %th Presented To
-    %th Spot Length
-    %th CPM
-    %th Owned By
-    - if can? :destroy, Ratecard
-      %th Remove
-  = render @ratecards
+%h1 Existing Quotes
+%table.table#ratecards
+  %thead
+    %tr
+      %th ID
+      %th Date
+      %th # of Stores
+      %th Prepared By
+      %th Prepared for
+      %th Brand / Division
+      %th Presented To
+      %th Spot Length
+      %th CPM
+      %th Owned By
+      - if can? :destroy, Ratecard
+        %th Remove
+  %tbody
+    = render @ratecards

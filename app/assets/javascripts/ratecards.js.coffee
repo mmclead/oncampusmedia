@@ -3,9 +3,6 @@
 //# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 
-
-
-
 jQuery ->
         col = $('#schools').data('sortcol')
         dir = $('#schools').data('sortdir')
@@ -18,4 +15,11 @@ jQuery ->
             $("#schools").data "sortDir", oSettings.aaSorting[0][1]
             $("#pdfLink").attr "href", "#{$('#pdfLink').attr('href').split('?')[0]}?sortCol=#{$('#schools').data('sortCol')}&sortDir=#{$('#schools').data('sortDir')}"
 
+        })
+
+        $('#ratecards').dataTable({
+          "sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>"
+          "sPaginationType": "bootstrap"
+          "aaSorting": [[ 0, "desc" ]],
+          "aoColumnDefs": [ { "sType": "formatted-num", "aTargets": [ 0, 2, 7, 8 ] }]
         })

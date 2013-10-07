@@ -96,10 +96,10 @@ header {
   table-layout: fixed; 
 }
 
-.dataTables_info {
+#schools_info {
   display: none;
 }
-.dataTables_filter {
+#schools_filter {
   display: none;
 }
 .pdf-table {
@@ -116,4 +116,33 @@ header {
 .no-break{ 
   page-break-inside: avoid;
   /*http://code.google.com/p/wkhtmltopdf/issues/detail?id=9#c21*/
+}
+
+div.dataTables_length label {
+    width: 460px;
+    float: left;
+    text-align: left;
+}
+ 
+div.dataTables_length select {
+    width: 75px;
+}
+ 
+div.dataTables_filter label {
+    float: right;
+    width: 460px;
+}
+ 
+div.dataTables_info {
+    padding-top: 8px;
+}
+ 
+div.dataTables_paginate {
+    float: right;
+    margin: 0;
+}
+ 
+table {
+    margin: 1em 0;
+    clear: both;
 }
