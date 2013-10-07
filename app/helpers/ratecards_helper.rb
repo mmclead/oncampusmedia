@@ -13,7 +13,7 @@ module RatecardsHelper
   end
   
   def nearbyLocationsOfSchool(store_ids, school)    
-    index = store_ids.index { |store| store["id"].to_i == school.store_id }
+    index = store_ids.index { |store| store["id"] == school.store_id }
     return "#{store_ids[index]['nearbyCount']} #{store_ids[index]['nearbyName']}"
   end
   

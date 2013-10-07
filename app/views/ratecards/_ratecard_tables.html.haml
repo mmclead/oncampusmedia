@@ -64,8 +64,15 @@
     %th Additional Cost
     %td= number_to_currency(@ratecard.additional_cost.to_f)
   %tr.warning
-    %th Total Net Cost
+    %th Total Cost
     %td= number_to_currency(@ratecard.total_cost)
+  - if @ratecard.discount.to_f > 0
+    %tr.info
+      %th Discount
+      %td= "- #{number_to_currency(@ratecard.discount.to_f)}"
+    %tr.success
+      %th Total Cost with Discount
+      %td= number_to_currency(@ratecard.total_cost_with_discount)
 
 - if @ratecard.special_instructions.present?
   .well
