@@ -14,6 +14,7 @@ jQuery ->
             $("#schools").data "sortCol", oSettings.aaSorting[0][0]
             $("#schools").data "sortDir", oSettings.aaSorting[0][1]
             $("#pdfLink").attr "href", "#{$('#pdfLink').attr('href').split('?')[0]}?sortCol=#{$('#schools').data('sortCol')}&sortDir=#{$('#schools').data('sortDir')}"
+            $("#contractLink").attr "href", "#{$('#contractLink').attr('href').split('?')[0]}?contract=true&sortCol=#{$('#schools').data('sortCol')}&sortDir=#{$('#schools').data('sortDir')}"
 
         })
 

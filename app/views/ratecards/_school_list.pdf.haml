@@ -1,19 +1,23 @@
-%table#schools.table.table-bordered.table-hover.table-condensed.pdf-table{:data =>{:sortCol => "#{params[:sortCol] || 6}", :sortDir => "#{params[:sortDir] || 'desc' }"} }
-  %thead.higlight
-    %tr.highlight.no-break
-      %th Campus No.
-      %th Campus Name
-      %th Campus Type
-      %th Address
-      %th City
-      %th ST
-      %th DMA
-      %th DMA Rank
-      %th No. of TVs
-      %th Students Enrolled
-      %th Impressions
-      %th Cost Per Campus
-      - if @ratecard.store_ids[0]['nearbyName'].present?
-        %th Nearby Locations
-    %tbody
-      = render partial: 'ratecards/school_for_quote'
+- if @sortCol && @sortDir
+  %table#schools.table.table-bordered.table-hover.table-condensed.pdf-table{:data =>{:sortCol => "#{@sortCol || 6}", :sortDir => "#{@sortDir || 'desc' }"} }
+- else
+  %table#schools.table.table-bordered.table-hover.table-condensed.pdf-table{:data =>{:sortCol => "#{params[:sortCol] || 6}", :sortDir => "#{params[:sortDir] || 'desc' }"} }  
+  
+    %thead.higlight
+      %tr.highlight.no-break
+        %th Campus No.
+        %th Campus Name
+        %th Campus Type
+        %th Address
+        %th City
+        %th ST
+        %th DMA
+        %th DMA Rank
+        %th No. of TVs
+        %th Students Enrolled
+        %th Impressions
+        %th Cost Per Campus
+        - if @ratecard.store_ids[0]['nearbyName'].present?
+          %th Nearby Locations
+      %tbody
+        = render partial: 'ratecards/school_for_quote'
