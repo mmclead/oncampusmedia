@@ -138,7 +138,7 @@ class RatecardsController < ApplicationController
   end
 
   def start_upload
-    RatecardsController.upload_to_dropbox(@ratecard)
+    RatecardsController.delay.upload_to_dropbox(@ratecard)
   end
   
   def self.upload_contract_to_dropbox(ratecard)
