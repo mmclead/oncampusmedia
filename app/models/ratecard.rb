@@ -76,7 +76,7 @@ class Ratecard < ActiveRecord::Base
       
       impressions += transactions + (s.screen_multiplier(equation.screen_weight_multiplier) * transactions)
     end
-    return impressions * equation.impression_factor * spot_length_multiplier * spot_rate
+    return impressions * equation.impression_factor * spot_rate
   end
   
   def total_spots(schools = self.schools)
