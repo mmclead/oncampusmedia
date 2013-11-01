@@ -7,7 +7,7 @@
 = f.input :creative_due_date, input_html: { class: 'datepicker', id: 'creative-date', :value => @ratecard.present? ? @ratecard.creative_due_date : '' }, as: :string
 = f.input :flight_date, label: "Start date", input_html: { class: 'datepicker', id: 'start-date', :value => @ratecard.present? ? @ratecard.flight_date : '' }, as: :string
 = f.input :end_date, input_html: { class: 'datepicker', id: 'end-date', :value => @ratecard.present? ? @ratecard.end_date : ''  }, as: :string
-= f.input :spot_length, collection: ([[':15',15], [':30',30], [':60',60], ['1:30', 90], ['2:00', 120]]), :selected => @ratecard.present? ? @ratecard.spot_length : 30, :hint => "seconds"
+= f.input :spot_length, collection: ([['15',15], ['30',30], ['60',60], ['90', 90], ['120', 120]]), :selected => @ratecard.present? ? @ratecard.spot_length : 30, :hint => "seconds"
 = f.input :spot_rate, label: "Frequency", :hint => "spots per hour", :input_html => {:value => @ratecard.present? ? @ratecard.spot_rate : 3}
 %br
 %ul.nav.nav-list
