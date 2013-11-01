@@ -45,7 +45,7 @@ class Ratecard < ActiveRecord::Base
   end
   
   def total_cost(schools = self.schools)
-    schools.inject(0) {|sum, school| sum + cost_at_school(school)[:total_cost] } + additional_cost.to_f
+    schools.inject(0) {|sum, school| sum + cost_at_school(school)[:total_cost] } * spot_length_multiplier + additional_cost.to_f
   end
   
   def total_cost_with_discount(schools = self.schools)
