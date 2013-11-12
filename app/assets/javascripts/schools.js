@@ -456,6 +456,7 @@ $(document).ready(function() {
     function continueLocationFilter(service, request, marker) {
       $('#facebookG').show();
       service.nearbySearch(request, function(results, status) {
+        var filteredResults = _.reject(results, function(result) { return result.name != request.name});
         console.log(status)
         if (status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
           setTimeout(function() {
@@ -463,11 +464,12 @@ $(document).ready(function() {
               }, 1000);
         }
         else {
-          if (status != google.maps.places.PlacesServiceStatus.OK) {
+          if (status != google.maps.places.PlacesServiceStatus.OK || filteredResults.length == 0) {
             locationFilteredList.push(marker)
           }
+          
           else {
-            marker['nearbyResults'] = results
+            marker['nearbyResults'] = filteredResults
           }
           ajaxCount--; 
           if (ajaxCount <= 0) {
