@@ -1,17 +1,38 @@
-- @schools.each do |school|
-  %tr.no-break
-    %td= school.store_id
-    %td= school.name
-    %td= school.school_type
-    %td= school.address
-    %td= school.city
-    %td= school.state
-    %td= school.dma
-    %td= school.dma_rank
-    %td= school.num_of_screens
-    %td= school.demographics.enrollment
-    %td= number_with_delimiter(@ratecard.total_impressions([school]).to_i)
-    %td= number_to_currency(@ratecard.total_cost([school]))
-    - if @ratecard.store_ids[0]['nearbyName'].present?
-      %td= nearbyLocationsOfSchool(@ratecard.store_ids, school)
-    
+- if @schools.present?
+  - @schools.each do |school|
+    %tr.no-break
+      %td= school.store_id
+      %td= school.name
+      %td= school.school_type
+      %td= school.address
+      %td= school.city
+      %td= school.state
+      %td= school.dma
+      %td= school.dma_rank
+      %td= school.num_of_screens
+      %td= school.demographics.enrollment
+      %td= number_with_delimiter(@ratecard.total_impressions([school]).to_i)
+      %td= number_to_currency(@ratecard.total_cost([school]))
+      - if @ratecard.store_ids[0]['nearbyName'].present?
+        %td= nearbyLocationsOfSchool(@ratecard.store_ids, school)
+      
+- else
+  - schools.each do |school|
+    %tr.no-break
+      %td= school.store_id
+      %td= school.name
+      %td= school.school_type
+      %td= school.address
+      %td= school.city
+      %td= school.state
+      %td= school.dma
+      %td= school.dma_rank
+      %td= school.num_of_screens
+      %td= school.demographics.enrollment
+      %td= number_with_delimiter(@ratecard.total_impressions([school]).to_i)
+      %td= number_to_currency(@ratecard.total_cost([school]))
+      - if @ratecard.store_ids[0]['nearbyName'].present?
+        %td= nearbyLocationsOfSchool(@ratecard.store_ids, school)
+      
+
+  
