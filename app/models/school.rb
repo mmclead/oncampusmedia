@@ -41,6 +41,10 @@ class School < ActiveRecord::Base
     
   end
   
+  def has_screens?
+    num_of_screens > 0 ? 1 : 0
+  end
+
   def screen_multiplier(weight = Equation.first.screen_weight_multiplier)
     (num_of_screens > 0 ? ((num_of_screens-1) * weight ) : 0)
   end

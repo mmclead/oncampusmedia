@@ -74,7 +74,7 @@ class Ratecard < ActiveRecord::Base
     schools.each do |s|
       transactions = s.transactions.for_period(flight_date, end_date)
       
-      impressions += transactions + (s.screen_multiplier(equation.screen_weight_multiplier) * transactions)
+      impressions += (transactions + (s.screen_multiplier(equation.screen_weight_multiplier) * transactions))* s.has_screens?.to_f
     end
     return impressions * equation.impression_factor * spot_rate
   end
