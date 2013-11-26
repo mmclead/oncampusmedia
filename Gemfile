@@ -9,8 +9,7 @@ ruby '1.9.3'
 
 gem 'gmaps4rails'
 gem 'simple_form'
-gem 'rspec-rails'
-gem 'factory_girl_rails'
+gem 'factory_girl_rails', '~> 4.0'
 gem 'haml-rails'
 gem 'jquery-ui-rails'
 gem 'yaml_db'
@@ -45,6 +44,8 @@ group :production do
 end
 group :development, :test do
   gem 'sqlite3'
+  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'guard'
 end
 
 # To use ActiveModel has_secure_password

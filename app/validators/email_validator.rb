@@ -7,9 +7,7 @@ class EmailValidator < ActiveModel::EachValidator
       r = m.domain && m.address == value
       t = m.__send__(:tree)
       list = ENV['ALLOWED_EMAILS'].split(",")
-      puts "the list is #{list}"
       on_the_list = list.include? m.domain 
-      puts "this email is on the list: #{on_the_list}"
       # We need to dig into treetop
       # A valid domain must have dot_atom_text elements size > 1
       # user@localhost is excluded
@@ -17,9 +15,7 @@ class EmailValidator < ActiveModel::EachValidator
       # We exclude valid email values like <user@localhost.com>
       # Hence we use m.__send__(tree).domain
       r &&= (t.domain.dot_atom_text.elements.size > 1) && on_the_list
-      
-      puts "final result = #{r}"
-      
+            
     rescue Exception => e   
       r = false
     end
