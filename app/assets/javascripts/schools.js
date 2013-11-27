@@ -466,6 +466,7 @@ $(document).ready(function() {
         else {
           if (status != google.maps.places.PlacesServiceStatus.OK || filteredResults.length == 0) {
             locationFilteredList.push(marker)
+
           }
           
           else {
