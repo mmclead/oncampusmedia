@@ -79,11 +79,3 @@
     %h4 Special Instructions
     = @ratecard.special_instructions
 
-.well.equation.pdf-table
-  %h3.text-center Total Cost Equation
-  #centered-equation.text-center
-    Total Impressions (#{number_with_delimiter(@ratecard.total_impressions.to_i)})
-    * CPM (#{@ratecard.cpm}) * spot length ratio (#{(@ratecard.spot_length/30.0).to_r})
-    %hr.black-line
-    .text-center
-      1000
