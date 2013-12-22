@@ -1,4 +1,7 @@
 Schools::Application.routes.draw do
+  resources :ambassadors
+
+
   devise_for :users
 
   # The priority is based upon order of creation:

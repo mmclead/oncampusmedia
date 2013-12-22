@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131007205130) do
+ActiveRecord::Schema.define(:version => 20131222000444) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "school_id"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(:version => 20131007205130) do
   end
 
   add_index "addresses", ["school_id"], :name => "index_addresses_on_school_id"
+
+  create_table "ambassadors", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -171,39 +181,8 @@ ActiveRecord::Schema.define(:version => 20131007205130) do
 
   add_index "schedules", ["school_id"], :name => "index_schedules_on_school_id"
 
-  create_table "schools", :force => true do |t|
-    t.string   "store_id"
-    t.string   "school_name"
-    t.string   "address"
-    t.string   "city"
-    t.string   "state"
-    t.string   "monday_hours"
-    t.string   "tuesday_hours"
-    t.string   "wednesday_hours"
-    t.string   "thursday_hours"
-    t.string   "friday_hours"
-    t.string   "saturday_hours"
-    t.string   "sunday_hours"
-    t.integer  "num_of_schools"
-    t.integer  "num_of_schools_included"
-    t.datetime "created_at",                                     :null => false
-    t.datetime "updated_at",                                     :null => false
-    t.float    "latitude"
-    t.float    "longitude"
-    t.boolean  "gmaps"
-    t.string   "dma"
-    t.integer  "dma_rank"
-    t.string   "school_type"
-    t.float    "current_local_annual_traffic"
-    t.boolean  "starbucks"
-    t.boolean  "coffee_stations"
-    t.integer  "num_of_screens"
-    t.boolean  "rotc"
-    t.string   "store_name"
-    t.boolean  "active",                       :default => true
-    t.string   "zip"
-    t.string   "network"
-  end
+# Could not dump table "schools" because of following StandardError
+#   Unknown type 'id' for column 'ambassador_id'
 
   create_table "sports", :force => true do |t|
     t.integer  "school_id"

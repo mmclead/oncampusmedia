@@ -1,5 +1,5 @@
 class RatecardsController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource, except: [:index]
   
   helper_method :sort_column, :sort_direction
   
@@ -26,7 +26,6 @@ class RatecardsController < ApplicationController
   end
   
   def create
-    @ratecard = Ratecard.new(params[:ratecard])
     if user_signed_in?
       @ratecard.user = current_user
     end
@@ -81,13 +80,11 @@ class RatecardsController < ApplicationController
   end
   
   def edit
-    @ratecard = Ratecard.find(params[:id])
     @schools = @ratecard.schools(sort_column, sort_direction)
     @edit = true
   end
 
   def update
-    @ratecard = Ratecard.find(params[:id])
     if params['remove_schools']
       params[:ratecard][:store_ids] = @ratecard.store_ids.delete_if { |x| params['remove_schools'].keys.include?(x["id"]) }
       puts "In it", params

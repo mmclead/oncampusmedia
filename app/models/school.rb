@@ -11,6 +11,8 @@ class School < ActiveRecord::Base
   has_one :demographics, dependent: :destroy
   has_one :hours, dependent: :destroy
   has_one :transactions, dependent: :destroy
+
+  belongs_to :ambassador
   
   default_scope includes(:demographics, :sports, :hours, :transactions, :schedule).order(:dma, :school_name) 
   scope :active, where(active: true)
