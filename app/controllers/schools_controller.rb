@@ -1,5 +1,5 @@
 class SchoolsController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource, except = [:create, :update]
   
   def new
     @school = School.new
@@ -11,6 +11,16 @@ class SchoolsController < ApplicationController
   end
   
   def create
+
+    if params[:ambassador_id]
+      params.delete("ambassador")
+    end
+
+    if params[:new_ambassador]
+      params.delete("ambassador_id")
+    end
+
+    @school = School.new(params[:school])
     if @school.save
       redirect_to schools_url, notice: "School Created"
     else
@@ -43,7 +53,20 @@ class SchoolsController < ApplicationController
   end
   
   def update
+
     @school = School.find(params[:id])
+
+
+    if params[:school][:new_ambassador]
+      params[:school].delete(:ambassador_id)
+    end
+    
+    if params[:school][:ambassador_id].present?
+      params[:school].delete(:ambassador)
+    end
+
+    
+
     if @school.update_attributes(params[:school])
       redirect_to schools_url, notice: "#{@school.name} updated successfully."
     else

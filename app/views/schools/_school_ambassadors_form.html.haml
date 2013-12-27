@@ -1,0 +1,36 @@
+.accordian-group
+  .accordian-heading
+    %h3= link_to 'Ambassador', '#amb', { data: {toggle: "collapse", parent: "#forms"}}
+  #amb.accordian-body.collapse
+
+    %ul.nav.nav-pills
+      %li.active
+        %a#existing_amb{:href=>"#existing", :data => {:toggle=> "tab"}}
+          Choose from Existing Ambassadors
+      %li
+        %a#new_amb{:href=>"#new", :data => {:toggle=> "tab"}}
+          Add new Ambassador
+    
+    .tab-content
+      .tab-pane.active#existing
+        = f.association :ambassador
+      .tab-pane#new
+        = f.simple_fields_for :ambassador do |amb|
+          = amb.input :name
+          = amb.input :address
+          = amb.input :city
+          = amb.input :state
+          = amb.input :zip
+
+
+
+:javascript
+
+  $('#new_amb').click(function() {
+    $('#school_ambassador_id').val("");
+  });
+
+  $('#existing_amb').click(function() {
+    $('#new input').val("");
+  });
+

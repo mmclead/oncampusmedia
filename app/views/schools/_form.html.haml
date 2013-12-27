@@ -1,8 +1,10 @@
 = simple_form_for @school, html: {class: 'form-horizontal' } do |f|  
   = f.button :submit
   %p
-  = f.input :active
+  .well
+    = f.input :active
   .accordian#forms
+    = render 'school_ambassadors_form', f:f
     = render 'school_info_form', f:f
     = render 'school_schedule_form', f:f
     = render 'school_store_hours_form', f:f

@@ -1,0 +1,28 @@
+%h1 Listing Ambassadors
+
+%table.table.table-striped
+  %tr
+    %th Name
+    %th Address
+    %th City
+    %th State
+    %th Zip
+    %th Schools
+    %th
+
+  - @ambassadors.each do |ambassador|
+    %tr
+      %td= ambassador.name
+      %td= ambassador.address
+      %td= ambassador.city
+      %td= ambassador.state
+      %td= ambassador.zip
+      %td= list_schools(ambassador.schools)
+      %td 
+        =link_to 'Edit', edit_ambassador_path(ambassador)  
+        |
+        =link_to 'Remove', ambassador, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Ambassador', new_ambassador_path

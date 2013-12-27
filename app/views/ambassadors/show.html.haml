@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @ambassador.name
+%p
+  %b Address:
+  = @ambassador.address
+%p
+  %b City:
+  = @ambassador.city
+%p
+  %b State:
+  = @ambassador.state
+%p
+  %b Zip:
+  = @ambassador.zip
+
+= link_to 'Edit', edit_ambassador_path(@ambassador)
+\|
+= link_to 'Back', ambassadors_path
