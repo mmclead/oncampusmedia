@@ -2,7 +2,7 @@ class School < ActiveRecord::Base
   attr_accessible :address, :city, :num_of_schools, :num_of_schools_included, :school_name, 
                   :state, :zip, :store_id,:sports_attributes, :schedule_attributes, :demographics_attributes, 
                   :hours_attributes, :transactions_attributes, :active, :num_of_screens, :school_type, 
-                  :dma, :dma_rank, :starbucks, :coffee_stations, :rotc, :network, :ambassador_id, :ambassadors_attributes
+                  :dma, :dma_rank, :starbucks, :coffee_stations, :rotc, :network, :ambassador_ids, :ambassadors_attributes
   
   acts_as_gmappable :validation => false
   
@@ -12,14 +12,14 @@ class School < ActiveRecord::Base
   has_one :hours, dependent: :destroy
   has_one :transactions, dependent: :destroy
 
-  belongs_to :ambassador
+  has_and_belongs_to_many :ambassadors
   
   default_scope includes(:demographics, :sports, :hours, :transactions, :schedule).order(:dma, :school_name) 
   scope :active, where(active: true)
   scope :inactive, where(active: false)
   scope :deployed, where("num_of_screens > 0")
   scope :not_deployed, where(num_of_screens: 0)
-  accepts_nested_attributes_for :sports, :schedule, :demographics, :hours, :transactions, :ambassador
+  accepts_nested_attributes_for :sports, :schedule, :demographics, :hours, :transactions, :ambassadors
   
   
   def gmaps4rails_address
