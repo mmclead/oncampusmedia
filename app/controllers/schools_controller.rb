@@ -50,17 +50,20 @@ class SchoolsController < ApplicationController
   
   def edit
     @school = School.find(params[:id])
+    @my_ambassadors = @school.ambassadors
+    puts "my_ambassadors are: #{@my_ambassadors}"
+    @not_my_ambassadors = Ambassador.all - @my_ambassadors
+    @school.ambassadors.build
   end
   
   def update
 
     @school = School.find(params[:id])
 
-
     if params[:school][:new_ambassador]
       params[:school].delete(:ambassador_id)
     end
-    
+
     if params[:school][:ambassador_id].present?
       params[:school].delete(:ambassador)
     end

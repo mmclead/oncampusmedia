@@ -5,17 +5,29 @@
 
     %ul.nav.nav-pills
       %li.active
+        %a#current_amb{:href=>"#current", :data => {:toggle=> "tab"}}
+          Current Ambassadors
+      %li
         %a#existing_amb{:href=>"#existing", :data => {:toggle=> "tab"}}
-          Choose from Existing Ambassadors
+          Add from Existing Ambassadors
       %li
         %a#new_amb{:href=>"#new", :data => {:toggle=> "tab"}}
           Add new Ambassador
     
     .tab-content
-      .tab-pane.active#existing
-        = f.association :ambassador
+      .tab-pane.active#current
+        - if @my_ambassadors.size > 0
+          =@my_ambassadors.compact.size
+          =@my_ambassadors.first.id
+          = f.association :ambassadors, collection: @my_ambassadors, as: :check_boxes 
+        - else
+          =@my_ambassadors.size
+
+
+      .tab-pane#existing
+        = f.association :ambassadors, collection: @not_my_ambassadors, as: :check_boxes
       .tab-pane#new
-        = f.simple_fields_for :ambassador do |amb|
+        = f.simple_fields_for :ambassadors do |amb|
           = amb.input :name
           = amb.input :address
           = amb.input :city
@@ -27,7 +39,7 @@
 :javascript
 
   $('#new_amb').click(function() {
-    $('#school_ambassador_id').val("");
+    $('#existing.school_ambassadors input').attr('checked', false);
   });
 
   $('#existing_amb').click(function() {
