@@ -11,30 +11,30 @@
         %a#existing_amb{:href=>"#existing", :data => {:toggle=> "tab"}}
           Add from Existing Ambassadors
       %li
-        %a#new_amb{:href=>"#new", :data => {:toggle=> "tab"}}
-          Add new Ambassador
+        %a#new_amb{:href=>"#new", :data => {:toggle=> "modal", :target => "#modal"}}
+          Create new Ambassador
+      
     
     .tab-content
       .tab-pane.active#current
-        - if @my_ambassadors.size > 0
-          =@my_ambassadors.compact.size
-          =@my_ambassadors.first.id
-          = f.association :ambassadors, collection: @my_ambassadors, as: :check_boxes 
-        - else
-          =@my_ambassadors.size
-
-
+        = f.association :ambassadors, collection: @my_ambassadors, as: :check_boxes 
+        
       .tab-pane#existing
         = f.association :ambassadors, collection: @not_my_ambassadors, as: :check_boxes
-      .tab-pane#new
-        = f.simple_fields_for :ambassadors do |amb|
-          = amb.input :name
-          = amb.input :address
-          = amb.input :city
-          = amb.input :state
-          = amb.input :zip
+      
 
 
+
+#modal.modal.hide.fade
+  .modal-header
+    %button{type: "button", class:"close", data:{dismiss: "modal"} }
+      &times
+    %h3 Create New Ambassador
+  .modal-body
+    = render 'ambassadors/form'
+  .modal-footer
+    = link_to 'Close', {class: 'btn'}, data:{dismiss: "modal"}
+    = f.submit 'Create Ambassador'
 
 :javascript
 
@@ -46,3 +46,8 @@
     $('#new input').val("");
   });
 
+  $('#new_amb').click(function() {
+    $("#ambassador_school_ids_#{@school.id}").attr('checked',true);
+  });
+
+  
