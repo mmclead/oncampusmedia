@@ -47,6 +47,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'guard'
   gem 'quiet_assets'
+  gem 'thin'
 end
 
 # To use ActiveModel has_secure_password
