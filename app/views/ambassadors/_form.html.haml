@@ -1,16 +1,16 @@
-= simple_form_for(@ambassador) do |f|
-  = f.error_notification
+= simple_form_for(@ambassador) do |a_f|
+  = a_f.error_notification
 
   .form-actions
-    = f.button :submit
+    = a_f.button :submit
 
   .form-inputs
-    = f.input :name
-    = f.input :address
-    = f.input :city
-    = f.input :state
-    = f.input :zip
-    = f.association :schools, as: :check_boxes
+    = a_f.input :name
+    = a_f.input :address
+    = a_f.input :city
+    = a_f.input :state
+    = a_f.input :zip
+    = a_f.association :schools, as: :check_boxes, collection: School.unscoped
 
   .form-actions
-    = f.button :submit
+    = a_f.button :submit
