@@ -30,13 +30,13 @@ class SchoolsController < ApplicationController
   
   def index
     if params[:inactive]
-      @schools = School.unscoped.inactive
+      @schools = School.inactive.with_extras
     elsif params[:include_not_deployed]
-      @schools = School.active
+      @schools = School.active.with_extras
     elsif params[:not_deployed_only]
-      @schools = School.active.not_deployed
+      @schools = School.active.not_deployed.with_extras
     else
-      @schools = School.active.deployed
+      @schools = School.active.deployed.with_extras
     end
     @json = @schools.to_gmaps4rails do |school, marker|
       #marker.infowindow render_to_string(partial: "/schools/infowindow", locals: {school: school})
@@ -53,7 +53,7 @@ class SchoolsController < ApplicationController
     @my_ambassadors = @school.ambassadors
     puts "my_ambassadors are: #{@my_ambassadors}"
     @not_my_ambassadors = Ambassador.all - @my_ambassadors
-    @school.ambassadors.build
+    @ambassador = Ambassador.new
   end
   
   def update
@@ -68,10 +68,8 @@ class SchoolsController < ApplicationController
       params[:school].delete(:ambassador)
     end
 
-    
-
     if @school.update_attributes(params[:school])
-      redirect_to schools_url, notice: "#{@school.name} updated successfully."
+      redirect_to edit_school_url, id: @school.id, notice: "#{@school.name} updated successfully."
     else
       render action: 'edit'
     end

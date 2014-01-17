@@ -13,8 +13,8 @@ class School < ActiveRecord::Base
   has_one :transactions, dependent: :destroy
 
   has_and_belongs_to_many :ambassadors
-  
-  default_scope includes(:demographics, :sports, :hours, :transactions, :schedule).order(:dma, :school_name) 
+
+  scope :with_extras, includes(:demographics, :sports, :hours, :transactions, :schedule).order(:dma, :school_name)
   scope :active, where(active: true)
   scope :inactive, where(active: false)
   scope :deployed, where("num_of_screens > 0")
