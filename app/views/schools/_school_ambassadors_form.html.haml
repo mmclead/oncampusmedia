@@ -11,8 +11,8 @@
         %a#existing_amb{:href=>"#existing", :data => {:toggle=> "tab"}}
           Add from Existing Ambassadors
       %li
-        %a#new_amb{:href=>"#new", :data => {:toggle=> "modal", :target => "#modal"}}
-          Create new Ambassador
+        =link_to "Create new Ambassador", new_ambassador_path(school_id: @school.id)
+          
       
     
     .tab-content
@@ -22,20 +22,6 @@
       .tab-pane#existing
         = f.association :ambassadors, collection: @not_my_ambassadors, as: :check_boxes
       
-
-
-
-#modal.modal.hide.fade
-  .modal-header
-    %button{type: "button", class:"close", data:{dismiss: "modal"} }
-      &times
-    %h3 Create New Ambassador
-  .modal-body
-    = render 'ambassadors/form'
-  .modal-footer
-    = link_to 'Close', {class: 'btn'}, data:{dismiss: "modal"}
-    = f.submit 'Create Ambassador'
-
 :javascript
 
   $('#new_amb').click(function() {
@@ -45,9 +31,4 @@
   $('#existing_amb').click(function() {
     $('#new input').val("");
   });
-
-  $('#new_amb').click(function() {
-    $("#ambassador_school_ids_#{@school.id}").attr('checked',true);
-  });
-
   

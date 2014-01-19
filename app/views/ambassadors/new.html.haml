@@ -1,5 +1,9 @@
 %h1 New ambassador
 
+= hidden_field_tag 'included_school_id', "#{params[:school_id]}"
+
 = render 'form'
 
 = link_to 'Back', ambassadors_path
+
+
