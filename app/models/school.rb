@@ -43,6 +43,10 @@ class School < ActiveRecord::Base
     
   end
   
+  def ambassadors_list
+    ambassadors.collect{|a| "#{a.name}_#{a.id}"}
+  end
+
   def has_screens?
     num_of_screens > 0 ? 1 : 0
   end

@@ -41,7 +41,8 @@ class SchoolsController < ApplicationController
     @json = @schools.to_gmaps4rails do |school, marker|
       #marker.infowindow render_to_string(partial: "/schools/infowindow", locals: {school: school})
       marker.title "#{school.school_name}" 
-      json = {id: school.id, store_id: school.store_id, network: school.network, sports: school.sports.active_in, conference: school.sports.conference, 
+      json = {id: school.id, store_id: school.store_id, network: school.network, ambassadors: school.ambassadors_list,
+              sports: school.sports.active_in, conference: school.sports.conference, 
               state: school.state, demographics: school.demographics.hash_for_filter, store_info: school.store_info, 
               transactions: school.transactions.hash_for_filter, schedule: school.schedule.hash_for_filter}
       marker.json(json)   
@@ -53,20 +54,14 @@ class SchoolsController < ApplicationController
     @my_ambassadors = @school.ambassadors
     puts "my_ambassadors are: #{@my_ambassadors}"
     @not_my_ambassadors = Ambassador.all - @my_ambassadors
-    @ambassador = Ambassador.new
+    #@school.ambassadors.build
   end
   
   def update
-
     @school = School.find(params[:id])
+    params[:school][:ambassador_ids].compact!
 
-    if params[:school][:new_ambassador]
-      params[:school].delete(:ambassador_id)
-    end
-
-    if params[:school][:ambassador_id].present?
-      params[:school].delete(:ambassador)
-    end
+    pp params
 
     if @school.update_attributes(params[:school])
       redirect_to edit_school_url, id: @school.id, notice: "#{@school.name} updated successfully."

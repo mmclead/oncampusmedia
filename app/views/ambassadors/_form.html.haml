@@ -1,4 +1,4 @@
-= simple_form_for(@ambassador) do |a_f|
+= simple_form_for @ambassador do |a_f|
   = a_f.error_notification
 
   .form-actions
@@ -10,7 +10,8 @@
     = a_f.input :city
     = a_f.input :state
     = a_f.input :zip
-    = a_f.association :schools, as: :check_boxes, collection: School.unscoped
+    = a_f.association :schools, label: 'Current Schools', as: :check_boxes, collection: @ambassador.schools, wrapper_html: { id: 'current_ambassador_schools'}
+    = a_f.association :schools, as: :check_boxes, collection: School.unscoped, wrapper_html: { id: 'non_ambassador_schools'}
 
   .form-actions
     = a_f.button :submit

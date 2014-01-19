@@ -1,0 +1,16 @@
+.accordian-group
+  .accordian-heading
+    %h3= link_to 'Filter by Ambassador', '#ambassador', { data: {toggle: "collapse", parent: "#school-info-list"}}
+  #ambassador.accordian-body.collapse
+    #all-ambassador
+      = check_box_tag "Any Ambassador ", 'all', true
+      = label_tag "Any ambassador", "Any ambassador"
+    #ambassador-list.well
+      %ul
+        - @schools.collect {|s| s.ambassadors }.flatten.compact.uniq.sort.each do |ambassador|  
+          %li
+            = check_box_tag "#{ambassador.name}_#{ambassador.id}"
+            = label_tag "#{ambassador.name}_#{ambassador.id}", "#{ambassador.name}"
+            
+    
+  

@@ -74,6 +74,7 @@ $(document).ready(function() {
     var DMAFilter = [];
     var ZipFilter = [];
     var NetworkFilter = [];
+    var AmbassadorFilter = [];
     var SportFilter = [];
     var DateFilter = [];
 
@@ -320,6 +321,21 @@ $(document).ready(function() {
       }
     });
     
+    $('#ambassador-list input').change(function() {
+      $('#all-ambassador input').prop('checked', false);
+      AmbassadorFilter = $('#ambassador-list input:checked').map( function() { return this.name;});
+      applyFilters()
+    });
+    
+    $('#all-ambassador input').change(function() {
+      if (this.checked) {
+        $('#ambassador-list input:checked').prop('checked', false);
+         AmbassadorFilter = [];
+        applyFilters()
+      }
+    });
+
+
     $('#schedule ul input').change(function() {
       $('#all-schedules input').prop('checked', false);
       DateFilter = $('#schedule ul input').map( function() { if($(this).val()) {return $(this)} });
@@ -363,6 +379,7 @@ $(document).ready(function() {
         && (($('#all-dma input').prop('checked')) || (_.contains(DMAFilter, marker.store_info.dma.dma)) )
         && (($('#all-zip input').prop('checked')) || (_.contains(ZipFilter, marker.store_info.zip)) )
         && (($('#all-network input').prop('checked')) || (_.contains(NetworkFilter, marker.network)) )
+        && (($('#all-ambassador input').prop('checked')) || ( _.some(marker.ambassadors, function(ambassador) {return _.contains(AmbassadorFilter, ambassador)})) ) 
         && (($('#all-rotc input').prop('checked')) || (_.contains(ROTCFilter, marker.store_info.rotc.toString())) )
         && ( marker.store_info.dma.dma_rank >= $('#dma-range').slider("values", 0) && marker.store_info.dma.dma_rank <= $('#dma-range').slider("values", 1) )
         && ( marker.store_info.screen_count >= $('#screen-count-range').slider("values", 0) && marker.store_info.screen_count <= $('#screen-count-range').slider("values", 1) )
