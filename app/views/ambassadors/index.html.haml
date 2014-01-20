@@ -24,5 +24,5 @@
         =link_to 'Remove', ambassador, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
-
-= link_to 'New Ambassador', new_ambassador_path
+- if can? :create, Ambassador
+  = link_to 'New Ambassador', new_ambassador_path
