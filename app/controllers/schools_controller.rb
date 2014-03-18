@@ -61,8 +61,6 @@ class SchoolsController < ApplicationController
     @school = School.find(params[:id])
     params[:school][:ambassador_ids].compact!
 
-    pp params
-
     if @school.update_attributes(params[:school])
       redirect_to edit_school_url, id: @school.id, notice: "#{@school.name} updated successfully."
     else
