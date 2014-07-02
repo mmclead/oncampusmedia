@@ -473,7 +473,7 @@ $(document).ready(function() {
     function continueLocationFilter(service, request, marker) {
       $('#facebookG').show();
       service.nearbySearch(request, function(results, status) {
-        var filteredResults = _.reject(results, function(result) { return result.name != request.name});
+        var filteredResults = _.reject(results, function(result) { return result.name.toLowerCase().replace(/-/g, " ") != request.name.toLowerCase().replace(/-/g, " ")});
         console.log(status)
         if (status == google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
           setTimeout(function() {
