@@ -9,7 +9,7 @@ module RatecardsHelper
   end
   
   def owned_by(quote)
-    quote.user_id.present? and ? ( "#{quote.user.name}" rescue 'User' : "Public"
+    quote.user_id.present? ? ( "#{quote.user.name}" rescue 'User') : "Public"
   end
   
   def nearbyLocationsOfSchool(store_ids, school)    
