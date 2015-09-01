@@ -21,7 +21,15 @@ class School < ActiveRecord::Base
   scope :not_deployed, where(num_of_screens: 0)
   accepts_nested_attributes_for :sports, :schedule, :demographics, :hours, :transactions, :ambassadors
   
+  validate :store_id_unique_within_network
   
+
+  def store_id_unique_within_network
+    if School.where(store_id: store_id, network: network).exists?
+      errors.add(:store_id, "must be unique within network")
+    end
+  end
+
   def gmaps4rails_address
     "#{address} #{city}, #{state}"
   end
