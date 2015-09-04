@@ -25,7 +25,7 @@ class School < ActiveRecord::Base
   
 
   def store_id_unique_within_network
-    if School.where(store_id: store_id, network: network).exists?
+    if School.where(store_id: store_id, network: network).count > 1
       errors.add(:store_id, "must be unique within network")
     end
   end
